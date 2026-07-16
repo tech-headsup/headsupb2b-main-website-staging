@@ -4,7 +4,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+        <meta name='robots' content='noindex, nofollow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
         {/* Preload critical Montserrat weights so they download in parallel with the render-blocking CSS (helps FCP) */}
         <link rel="preload" href="/font/Montserrat-Regular.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
         <link rel="preload" href="/font/Montserrat-Bold.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />

@@ -140,8 +140,8 @@ export default function SolarHubStyles() {
         background: transparent;
       }
       .services-page .hero-image img {
-        width: 145% !important;
-        max-width: 145%;
+        width: 115% !important;
+        max-width: 115%;
         height: auto;
         transform: translateX(2%);
         border: none;
@@ -158,8 +158,8 @@ export default function SolarHubStyles() {
       }
       @media (max-width: 1280px) {
         .services-page .hero-image img {
-          width: 130% !important;
-          max-width: 130%;
+          width: 105% !important;
+          max-width: 105%;
           transform: translateX(0);
         }
       }
