@@ -1609,14 +1609,19 @@ export default function SolarHubStyles() {
       }
       @media (max-width: 768px) {
         .services-page .hero-stats {
-          flex-wrap: wrap;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
         }
         .services-page .hero-stat {
-          flex: 0 0 50%;
+          flex: none;
+          width: auto;
           padding: 18px 12px;
+          min-width: 0;
         }
         .services-page .hero-stat-val {
-          font-size: 22px;
+          font-size: 20px;
+          white-space: normal;
+          word-break: break-word;
         }
         .services-page .hero-stat-lbl {
           font-size: 12px;
@@ -1692,6 +1697,19 @@ export default function SolarHubStyles() {
         }
       }
       @media (max-width: 480px) {
+        .services-page .hero-stat {
+          padding: 14px 6px;
+          min-width: 0;
+        }
+        .services-page .hero-stat-val {
+          font-size: 18px;
+          letter-spacing: -0.3px;
+          white-space: normal;
+          word-break: break-word;
+        }
+        .services-page .hero-stat-lbl {
+          font-size: 11px;
+        }
         .services-page .trust-row {
           grid-template-columns: 1fr 1fr;
           gap: 10px;
