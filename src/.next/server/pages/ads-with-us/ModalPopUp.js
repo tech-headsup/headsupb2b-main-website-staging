@@ -1,0 +1,35 @@
+"use strict";(()=>{var e={};e.id=348,e.ids=[348,660],e.modules={8847:(e,t)=>{Object.defineProperty(t,"l",{enumerable:!0,get:function(){return function e(t,r){return r in t?t[r]:"then"in t&&"function"==typeof t.then?t.then(t=>e(t,r)):"function"==typeof t&&"default"===r?t:void 0}}})},8291:(e,t,r)=>{r.a(e,async(e,n)=>{try{r.r(t),r.d(t,{config:()=>m,default:()=>u,getServerSideProps:()=>p,getStaticPaths:()=>f,getStaticProps:()=>g,reportWebVitals:()=>h,routeModule:()=>v,unstable_getServerProps:()=>b,unstable_getServerSideProps:()=>j,unstable_getStaticParams:()=>y,unstable_getStaticPaths:()=>w,unstable_getStaticProps:()=>x});var a=r(9847),o=r(2603),s=r(8847),i=r(4929),l=r(2702),d=r(3177),c=e([l]);l=(c.then?(await c)():c)[0];let u=(0,s.l)(d,"default"),g=(0,s.l)(d,"getStaticProps"),f=(0,s.l)(d,"getStaticPaths"),p=(0,s.l)(d,"getServerSideProps"),m=(0,s.l)(d,"config"),h=(0,s.l)(d,"reportWebVitals"),x=(0,s.l)(d,"unstable_getStaticProps"),w=(0,s.l)(d,"unstable_getStaticPaths"),y=(0,s.l)(d,"unstable_getStaticParams"),b=(0,s.l)(d,"unstable_getServerProps"),j=(0,s.l)(d,"unstable_getServerSideProps"),v=new a.PagesRouteModule({definition:{kind:o.x.PAGES,page:"/ads-with-us/ModalPopUp",pathname:"/ads-with-us/ModalPopUp",bundlePath:"",filename:""},components:{App:l.default,Document:i.default},userland:d});n()}catch(e){n(e)}})},2702:(e,t,r)=>{r.a(e,async(e,n)=>{try{r.r(t),r.d(t,{default:()=>m});var a=r(997);(function(){var e=Error("Cannot find module '@/Layout/Layout'");throw e.code="MODULE_NOT_FOUND",e})(),function(){var e=Error("Cannot find module '@/storage/storage'");throw e.code="MODULE_NOT_FOUND",e}(),function(){var e=Error("Cannot find module '@/styles/globals.css'");throw e.code="MODULE_NOT_FOUND",e}();var o=r(6689),s=r(9114),i=r(6197),l=r(9752),d=r(9063),c=r(968),u=r.n(c);!function(){var e=Error("Cannot find module '@/component/SEOScripts/AllPageScript'");throw e.code="MODULE_NOT_FOUND",e}();var g=r(3218),f=r.n(g),p=e([i,l,d]);[i,l,d]=p.then?(await p)():p;let h=new s.ApolloClient({uri:"https://admin.headsupb2b.com/graphql",cache:new s.InMemoryCache}),x=new l.QueryClient;function m({Component:e,pageProps:t,router:r}){return(0,o.useEffect)(()=>{let e=Object(function(){var e=Error("Cannot find module '@/storage/storage'");throw e.code="MODULE_NOT_FOUND",e}())();null==e&&Object(function(){var e=Error("Cannot find module '@/storage/storage'");throw e.code="MODULE_NOT_FOUND",e}())("en")},[]),(0,a.jsxs)(i.AnimatePresence,{children:[(0,a.jsxs)(u(),{children:[a.jsx(f(),{id:"twak",src:"https://embed.tawk.to/66c5b5d0ea492f34bc0875d5/1i5q4sef7",charset:"UTF-8",crossorigin:"*"}),a.jsx("script",{dangerouslySetInnerHTML:{__html:`
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PWPLHZGR')
+    `}}),a.jsx("script",{dangerouslySetInnerHTML:{__html:`
+      window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments)}
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-EL9S9Y3SXG');
+    `}}),a.jsx("script",{dangerouslySetInnerHTML:{__html:`
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '468463856066805');
+        fbq('track', 'PageView');
+    `}}),a.jsx("script",{async:!0,src:"https://www.googletagmanager.com/gtag/js?id=AW-11484520855"}),a.jsx("script",{strategy:"lazyOnload",dangerouslySetInnerHTML:{__html:`
+    window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-11484520855');
+    `}},"gtag"),a.jsx("style",{children:`
+          body {
+                font-family: "Montserrat", sans-serif;
+                color: #404040;
+        }
+    `})]}),a.jsx(s.ApolloProvider,{client:h,children:(0,a.jsxs)(l.QueryClientProvider,{client:x,children:[a.jsx(Object(function(){var e=Error("Cannot find module '@/Layout/Layout'");throw e.code="MODULE_NOT_FOUND",e}()),{...t,children:a.jsx(e,{...t})}),a.jsx(d.ReactQueryDevtools,{initialIsOpen:!1})]})}),"//"," "]})}n()}catch(e){n(e)}})},4929:(e,t,r)=>{r.r(t),r.d(t,{default:()=>o});var n=r(997),a=r(3590);function o(){return(0,n.jsxs)(a.Html,{lang:"en",children:[(0,n.jsxs)(a.Head,{children:[n.jsx("meta",{name:"viewport",content:"width=device-width, initial-scale=1, shrink-to-fit=no"}),n.jsx("meta",{name:"robots",content:"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"})]}),(0,n.jsxs)("body",{children:[n.jsx("noscript",{children:n.jsx("iframe",{src:"https://www.googletagmanager.com/ns.html?id=GTM-PWPLHZGR",height:"0",width:"0",style:{display:"none",visibility:"hidden"}})}),n.jsx(a.Main,{}),n.jsx(a.NextScript,{}),n.jsx("div",{id:"portal"})]})]})}},3177:(e,t,r)=>{r.r(t),r.d(t,{default:()=>a});var n=r(997);let a=({isOpen:e,onClose:t,children:r})=>e?n.jsx("div",{className:"fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4",children:(0,n.jsxs)("div",{className:"bg-white rounded-2xl shadow-xl max-w-2xl w-full max-h-[100vh] overflow-y-auto",children:[(0,n.jsxs)("div",{className:"flex justify-between items-center p-6 border-b border-gray-200",children:[n.jsx("h2",{className:"text-xl font-bold text-gray-800",children:"Please fill out the following form to inquire about advertising opportunities with Headsup B2B."}),n.jsx("button",{onClick:t,className:"text-gray-500 hover:text-gray-700 text-2xl font-bold w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100",children:"\xd7"})]}),n.jsx("div",{className:"p-6",children:r})]})}):null},2603:(e,t)=>{var r;Object.defineProperty(t,"x",{enumerable:!0,get:function(){return r}}),function(e){e.PAGES="PAGES",e.PAGES_API="PAGES_API",e.APP_PAGE="APP_PAGE",e.APP_ROUTE="APP_ROUTE"}(r||(r={}))},9114:e=>{e.exports=require("@apollo/client")},2785:e=>{e.exports=require("next/dist/compiled/next-server/pages.runtime.prod.js")},968:e=>{e.exports=require("next/head")},6689:e=>{e.exports=require("react")},6405:e=>{e.exports=require("react-dom")},997:e=>{e.exports=require("react/jsx-runtime")},9752:e=>{e.exports=import("@tanstack/react-query")},9063:e=>{e.exports=import("@tanstack/react-query-devtools")},6197:e=>{e.exports=import("framer-motion")},1017:e=>{e.exports=require("path")}};var t=require("../../webpack-runtime.js");t.C(e);var r=e=>t(t.s=e),n=t.X(0,[3590,3218],()=>r(8291));module.exports=n})();

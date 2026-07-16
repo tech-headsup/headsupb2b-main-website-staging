@@ -1,0 +1,1 @@
+self.__REACT_LOADABLE_MANIFEST="{\"_app.js -> @tanstack/react-query-devtools\":{\"id\":\"_app.js -> @tanstack/react-query-devtools\",\"files\":[\"static/chunks/node_modules_tanstack_react-query-devtools_build_lib_index_mjs.js\"]}}"

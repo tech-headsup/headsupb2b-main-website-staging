@@ -1,0 +1,32 @@
+# Headsup B2B
+
+> Headsup B2B is India's integrated B2B platform for sourcing, fulfilment, and financing of construction and industrial raw materials — including solar panels, steel, aggregates, sand, tiles, cement, and electricals — serving contractors, EPCs, developers, and industrial buyers across India.
+
+Headsup B2B combines a digital marketplace with credit facilities and end-to-end fulfilment. Buyers can request quotes, upload existing quotes for better pricing, and access collateral-free short-term credit for up to 61 days.
+
+## Core
+
+- [Home](https://www.headsupb2b.com/): Overview of Headsup B2B services — sourcing, fulfilment, and financing for construction materials.
+- [About Us](https://www.headsupb2b.com/about): Company background, mission, and leadership.
+- [Contact](https://www.headsupb2b.com/contact): Sales enquiry, phone numbers, and office addresses.
+- [Careers](https://www.headsupb2b.com/careers): Current openings and how to apply.
+
+## Products & Categories
+
+- [Metal Solutions](https://www.headsupb2b.com/metal-solutions): Solar panels, steel, and metal supply.
+- [Electricals](https://www.headsupb2b.com/electricals): Cables, transformers, and electrical accessories.
+- [Services](https://www.headsupb2b.com/services): Integrated infrastructure services offering.
+
+## Knowledge Hub
+
+- [Blog](https://www.headsupb2b.com/blog): Guides and articles on construction materials, solar procurement, and industry trends.
+- [Research](https://www.headsupb2b.com/research): In-depth reports and procurement checklists.
+- [News & Press Releases](https://www.headsupb2b.com/news-press-release): Company news and media coverage.
+
+## Legal
+
+- [Privacy Policy](https://www.headsupb2b.com/privacy-policy): Data handling and user privacy.
+
+## Optional
+
+- [Sitemap](https://www.headsupb2b.com/sitemap.xml): Full URL list for crawlers.
