@@ -118,7 +118,7 @@ const BundleContent = ({ bundleData, bundleIndex }) => {
   );
 };
 
-export default function BundleCarousel({ bundles }) {
+export default function BundleCarousel({ bundles, equalSlides = false }) {
   return (
     <>
       <Swiper
@@ -136,16 +136,16 @@ export default function BundleCarousel({ bundles }) {
         }}
         loop={true}
         modules={[Pagination, Autoplay]}
-        className="mySwiper pb-12 md:pb-16"
+        className={`mySwiper pb-12 md:pb-16 ${equalSlides ? "mySwiper--equal" : ""}`}
         breakpoints={{
           768: {
             slidesPerView: 1,
             spaceBetween: 40,
           },
           1024: {
-            slidesPerView: 1.2,
+            slidesPerView: equalSlides ? 1 : 1.2,
             spaceBetween: 50,
-            centeredSlides: false,
+            centeredSlides: equalSlides ? true : false,
           },
         }}
       >
@@ -168,7 +168,7 @@ export default function BundleCarousel({ bundles }) {
           text-align: left !important;
           padding-left: 0 !important;
         }
-        
+
         /* Mobile - center aligned */
         @media (max-width: 767px) {
           .mySwiper .swiper-pagination {
@@ -176,7 +176,7 @@ export default function BundleCarousel({ bundles }) {
             padding-left: 0 !important;
           }
         }
-        
+
         /* Tablet and Desktop - left aligned with offset */
         @media (min-width: 1024px) {
           .mySwiper .swiper-pagination {
@@ -184,7 +184,19 @@ export default function BundleCarousel({ bundles }) {
             padding-left: 42.33% !important;
           }
         }
-        
+
+        /* Solar Hub variant - dots centered on all breakpoints */
+        .mySwiper--equal .swiper-pagination {
+          text-align: center !important;
+          padding-left: 0 !important;
+        }
+        @media (min-width: 1024px) {
+          .mySwiper--equal .swiper-pagination {
+            text-align: center !important;
+            padding-left: 0 !important;
+          }
+        }
+
         .mySwiper .swiper-pagination-bullet {
           width: 10px;
           height: 10px;
