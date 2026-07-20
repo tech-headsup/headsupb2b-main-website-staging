@@ -9,12 +9,12 @@ import { sendEmailToSell } from "@/Contants/APIEndpoint";
 import NewsTicker from "@/component/home/NewsTicker";
 
 const NAV_LINKS = [
-  { href: "/careers", label: "Career" },
-  { href: "/contact", label: "Contact us" },
+  { href: "/solar-hub", label: "Solar Hub" },
   { href: "/services", label: "Services" },
   { href: "/ads-with-us", label: "Advertise with us" },
-  { href: "/solar-hub", label: "Solar Hub" },
-  // { href: "/blog", label: "Blogs" },
+  { href: "/blog", label: "Blogs" },
+  { href: "/careers", label: "Career" },
+  { href: "/contact", label: "Contact us" },
   // { href: "/research", label: "Research" },
 ];
 
