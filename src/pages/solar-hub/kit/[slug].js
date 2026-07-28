@@ -407,6 +407,9 @@ function KitDetailStyles() {
         width: auto;
         object-fit: contain;
       }
+      .kit-brand-logos img[alt="ALMM"] {
+        height: 20px;
+      }
       .kit-lead {
         font-family: "DM Sans", sans-serif;
         font-size: 14px;
@@ -470,7 +473,7 @@ function KitDetailStyles() {
         align-items: center;
         justify-content: center;
         padding: 13px 24px;
-        border-radius: 8px;
+        border-radius: 12px;
         font-family: "Montserrat", sans-serif;
         font-size: 14px;
         font-weight: 700;
@@ -482,11 +485,11 @@ function KitDetailStyles() {
           box-shadow 0.2s ease;
       }
       .kit-cta-primary {
-        background: #5e3f99;
-        color: #ffffff;
+        background: #80EBF7;
+        color: #4A3772;
       }
       .kit-cta-primary:hover {
-        background: #4a3175;
+        background: #6dd9e5;
         transform: translateY(-1px);
       }
       .kit-cta-outline {
@@ -846,7 +849,7 @@ function KitDetailStyles() {
         color: #000000;
         background: #80EBF7;
         padding: 10px 20px;
-        border-radius: 6px;
+        border-radius: 12px;
         letter-spacing: 0.05em;
         text-decoration: none;
         margin-top: auto;

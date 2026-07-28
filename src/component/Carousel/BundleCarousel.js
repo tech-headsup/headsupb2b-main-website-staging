@@ -169,8 +169,8 @@ export default function BundleCarousel({ bundles, equalSlides = false }) {
           padding-left: 0 !important;
         }
 
-        /* Mobile - center aligned */
-        @media (max-width: 767px) {
+        /* Mobile + Tablet - center aligned */
+        @media (max-width: 1023px) {
           .mySwiper .swiper-pagination {
             text-align: center !important;
             padding-left: 0 !important;

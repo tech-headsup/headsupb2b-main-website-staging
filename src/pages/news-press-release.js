@@ -303,7 +303,7 @@ export default function NewsPressRelease() {
                     className="mt-auto pt-4 self-start"
                     style={{ fontFamily: "'Montserrat', sans-serif" }}
                   >
-                    <span className="inline-flex items-center gap-2 rounded-full border border-[#4A3772] bg-[#4A3772] px-4 py-2 text-[13px] font-semibold text-white transition">
+                    <span className="inline-flex items-center gap-2 rounded-xl bg-[#80EBF7] px-4 py-2 text-[13px] font-bold text-[#4A3772] transition">
                       Read release <span aria-hidden="true">→</span>
                     </span>
                   </span>

@@ -69,7 +69,7 @@ export default function SolarHubStyles() {
         padding: 72px 0 48px;
         display: flex;
         align-items: center;
-        position: relative;
+        position: relative; border-radius: 6px;
         overflow: hidden;
       }
       .services-page .hero-bg {
@@ -253,13 +253,13 @@ export default function SolarHubStyles() {
         align-items: stretch;
         gap: 14px;
         animation: services-slideUp 0.7s ease-out 0.3s both;
-        max-width: 560px;
+        max-width: 480px;
       }
       @media (min-width: 640px) {
         .services-page .hero-btns {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 16px;
+          gap: 12px;
         }
       }
       .services-page .btn-glow,
@@ -644,7 +644,7 @@ export default function SolarHubStyles() {
         color: #000000;
         background: #80EBF7;
         padding: 10px 20px;
-        border-radius: 6px;
+        border-radius: 12px;
         letter-spacing: 0.05em;
         text-decoration: none;
         margin-top: auto;
@@ -1199,7 +1199,7 @@ export default function SolarHubStyles() {
         color: #000000;
         background: #80EBF7;
         padding: 10px 20px;
-        border-radius: 6px;
+        border-radius: 12px;
         letter-spacing: 0.05em;
         margin-top: auto;
       }

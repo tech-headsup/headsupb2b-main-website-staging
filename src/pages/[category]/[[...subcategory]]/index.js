@@ -205,7 +205,7 @@ export default function CategoryPage({
             background: "linear-gradient(180deg, #402A6F 0%, #1D0946 59.13%)",
           }}
         >
-          <div className="pt-20 md:pt-24 lg:pt-28 xl:pt-[120px] py-8 md:py-12 lg:py-16 xl:py-20 px-4 md:px-8 lg:px-12">
+          <div className="pt-20 md:pt-24 lg:pt-28 xl:pt-[120px] py-8 md:py-12 lg:py-16 xl:py-20 max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8">
             {/* ── Search bar ── */}
             <div className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold opacity-1 text-center mt-4 md:mt-6 lg:mt-8 xl:mt-10">
               <CustomSearch variant="hero" />
@@ -223,7 +223,7 @@ export default function CategoryPage({
 
             {/* Stats */}
             {categoryData?.stats?.length > 0 && (
-              <div className="bg-white mx-4 sm:mx-8 md:mx-16 lg:mx-24 xl:mx-40 mt-6 md:mt-8 shadow-3xl rounded-2xl px-4 sm:px-6 md:px-10 lg:px-14 py-4 md:py-5 lg:py-6">
+              <div className="bg-white shadow-3xl rounded-2xl px-4 sm:px-6 md:px-10 lg:px-14 py-4 md:py-5 lg:py-6 mt-6 md:mt-8">
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-2">
                   {categoryData?.stats?.map((item, index) => (
                     <div
@@ -245,13 +245,13 @@ export default function CategoryPage({
             {/* Loan banner */}
             <button
               onClick={() => setFormVisible(true)}
-              className="flex items-center justify-center w-full mt-4 md:mt-5 px-4"
+              className="flex items-center justify-center w-full mt-4 md:mt-5"
             >
               <LoanBanner />
             </button>
 
             {/* Action buttons */}
-            <div className="flex flex-col l:flex-row items-center gap-4 md:gap-6 lg:gap-12 xl:gap-20 justify-center px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 mt-6 md:mt-8 lg:mt-10">
+            <div className="flex flex-col l:flex-row items-center gap-4 md:gap-6 lg:gap-2 xl:gap-8 justify-center mt-6 md:mt-8 lg:mt-10">
               <BannerButtons
                 bg={"bg-white hover:bg-gray-200"}
                 icon={<GetInstantQuoteSVG />}
@@ -284,14 +284,15 @@ export default function CategoryPage({
       {/* ✅ Categories Section — ref attached here */}
       <section
         ref={categorySectionRef}
-        className="secion_V_padding secion_H_padding bg-[#D9D9D96B]"
+        className="secion_V_padding bg-[#D9D9D96B]"
       >
+      <div className="max-w-[1280px] mx-auto w-full px-6 md:px-12 lg:px-8">
         <h2 className="section_heading">{`${categoryData?.name}`}</h2>
         {categoryData?.serviceDescriptor?.map((item) => (
-          <label
+          <div
             key={item}
             dangerouslySetInnerHTML={{ __html: item }}
-            className={`section_sub_text mt-8 ll:mt-7 ${
+            className={`section_sub_text mt-8 ll:mt-7 break-words ${
               categoryData?.slug === "high-mast-poles"
                 ? "[&_p+p]:mt-6 [&_p:empty]:hidden"
                 : ""
@@ -372,74 +373,85 @@ export default function CategoryPage({
           dimensions, and expert-backed recommendations. So whether you are an
           engineer, contractor or procurement manager - we've got you covered!
         </label>
+      </div>
       </section>
 
       {/* Reliable Supply Partners */}
-      <section className="secion_V_padding secion_H_padding bg-white">
-        <ReliableSupplyPartnerCarousel
-          tabText1="Reliable Supply Partners"
-          twoRows={false}
-          partnerCompanyList={categoryData?.rsp}
-          visionText={visionText}
-        />
+      <section className="secion_V_padding bg-white">
+        <div className="max-w-[1280px] mx-auto w-full px-6 md:px-12 lg:px-8">
+          <ReliableSupplyPartnerCarousel
+            tabText1="Reliable Supply Partners"
+            twoRows={false}
+            partnerCompanyList={categoryData?.rsp}
+            visionText={visionText}
+          />
+        </div>
       </section>
 
       {/* Bundles */}
-      <div className="flex flex-col w-full">
-        <h2 className="section_heading mt-20 pl-0">Supporting Every Build</h2>
-        <p className="section_sub_text w-full mt-5">
-          Explore our Customised Bundles, combining all your project needs for
-          better rates!
-        </p>
+      <div className="max-w-[1280px] mx-auto w-full px-6 md:px-12 lg:px-8">
+        <div className="flex flex-col w-full">
+          <h2 className="section_heading mt-20 pl-0">Supporting Every Build</h2>
+          <p className="section_sub_text w-full mt-5">
+            Explore our Customised Bundles, combining all your project needs for
+            better rates!
+          </p>
+        </div>
       </div>
-      <section className="secion_V_padding secion_H_padding ll:pr-0 pt-0 bg-white">
-        <BundleCarousel bundles={categoryData?.bundles?.bundles} />
+      <section className="secion_V_padding pt-0 bg-white">
+        <div className="max-w-[1280px] mx-auto w-full px-6 md:px-12 lg:px-8">
+          <BundleCarousel bundles={categoryData?.bundles?.bundles} equalSlides={true} />
+        </div>
       </section>
 
       {/* Why Choose Us */}
-      <section className="secion_V_padding secion_H_padding flex flex-col items-center bg-[#D9D9D96B]">
-        <h6 className="section_heading">Why Choose Us?</h6>
-        <p className="section_sub_text w-full mt-5 max-w-[1214px]">
-          Choosing the right partner for your projects ensures that you never
-          face unnecessary delays or compromises. At Headsup B2B, our focus is
-          on supplying more than materials - we focus on solving all of your
-          procurement challenges.
-        </p>
-        <div className="w-full grid grid-cols-1 t:grid-cols-2 l:grid-cols-3 ll:grid-cols-4 4k:grid-cols-4 gap-2 sm:gap-5 justify-items-center mt-5">
-          {[
-            { icon: <ExpertConsultationIcon />, label: "Expert Consultation" },
-            { icon: <PremiumQualityIcon />, label: "Premium Quality Products" },
-            { icon: <ComprehensiveRangeIcon />, label: "Comprehensive Range" },
-            {
-              icon: <RelationshipOfTrustIcon />,
-              label: "Relationship of Trust",
-            },
-          ].map((item) => (
-            <span
-              key={item.label}
-              className="flex flex-col items-center justify-center bg-white border border-[#B6B6B6] w-[273px] ll:w-full h-[218px] rounded-2xl"
-            >
-              <span className="w-24 h-24">{item.icon}</span>
-              <p className="px-16 pt-5 text-center text-[17px] font-bold">
-                {item.label}
-              </p>
-            </span>
-          ))}
+      <section className="secion_V_padding bg-[#D9D9D96B]">
+        <div className="max-w-[1280px] mx-auto w-full px-6 md:px-12 lg:px-8 flex flex-col items-center">
+          <h6 className="section_heading">Why Choose Us?</h6>
+          <p className="section_sub_text w-full mt-5">
+            Choosing the right partner for your projects ensures that you never
+            face unnecessary delays or compromises. At Headsup B2B, our focus is
+            on supplying more than materials - we focus on solving all of your
+            procurement challenges.
+          </p>
+          <div className="w-full grid grid-cols-1 t:grid-cols-2 l:grid-cols-3 ll:grid-cols-4 4k:grid-cols-4 gap-2 sm:gap-5 justify-items-center mt-5">
+            {[
+              { icon: <ExpertConsultationIcon />, label: "Expert Consultation" },
+              { icon: <PremiumQualityIcon />, label: "Premium Quality Products" },
+              { icon: <ComprehensiveRangeIcon />, label: "Comprehensive Range" },
+              {
+                icon: <RelationshipOfTrustIcon />,
+                label: "Relationship of Trust",
+              },
+            ].map((item) => (
+              <span
+                key={item.label}
+                className="flex flex-col items-center justify-center bg-white border border-[#B6B6B6] w-[273px] ll:w-full h-[218px] rounded-2xl"
+              >
+                <span className="w-24 h-24">{item.icon}</span>
+                <p className="px-16 pt-5 text-center text-[17px] font-bold">
+                  {item.label}
+                </p>
+              </span>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* What are you looking for */}
-      <section className="secion_V_padding secion_H_padding bg-white">
-        <WhatAreYouLookingFor categoryProductOptions={categoryProductOptions} />
+      <section className="secion_V_padding bg-white">
+        <div className="max-w-[1280px] mx-auto w-full px-6 md:px-12 lg:px-8">
+          <WhatAreYouLookingFor categoryProductOptions={categoryProductOptions} />
+        </div>
       </section>
 
       {/* Call and Chat */}
-      <section className="secion_V_padding secion_H_padding pt-0 bg-white">
+      <section className="secion_V_padding pt-0 bg-white px-4 sm:px-6 md:px-12 lg:px-20 xl:px-28">
         <CallAndChat />
       </section>
 
       {/* FAQ */}
-      <section className="secion_V_padding secion_H_padding pt-0 bg-white">
+      <section className="secion_V_padding pt-0 bg-white px-4 sm:px-6 md:px-12 lg:px-20 xl:px-28">
         {categoryData?.faqs?.schemaMarkup && (
           <script
             type="application/ld+json"
