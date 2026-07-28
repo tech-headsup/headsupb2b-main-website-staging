@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const features = [
   {
@@ -69,33 +68,34 @@ const FeaturesGrid = () => {
   };
 
   return (
-    <section className="py-16 px-6 bg-white ms:mt-0">
-      <h2 className="ll:text-3xl font-bold text-center mb-12" >Why Choose Headsup B2B?</h2>
-      
-      {/* Desktop Grid - Hidden on large tablet and below */}
-      <div className="hidden lg:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+    <section className="py-12 md:py-14 lg:py-16 ll:py-20 mt-10 -mx-12 md:-mx-10">
+      <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8">
+      <h2 className="text-2xl md:text-3xl lg:text-3xl ll:text-4xl font-bold text-center mb-8 md:mb-10 lg:mb-12 ll:mb-16" >Why Choose Headsup B2B?</h2>
+
+      {/* Desktop Grid - Hidden on mobile */}
+      <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-6 ll:gap-8">
         {features.map((f, i) => (
           <div
             key={i}
-            className="bg-white/90 backdrop-blur-sm border border-gray-200 p-10 rounded-2xl shadow 
-              transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] 
+            className="bg-white/90 backdrop-blur-sm border border-gray-200 p-8 md:p-8 lg:p-10 ll:p-12 rounded-2xl shadow
+              transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)]
               transform hover:scale-105 hover:shadow-xl text-center"
           >
-            <div className="bg-[#80EBF7] w-20 h-20 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+            <div className="bg-[#80EBF7] w-16 h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 ll:w-24 ll:h-24 rounded-2xl flex items-center justify-center mb-4 ll:mb-6 mx-auto">
               <img
                 src={f.img}
                 alt={f.title}
-                className="w-12 h-12"
+                className="w-10 h-10 lg:w-12 lg:h-12 ll:w-14 ll:h-14"
               />
             </div>
-            <h3 className="font-bold text-xl mb-2 text-gray-900">{f.title}</h3>
-            <p className="text-gray-600 text-base leading-relaxed">{f.desc}</p>
+            <h3 className="font-bold text-lg md:text-xl ll:text-2xl mb-2 ll:mb-3 text-gray-900">{f.title}</h3>
+            <p className="text-gray-600 text-sm md:text-base ll:text-lg leading-relaxed">{f.desc}</p>
           </div>
         ))}
       </div>
 
-      {/* Mobile/Tablet Slider - Visible on large tablet and below */}
-      <div className="block lg:hidden max-w-lg mx-auto">
+      {/* Mobile Slider - Visible on mobile only */}
+      <div className="block md:hidden max-w-lg mx-auto">
         <div 
           className="relative overflow-hidden"
           onMouseEnter={handleMouseEnter}
@@ -127,25 +127,6 @@ const FeaturesGrid = () => {
               </div>
             ))}
           </div>
-
-          {/* Navigation Arrows */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white 
-            rounded-full p-2 shadow-md transition-all duration-200 hover:scale-110"
-            aria-label="Previous slide"
-          >
-            <ChevronLeft className="w-5 h-5 text-gray-600" />
-          </button>
-          
-          <button
-            onClick={nextSlide}
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white 
-            rounded-full p-2 shadow-md transition-all duration-200 hover:scale-110"
-            aria-label="Next slide"
-          >
-            <ChevronRight className="w-5 h-5 text-gray-600" />
-          </button>
         </div>
 
         {/* Dots Indicator */}
@@ -155,17 +136,17 @@ const FeaturesGrid = () => {
               key={i}
               onClick={() => goToSlide(i)}
               className={`w-3 h-3 rounded-full transition-all duration-200 relative ${
-                i === currentSlide 
-                  ? 'bg-blue-600 scale-110' 
+                i === currentSlide
+                  ? 'bg-headupb2b scale-110'
                   : 'bg-gray-300 hover:bg-gray-400'
               }`}
               aria-label={`Go to slide ${i + 1}`}
             >
               {/* Progress indicator for current slide */}
               {i === currentSlide && isAutoPlaying && (
-                <div className="absolute inset-0 rounded-full border-2 border-blue-200">
-                  <div 
-                    className="w-full h-full bg-blue-400 rounded-full opacity-30 animate-pulse"
+                <div className="absolute inset-0 rounded-full border-2 border-headupb2b/40">
+                  <div
+                    className="w-full h-full bg-headupb2b rounded-full opacity-30 animate-pulse"
                     style={{
                       animation: 'progress 3s linear infinite'
                     }}
@@ -183,11 +164,7 @@ const FeaturesGrid = () => {
             100% { transform: scale(0); opacity: 0.5; }
           }
         `}</style>
-
-        {/* Slide Counter */}
-        <div className="text-center mt-4 text-sm text-gray-500">
-          {currentSlide + 1} of {features.length}
-        </div>
+      </div>
       </div>
     </section>
   );

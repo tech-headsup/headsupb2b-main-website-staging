@@ -5,7 +5,7 @@ export default function SupportingBuildSection({ bundles }) {
 
   return (
     <>
-      <div className="flex flex-col w-full items-center text-center px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+      <div className="flex flex-col w-full items-center text-center supporting-container">
         <h2
           className="section_heading mt-0 pl-0 text-center text-3xl md:text-[40px] font-extrabold text-[#111]"
           style={{ fontFamily: "'Montserrat', sans-serif" }}
@@ -17,7 +17,7 @@ export default function SupportingBuildSection({ bundles }) {
         </p>
       </div>
       <section className="section section-no-top pt-0" style={{ paddingBottom: 16 }}>
-        <div className="px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+        <div className="supporting-container">
           <BundleCarousel bundles={bundles} equalSlides />
         </div>
       </section>

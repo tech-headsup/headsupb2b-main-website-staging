@@ -133,9 +133,8 @@ export default function HeroSection({ onGetQuote, onUploadQuote }) {
           </button>
           <button
             onClick={onUploadQuote}
-            className="rounded-full font-bold text-white bg-transparent cursor-pointer transition-all duration-200 hover:bg-white/15 hover:-translate-y-0.5 w-full sm:w-auto"
+            className="rounded-full font-bold text-[#4A3772] lg:text-white bg-white lg:bg-transparent border-0 md:border-2 md:border-[#4A3772] lg:border-white/60 cursor-pointer transition-all duration-200 hover:bg-white/90 lg:hover:bg-white/15 hover:-translate-y-0.5 w-full sm:w-auto"
             style={{
-              border: "2px solid rgba(255,255,255,0.65)",
               fontFamily: "'DM Sans', sans-serif",
               fontSize: "clamp(0.82rem, 1.6vw, 1rem)",
               padding: "clamp(10px, 1.8vw, 14px) clamp(22px, 3.5vw, 38px)",

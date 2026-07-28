@@ -1,7 +1,9 @@
 export default function CTABanner({ onGetQuote }) {
   return (
+    <div className="-mx-4 sm:-mx-6 md:-mx-12 lg:-mx-20 xl:-mx-28 mt-10 sm:mt-16 md:mt-20">
+    <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8">
     <div
-      className="rounded-2xl flex flex-col items-center justify-center text-center px-4 py-10 sm:px-8 sm:py-14 md:py-16 mt-10 sm:mt-16 md:mt-20"
+      className="rounded-2xl flex flex-col items-center justify-center text-center p-4 sm:p-8 py-10 sm:py-14 md:py-16"
       style={{ background: "#4A3772" }}
     >
       <h2
@@ -26,6 +28,8 @@ export default function CTABanner({ onGetQuote }) {
           Talk to our team
         </button>
       </div>
+    </div>
+    </div>
     </div>
   );
 }

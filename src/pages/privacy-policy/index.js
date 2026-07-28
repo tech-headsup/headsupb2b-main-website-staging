@@ -2,8 +2,8 @@ import React from 'react';
 
 function Index() {
     return (
-        <div className="container mx-auto p-8 mt-28 bg-gray-100">
-            <div className="max-w-4xl mx-auto">
+        <div className="bg-gray-100 pt-16 pb-10 md:pt-[72px] md:pb-12 lg:pt-[72px] lg:pb-16">
+            <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8">
                 <section className="mb-12">
                     <h1 className="text-3xl font-bold mb-4">Terms of Use</h1>
                     <p className="mb-6">
@@ -102,11 +102,11 @@ function Index() {
                     <h2 className="text-xl font-bold mb-2">Contact Us</h2>
                     <p>
                         If you have any questions about these Terms, please contact us at{' '}
-                        <a href="tel:+917210199772" className="text-blue-500">+91 72101 99772</a> or{' '}
-                        <a href="tel:+919313306060" className="text-blue-500">+91 93133 06060</a> or{' '}
-                        <a href="tel:+918595736388" className="text-blue-500">+91 85957 36388</a>. You can also email us at{' '}
-                        <a href="mailto:info@headsupb2b.com" className="text-blue-500">info@headsupb2b.com</a> or connect with us on{' '}
-                        <a href="https://www.linkedin.com/company/headsupb2b" target="_blank" rel="noopener noreferrer" className="text-blue-500">LinkedIn</a>.
+                        <a href="tel:+917210199772" className="text-headupb2b font-medium hover:underline">+91 72101 99772</a> or{' '}
+                        <a href="tel:+919313306060" className="text-headupb2b font-medium hover:underline">+91 93133 06060</a> or{' '}
+                        <a href="tel:+918595736388" className="text-headupb2b font-medium hover:underline">+91 85957 36388</a>. You can also email us at{' '}
+                        <a href="mailto:info@headsupb2b.com" className="text-headupb2b font-medium hover:underline">info@headsupb2b.com</a> or connect with us on{' '}
+                        <a href="https://www.linkedin.com/company/headsupb2b" target="_blank" rel="noopener noreferrer" className="text-headupb2b font-medium hover:underline">LinkedIn</a>.
                     </p>
                 </section>
                 <hr className="my-8" />
@@ -169,10 +169,10 @@ function Index() {
                     <h2 className="text-xl font-bold mb-2">Contact Us</h2>
                     <p>
                         If you have any questions about this Privacy Policy, please contact us at{' '}
-                        <a href="tel:+917210199772" className="text-blue-500">+91 72101 99772</a> or{' '}
-                        <a href="tel:+919313306060" className="text-blue-500">+91 93133 06060</a>. You can also email us at{' '}
-                        <a href="mailto:info@headsupb2b.com" className="text-blue-500">info@headsupb2b.com</a> or connect with us on{' '}
-                        <a href="https://www.linkedin.com/company/headsupb2b" target="_blank" rel="noopener noreferrer" className="text-blue-500">LinkedIn</a>.
+                        <a href="tel:+917210199772" className="text-headupb2b font-medium hover:underline">+91 72101 99772</a> or{' '}
+                        <a href="tel:+919313306060" className="text-headupb2b font-medium hover:underline">+91 93133 06060</a>. You can also email us at{' '}
+                        <a href="mailto:info@headsupb2b.com" className="text-headupb2b font-medium hover:underline">info@headsupb2b.com</a> or connect with us on{' '}
+                        <a href="https://www.linkedin.com/company/headsupb2b" target="_blank" rel="noopener noreferrer" className="text-headupb2b font-medium hover:underline">LinkedIn</a>.
                     </p>
                 </section>
                 <hr className="my-8" />

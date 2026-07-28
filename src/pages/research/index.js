@@ -15,7 +15,7 @@ export default function ResearchIndex() {
   )
 
   return (
-    <div className="px-4 mm:px-6 t:px-8 l:px-12 py-10 mt-12 max-w-[1400px] mx-auto">
+    <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8 py-8 md:py-10 lg:py-12 ll:py-16">
       <NextSeo
         title={seoTitle}
         description={seoDescription}
@@ -35,17 +35,17 @@ export default function ResearchIndex() {
       />
 
       {/* Header */}
-      <div className="text-center mb-10">
-        <h1 className="text-2xl mm:text-3xl l:text-4xl font-bold text-black">
+      <div className="text-center mb-8 md:mb-10 lg:mb-12">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl ll:text-5xl font-bold text-black">
           Research Hub
         </h1>
-        <p className="text-gray-500 mt-2 text-sm mm:text-base max-w-[500px] mx-auto">
+        <p className="text-gray-500 mt-2 md:mt-3 text-sm md:text-base lg:text-lg max-w-[500px] lg:max-w-[600px] mx-auto">
           In-depth guides on solar procurement, energy infrastructure, and India's power sector.
         </p>
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 t:grid-cols-2 l:grid-cols-3 gap-4 t:gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6 ll:gap-8">
         {[...researchData]
           .sort((a, b) => new Date(b.date) - new Date(a.date))
           .map((item, index) => {
@@ -55,42 +55,44 @@ export default function ResearchIndex() {
               <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all duration-200 h-full flex flex-col">
 
                 {/* Fixed image */}
-                <div className="relative w-full h-[180px] mm:h-[200px] t:h-[210px] shrink-0">
+                <div className="w-full shrink-0 overflow-hidden">
                   <Image
                     src={item.image}
-                    fill
+                    width={1200}
+                    height={675}
                     alt={item.title}
-                    className="w-full h-auto"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="w-full h-auto block"
                   />
                 </div>
 
                 {/* Content */}
-                <div className="flex flex-col flex-1 p-4 mm:p-5">
+                <div className="flex flex-col flex-1 p-4 md:p-5 lg:p-6">
 
                   {/* Category tag — optional, show if exists */}
                   {item.category && (
-                    <span className="text-[10px] font-mono tracking-[1px] uppercase text-headupb2b bg-[#F4F1FA] px-2 py-0.5 rounded w-fit mb-2">
+                    <span className="text-[10px] md:text-[11px] font-mono tracking-[1px] uppercase text-headupb2b bg-[#F4F1FA] px-2 py-0.5 rounded w-fit mb-2">
                       {item.category}
                     </span>
                   )}
 
                   {/* Title */}
-                  <h2 className="font-bold text-base mm:text-lg text-black line-clamp-2 leading-snug">
+                  <h2 className="font-bold text-base md:text-lg lg:text-xl text-black line-clamp-2 leading-snug">
                     {item.title}
                   </h2>
 
                   {/* Date */}
-                  <p className="text-[11px] mm:text-xs text-gray-400 mt-1 font-mono">
+                  <p className="text-[11px] md:text-xs text-gray-400 mt-1 font-mono">
                     {format(date, 'LLL d, yyyy')}
                   </p>
 
                   {/* Description */}
-                  <p className="text-sm text-gray-600 mt-2 line-clamp-3 flex-1">
+                  <p className="text-sm md:text-base text-gray-600 mt-2 line-clamp-3 flex-1">
                     {item.description}
                   </p>
 
                   {/* Read more */}
-                  <div className="mt-4 text-[13px] font-semibold text-headupb2b flex items-center gap-1">
+                  <div className="mt-4 text-[13px] md:text-sm font-semibold text-headupb2b flex items-center gap-1">
                     Read Guide <span>→</span>
                   </div>
 

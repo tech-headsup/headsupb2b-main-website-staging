@@ -64,7 +64,9 @@ export default function PanIndiaText() {
   );
 
   return (
-    <div className="rounded-2xl overflow-hidden mt-6 sm:mt-8">
+    <div className="-mx-4 sm:-mx-6 md:-mx-12 lg:-mx-20 xl:-mx-28">
+    <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8 mt-6 sm:mt-8">
+    <div className="rounded-2xl overflow-hidden">
       {/* Image */}
       <div className="w-full">
         <Image
@@ -114,6 +116,8 @@ export default function PanIndiaText() {
           {P2_WORDS.map((w, i) => wordSpan(w, p2Refs, i, P2_WORDS.length))}
         </p>
       </div>
+    </div>
+    </div>
     </div>
   );
 }

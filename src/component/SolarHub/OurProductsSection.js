@@ -18,7 +18,7 @@ export default function OurProductsSection({ categoryData, categoryProductOption
 
   return (
     <section className="section section-no-top" style={{ paddingBottom: 40 }}>
-      <div className="px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+      <div className="max-w-[1280px] mx-auto w-full px-6 md:px-12 lg:px-8">
         <h2 className="section_heading text-center text-[#111] text-3xl md:text-[40px] font-extrabold" style={{ fontFamily: "'Montserrat', sans-serif" }}>
           Our Products
         </h2>
@@ -41,7 +41,7 @@ export default function OurProductsSection({ categoryData, categoryProductOption
           })}
         </div>
 
-        <div className="bg-white flex flex-col px-2 ll:px-10 py-8 pb-8 mt-5 rounded-2xl">
+        <div className="bg-white flex flex-col py-8 pb-8 mt-5 rounded-2xl">
           <div className="w-full flex justify-between items-center">
             <span className="text-base font-semibold capitalize text-gray-800 truncate">
               {`Home > ${categoryData?.name} > ${selectedSubCategory?.name}`}

@@ -28,6 +28,7 @@ export default function TestimonialsCarousel() {
   const swiperRef = React.useRef(null);
   return (
     <div className="bg-white pt-20">
+    <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8">
       <h2 className="text-2xl sm:text-3xl md:text-[40px] font-bold text-center text-[#111] mb-10" style={{ fontFamily: "'Montserrat', sans-serif" }}>
         Testimonials
       </h2>
@@ -41,7 +42,7 @@ export default function TestimonialsCarousel() {
         >
           {TESTIMONIALS.map((t, i) => (
             <SwiperSlide key={i}>
-              <div className="flex flex-col md:flex-row min-h-[420px]">
+              <div className="flex flex-col md:flex-row min-h-[420px] rounded-2xl overflow-hidden">
                 <div className="w-full md:w-[35%] flex-shrink-0 overflow-hidden max-h-[280px] md:max-h-none">
                   <img src={t.image} alt="testimonial" className="w-full h-full object-cover" style={{ filter: "saturate(1.1)" }} />
                 </div>
@@ -64,6 +65,7 @@ export default function TestimonialsCarousel() {
           ))}
         </Swiper>
       </div>
+    </div>
     </div>
   );
 }

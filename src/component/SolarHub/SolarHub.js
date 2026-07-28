@@ -18,6 +18,7 @@ import CtaCardsSection from "./CtaCardsSection";
 import FaqSection from "./FaqSection";
 import SolarHubStyles from "./SolarHubStyles";
 import WhyHeadsupB2B from "@/component/home/WhyHeadsupB2B";
+import UploadQuote from "@/component/UploadQuote";
 
 export default function SolarHub({
   knowledgeArticles = [],
@@ -26,6 +27,7 @@ export default function SolarHub({
 }) {
   const [showSellModal, setShowSellModal] = useState(false);
   const [showQuoteModal, setShowQuoteModal] = useState(false);
+  const [showUploadQuoteModal, setShowUploadQuoteModal] = useState(false);
 
   return (
     <>
@@ -39,7 +41,7 @@ export default function SolarHub({
 
       <div className="services-page">
         <HeroSection
-          onOpenSellModal={() => setShowSellModal(true)}
+          onOpenSellModal={() => setShowUploadQuoteModal(true)}
           onOpenQuoteModal={() => setShowQuoteModal(true)}
         />
         <HeroStatsSection />
@@ -55,7 +57,7 @@ export default function SolarHub({
         <KnowledgeCenterSection knowledgeArticles={knowledgeArticles} />
         <FaqSection />
         <CtaCardsSection
-          onOpenSellModal={() => setShowSellModal(true)}
+          onOpenSellModal={() => setShowUploadQuoteModal(true)}
           onOpenQuoteModal={() => setShowQuoteModal(true)}
         />
       </div>
@@ -91,6 +93,19 @@ export default function SolarHub({
             endPoint={sendEmailToBuy}
             categoryProductOptions={categoryProductOptions}
           />
+        </CommonModal>
+      )}
+
+      {showUploadQuoteModal && (
+        <CommonModal
+          isOpen={showUploadQuoteModal}
+          onClose={() => setShowUploadQuoteModal(false)}
+          title="Have an Existing Product Quote?"
+          subTitle="Upload Below and Unlock Better Pricing!"
+          closeOnBackdropClick={true}
+          size="md"
+        >
+          <UploadQuote />
         </CommonModal>
       )}
     </>

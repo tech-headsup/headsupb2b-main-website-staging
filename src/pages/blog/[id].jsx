@@ -119,7 +119,7 @@ export default function BlogPage({ post, publication }) {
         />
       </Head>
 
-      <div className="mx-auto my-10 w-full max-w-[1600px] px-4 lg:px-6 py-14">
+      <div className="mx-auto w-full max-w-[1280px] px-6 md:px-12 lg:px-8 pt-16 md:pt-[72px] lg:pt-[72px] pb-8 md:pb-10">
         <PostHeader
           title={post.title}
           coverImage={post.coverImage?.url}
@@ -131,7 +131,7 @@ export default function BlogPage({ post, publication }) {
         />
       </div>
 
-      <div className="grid grid-cols-1 gap-4 lg:grid-cols-[300px_minmax(0,1fr)_300px] ll:mx-10 pb-10">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-[280px_minmax(0,1fr)_300px] max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8 pb-10 md:pb-12 lg:pb-16">
         {post.features?.tableOfContents?.isEnabled ? (
           <aside className="sticky top-0 hidden h-screen overflow-y-auto lg:block">
             <div ref={triggerRef} className="px-4 py-6">
@@ -144,7 +144,7 @@ export default function BlogPage({ post, publication }) {
 
         <main
           ref={middleGridRef}
-          className="min-h-screen overflow-y-auto px-4 lg:px-6 lg:mt-0 mt-[-30px]"
+          className="min-h-screen overflow-y-auto lg:px-2 lg:mt-0"
         >
           <div className="mx-auto max-w-3xl">
             <MarkdownToHtml contentHtml={post.content?.html || ""} />

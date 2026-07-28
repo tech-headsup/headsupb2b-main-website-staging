@@ -39,7 +39,7 @@ export default function SolarKitsSection() {
 
   return (
     <section className="section section-tight-top">
-      <div className="container">
+      <div className="kits-container">
         <div className="sec-header">
           <h2>Solar Kits</h2>
           <p>Ready-to-install Project kits</p>

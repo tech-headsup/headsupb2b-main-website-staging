@@ -97,6 +97,10 @@ export default function KitDetailPage({ kit }) {
                 Authorised Seller &amp; Pan India Shipping
               </div>
               <h1 className="kit-heading">{kit.fullTitle}</h1>
+              <div className="kit-brand-logos">
+                <img src="/polycab.webp" alt="Polycab" />
+                <img src="/almm-logo.png" alt="ALMM" />
+              </div>
               <p className="kit-lead">{kit.longDescription}</p>
 
               <div className="kit-highlights">
@@ -200,6 +204,44 @@ export default function KitDetailPage({ kit }) {
               </div>
             )}
           </div>
+
+          {/* RELATED PRODUCTS */}
+          {(() => {
+            const related = SOLAR_KITS.filter((k) => k.slug !== kit.slug).slice(0, 4);
+            if (related.length === 0) return null;
+            return (
+              <section className="kit-related">
+                <h2 className="kit-related-title">Related Products</h2>
+                <div className="kit-related-grid">
+                  {related.map((k) => (
+                    <Link key={k.slug} href={`/solar-hub/kit/${k.slug}`} className="kit-related-card">
+                      <div className="kit-related-img">
+                        {k.image && (
+                          <Image
+                            src={k.image}
+                            alt={k.title}
+                            fill
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                            style={{
+                              objectFit: "contain",
+                              padding: 8,
+                              transform: k.imgScale ? `scale(${k.imgScale})` : undefined,
+                            }}
+                          />
+                        )}
+                      </div>
+                      <div className="kit-related-body">
+                        <div className="kit-related-power">{k.power}</div>
+                        <h4 className="kit-related-name">{k.fullTitle || k.title}</h4>
+                        <p className="kit-related-desc">{k.desc}</p>
+                        <span className="kit-related-view">View Kit</span>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            );
+          })()}
         </div>
       </div>
 
@@ -237,9 +279,20 @@ function KitDetailStyles() {
         box-sizing: border-box;
       }
       .kit-container {
-        max-width: 1200px;
+        max-width: 1280px;
         margin: 0 auto;
-        padding: 0 48px;
+        padding: 0 24px;
+        width: 100%;
+      }
+      @media (min-width: 768px) {
+        .kit-container {
+          padding: 0 48px;
+        }
+      }
+      @media (min-width: 1024px) {
+        .kit-container {
+          padding: 0 32px;
+        }
       }
       .kit-crumbs {
         display: flex;
@@ -342,6 +395,18 @@ function KitDetailStyles() {
         letter-spacing: -0.6px;
         margin: 0 0 16px;
       }
+      .kit-brand-logos {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin: 0 0 20px;
+        flex-wrap: wrap;
+      }
+      .kit-brand-logos img {
+        height: 36px;
+        width: auto;
+        object-fit: contain;
+      }
       .kit-lead {
         font-family: "DM Sans", sans-serif;
         font-size: 14px;
@@ -352,7 +417,7 @@ function KitDetailStyles() {
 
       .kit-highlights {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 0;
         background: #f4f1fa;
         border-radius: 12px;
@@ -656,29 +721,32 @@ function KitDetailStyles() {
           flex-direction: column;
           gap: 32px;
         }
+        .kit-main-image {
+          aspect-ratio: 4 / 3;
+          flex: none;
+          min-height: 320px;
+        }
+      }
+      @media (max-width: 1280px) and (min-width: 1025px) {
+        .kit-main-image {
+          aspect-ratio: 4 / 3;
+          flex: none;
+          min-height: 380px;
+        }
       }
       @media (max-width: 768px) {
         .kit-page {
           padding: 72px 0 56px;
         }
-        .kit-container {
-          padding: 0 20px;
-        }
         .kit-heading {
           font-size: 26px;
         }
         .kit-highlights {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 12px 0;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 0;
         }
         .kit-highlight {
-          border-right: none;
-          border-bottom: 1px solid rgba(94, 63, 153, 0.12);
-          padding-bottom: 12px;
-        }
-        .kit-highlight:nth-last-child(-n + 2) {
-          border-bottom: none;
-          padding-bottom: 0;
+          padding: 4px 6px;
         }
         .kit-cta-row {
           grid-template-columns: 1fr;
@@ -695,6 +763,105 @@ function KitDetailStyles() {
         .kit-table tbody td {
           padding: 12px 12px;
           font-size: 12px;
+        }
+      }
+
+      /* Related Products */
+      .kit-related {
+        margin-top: 64px;
+      }
+      .kit-related-title {
+        font-family: "Montserrat", sans-serif;
+        font-size: 28px;
+        font-weight: 800;
+        color: #111;
+        letter-spacing: -0.4px;
+        margin: 0 0 24px;
+      }
+      .kit-related-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+      .kit-related-card {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #e5e5e5;
+        border-radius: 16px;
+        overflow: hidden;
+        background: #ffffff;
+        text-decoration: none;
+        color: inherit;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+      }
+      .kit-related-card:hover {
+        border-color: #c5b8e8;
+        box-shadow: 0 8px 30px rgba(74, 55, 114, 0.1);
+        transform: translateY(-2px);
+      }
+      .kit-related-img {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        background: #f7f4ff;
+      }
+      .kit-related-body {
+        padding: 16px 16px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        flex: 1;
+      }
+      .kit-related-power {
+        font-family: "DM Sans", sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        color: #4a3772;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+      }
+      .kit-related-name {
+        font-family: "Montserrat", sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        color: #111;
+        margin: 0;
+        line-height: 1.3;
+      }
+      .kit-related-desc {
+        font-family: "DM Sans", sans-serif;
+        font-size: 13px;
+        color: #6b6b6b;
+        line-height: 1.5;
+        margin: 4px 0 10px;
+        flex: 1;
+      }
+      .kit-related-view {
+        align-self: flex-start;
+        display: inline-flex;
+        align-items: center;
+        font-family: "DM Sans", sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        color: #000000;
+        background: #80EBF7;
+        padding: 10px 20px;
+        border-radius: 6px;
+        letter-spacing: 0.05em;
+        text-decoration: none;
+        margin-top: auto;
+      }
+      @media (max-width: 1024px) {
+        .kit-related-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 640px) {
+        .kit-related-title {
+          font-size: 22px;
+        }
+        .kit-related-grid {
+          grid-template-columns: 1fr;
         }
       }
     `}</style>

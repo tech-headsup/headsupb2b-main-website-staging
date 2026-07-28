@@ -109,10 +109,13 @@ export default function GetInTouch() {
               )}
             </div>
             <div className="my-3">
-              <h2 className={`text-lg text-white`}>Message</h2>
+              <label htmlFor="message" className="text-lg text-white">
+                Message
+              </label>
             </div>
             <textarea
               {...register("message")}
+              id="message"
               className="bg-transparent text-white placeholder:text-white w-full border rounded-lg outline-none p-4"
               rows={3}
             ></textarea>

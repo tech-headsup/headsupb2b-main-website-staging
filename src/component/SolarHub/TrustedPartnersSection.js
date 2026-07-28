@@ -21,7 +21,7 @@ export default function TrustedPartnersSection() {
 
   return (
     <section className="section section-no-top" style={{ paddingTop: 60 }}>
-      <div className="container">
+      <div className="tp-container">
         <div className="tp-wrap">
           <h2 className="tp-heading">Our Trusted Partners</h2>
           <p className="tp-sub">Sourced from India&apos;s leading manufacturers</p>

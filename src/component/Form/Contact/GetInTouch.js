@@ -136,8 +136,12 @@ function GetInTouch({ onClose,title }) {
 
           {/* Message */}
           <div className="my-3">
+            <label htmlFor="message" className="sr-only">
+              Message
+            </label>
             <textarea
               {...register("message")}
+              id="message"
               placeholder="Message"
               className="bg-transparent text-white placeholder:text-white w-full border rounded-lg p-2 outline-none"
               rows={3}

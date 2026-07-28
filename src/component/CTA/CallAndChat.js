@@ -8,7 +8,9 @@ import ChatSVG from "@/assets/images/svg/ChatSVG";
 export default function CallAndChat() {
 
   return (
-    <div className="grid ms:grid-cols-2 ms:gap-2 ll:grid-cols-2 ll:gap-4">
+    <div className="-mx-4 sm:-mx-6 md:-mx-12 lg:-mx-20 xl:-mx-28">
+    <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8">
+    <div className="grid ms:grid-cols-1 t:grid-cols-2 ms:gap-2 ll:grid-cols-2 ll:gap-4">
       <Link href="tel:+917210199772">
         <div
           className={`bg-[#80EBF7] text-[#4A3772] ms:py-2 t:py-4 ll:py-8 ll:px-34 flex justify-center rounded-2xl  cursor-pointer items-center`}
@@ -47,6 +49,8 @@ export default function CallAndChat() {
           </div>
         </div>
       </Link>
+    </div>
+    </div>
     </div>
   );
 }

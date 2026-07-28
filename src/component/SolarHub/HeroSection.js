@@ -7,14 +7,15 @@ export default function HeroSection({ onOpenSellModal, onOpenQuoteModal }) {
       <div className="orb orb-1" />
       <div className="orb orb-2" />
       <div className="orb orb-3" />
-      <div className="container">
+      <div className="hero-container">
         <div className="hero-grid">
           <div className="hero-content">
 
             <h1>
               Everything you need to source
               <br />
-              <span className="gradient-text">solar for your project in one place.</span>
+              <span className="yellow-highlight">solar</span>{" "}
+              <span className="gradient-text">for your project in one place.</span>
             </h1>
             <p className="subtitle">
               Products, project kits, expertise and credit — from India's infrastructure sourcing partner.

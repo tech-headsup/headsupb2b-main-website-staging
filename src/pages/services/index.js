@@ -327,7 +327,7 @@ export default function ServicesPage() {
                   </p>
                 </div>
                 <div className="step-item">
-                  <div className="step-num alt">2</div>
+                  <div className="step-num">2</div>
                   <h4>Vendor Matching</h4>
                   <p>
                     We match the requirement with verified vendors based on
@@ -343,7 +343,7 @@ export default function ServicesPage() {
                   </p>
                 </div>
                 <div className="step-item">
-                  <div className="step-num alt">4</div>
+                  <div className="step-num">4</div>
                   <h4>Execute &amp; Deliver</h4>
                   <p>
                     Execution moves on ground with material support, quality
@@ -530,35 +530,37 @@ export default function ServicesPage() {
                     />
                   </div>
                 </div>
-                <div className="f-group">
-                  <label>You Are A...</label>
-                  <select value={form.vendorType} onChange={handleChange("vendorType")}>
-                    <option value="">Select your vendor type</option>
-                    <option>Service Provider / Contractor</option>
-                    <option>Local Hardware Shop</option>
-                    <option>Fabrication / Manufacturing Unit</option>
-                    <option>Solar EPC / Installer</option>
-                    <option>Multi-Trade Crew</option>
-                  </select>
-                </div>
-                <div className="f-group">
-                  <label>Service Category</label>
-                  <select value={form.serviceCategory} onChange={handleChange("serviceCategory")}>
-                    <option value="">Select primary service</option>
-                    <option>Painting Services</option>
-                    <option>Electrical Works</option>
-                    <option>Plumbing &amp; Sanitary</option>
-                    <option>HVAC &amp; AC Services</option>
-                    <option>Fire Fighting Systems</option>
-                    <option>Civil &amp; Structural</option>
-                    <option>Interior Fit-Outs</option>
-                    <option>Solar Plant Installation</option>
-                    <option>BESS / Energy Storage</option>
-                    <option>Annual Maintenance (AMC)</option>
-                    <option>Hardware / Building Material Supply</option>
-                    <option>Multi-Trade (Materials + Labour)</option>
-                    <option>Other</option>
-                  </select>
+                <div className="f-row">
+                  <div className="f-group">
+                    <label>You Are A...</label>
+                    <select value={form.vendorType} onChange={handleChange("vendorType")}>
+                      <option value="">Select your vendor type</option>
+                      <option>Service Provider / Contractor</option>
+                      <option>Local Hardware Shop</option>
+                      <option>Fabrication / Manufacturing Unit</option>
+                      <option>Solar EPC / Installer</option>
+                      <option>Multi-Trade Crew</option>
+                    </select>
+                  </div>
+                  <div className="f-group">
+                    <label>Service Category</label>
+                    <select value={form.serviceCategory} onChange={handleChange("serviceCategory")}>
+                      <option value="">Select primary service</option>
+                      <option>Painting Services</option>
+                      <option>Electrical Works</option>
+                      <option>Plumbing &amp; Sanitary</option>
+                      <option>HVAC &amp; AC Services</option>
+                      <option>Fire Fighting Systems</option>
+                      <option>Civil &amp; Structural</option>
+                      <option>Interior Fit-Outs</option>
+                      <option>Solar Plant Installation</option>
+                      <option>BESS / Energy Storage</option>
+                      <option>Annual Maintenance (AMC)</option>
+                      <option>Hardware / Building Material Supply</option>
+                      <option>Multi-Trade (Materials + Labour)</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
                 </div>
                 <div className="f-group">
                   <label>Team Size</label>
@@ -680,18 +682,24 @@ export default function ServicesPage() {
         .services-page .container {
           max-width: 1280px;
           margin: 0 auto;
-          padding: 0 48px;
+          padding: 0 24px;
+          width: 100%;
         }
-        @media (max-width: 768px) {
+        @media (min-width: 768px) {
           .services-page .container {
-            padding: 0 20px;
+            padding: 0 48px;
+          }
+        }
+        @media (min-width: 1024px) {
+          .services-page .container {
+            padding: 0 32px;
           }
         }
 
         .services-page .hero {
-          margin-top: 16px;
+          margin-top: 0;
           min-height: auto;
-          padding: 40px 0 48px;
+          padding: 72px 0 48px;
           display: flex;
           align-items: center;
           position: relative;
@@ -792,7 +800,7 @@ export default function ServicesPage() {
           .services-page .hero {
             height: auto;
             min-height: auto;
-            padding: 12px 0 40px;
+            padding: 72px 0 40px;
           }
           .services-page .hero-grid {
             grid-template-columns: 1fr;
@@ -891,12 +899,14 @@ export default function ServicesPage() {
           justify-content: center;
           gap: 10px;
           width: 100%;
-          padding: 13px 24px;
+          padding: 13px 20px;
           border-radius: 10px;
           font-family: "Montserrat", sans-serif;
           font-size: 14px;
           text-decoration: none;
-          white-space: nowrap;
+          white-space: normal;
+          text-align: center;
+          line-height: 1.3;
           transition: all 0.3s;
           cursor: pointer;
         }
@@ -940,7 +950,7 @@ export default function ServicesPage() {
           border-radius: 16px;
           overflow: hidden;
           width: 100%;
-          max-width: 1000px;
+          max-width: 1280px;
         }
         .services-page .hero-stat {
           flex: 1;
@@ -1154,6 +1164,11 @@ export default function ServicesPage() {
             gap: 12px;
           }
         }
+        @media (max-width: 480px) {
+          .services-page .audience-grid {
+            grid-template-columns: 1fr;
+          }
+        }
         .services-page .s-card {
           background: #ffffff;
           border: 1px solid #e5e5e5;
@@ -1297,6 +1312,12 @@ export default function ServicesPage() {
         .services-page .v-left {
           position: relative;
           z-index: 2;
+          padding-top: 12px;
+        }
+        @media (max-width: 1100px) {
+          .services-page .v-left {
+            padding-top: 0;
+          }
         }
         .services-page .v-left h2 {
           font-family: "Montserrat", sans-serif;
@@ -1358,7 +1379,7 @@ export default function ServicesPage() {
           background: #ffffff;
           border: 1px solid rgba(0, 0, 0, 0.08);
           border-radius: 20px;
-          padding: 40px;
+          padding: 24px 40px;
         }
         .services-page .v-form h3 {
           font-family: "Montserrat", sans-serif;
@@ -1378,7 +1399,7 @@ export default function ServicesPage() {
           gap: 20px;
         }
         .services-page .f-group {
-          margin-bottom: 20px;
+          margin-bottom: 12px;
         }
         .services-page .v-form .f-group label {
           display: block;
@@ -1411,6 +1432,12 @@ export default function ServicesPage() {
         .services-page .v-form .f-group textarea::placeholder {
           color: #9ca3af;
           font-family: "Montserrat", sans-serif;
+          font-size: 12px;
+        }
+        .services-page .v-form .f-group select:invalid,
+        .services-page .v-form .f-group select option[value=""] {
+          font-size: 12px;
+          color: #9ca3af;
         }
         .services-page .v-form .f-group input:focus,
         .services-page .v-form .f-group select:focus,
@@ -1420,6 +1447,7 @@ export default function ServicesPage() {
         }
         .services-page .v-form .f-group select {
           appearance: none;
+          padding-right: 36px;
           background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%235E3F99' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
           background-repeat: no-repeat;
           background-position: right 14px center;
@@ -1517,11 +1545,18 @@ export default function ServicesPage() {
         }
         @media (max-width: 768px) {
           .services-page .hero-stats {
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
           }
           .services-page .hero-stat {
-            flex: 0 0 50%;
+            flex: none;
+            width: auto;
             padding: 18px 12px;
+            min-width: 0;
+          }
+          .services-page .hero-stat-val {
+            white-space: normal;
+            word-break: break-word;
           }
           .services-page .hero-stat-val {
             font-size: 22px;
@@ -1532,8 +1567,8 @@ export default function ServicesPage() {
           .services-page .hero {
             min-height: auto;
             height: auto;
-            padding: 48px 0 32px;
-            margin-top: 64px;
+            padding: 64px 0 32px;
+            margin-top: 0;
           }
           .services-page .hero-grid {
             gap: 24px;
@@ -1634,9 +1669,6 @@ export default function ServicesPage() {
           }
           .services-page .vendor-section {
             padding: 32px 18px;
-          }
-          .services-page .container {
-            padding: 0 16px;
           }
           .services-page .btn-glow,
           .services-page .btn-outline {

@@ -20,7 +20,7 @@ function index({productData}) {
         }
         canonical={"https://www.headsupb2b.com/ads-with-us"}
       />
-      <main className="bg-gray-50 mb-10 p-10 ll:mt-24">
+      <main className="bg-gray-50 p-10 ll:mt-24">
         <HeroSection productOptions={productData} />
         <MetricsCards />
         <StatsBanner productOptions={productData} />

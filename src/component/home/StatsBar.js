@@ -13,9 +13,9 @@ export default function StatsBar() {
   const [hovered, setHovered] = useState(null);
 
   return (
-    <div className="w-full px-4 md:px-12 lg:px-36 pt-8 bg-white">
+    <div className="max-w-[1280px] mx-auto w-full px-6 md:px-12 lg:px-8 pt-8 bg-white">
       <div
-        className="grid grid-cols-3 lg:flex lg:items-stretch rounded-2xl overflow-hidden"
+        className="grid grid-cols-2 md:grid-cols-3 lg:flex lg:items-stretch rounded-2xl overflow-hidden"
         style={{ background: "#e8e4f7" }}
       >
         {STATS.map((stat, i) => (

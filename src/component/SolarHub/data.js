@@ -57,16 +57,14 @@ const buildDefaultDetails = (skuSize) => [
   { label: "SKU", value: `${skuSize}_BOS_DCR_TOPCON` },
   { label: "Shipping", value: "Free Shipping" },
   { label: "T&C", value: "Non Returnable" },
-  { label: "Note", value: "Structure & Installation Charges Not Included" },
   { label: "Type", value: "Ready To Install Solar Kit" },
-  { label: "Scheme", value: "PM SURYA GHAR MUFT BIJALI YOJANA" },
   { label: "Subsidy", value: "Eligible for Government Subsidies" },
 ];
 
 const KIT_1_1_SPEC_ROWS = [
   {
     component: "Solar Panel",
-    specifications: "575 Wp N-Type TOPCon Mono Solar Module (22.26% Eff.) ALMM",
+    specifications: "570-650 Wp On grid TOPCon Mono Solar Module",
     brand: "ALMM",
     qty: 2,
     units: "Nos.",
@@ -210,7 +208,7 @@ const KIT_1_1_SPEC_ROWS = [
 const KIT_2_2_SPEC_ROWS = [
   {
     component: "Solar Panel",
-    specifications: "575 Wp N-Type TOPCon Mono Solar Module (22.26% Eff.) ALMM",
+    specifications: "570-650 Wp On grid TOPCon Mono Solar Module",
     brand: "ALMM",
     qty: 4,
     units: "Nos.",
@@ -354,7 +352,7 @@ const KIT_2_2_SPEC_ROWS = [
 const KIT_3_3_SPEC_ROWS = [
   {
     component: "Solar Panel",
-    specifications: "575 Wp N-Type TOPCon Mono Solar Module (22.26% Eff.) ALMM",
+    specifications: "570-650 Wp On grid TOPCon Mono Solar Module",
     brand: "ALMM",
     qty: 6,
     units: "Nos.",
@@ -486,21 +484,13 @@ const KIT_3_3_SPEC_ROWS = [
     brand: "SRG",
     qty: 3.3,
     units: "Kw.",
-  },
-  {
-    component: "Installation & Commissioning",
-    specifications:
-      "Structure, PV Panel, Inverters, ACDBs & LT Panel with all Accessories + Loading & Unloading",
-    brand: "SRG",
-    qty: 3.3,
-    units: "Kw.",
-  },
+  }
 ];
 
 const KIT_5_5_SPEC_ROWS = [
   {
     component: "Solar Panel",
-    specifications: "575 Wp N-Type TOPCon Mono Solar Module (22.26% Eff.) ALMM",
+    specifications: "570-650 Wp On grid TOPCon Mono Solar Module",
     brand: "ALMM",
     qty: 10,
     units: "Nos.",
@@ -632,21 +622,13 @@ const KIT_5_5_SPEC_ROWS = [
     brand: "SRG",
     qty: 5.5,
     units: "Kw.",
-  },
-  {
-    component: "Installation & Commissioning",
-    specifications:
-      "Structure, PV Panel, Inverters, ACDBs & LT Panel with all Accessories + Loading & Unloading",
-    brand: "SRG",
-    qty: 5.5,
-    units: "Kw.",
-  },
+  }
 ];
 
 const KIT_10_SPEC_ROWS = [
   {
     component: "Solar Panel",
-    specifications: "575 Wp N-Type TOPCon Mono Solar Module (22.26% Eff.) ALMM",
+    specifications: "570-650 Wp On grid TOPCon Mono Solar Module",
     brand: "ALMM",
     qty: 18,
     units: "Nos.",
@@ -778,21 +760,13 @@ const KIT_10_SPEC_ROWS = [
     brand: "SRG",
     qty: 10,
     units: "Kw.",
-  },
-  {
-    component: "Installation & Commissioning",
-    specifications:
-      "Structure, PV Panel, Inverters, ACDBs & LT Panel with all Accessories + Loading & Unloading",
-    brand: "SRG",
-    qty: 10,
-    units: "Kw.",
-  },
+  }
 ];
 
 const DEFAULT_SPEC_ROWS = [
   {
     component: "Solar Panel",
-    specifications: "575 Wp N-Type TOPCon Mono Solar Module (22.26% Eff.) ALMM",
+    specifications: "570-650 Wp On grid TOPCon Mono Solar Module",
     brand: "CONNECTWELL",
     qty: 1,
     units: "NOS.",
@@ -829,13 +803,11 @@ const DEFAULT_SPEC_ROWS = [
 
 export const SOLAR_KITS = [
   {
-    slug: "topcon-dcr-1-1-kw",
+    slug: "ongrid-dcr-non-dcr-1-1-kw",
     power: "1.1 kW",
-    title: "TopCon DCR 1.1 kW Kit",
-    fullTitle: "Headsup B2B TopCon DCR 1.1 kW Kit",
-    desc: "N-Type TOPCon · 575 Wp modules · Ready to install",
-    longDescription:
-      "A ready-to-install on-grid solar kit built around high-efficiency N-Type TOPCon modules and matched balance-of-system components — engineered for reliable rooftop generation.",
+    title: "OnGrid DCR/NON DCR 1.1 kW Kit",
+    fullTitle: "Headsup B2B OnGrid DCR/NON DCR 1.1 kW Kit",
+    desc: "N-Type TOPCon · 570-650 Wp modules · Ready to install",
     image: "/solar-kits/kit-1-5.png",
     imgScale: 0.9,
     gallery: [
@@ -845,10 +817,9 @@ export const SOLAR_KITS = [
       "/solar-kits/kit-1.png",
     ],
     highlights: [
-      { label: "MODULE POWER", value: "575 Wp" },
-      { label: "CELL TYPE", value: "N-Type" },
-      { label: "EFFICIENCY", value: "22.26 %" },
-      { label: "MODULE TYPE", value: "TOPCon" },
+      { label: "MODULE POWER", value: "570-650 Wp" },
+      { label: "SYSTEM TYPE", value: "On grid" },
+      { label: "MODULE TYPE", value: "DCR/NON DCR" },
     ],
     features: ["Free Shipping", "Ready To Install Kit", "Subsidy Eligible"],
     details: buildDefaultDetails("1.1kW"),
@@ -856,13 +827,11 @@ export const SOLAR_KITS = [
     specsTable: KIT_1_1_SPEC_ROWS,
   },
   {
-    slug: "topcon-dcr-2-2-kw",
+    slug: "ongrid-dcr-non-dcr-2-2-kw",
     power: "2.2 kW",
-    title: "TopCon DCR 2.2 kW Kit",
-    fullTitle: "Headsup B2B TopCon DCR 2.2 kW Kit",
+    title: "OnGrid DCR/NON DCR 2.2 kW Kit",
+    fullTitle: "Headsup B2B OnGrid DCR/NON DCR 2.2 kW Kit",
     desc: "Single-phase · MPPT inverter · Full BOS",
-    longDescription:
-      "Single-phase on-grid kit for small rooftops — N-Type TOPCon modules paired with an MPPT inverter and complete balance-of-system components.",
     image: "/solar-kits/kit-1-3.png",
     gallery: [
       "/solar-kits/kit-1-3.png",
@@ -871,10 +840,9 @@ export const SOLAR_KITS = [
       "/solar-kits/kit-1-3.png",
     ],
     highlights: [
-      { label: "MODULE POWER", value: "575 Wp" },
-      { label: "CELL TYPE", value: "N-Type" },
-      { label: "EFFICIENCY", value: "22.26 %" },
-      { label: "MODULE TYPE", value: "TOPCon" },
+      { label: "MODULE POWER", value: "570-650 Wp" },
+      { label: "SYSTEM TYPE", value: "On grid" },
+      { label: "MODULE TYPE", value: "DCR/NON DCR" },
     ],
     features: ["Free Shipping", "Ready To Install Kit", "Subsidy Eligible"],
     details: buildDefaultDetails("2.2kW"),
@@ -882,13 +850,11 @@ export const SOLAR_KITS = [
     specsTable: KIT_2_2_SPEC_ROWS,
   },
   {
-    slug: "topcon-dcr-3-3-kw",
+    slug: "ongrid-dcr-non-dcr-3-3-kw",
     power: "3.3 kW",
-    title: "TopCon DCR 3.3 kW Kit",
-    fullTitle: "Headsup B2B TopCon DCR 3.3 kW Kit",
+    title: "OnGrid DCR/NON DCR 3.3 kW Kit",
+    fullTitle: "Headsup B2B OnGrid DCR/NON DCR 3.3 kW Kit",
     desc: "Subsidy-eligible · Mounting + earthing",
-    longDescription:
-      "Subsidy-eligible 3.3 kW on-grid kit engineered for typical Indian rooftops — modules, inverter, mounting and earthing included.",
     image: "/solar-kits/kit-3-5.png",
     gallery: [
       "/solar-kits/kit-3-5.png",
@@ -898,10 +864,9 @@ export const SOLAR_KITS = [
       "/solar-kits/kit-3-4.png",
     ],
     highlights: [
-      { label: "MODULE POWER", value: "575 Wp" },
-      { label: "CELL TYPE", value: "N-Type" },
-      { label: "EFFICIENCY", value: "22.26 %" },
-      { label: "MODULE TYPE", value: "TOPCon" },
+      { label: "MODULE POWER", value: "570-650 Wp" },
+      { label: "SYSTEM TYPE", value: "On grid" },
+      { label: "MODULE TYPE", value: "DCR/NON DCR" },
     ],
     features: ["Free Shipping", "Ready To Install Kit", "Subsidy Eligible"],
     details: buildDefaultDetails("3.3kW"),
@@ -909,13 +874,11 @@ export const SOLAR_KITS = [
     specsTable: KIT_3_3_SPEC_ROWS,
   },
   {
-    slug: "topcon-dcr-5-5-kw",
+    slug: "ongrid-dcr-non-dcr-5-5-kw",
     power: "5.5 kW",
-    title: "TopCon DCR 5.5 kW Kit",
-    fullTitle: "Headsup B2B TopCon DCR 5.5 kW Kit",
+    title: "OnGrid DCR/NON DCR 5.5 kW Kit",
+    fullTitle: "Headsup B2B OnGrid DCR/NON DCR 5.5 kW Kit",
     desc: "Three-phase · Project-grade BOS",
-    longDescription:
-      "Three-phase 5.5 kW kit for commercial rooftops with project-grade BOS and documentation for statutory compliance.",
     image: "/solar-kits/kit-3-6.png",
     gallery: [
       "/solar-kits/kit-3-6.png",
@@ -925,10 +888,9 @@ export const SOLAR_KITS = [
       "/solar-kits/kit-3-4.png",
     ],
     highlights: [
-      { label: "MODULE POWER", value: "575 Wp" },
-      { label: "CELL TYPE", value: "N-Type" },
-      { label: "EFFICIENCY", value: "22.26 %" },
-      { label: "MODULE TYPE", value: "TOPCon" },
+      { label: "MODULE POWER", value: "570-650 Wp" },
+      { label: "SYSTEM TYPE", value: "On grid" },
+      { label: "MODULE TYPE", value: "DCR/NON DCR" },
     ],
     features: ["Free Shipping", "Ready To Install Kit", "Subsidy Eligible"],
     details: buildDefaultDetails("5.5kW"),
@@ -936,40 +898,11 @@ export const SOLAR_KITS = [
     specsTable: KIT_5_5_SPEC_ROWS,
   },
   {
-    slug: "topcon-dcr-9-5-kw",
-    power: "9.5 kW",
-    title: "TopCon DCR 9.5 kW Kit",
-    fullTitle: "Headsup B2B TopCon DCR 9.5 kW Kit",
-    desc: "High-yield modules · SLD support included",
-    longDescription:
-      "9.5 kW kit with high-yield TOPCon modules — SLD and structural support included for faster approvals.",
-    image: "/solar-kits/kit-3-5.png",
-    gallery: [
-      "/solar-kits/kit-3-5.png",
-      "/solar-kits/kit-3-1.png",
-      // "/solar-kits/kit-3-2.png",
-      "/solar-kits/kit-3-3.png",
-      "/solar-kits/kit-3-4.png",
-    ],
-    highlights: [
-      { label: "MODULE POWER", value: "575 Wp" },
-      { label: "CELL TYPE", value: "N-Type" },
-      { label: "EFFICIENCY", value: "22.26 %" },
-      { label: "MODULE TYPE", value: "TOPCon" },
-    ],
-    features: ["Free Shipping", "Ready To Install Kit", "Subsidy Eligible"],
-    details: buildDefaultDetails("9.5kW"),
-    howItWorksSteps: DEFAULT_HOW_STEPS,
-    specsTable: KIT_5_5_SPEC_ROWS,
-  },
-  {
-    slug: "topcon-dcr-10-kw",
+    slug: "ongrid-dcr-non-dcr-10-kw",
     power: "10 kW",
-    title: "TopCon DCR 10 kW Kit",
-    fullTitle: "Headsup B2B TopCon DCR 10 kW Kit",
+    title: "OnGrid DCR/NON DCR 10 kW Kit",
+    fullTitle: "Headsup B2B OnGrid DCR/NON DCR 10 kW Kit",
     desc: "Custom sizing · Full O&M coverage",
-    longDescription:
-      "10 kW kit with custom sizing options and full O&M coverage for uninterrupted generation.",
     image: "/solar-kits/kit-3-6.png",
     gallery: [
       "/solar-kits/kit-3-6.png",
@@ -979,14 +912,37 @@ export const SOLAR_KITS = [
       "/solar-kits/kit-3-4.png",
     ],
     highlights: [
-      { label: "MODULE POWER", value: "575 Wp" },
-      { label: "CELL TYPE", value: "N-Type" },
-      { label: "EFFICIENCY", value: "22.26 %" },
-      { label: "MODULE TYPE", value: "TOPCon" },
+      { label: "MODULE POWER", value: "570-650 Wp" },
+      { label: "SYSTEM TYPE", value: "On grid" },
+      { label: "MODULE TYPE", value: "DCR/NON DCR" },
     ],
     features: ["Free Shipping", "Ready To Install Kit", "Subsidy Eligible"],
     details: buildDefaultDetails("10kW"),
     howItWorksSteps: DEFAULT_HOW_STEPS,
     specsTable: KIT_10_SPEC_ROWS,
   },
+  {
+    slug: "ongrid-dcr-non-dcr-1-1-kw",
+    power: "1.1 kW",
+    title: "OnGrid DCR/NON DCR 1.1 kW Kit",
+    fullTitle: "Headsup B2B OnGrid DCR/NON DCR 1.1 kW Kit",
+    desc: "N-Type TOPCon · 570-650 Wp modules · Ready to install",
+    image: "/solar-kits/kit-1-5.png",
+    imgScale: 0.9,
+    gallery: [
+      "/solar-kits/kit-1-5.png",
+      "/solar-kits/kit-1-1.png",
+      "/solar-kits/kit-1-2.png",
+      "/solar-kits/kit-1.png",
+    ],
+    highlights: [
+      { label: "MODULE POWER", value: "570-650 Wp" },
+      { label: "SYSTEM TYPE", value: "On grid" },
+      { label: "MODULE TYPE", value: "DCR/NON DCR" },
+    ],
+    features: ["Free Shipping", "Ready To Install Kit", "Subsidy Eligible"],
+    details: buildDefaultDetails("1.1kW"),
+    howItWorksSteps: DEFAULT_HOW_STEPS,
+    specsTable: KIT_1_1_SPEC_ROWS,
+  }
 ];

@@ -21,7 +21,7 @@ export default function ProductCard({ ele, index = 0 }) {
         - flex flex-col    → stacks image then content
         - gap-3            → matches WWSCard gap
       */}
-      <div className="bg-white rounded-2xl overflow-hidden flex flex-col gap-3 cursor-pointer transaction-delay l:min-h-[305px] ll:min-h-[310px] 4k:min-h-[450px]">
+      <div className="bg-white rounded-2xl overflow-hidden flex flex-col gap-3 cursor-pointer transaction-delay h-full l:min-h-[305px] ll:min-h-[310px] 4k:min-h-[450px]">
 
         {/* Image — slight padding + rounded so it sits inset from the card border */}
         <div className="w-full px-3 pt-3">
@@ -44,9 +44,8 @@ export default function ProductCard({ ele, index = 0 }) {
         </div>
 
         {/* Content — tightened bottom padding */}
-        <div className="flex flex-col px-6 pb-4 flex-1">
-          {/* Fixed-height text block ensures button lines up across all cards */}
-          <div className="min-h-[80px]">
+        <div className="flex flex-col justify-between px-6 pb-4 flex-1 gap-3">
+          <div>
             <p
               className="font-bold text-[17px] text-[#111] leading-snug ms:text-center l:text-left"
               style={{ fontFamily: "'Manrope', sans-serif" }}

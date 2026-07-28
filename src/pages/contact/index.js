@@ -38,7 +38,7 @@ export default function index({ categoryProductOptions }) {
   };
 
   return (
-    <div className="ms:px-6 ms:pt-10 ms:pb-20 t:pt-8 ll:mt-16 t:mx-14 imac:mx-56 t:pb-8 l:pb-10">
+    <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8 pt-10 md:pt-8 lg:pt-10 ll:pt-16 pb-16 md:pb-10 lg:pb-12">
       <NextSeo
         title="Contact Us | HeadsupB2B"
         description="Contact for Construction Sand, Aggregates, Bricks, Stone, Metal Beam Crash Barriers, Metals and Steels, TMT, Electronic Products and Price | Call Now 9097476155"
@@ -73,19 +73,19 @@ export default function index({ categoryProductOptions }) {
         />
       </Head>
 
-      <div className="t:pb-12">
-        <div className="grid ms:grid-cols-1 t:grid-cols-3 ms:gap-4 t:gap-10">
+      <div className="pb-10 md:pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 ll:gap-10">
           {/* Buy Card */}
-          <div className="p-2 bg-purple text-center rounded-lg shadow-xl flex flex-col justify-between h-full">
+          <div className="p-4 md:p-5 lg:p-6 bg-purple text-center rounded-xl md:rounded-2xl shadow-xl flex flex-col justify-between h-full">
             <div className="my-3 flex justify-center">
-              <span className="bg-white p-6 rounded-full flex items-center justify-center w-[120px] h-[120px]">
-                <Image src={Buy} className="" width={70} />
+              <span className="bg-white p-5 md:p-6 rounded-full flex items-center justify-center w-[100px] h-[100px] md:w-[110px] md:h-[110px] lg:w-[120px] lg:h-[120px]">
+                <Image src={Buy} alt="Buy" width={70} />
               </span>
             </div>
             <div className="my-3">
               <CustomText
                 text={"Want to Buy?"}
-                className={"text-headupb2b ms:text-[24px] text-5xl font-bold"}
+                className={"text-headupb2b text-2xl md:text-2xl lg:text-3xl ll:text-4xl font-bold"}
               />
             </div>
             <div className="my-3">
@@ -93,7 +93,7 @@ export default function index({ categoryProductOptions }) {
                 className={`${Gradient} rounded-md hover:scale-105 delay`}
               >
                 <label
-                  className="text-white py-2 px-4 text-xl cursor-pointer"
+                  className="text-white py-2 px-4 text-base md:text-lg lg:text-xl cursor-pointer"
                   onClick={() => setShowBuyModal(true)}
                 >
                   Click here
@@ -103,16 +103,16 @@ export default function index({ categoryProductOptions }) {
           </div>
 
           {/* Sell Card */}
-          <div className="p-2 bg-purple text-center rounded-lg shadow-xl flex flex-col justify-between h-full">
+          <div className="p-4 md:p-5 lg:p-6 bg-purple text-center rounded-xl md:rounded-2xl shadow-xl flex flex-col justify-between h-full">
             <div className="my-3 flex justify-center">
-              <span className="bg-white p-6 rounded-full flex items-center justify-center w-[120px] h-[120px]">
-                <Image src={Sell} className="" width={70} />
+              <span className="bg-white p-5 md:p-6 rounded-full flex items-center justify-center w-[100px] h-[100px] md:w-[110px] md:h-[110px] lg:w-[120px] lg:h-[120px]">
+                <Image src={Sell} alt="Sell" width={70} />
               </span>
             </div>
             <div className="my-3">
               <CustomText
                 text={"Want to Sell?"}
-                className={"text-headupb2b ms:text-[24px] text-5xl font-bold"}
+                className={"text-headupb2b text-2xl md:text-2xl lg:text-3xl ll:text-4xl font-bold"}
               />
             </div>
             <div className="my-3">
@@ -120,7 +120,7 @@ export default function index({ categoryProductOptions }) {
                 className={`${Gradient} rounded-md hover:scale-105 delay`}
               >
                 <label
-                  className="text-white py-2 px-4 text-xl cursor-pointer"
+                  className="text-white py-2 px-4 text-base md:text-lg lg:text-xl cursor-pointer"
                   onClick={() => setShowSellModal(true)}
                 >
                   Click here
@@ -130,16 +130,16 @@ export default function index({ categoryProductOptions }) {
           </div>
 
           {/* Expert Card */}
-          <div className="p-2 bg-purple text-center rounded-lg shadow-xl flex flex-col justify-between h-full">
+          <div className="p-4 md:p-5 lg:p-6 bg-purple text-center rounded-xl md:rounded-2xl shadow-xl flex flex-col justify-between h-full">
             <div className="my-3 flex justify-center">
-              <span className="bg-white p-6 rounded-full flex items-center justify-center w-[120px] h-[120px]">
-                <Image src={Expert} className="" width={70} />
+              <span className="bg-white p-5 md:p-6 rounded-full flex items-center justify-center w-[100px] h-[100px] md:w-[110px] md:h-[110px] lg:w-[120px] lg:h-[120px]">
+                <Image src={Expert} alt="Expert" width={70} />
               </span>
             </div>
             <div className="my-3">
               <CustomText
                 text={"Get in Touch with Sachin"}
-                className={"text-headupb2b ms:text-[24px] text-5xl font-bold text-wrap"}
+                className={"text-headupb2b text-2xl md:text-2xl lg:text-3xl ll:text-4xl font-bold leading-tight"}
               />
             </div>
             <div className="my-3">
@@ -147,7 +147,7 @@ export default function index({ categoryProductOptions }) {
                 className={`${Gradient} rounded-md hover:scale-105 delay`}
               >
                 <label
-                  className="text-white py-2 px-4 text-xl cursor-pointer"
+                  className="text-white py-2 px-4 text-base md:text-lg lg:text-xl cursor-pointer"
                   onClick={handleCallUs}
                 >
                   Call Us
@@ -158,7 +158,7 @@ export default function index({ categoryProductOptions }) {
         </div>
       </div>
 
-      <div className="bg-headupb2b rounded-lg">
+      <div className="bg-headupb2b rounded-lg md:rounded-2xl">
         <ContactForm />
       </div>
 

@@ -8,9 +8,9 @@ export default function HeroStatsSection() {
 
   return (
     <section className="stats-section">
-      <div className="container">
+      <div className="max-w-[1280px] mx-auto w-full px-6 md:px-12 lg:px-8">
         <div className="hero-stats-wrap">
-          <div className="hero-stats" style={{ background: "#e8e4f7" }}>
+          <div className="hero-stats !max-w-none" style={{ background: "#e8e4f7" }}>
             {HERO_STATS.map((stat, i) => (
               <div
                 key={stat.value}

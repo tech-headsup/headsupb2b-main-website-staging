@@ -120,18 +120,18 @@ const GenericForm = ({
       label: isSubmitting ? "Submitting..." : "Submit",
       disabled: isSubmitting,
       className:
-        "bg-headupb2b hover:bg-white hover:text-black hover:border border-headupb2b text-white",
+        "bg-headupb2b text-white",
     },
-    {
-      type: "button",
-      label: "Cancel",
-      onClick: () => {
-        if (setIsModalOpen) {
-          setIsModalOpen(false);
-        }
-      },
-      className: "bg-gray-500 hover:bg-gray-600 text-white",
-    },
+    // {
+    //   type: "button",
+    //   label: "Cancel",
+    //   onClick: () => {
+    //     if (setIsModalOpen) {
+    //       setIsModalOpen(false);
+    //     }
+    //   },
+    //   className: "bg-gray-500 hover:bg-gray-600 text-white",
+    // },
   ];
 
   // --- USE PROPS OR DEFAULTS ---
@@ -159,14 +159,16 @@ const GenericForm = ({
   // --- RENDER FORM ---
   return (
     <form
-      className="space-y-5 text-gray-800 w-full"
+      className="text-gray-800 w-full"
       onSubmit={handleSubmit(finalOnSubmit)}
     >
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-3">
       {finalInputs.map((input, index) => {
         const key = input.Key || input.key || index;
+        const fullWidth = input.type === "textarea" || input.type === "select";
 
         return (
-          <div key={key}>
+          <div key={key} className={fullWidth ? "md:col-span-2" : ""}>
             <label className="block mb-1 font-medium">
               {input.label}
               {input.isLoading && (
@@ -202,7 +204,7 @@ const GenericForm = ({
                             input.isLoading ? "bg-gray-50" : ""
                           } ${state.isFocused ? "ring-2 ring-orange-400" : ""}`,
                         placeholder: () =>
-                          input.isLoading ? "text-orange-500" : "text-gray-400",
+                          `text-sm ${input.isLoading ? "text-orange-500" : "text-gray-400"}`,
                       }}
                       loadingMessage={() => "Loading options..."}
                     />
@@ -220,7 +222,7 @@ const GenericForm = ({
                 <textarea
                   {...register(key)}
                   placeholder={input.placeholder}
-                  className={`w-full border border-gray-300 rounded-md px-4 py-2 h-28 resize-none focus:outline-none focus:ring-2 focus:ring-orange-400 ${
+                  className={`w-full border border-gray-300 rounded-md px-4 py-2 h-20 resize-none focus:outline-none focus:ring-2 focus:ring-orange-400 placeholder:text-sm ${
                     input.disabled ? "bg-gray-100 cursor-not-allowed" : ""
                   }`}
                   disabled={input.disabled}
@@ -237,7 +239,7 @@ const GenericForm = ({
                   {...register(key)}
                   type={input.type}
                   placeholder={input.placeholder}
-                  className={`w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400 ${
+                  className={`w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400 placeholder:text-sm ${
                     input.disabled ? "bg-gray-100 cursor-not-allowed" : ""
                   }`}
                   disabled={input.disabled}
@@ -258,8 +260,9 @@ const GenericForm = ({
           </div>
         );
       })}
+      </div>
 
-      <div className="flex flex-col sm:flex-row gap-4">
+      <div className="flex flex-col sm:flex-row gap-4 mt-3">
         {finalButtons.map((btn, idx) => (
           <button
             key={idx}

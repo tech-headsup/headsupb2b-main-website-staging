@@ -64,7 +64,7 @@ export default function SolarHubStyles() {
       }
 
       .services-page .hero {
-        margin-top: 16px;
+        margin-top: 0;
         min-height: auto;
         padding: 72px 0 48px;
         display: flex;
@@ -167,7 +167,7 @@ export default function SolarHubStyles() {
         .services-page .hero {
           height: auto;
           min-height: auto;
-          padding: 12px 0 40px;
+          padding: 72px 0 40px;
         }
         .services-page .hero-grid {
           grid-template-columns: 1fr;
@@ -235,6 +235,9 @@ export default function SolarHubStyles() {
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
+      }
+      .services-page .hero h1 .yellow-highlight {
+        color: #f5c518;
       }
       .services-page .hero .subtitle {
         font-size: 16px;
@@ -715,11 +718,30 @@ export default function SolarHubStyles() {
         width: 100%;
       }
 
+      .services-page .products-container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 20px;
+        width: 100%;
+      }
+      @media (max-width: 640px) {
+        .services-page .products-container {
+          padding: 0 16px;
+        }
+      }
       .services-page .how-wrap {
         background: var(--bg-card);
         border: 1px solid var(--border);
         border-radius: 24px;
-        padding: 32px 56px 40px;
+        padding: 32px 24px 40px;
+        max-width: 1280px;
+        margin: 0 auto;
+        width: 100%;
+      }
+      @media (min-width: 768px) {
+        .services-page .how-wrap {
+          padding: 32px 40px 40px;
+        }
       }
       .services-page .how-wrap .sec-header {
         margin-bottom: 28px;
@@ -775,6 +797,44 @@ export default function SolarHubStyles() {
         }
       }
 
+      .services-page .faq-container,
+      .services-page .kc-container,
+      .services-page .stats-container,
+      .services-page .kits-container,
+      .services-page .hero-container,
+      .services-page .how-container,
+      .services-page .cta-container,
+      .services-page .tp-container,
+      .supporting-container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 24px;
+        width: 100%;
+      }
+      @media (min-width: 768px) {
+        .services-page .faq-container,
+        .services-page .kc-container,
+        .services-page .stats-container,
+        .services-page .kits-container,
+        .services-page .hero-container,
+        .services-page .how-container,
+        .services-page .cta-container,
+        .supporting-container {
+          padding: 0 48px;
+        }
+      }
+      @media (min-width: 1024px) {
+        .services-page .faq-container,
+        .services-page .kc-container,
+        .services-page .stats-container,
+        .services-page .kits-container,
+        .services-page .hero-container,
+        .services-page .how-container,
+        .services-page .cta-container,
+        .supporting-container {
+          padding: 0 32px;
+        }
+      }
       .services-page .faq-custom-head > div > .flex.flex-col.items-center {
         display: none !important;
       }
@@ -823,8 +883,6 @@ export default function SolarHubStyles() {
 
       .services-page .tp-wrap {
         text-align: center;
-        max-width: 1200px;
-        margin: 0 auto;
       }
       .services-page .tp-partners-row {
         display: flex;
@@ -1013,17 +1071,16 @@ export default function SolarHubStyles() {
         font-family: "Montserrat", sans-serif;
         font-size: 14px;
         font-weight: 700;
-        color: #4A3772;
+        color: #ffffff;
         text-decoration: none;
         white-space: nowrap;
-        background: #ede9ff;
+        background: #4A3772;
         border: 1.5px solid #4A3772;
         border-radius: 999px;
         padding: 12px 26px;
         transition: background 0.2s ease, transform 0.2s ease;
       }
       .services-page .kc-more:hover {
-        background: #dfd7ff;
         transform: translateY(-1px);
       }
       .services-page .kc-grid {
@@ -1052,7 +1109,7 @@ export default function SolarHubStyles() {
         aspect-ratio: 1200 / 630;
         margin: 12px 12px 0;
         width: calc(100% - 24px);
-        border-radius: 18px;
+        border-radius: 16px;
         background-color: #eeeaf7;
         background-image: repeating-linear-gradient(
           135deg,
@@ -1068,18 +1125,19 @@ export default function SolarHubStyles() {
         isolation: isolate;
       }
       .services-page .kc-img.has-image {
-        background: #ffffff;
+        background: transparent;
         aspect-ratio: 1200 / 630;
         display: block;
         padding: 0;
+        border-radius: 16px;
       }
       .services-page .kc-img.has-image img {
         width: 100% !important;
         height: 100% !important;
-        object-fit: contain !important;
+        object-fit: fill !important;
         object-position: center !important;
         display: block;
-        border-radius: 0 !important;
+        border-radius: 16px !important;
       }
       .services-page .kc-img-label {
         font-family: "Montserrat", sans-serif;
@@ -1173,8 +1231,6 @@ export default function SolarHubStyles() {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 24px;
-        max-width: 1200px;
-        margin: 0 auto;
       }
       .services-page .cta-cards.cta-single {
         grid-template-columns: 1fr;
@@ -1629,8 +1685,8 @@ export default function SolarHubStyles() {
         .services-page .hero {
           min-height: auto;
           height: auto;
-          padding: 48px 0 32px;
-          margin-top: 64px;
+          padding: 64px 0 32px;
+          margin-top: 0;
         }
         .services-page .hero-grid {
           gap: 24px;

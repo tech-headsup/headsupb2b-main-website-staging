@@ -7,29 +7,28 @@ const HeroSection = ({ productOptions }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
+    <div className="bg-white -mx-10 -mt-10 mb-10">
     <section
-      className="flex flex-col l:flex-row items-center 
-                      py-8 ms:py-10 mm:py-12 ml:py-14 t:py-16 l:py-20 ll:py-24 imac:py-28 4k:py-32 qhd:py-36
-                      px-4 ms:px-5 mm:px-6 ml:px-7 t:px-8 l:px-10 ll:px-12 imac:px-16 4k:px-20 qhd:px-24
+      className="flex flex-col l:flex-row items-center gap-8 l:gap-12
+                      max-w-[1280px] mx-auto
+                      pt-16 pb-8 t:pt-[72px] t:pb-10 l:pt-[72px] l:pb-12 ll:pt-2
+                      px-4 t:px-8 l:px-8
                       bg-white"
     >
       {/* Left Side */}
-      <div
-        className="l:w-1/2 text-center l:text-left 
-                    max-w-full ms:max-w-sm mm:max-w-md ml:max-w-lg t:max-w-2xl l:max-w-none"
-      >
+      <div className="w-full l:w-1/2 text-center l:text-left">
         <div
-          className="text-headupb2b font-semibold 
-                      text-sm ms:text-base mm:text-lg ml:text-xl t:text-xl l:text-xl ll:text-2xl imac:text-3xl 4k:text-4xl qhd:text-5xl
-                      mb-2 ms:mb-3 mm:mb-4 ml:mb-4 t:mb-4 l:mb-4 ll:mb-5 imac:mb-6 4k:mb-7 qhd:mb-8"
+          className="text-headupb2b font-semibold
+                      text-sm mm:text-base l:text-lg ll:text-xl
+                      mb-2 mm:mb-3 l:mb-4"
         >
           High‑Performance Advertising
         </div>
 
         <h1
-          className="font-bold leading-tight 
-                     text-2xl ms:text-3xl mm:text-3xl ml:text-4xl t:text-4xl l:text-5xl ll:text-6xl imac:text-7xl 4k:text-8xl qhd:text-9xl
-                     mb-4 ms:mb-5 mm:mb-6 ml:mb-6 t:mb-6 l:mb-6 ll:mb-8 imac:mb-10 4k:mb-12 qhd:mb-14"
+          className="font-bold leading-tight
+                     text-2xl mm:text-3xl t:text-4xl l:text-5xl ll:text-6xl
+                     mb-4 mm:mb-5 l:mb-6"
         >
           Reach <span className="text-headupb2b">50,000+</span> Infra{" "}
           <span className="text-headupb2b">Decision Makers</span> Monthly
@@ -37,8 +36,8 @@ const HeroSection = ({ productOptions }) => {
 
         <p
           className="text-gray-700 font-medium leading-relaxed
-                    text-base ms:text-lg mm:text-xl ml:text-xl t:text-xl l:text-xl ll:text-2xl imac:text-3xl 4k:text-4xl qhd:text-5xl
-                    mb-2 ms:mb-3 mm:mb-5 ml:mb-5 t:mb-5 l:mb-5 ll:mb-6 imac:mb-10 4k:mb-12 qhd:mb-14"
+                    text-base mm:text-lg l:text-xl ll:text-2xl
+                    mb-3 mm:mb-4 l:mb-5"
         >
           <strong>
             Let's put your brand in front of the right businesses.
@@ -47,16 +46,17 @@ const HeroSection = ({ productOptions }) => {
 
         <p
           className="text-gray-700 leading-relaxed
-                    text-sm ms:text-base mm:text-base ml:text-base t:text-base l:text-base ll:text-lg imac:text-xl 4k:text-2xl qhd:text-3xl
-                    mb-6 ms:mb-7 mm:mb-8 ml:mb-8 t:mb-8 l:mb-8 ll:mb-10 imac:mb-12 4k:mb-14 qhd:mb-16"
+                    text-sm mm:text-base ll:text-lg
+                    mb-6 mm:mb-7 l:mb-8"
         >
           With Headsup B2B's <strong>targeted advertising,</strong> get connected to a focused,
           <strong> pan-India </strong>audience of{" "}
           <strong>purchase-ready</strong> industrial and construction
           professionals, driving real results for your campaigns.
         </p>
-        <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-          <button className="bg-headupb2b text-white py-3 px-6 rounded-full text-base md:text-lg font-medium hover:bg-white hover:text-black hover:border border-headupb2b"
+        <div className="flex flex-col ms:flex-row flex-wrap gap-3 ms:gap-4 justify-center l:justify-start">
+          <button
+            className="w-full ms:w-auto bg-headupb2b text-white py-3 px-6 rounded-full text-base l:text-lg font-medium hover:bg-white hover:text-black hover:border border-headupb2b transition"
             onClick={() => setIsModalOpen(true)}
           >
             Show Interest
@@ -66,7 +66,7 @@ const HeroSection = ({ productOptions }) => {
             href="mailto:tanshi@headsupcorporation.com,raviranjan@headsupb2b.com"
             className="w-full ms:w-auto"
           >
-            <button className="border border-headupb2b text-headupb2b py-3 px-6 rounded-full text-base md:text-lg font-medium hover:text-black">
+            <button className="w-full ms:w-auto border border-headupb2b text-headupb2b py-3 px-6 rounded-full text-base l:text-lg font-medium hover:text-black transition">
               Talk to our Expert
             </button>
           </a>
@@ -74,11 +74,7 @@ const HeroSection = ({ productOptions }) => {
       </div>
 
       {/* Right Side */}
-      <div
-        className="l:w-1/2 
-                    mt-8 ms:mt-10 mm:mt-12 ml:mt-12 t:mt-12 l:mt-0
-                    w-full max-w-sm ms:max-w-md mm:max-w-lg ml:max-w-xl t:max-w-2xl l:max-w-none"
-      >
+      <div className="w-full l:w-1/2 mt-2 l:mt-0 max-w-md t:max-w-xl l:max-w-none mx-auto">
         <FloatingCard />
       </div>
 
@@ -89,6 +85,7 @@ const HeroSection = ({ productOptions }) => {
         </ModalPopUp>
       </div>
     </section>
+    </div>
   );
 };
 

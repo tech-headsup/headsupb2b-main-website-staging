@@ -14,8 +14,8 @@ function formatDate(value) {
 export default function KnowledgeCenterSection({ knowledgeArticles = [] }) {
   return (
     <section className="section section-no-top kc-section">
-      <div className="container">
-        <div className="kc-wrap">
+      <div className="max-w-[1280px] mx-auto w-full px-6 md:px-12 lg:px-8">
+        <div className="kc-wrap !max-w-none">
           <div className="kc-head">
             <div className="sec-header">
               <h2>Knowledge Center</h2>

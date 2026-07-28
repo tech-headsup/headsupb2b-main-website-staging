@@ -9,9 +9,10 @@ import { sendEmailToSell } from "@/Contants/APIEndpoint";
 import NewsTicker from "@/component/home/NewsTicker";
 
 const NAV_LINKS = [
-  { href: "/solar-hub", label: "Solar Hub" },
   { href: "/services", label: "Services" },
+  { href: "/solar-hub", label: "Solar Hub" },
   { href: "/ads-with-us", label: "Advertise with us" },
+  { href: "/news-press-release", label: "Newsroom" },
   { href: "/blog", label: "Blogs" },
   { href: "/careers", label: "Career" },
   { href: "/contact", label: "Contact us" },
@@ -70,7 +71,7 @@ export default function Navigation({
         }}
       >
         <NewsTicker />
-        <div className="flex items-center justify-between px-6 md:px-12 lg:px-8 xl:px-16 2xl:px-32 py-3.5 md:py-4">
+        <div className="flex items-center justify-between max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8 py-3.5 md:py-4">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image
@@ -84,12 +85,12 @@ export default function Navigation({
           </Link>
 
           {/* ── Desktop nav (lg and up) ── */}
-          <ul className="hidden lg:flex items-center gap-4 xl:gap-6 2xl:gap-8 list-none m-0 p-0">
+          <ul className="hidden lg:flex items-center gap-3 xl:gap-6 2xl:gap-8 list-none m-0 p-0">
 
             {/* Categories dropdown */}
             <li className="relative" onMouseEnter={openCat} onMouseLeave={closeCat}>
               <button
-                className="flex items-center gap-1 text-[14px] font-medium text-[#222] hover:text-[#4A3772] transition-colors duration-200 bg-transparent border-none cursor-pointer p-0"
+                className="flex items-center gap-1 text-[12px] xl:text-[14px] font-medium text-[#222] hover:text-[#4A3772] transition-colors duration-200 bg-transparent border-none cursor-pointer p-0"
                 onClick={() => setCatOpen((v) => !v)}
               >
                 Categories
@@ -199,16 +200,23 @@ export default function Navigation({
             </li>
 
             {/* Other nav links */}
-            {NAV_LINKS.map(({ href, label }) => (
-              <li key={href}>
-                <Link
-                  href={href}
-                  className="text-[14px] font-medium no-underline text-[#222] hover:text-[#4A3772] transition-colors duration-200 whitespace-nowrap"
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
+            {NAV_LINKS.map(({ href, label }) => {
+              const isSolarHub = href === "/solar-hub";
+              return (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className={
+                      isSolarHub
+                        ? "text-[12px] xl:text-[14px] font-semibold no-underline text-[#1a1a2e] bg-[#FFD84D] rounded-full px-3 xl:px-4 py-1.5 hover:bg-[#FFCA1F] transition-colors duration-200 whitespace-nowrap"
+                        : "text-[12px] xl:text-[14px] font-medium no-underline text-[#222] hover:text-[#4A3772] transition-colors duration-200 whitespace-nowrap"
+                    }
+                  >
+                    {label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
 
           {/* Desktop CTAs (lg and up) */}

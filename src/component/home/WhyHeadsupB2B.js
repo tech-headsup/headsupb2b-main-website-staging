@@ -8,12 +8,13 @@ const WHY_ITEMS = [
   { title: "Get the Most Competitive Prices", icon: CompetitivePriceSvg },
   { title: "Verified Suppliers & OEM Network", icon: VerifiedSvg },
   { title: "BOQ and Requirement Mapped Delivery", icon: BOQSvg },
-  { title: "Up to 60 days* Collateral Free Credit", icon: CollateralSvg },
+  { title: "Up to 61 days* Collateral Free Credit", icon: CollateralSvg },
 ];
 
 export default function WhyHeadsupB2B({ onContactUs, heading = "Why Headsup B2B?" }) {
   return (
-    <div className="bg-[#f4f4f4] px-5 sm:px-8 md:px-10 py-12 sm:py-16 md:py-20">
+    <div className="bg-[#f4f4f4] py-12 sm:py-16 md:py-20">
+      <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8">
       <h2
         className="text-2xl sm:text-3xl md:text-[40px] font-bold text-center text-[#111] mb-8 sm:mb-10"
         style={{ fontFamily: "'Montserrat', sans-serif" }}
@@ -21,7 +22,7 @@ export default function WhyHeadsupB2B({ onContactUs, heading = "Why Headsup B2B?
         {heading}
       </h2>
 
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5 max-w-[1200px] mx-auto mb-8 sm:mb-10">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5 mb-8 sm:mb-10">
         {WHY_ITEMS.map((item) => (
           <div
             key={item.title}
@@ -54,6 +55,7 @@ export default function WhyHeadsupB2B({ onContactUs, heading = "Why Headsup B2B?
         >
           Contact Us Today
         </button>
+      </div>
       </div>
     </div>
   );

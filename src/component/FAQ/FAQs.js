@@ -23,7 +23,8 @@ export default function FAQs({ FAQData = [] }) {
   const [faqColumn1, faqColumn2] = splitFAQs(FAQData);
 
   return (
-    <div className="">
+    <div className="-mx-4 sm:-mx-6 md:-mx-12 lg:-mx-20 xl:-mx-28">
+    <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8">
       <div className="flex flex-col items-center justify-center">
         <h3 className="section_heading">FAQs</h3>
         <div className="text-center mt-3 mx-8 text-xs leading-4 mm:leading-4 mm:text-xs md:text-[16px] md:leading-6">
@@ -62,6 +63,7 @@ export default function FAQs({ FAQData = [] }) {
           ))}
         </div>
       </Accordion>
+    </div>
     </div>
   );
 }

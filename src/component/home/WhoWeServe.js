@@ -23,7 +23,7 @@ const WWS_BOTTOM = [
 
 function WWSCard({ card }) {
   return (
-    <div className="border border-[#e5e5e5] rounded-2xl p-5 sm:p-6 flex flex-col gap-3 bg-white transition-all duration-200 hover:shadow-[0_8px_30px_rgba(74,55,114,0.1)] hover:border-[#c5b8e8]">
+    <div className=" border border-[#e5e5e5] rounded-2xl p-5 sm:p-6 flex flex-col gap-3 bg-white transition-all duration-200 hover:shadow-[0_8px_30px_rgba(74,55,114,0.1)] hover:border-[#c5b8e8]">
       <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#f0eef8] flex items-center justify-center flex-shrink-0">
         <Image src={card.icon} alt={card.title} width={150} height={150} style={{ objectFit: "contain" }} />
       </div>
@@ -46,7 +46,7 @@ function WWSCard({ card }) {
 
 export default function WhoWeServe() {
   return (
-    <div className="bg-white px-5 sm:px-8 md:px-10 py-12 sm:py-16 md:py-20">
+    <div className="bg-white max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8 py-12 sm:py-16 md:py-20">
       <h2
         className="text-2xl sm:text-3xl md:text-[40px] font-bold text-center text-[#111] mb-8 sm:mb-10 md:mb-12"
         style={{ fontFamily: "'Montserrat', sans-serif" }}
