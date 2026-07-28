@@ -858,10 +858,10 @@ export const SOLAR_KITS = [
     image: "/solar-kits/kit-3-5.png",
     gallery: [
       "/solar-kits/kit-3-5.png",
-      "/solar-kits/kit-3-1.png",
+      "/solar-kits/3-3-5-5-10kw2.png",
       // "/solar-kits/kit-3-2.png",
       "/solar-kits/kit-3-3.png",
-      "/solar-kits/kit-3-4.png",
+      "/solar-kits/3-3-5-5-10kw.png",
     ],
     highlights: [
       { label: "MODULE POWER", value: "570-650 Wp" },
@@ -882,10 +882,10 @@ export const SOLAR_KITS = [
     image: "/solar-kits/kit-3-6.png",
     gallery: [
       "/solar-kits/kit-3-6.png",
-      "/solar-kits/kit-3-1.png",
+      "/solar-kits/3-3-5-5-10kw2.png",
       // "/solar-kits/kit-3-2.png",
       "/solar-kits/kit-3-3.png",
-      "/solar-kits/kit-3-4.png",
+      "/solar-kits/3-3-5-5-10kw.png",
     ],
     highlights: [
       { label: "MODULE POWER", value: "570-650 Wp" },
@@ -906,10 +906,10 @@ export const SOLAR_KITS = [
     image: "/solar-kits/kit-3-6.png",
     gallery: [
       "/solar-kits/kit-3-6.png",
-      "/solar-kits/kit-3-1.png",
+      "/solar-kits/3-3-5-5-10kw2.png",
       // "/solar-kits/kit-3-2.png",
       "/solar-kits/kit-3-3.png",
-      "/solar-kits/kit-3-4.png",
+      "/solar-kits/3-3-5-5-10kw.png",
     ],
     highlights: [
       { label: "MODULE POWER", value: "570-650 Wp" },
