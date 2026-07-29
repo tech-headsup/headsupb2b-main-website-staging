@@ -59,7 +59,7 @@ export default function KnowledgeCenterSection({ knowledgeArticles = [] }) {
           </div>
           <div className="kc-footer">
             <a href="/research" className="kc-more">
-              Blog &amp; Research →
+              Research →
             </a>
           </div>
         </div>
