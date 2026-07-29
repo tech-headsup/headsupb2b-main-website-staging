@@ -138,6 +138,15 @@ export default function CategoryPage({
     setSeoImage(categoryData?.image?.url || defaultOgImage);
   };
 
+  const AVAILABLE_BROCHURES = [
+    "electrical-solutions",
+    "industrial-solutions",
+    "metal-solutions",
+  ];
+  const localBrochureUrl = AVAILABLE_BROCHURES.includes(categoryData?.slug)
+    ? `/brochures/${categoryData.slug}.pdf`
+    : null;
+
   const handleNavigate = () => setShow(true);
   const handleClick = () => setSelected(categoryData?.name);
   const handleSubCategoryClick = (subCategory) => {
@@ -268,7 +277,7 @@ export default function CategoryPage({
                 subText={"To Unlock Better Pricing "}
                 onClick={() => setshowUploadQuoteForm(true)}
               />
-              {categoryData?.cataloguePdf?.url ? (
+              {localBrochureUrl ? (
                 <BannerButtons
                   icon={<DownloadSVG />}
                   text="Download Brochure"
@@ -518,7 +527,7 @@ export default function CategoryPage({
         >
           <DownloadBrochure
             categoryName={categoryData?.name}
-            cataloguePdfURL={categoryData?.cataloguePdf?.url}
+            cataloguePdfURL={localBrochureUrl}
             onClose={() => setshowDownloadBrochureForm(false)}
           />
         </CommonModal>
