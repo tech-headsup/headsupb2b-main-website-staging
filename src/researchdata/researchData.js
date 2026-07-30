@@ -172,7 +172,7 @@ const researchData = [
   },
   {
     title: "India's Coal Decade Delivers 210 MT — FY 2025-26 Sector Report",
-    slug: "india-coal-sector-report",
+    slug: "india-coal-sector-report-2026",
     date: "2026-07-28",
     image: indiaCoalSectorReport,
     description: "Ministry of Coal FY 2025-26 performance review — captive and commercial mines crossed 200 MT for the first time at 210.46 MT (+10.22% YoY), 12 blocks opened, 53.64 MT construction pipeline, and the material package (TMT, HDPE, crash barriers, solar, CHP) for every new coal block.",

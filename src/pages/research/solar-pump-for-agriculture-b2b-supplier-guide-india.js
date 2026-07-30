@@ -201,7 +201,7 @@ export default function SolarPumpB2BGuide() {
   const para = "text-[17px] leading-[1.8] text-gray-700 mb-5";
 
   return (
-    <div style={{ fontFamily: "'DM Sans', sans-serif" }} className="bg-white text-[#1a1330]">
+    <div style={{ fontFamily: "'DM Sans', sans-serif" }} className="bg-white text-[#1a1330] pt-6 t:pt-10">
       <Head>
         <link
           href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&display=swap"
@@ -221,19 +221,6 @@ export default function SolarPumpB2BGuide() {
           site_name: "Headsup B2B",
         }}
       />
-
-      {/* ── TOP BAR (was dark green → headsupb2b) ── */}
-      <nav className="bg-headupb2b px-5 t:px-12 py-3.5 flex items-center justify-between">
-        <div className="font-extrabold text-lg text-white tracking-tight">
-          Headsup <span className="text-[#C9B8E8]">B2B</span>
-        </div>
-        <a
-          href="https://www.headsupb2b.com"
-          className="bg-white text-headupb2b px-5 py-2 rounded-md text-[13px] font-bold no-underline"
-        >
-          Get Sourcing Help →
-        </a>
-      </nav>
 
       {/* ── HERO (was dark green → deep headsupb2b) ── */}
       <header className="relative overflow-hidden bg-[#2e1f4d] px-5 t:px-12 pt-16 pb-20">

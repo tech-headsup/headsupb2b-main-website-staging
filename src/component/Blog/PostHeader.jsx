@@ -97,7 +97,7 @@ export const PostHeader = ({
         {coverImageComponent}
 
         {/* Mobile Ad */}
-        <div className="mt-6 w-full">
+        {/* <div className="mt-6 w-full">
           <a href="#" rel="noopener noreferrer">
             <Image
               src={emergeSolutionAdMobile}
@@ -108,7 +108,7 @@ export const PostHeader = ({
               loading="lazy"
             />
           </a>
-        </div>
+        </div> */}
       </div>
     </>
   );

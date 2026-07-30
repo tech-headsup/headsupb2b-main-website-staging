@@ -1260,20 +1260,20 @@ export default function SolarHubStyles() {
       }
       .services-page .cta-tag {
         font-family: "Montserrat", sans-serif;
-        font-size: 11px;
+        font-size: 12px;
         font-weight: 700;
         letter-spacing: 3px;
-        color: #b2a9c6;
+        color: #ffffff;
       }
       .services-page .cta-tag-light {
         color: #5e3f99;
       }
       .services-page .cta-card h3 {
         font-family: "Montserrat", sans-serif;
-        font-size: 24px;
-        font-weight: 800;
+        font-size: 36px;
+        font-weight: 700;
         letter-spacing: -0.4px;
-        line-height: 1.2;
+        line-height: 1.375;
         margin: 4px 0 0;
       }
       .services-page .cta-buyer h3 {
@@ -1284,7 +1284,7 @@ export default function SolarHubStyles() {
       }
       .services-page .cta-card p {
         font-family: "DM Sans", sans-serif;
-        font-size: 14px;
+        font-size: 16px;
         line-height: 1.55;
         margin: 0 0 12px;
       }
@@ -1339,7 +1339,7 @@ export default function SolarHubStyles() {
         border-color: #ffffff;
         transform: translateY(-1px);
       }
-      @media (max-width: 768px) {
+      @media (max-width: 767px) {
         .services-page .cta-cards {
           grid-template-columns: 1fr;
           gap: 16px;
@@ -1347,6 +1347,11 @@ export default function SolarHubStyles() {
         .services-page .cta-card {
           padding: 28px 24px;
         }
+        .services-page .cta-card h3 {
+          font-size: 24px;
+        }
+      }
+      @media (max-width: 639px) {
         .services-page .cta-card h3 {
           font-size: 20px;
         }
