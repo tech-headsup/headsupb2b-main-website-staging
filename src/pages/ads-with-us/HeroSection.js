@@ -60,7 +60,8 @@ const HeroSection = ({ productOptions }) => {
         </p>
         <div className="flex flex-col ms:flex-row flex-wrap gap-3 ms:gap-4 justify-center l:justify-start">
           <button
-            className="w-full ms:w-auto bg-headupb2b text-white py-3 px-6 rounded-2xl text-base l:text-lg font-medium hover:bg-white hover:text-black hover:border border-headupb2b transition"
+            className="w-full ms:w-auto text-white py-3 px-6 rounded-2xl text-base l:text-lg font-medium border-none cursor-pointer transition-all duration-200 hover:bg-[#00b8d9] hover:-translate-y-px"
+            style={{ background: "#00d4f5" }}
             onClick={() => setIsModalOpen(true)}
           >
             Show Interest
@@ -70,7 +71,10 @@ const HeroSection = ({ productOptions }) => {
             href="mailto:tanshi@headsupcorporation.com,raviranjan@headsupb2b.com"
             className="w-full ms:w-auto"
           >
-            <button className="w-full ms:w-auto border border-headupb2b text-headupb2b py-3 px-6 rounded-2xl text-base l:text-lg font-medium hover:text-black transition">
+            <button
+              className="w-full ms:w-auto text-white py-3 px-6 rounded-2xl text-base l:text-lg font-medium border-none cursor-pointer transition-all duration-200 hover:bg-[#00b8d9] hover:-translate-y-px"
+              style={{ background: "#00d4f5" }}
+            >
               Talk to our Expert
             </button>
           </a>

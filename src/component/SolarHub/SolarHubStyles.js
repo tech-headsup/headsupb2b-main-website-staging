@@ -772,13 +772,13 @@ export default function SolarHubStyles() {
         gap: 10px;
         padding: 11px 24px;
         border-radius: 999px;
-        background: rgba(0, 212, 245, 0.12);
+        background: rgba(94, 63, 153, 0.12);
         box-shadow: none;
         text-shadow: none;
         font-family: "Montserrat", sans-serif;
         font-size: 14px;
         font-weight: 700;
-        color: #00d4f5;
+        color: #3d2966;
         letter-spacing: 0.1px;
         white-space: nowrap;
       }
@@ -786,7 +786,7 @@ export default function SolarHubStyles() {
         width: 8px;
         height: 8px;
         border-radius: 50%;
-        background: #00d4f5;
+        background: #3d2966;
         flex-shrink: 0;
       }
       @media (max-width: 640px) {
@@ -1392,9 +1392,9 @@ export default function SolarHubStyles() {
         font-family: "Montserrat", sans-serif;
         font-size: 24px;
         font-weight: 800;
-        color: #ffffff;
-        background: var(--teal);
-        box-shadow: 0 8px 24px rgba(94, 63, 153, 0.35);
+        color: #1a1a2e;
+        background: #80EBF7;
+        box-shadow: 0 8px 24px rgba(128, 235, 247, 0.35);
         transition: transform 0.3s;
       }
       .services-page .step-num.alt {

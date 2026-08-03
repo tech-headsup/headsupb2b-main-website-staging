@@ -864,10 +864,7 @@ export default function ServicesPage() {
           animation: services-slideUp 0.7s ease-out 0.1s both;
         }
         .services-page .hero h1 .gradient-text {
-          background: linear-gradient(135deg, #5e3f99 0%, #b2a9c6 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
+          color: #5e3f99;
         }
         .services-page .hero .subtitle {
           font-size: 16px;
@@ -1250,9 +1247,9 @@ export default function ServicesPage() {
           font-family: "Montserrat", sans-serif;
           font-size: 24px;
           font-weight: 800;
-          color: #ffffff;
-          background: var(--teal);
-          box-shadow: 0 8px 24px rgba(94, 63, 153, 0.35);
+          color: #1a1a2e;
+          background: #80EBF7;
+          box-shadow: 0 8px 24px rgba(128, 235, 247, 0.35);
           transition: transform 0.3s;
         }
         .services-page .step-num.alt {

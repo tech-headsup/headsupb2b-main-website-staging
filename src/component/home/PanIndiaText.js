@@ -65,7 +65,7 @@ export default function PanIndiaText() {
 
   return (
     <div className="-mx-4 sm:-mx-6 md:-mx-12 lg:-mx-20 xl:-mx-28">
-    <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8 mt-6 sm:mt-8">
+    <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8 mt-2 sm:mt-3">
     <div className="rounded-2xl overflow-hidden">
       {/* Image */}
       <div className="w-full">
@@ -80,12 +80,12 @@ export default function PanIndiaText() {
 
       {/* Purple section */}
       <div
-        className="flex flex-col items-center text-center px-5 sm:px-10 md:px-20 pb-12 sm:pb-16 pt-8 md:pt-12"
+        className="flex flex-col items-center text-center px-5 sm:px-10 md:px-20 pb-6 sm:pb-8 pt-4 md:pt-6"
         style={{ background: "#4A3772" }}
       >
         {/* Heading — increased from clamp(1.3rem, 2.8vw, 2rem) */}
         <h2
-          className="font-bold leading-snug mb-8 max-w-5xl"
+          className="font-bold leading-snug mb-5 max-w-5xl"
           style={{
             fontFamily: "'Montserrat', sans-serif",
             fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",

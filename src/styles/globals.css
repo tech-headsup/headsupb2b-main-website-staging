@@ -513,8 +513,9 @@ span.has-dot::before {
 @media (min-width: 768px) { .hub-title { font-size: 40px; } }
 
 /* Section vertical gap (CallAndChat wrapper) */
-.section-gap { padding-top: 5rem; padding-bottom: 5rem; }
-@media (min-width: 2560px) { .section-gap { padding-top: 10rem; padding-bottom: 10rem; } }
+.section-gap { padding-top: 3rem; padding-bottom: 3rem; }
+@media (min-width: 768px) { .section-gap { padding-top: 3.5rem; padding-bottom: 3.5rem; } }
+@media (min-width: 2560px) { .section-gap { padding-top: 7rem; padding-bottom: 7rem; } }
 
 /* FAQ vertical gap */
 .faq-gap { padding-top: 3.5rem; padding-bottom: 3.5rem; }
