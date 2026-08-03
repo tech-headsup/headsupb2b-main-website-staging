@@ -1,30 +1,53 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import ProductCardv2 from "@/component/Card/ProductCardv2";
 
+const SUBCATEGORY_ORDER = [
+  "Solar Panels & Cells",
+  "Energy Storage",
+  "Solar Lighting Solutions",
+];
+
+function sortSubCategories(subCategories = []) {
+  const priorityIndex = (name) => {
+    const idx = SUBCATEGORY_ORDER.findIndex(
+      (n) => n.toLowerCase() === (name || "").toLowerCase()
+    );
+    return idx === -1 ? SUBCATEGORY_ORDER.length : idx;
+  };
+  return [...subCategories].sort(
+    (a, b) => priorityIndex(a?.name) - priorityIndex(b?.name)
+  );
+}
+
 export default function OurProductsSection({ categoryData, categoryProductOptions = [] }) {
+  const orderedSubCategories = useMemo(
+    () => sortSubCategories(categoryData?.subCategories),
+    [categoryData]
+  );
+
   const [selectedSubCategory, setSelectedSubCategory] = useState(
-    categoryData?.subCategories?.[0] || null
+    orderedSubCategories[0] || null
   );
 
   useEffect(() => {
-    if (!selectedSubCategory && categoryData?.subCategories?.[0]) {
-      setSelectedSubCategory(categoryData.subCategories[0]);
+    if (!selectedSubCategory && orderedSubCategories[0]) {
+      setSelectedSubCategory(orderedSubCategories[0]);
     }
-  }, [categoryData, selectedSubCategory]);
+  }, [orderedSubCategories, selectedSubCategory]);
 
   if (!categoryData) return null;
 
   return (
-    <section className="section section-no-top" style={{ paddingBottom: 40 }}>
+    <section className="section section-no-top" style={{ paddingBottom: 20 }}>
       <div className="max-w-[1280px] mx-auto w-full px-6 md:px-12 lg:px-8">
         <h2 className="section_heading text-center text-[#111] text-3xl md:text-[40px] font-extrabold" style={{ fontFamily: "'Montserrat', sans-serif" }}>
           Our Products
         </h2>
 
         <div className="mt-8 ll:mt-[70px] flex flex-wrap gap-2 justify-center">
-          {categoryData?.subCategories?.map((item) => {
+          {orderedSubCategories?.map((item) => {
             const isActive = selectedSubCategory?.name === item?.name;
             const selectedClass = isActive
               ? "bg-[#4A3772] text-white"
@@ -43,7 +66,7 @@ export default function OurProductsSection({ categoryData, categoryProductOption
 
         <div className="bg-white flex flex-col py-8 pb-8 mt-5 rounded-2xl">
           <div className="w-full flex justify-between items-center">
-            <span className="text-base font-semibold capitalize text-gray-800 truncate">
+            <span className="text-base font-medium capitalize text-gray-500 truncate">
               {`Home > ${categoryData?.name} > ${selectedSubCategory?.name}`}
             </span>
             <span className="text-base hidden sm:inline font-semibold text-gray-600">
@@ -54,7 +77,7 @@ export default function OurProductsSection({ categoryData, categoryProductOption
           </div>
           <hr className="border-b mt-6 border-[#B6B6B6] w-full" />
           <div className="w-full mt-5">
-            {categoryData?.subCategories?.map((subCat) => {
+            {orderedSubCategories?.map((subCat) => {
               const isVisible = selectedSubCategory?.name === subCat?.name;
               const products = subCat?.products || [];
               return (

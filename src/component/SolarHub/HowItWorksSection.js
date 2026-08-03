@@ -1,6 +1,6 @@
 export default function HowItWorksSection() {
   return (
-    <section className="section section-no-top how-section">
+    <section className="section section-no-top how-section" style={{ paddingBottom: 40 }}>
       <div className="how-container">
         <div className="how-wrap">
           <div className="sec-header">

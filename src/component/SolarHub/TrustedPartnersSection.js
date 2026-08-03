@@ -20,7 +20,7 @@ export default function TrustedPartnersSection() {
   const partners = SOLAR_PARTNERS_RESPONSE?.doc?.[0]?.partner || [];
 
   return (
-    <section className="section section-no-top" style={{ paddingTop: 60 }}>
+    <section className="section section-no-top" style={{ paddingTop: 40, paddingBottom: 40 }}>
       <div className="tp-container">
         <div className="tp-wrap">
           <h2 className="tp-heading">Our Trusted Partners</h2>

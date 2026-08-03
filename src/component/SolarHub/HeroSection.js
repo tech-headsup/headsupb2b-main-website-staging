@@ -12,10 +12,9 @@ export default function HeroSection({ onOpenSellModal, onOpenQuoteModal }) {
           <div className="hero-content">
 
             <h1>
-              Everything you need to source
-              <br />
-              <span className="yellow-highlight">solar</span>{" "}
-              <span className="gradient-text">for your project in one place.</span>
+              Everything you need to
+              <span className="yellow-highlight"> source solar</span>{" "}
+              <span>for your project in one place.</span>
             </h1>
             <p className="subtitle">
               Products, project kits, expertise and credit — from India's infrastructure sourcing partner.

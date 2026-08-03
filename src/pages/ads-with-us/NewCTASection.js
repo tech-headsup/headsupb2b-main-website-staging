@@ -6,8 +6,8 @@ const NewCTASection = ( { productOptions} ) => {
 
   const handelTalkToOurExpert = () => {};
   return (
-    <section className="bg-[#f9fbfc] -mx-10 mt-8 md:mt-10">
-      <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8 py-8 md:py-10 lg:py-16">
+    <section className="bg-[#f9fbfc] -mx-10 mt-6 md:mt-8">
+      <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8 py-8 md:py-10 lg:py-12">
         <div className="bg-white rounded-2xl md:rounded-3xl shadow-xl px-4 md:px-8 lg:px-12 xl:px-16 py-6 md:py-8 lg:py-14 text-center">
           {/* Heading */}
           <h2 className="text-xl md:text-2xl lg:text-4xl font-extrabold text-gray-900 mb-2 md:mb-3 lg:mb-4 leading-tight">

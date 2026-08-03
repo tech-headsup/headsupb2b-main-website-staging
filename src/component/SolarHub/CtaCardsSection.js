@@ -1,6 +1,6 @@
 export default function CtaCardsSection({ onOpenSellModal, onOpenQuoteModal }) {
   return (
-    <section className="section section-no-top">
+    <section className="section section-no-top" style={{ paddingBottom: 40, marginTop: -24 }}>
       <div className="cta-container">
         <div className="cta-cards cta-single">
           <div className="cta-card cta-buyer">

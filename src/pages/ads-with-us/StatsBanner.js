@@ -33,7 +33,7 @@ const StatsBanner = ({productOptions}) => {
 
   return (
     <>
-      <div className="-mx-10 mt-8 md:mt-12">
+      <div className="bg-white py-8 -mx-10 mt-6 md:mt-8">
         <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8">
           <div className="rounded-2xl md:rounded-3xl overflow-hidden shadow-sm">
             <Swiper
@@ -60,7 +60,7 @@ const StatsBanner = ({productOptions}) => {
               ))}
             </Swiper>
           </div>
-          <div className="stats-dots flex justify-center gap-2 mt-4"></div>
+          <div className="stats-dots flex justify-center gap-2 mt-6"></div>
         </div>
       </div>
 

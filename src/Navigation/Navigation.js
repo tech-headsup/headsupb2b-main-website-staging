@@ -63,7 +63,7 @@ export default function Navigation({
       <header
         className="fixed top-0 left-0 right-0 z-50"
         style={{
-          fontFamily: "'DM Sans', sans-serif",
+          fontFamily: "'Montserrat', sans-serif",
           background: "#ffffff",
           boxShadow: scrolled
             ? "0 2px 16px rgba(0,0,0,0.10)"
@@ -141,7 +141,7 @@ export default function Navigation({
                             className="flex-1 text-[14px] font-medium no-underline px-5 py-3"
                             style={{
                               color: isActive ? "#4A3772" : "#222",
-                              fontFamily: "'DM Sans', sans-serif",
+                              fontFamily: "'Montserrat', sans-serif",
                             }}
                             onClick={() => setCatOpen(false)}
                           >
@@ -174,7 +174,7 @@ export default function Navigation({
                     >
                       <p
                         className="text-[11px] font-bold uppercase tracking-widest mb-3 px-1"
-                        style={{ color: "#9b8ec4", fontFamily: "'DM Sans', sans-serif" }}
+                        style={{ color: "#9b8ec4", fontFamily: "'Montserrat', sans-serif" }}
                       >
                         {activeCategory?.name}
                       </p>
@@ -183,7 +183,7 @@ export default function Navigation({
                           key={sub.slug}
                           href={`/${activeCategory?.slug}/${sub.slug}`}
                           className="flex items-center gap-2 px-3 py-2.5 rounded-lg text-[13px] font-medium no-underline transition-colors duration-150 hover:bg-[#ede9ff]"
-                          style={{ color: "#333", fontFamily: "'DM Sans', sans-serif" }}
+                          style={{ color: "#333", fontFamily: "'Montserrat', sans-serif" }}
                           onClick={() => setCatOpen(false)}
                         >
                           <span

@@ -4,7 +4,7 @@ import GenericForm from "./GenericForm";
 
 const MediaKitCTA = ({ productOptions }) => {
   return (
-    <section className="bg-headupb2b text-white px-4 py-6 md:px-8 md:py-10 lg:px-12 lg:py-12 xl:px-16 ll:px-16 ll:py-14 rounded-2xl md:rounded-3xl max-w-[1200px] ll:max-w-[1200px] mt-8 md:mt-10 -mx-4 md:mx-auto ll:mx-auto">
+    <section className="bg-headupb2b text-white px-4 py-6 md:px-8 md:py-10 lg:px-12 lg:py-12 xl:px-16 ll:px-16 ll:py-14 rounded-2xl md:rounded-3xl max-w-[1200px] ll:max-w-[1200px] mt-6 md:mt-8 -mx-4 md:mx-auto ll:mx-auto">
       <div className="flex flex-col lg:flex-row items-start lg:items-stretch gap-6 md:gap-8 lg:gap-12 ll:gap-16">
         {/* Left side content */}
         <div className="w-full lg:w-1/2 flex flex-col lg:justify-center">

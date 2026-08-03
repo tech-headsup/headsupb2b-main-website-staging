@@ -60,7 +60,7 @@ const MetricsCards = () => {
   };
 
   return (
-    <section className="py-16 bg-white mt-10 -mx-12 md:-mx-10">
+    <section className="py-12 bg-white mt-8 -mx-12 md:-mx-10">
       <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8">
       <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-center mb-8 md:mb-10 lg:mb-12">
         Our Unique Offerings Designed for Your Visibility

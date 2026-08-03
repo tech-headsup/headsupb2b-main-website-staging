@@ -411,7 +411,7 @@ function KitDetailStyles() {
         height: 20px;
       }
       .kit-lead {
-        font-family: "DM Sans", sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 14px;
         line-height: 1.6;
         color: #555;
@@ -508,7 +508,7 @@ function KitDetailStyles() {
         display: flex;
         flex-wrap: wrap;
         gap: 8px 28px;
-        font-family: "DM Sans", sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 13px;
         color: #444;
       }
@@ -608,7 +608,7 @@ function KitDetailStyles() {
       }
 
       .kit-copy {
-        font-family: "DM Sans", sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 15px;
         line-height: 1.7;
         color: #444;
@@ -660,7 +660,7 @@ function KitDetailStyles() {
         line-height: 1.35;
       }
       .kit-how-desc {
-        font-family: "DM Sans", sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 13px;
         color: #6b6b6b;
         line-height: 1.55;
@@ -700,7 +700,7 @@ function KitDetailStyles() {
       }
       .kit-details-value {
         background: #ffffff;
-        font-family: "DM Sans", sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 14px;
         color: #6b6b6b;
         line-height: 1.5;
@@ -816,7 +816,7 @@ function KitDetailStyles() {
         flex: 1;
       }
       .kit-related-power {
-        font-family: "DM Sans", sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 12px;
         font-weight: 700;
         color: #4a3772;
@@ -832,7 +832,7 @@ function KitDetailStyles() {
         line-height: 1.3;
       }
       .kit-related-desc {
-        font-family: "DM Sans", sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 13px;
         color: #6b6b6b;
         line-height: 1.5;
@@ -843,7 +843,7 @@ function KitDetailStyles() {
         align-self: flex-start;
         display: inline-flex;
         align-items: center;
-        font-family: "DM Sans", sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 14px;
         font-weight: 700;
         color: #000000;

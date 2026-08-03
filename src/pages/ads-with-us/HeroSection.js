@@ -18,7 +18,7 @@ const HeroSection = ({ productOptions }) => {
       {/* Left Side */}
       <div className="w-full l:w-1/2 text-center l:text-left">
         <div
-          className="text-headupb2b font-semibold
+          className="font-montserrat text-headupb2b font-semibold
                       text-sm mm:text-base l:text-lg ll:text-xl
                       mb-2 mm:mb-3 l:mb-4"
         >
@@ -26,18 +26,22 @@ const HeroSection = ({ productOptions }) => {
         </div>
 
         <h1
-          className="font-bold leading-tight
-                     text-2xl mm:text-3xl t:text-4xl l:text-5xl ll:text-6xl
-                     mb-4 mm:mb-5 l:mb-6"
+          className="font-montserrat text-[32px] mm:text-[36px] t:text-[52px] ll:text-[60px] mb-[22px]"
+          style={{
+            fontFamily: "'Montserrat', sans-serif",
+            fontWeight: 900,
+            lineHeight: 1.15,
+            letterSpacing: "-1.5px",
+          }}
         >
           Reach <span className="text-headupb2b">50,000+</span> Infra{" "}
           <span className="text-headupb2b">Decision Makers</span> Monthly
         </h1>
 
         <p
-          className="text-gray-700 font-medium leading-relaxed
-                    text-base mm:text-lg l:text-xl ll:text-2xl
-                    mb-3 mm:mb-4 l:mb-5"
+          className="font-montserrat text-[#404040] font-medium leading-[1.65]
+                    text-base
+                    mb-3 mm:mb-4 l:mb-4"
         >
           <strong>
             Let's put your brand in front of the right businesses.
@@ -45,9 +49,9 @@ const HeroSection = ({ productOptions }) => {
         </p>
 
         <p
-          className="text-gray-700 leading-relaxed
-                    text-sm mm:text-base ll:text-lg
-                    mb-6 mm:mb-7 l:mb-8"
+          className="font-montserrat text-[#404040] leading-[1.65]
+                    text-base
+                    mb-6 mm:mb-7 l:mb-8 max-w-[580px] mx-auto l:mx-0"
         >
           With Headsup B2B's <strong>targeted advertising,</strong> get connected to a focused,
           <strong> pan-India </strong>audience of{" "}
@@ -56,7 +60,7 @@ const HeroSection = ({ productOptions }) => {
         </p>
         <div className="flex flex-col ms:flex-row flex-wrap gap-3 ms:gap-4 justify-center l:justify-start">
           <button
-            className="w-full ms:w-auto bg-headupb2b text-white py-3 px-6 rounded-full text-base l:text-lg font-medium hover:bg-white hover:text-black hover:border border-headupb2b transition"
+            className="w-full ms:w-auto bg-headupb2b text-white py-3 px-6 rounded-2xl text-base l:text-lg font-medium hover:bg-white hover:text-black hover:border border-headupb2b transition"
             onClick={() => setIsModalOpen(true)}
           >
             Show Interest
@@ -66,7 +70,7 @@ const HeroSection = ({ productOptions }) => {
             href="mailto:tanshi@headsupcorporation.com,raviranjan@headsupb2b.com"
             className="w-full ms:w-auto"
           >
-            <button className="w-full ms:w-auto border border-headupb2b text-headupb2b py-3 px-6 rounded-full text-base l:text-lg font-medium hover:text-black transition">
+            <button className="w-full ms:w-auto border border-headupb2b text-headupb2b py-3 px-6 rounded-2xl text-base l:text-lg font-medium hover:text-black transition">
               Talk to our Expert
             </button>
           </a>

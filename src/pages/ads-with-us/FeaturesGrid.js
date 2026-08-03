@@ -68,7 +68,8 @@ const FeaturesGrid = () => {
   };
 
   return (
-    <section className="py-12 md:py-14 lg:py-16 ll:py-20 mt-10 -mx-12 md:-mx-10">
+    // <section className="py-8 md:py-10 lg:py-12 ll:py-14 mt-8 -mx-12 md:-mx-10">
+     <section className="py-4 md:py-6 lg:py-8 ll:py-10 mt-2 -mx-12 md:-mx-10">
       <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8">
       <h2 className="text-2xl md:text-3xl lg:text-3xl ll:text-4xl font-bold text-center mb-8 md:mb-10 lg:mb-12 ll:mb-16" >Why Choose Headsup B2B?</h2>
 

@@ -72,6 +72,11 @@ export default function SolarHubStyles() {
         position: relative; border-radius: 6px;
         overflow: hidden;
       }
+      @media (min-width: 1024px) {
+        .services-page .hero {
+          padding-top: 88px;
+        }
+      }
       .services-page .hero-bg {
         position: absolute;
         inset: 0;
@@ -287,7 +292,6 @@ export default function SolarHubStyles() {
         letter-spacing: 0.3px;
       }
       .services-page .btn-glow:hover {
-        background: #00bcd9;
         box-shadow: 0 8px 28px rgba(0, 212, 245, 0.45), 0 4px 12px rgba(0, 0, 0, 0.08);
         transform: translateY(-2px);
       }
@@ -300,7 +304,6 @@ export default function SolarHubStyles() {
         letter-spacing: 0.3px;
       }
       .services-page .btn-outline:hover {
-        background: #00bcd9;
         box-shadow: 0 8px 28px rgba(0, 212, 245, 0.45), 0 4px 12px rgba(0, 0, 0, 0.08);
         transform: translateY(-2px);
       }
@@ -627,7 +630,7 @@ export default function SolarHubStyles() {
         line-height: 1.3;
       }
       .services-page .kit-desc {
-        font-family: "DM Sans", sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 13px;
         color: #666;
         line-height: 1.5;
@@ -638,7 +641,7 @@ export default function SolarHubStyles() {
         align-self: flex-start;
         display: inline-flex;
         align-items: center;
-        font-family: "DM Sans", sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 14px;
         font-weight: 700;
         color: #000000;
@@ -852,7 +855,7 @@ export default function SolarHubStyles() {
         line-height: 1.15;
       }
       .services-page .faq-sub {
-        font-family: "DM Sans", sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 16px;
         color: #666;
         margin: 0;
@@ -940,7 +943,7 @@ export default function SolarHubStyles() {
       .services-page .tp-cert-chip {
         display: inline-flex;
         align-items: center;
-        font-family: "DM Sans", sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 12px;
         font-weight: 700;
         color: #4A3772;
@@ -992,7 +995,7 @@ export default function SolarHubStyles() {
         line-height: 1.15;
       }
       .services-page .tp-sub {
-        font-family: "DM Sans", sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 16px;
         color: #666;
         margin: 0 0 32px;
@@ -1010,7 +1013,7 @@ export default function SolarHubStyles() {
 
       .services-page .kc-section {
         background: #f4f2f9;
-        padding-top: 64px;
+        padding-top: 48px;
         padding-bottom: 64px;
       }
       .services-page .kc-wrap {
@@ -1068,8 +1071,9 @@ export default function SolarHubStyles() {
       .services-page .kc-more {
         display: inline-flex;
         align-items: center;
+        gap: 8px;
         font-family: "Montserrat", sans-serif;
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 700;
         color: #ffffff;
         text-decoration: none;
@@ -1077,7 +1081,7 @@ export default function SolarHubStyles() {
         background: #4A3772;
         border: 1.5px solid #4A3772;
         border-radius: 999px;
-        padding: 12px 26px;
+        padding: 12px 40px;
         transition: background 0.2s ease, transform 0.2s ease;
       }
       .services-page .kc-more:hover {
@@ -1159,7 +1163,7 @@ export default function SolarHubStyles() {
         gap: 10px;
       }
       .services-page .kc-date {
-        font-family: "DM Sans", sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 12px;
         font-weight: 500;
         color: #6b6b6b;
@@ -1193,7 +1197,7 @@ export default function SolarHubStyles() {
         align-self: flex-start;
         display: inline-flex;
         align-items: center;
-        font-family: "DM Sans", sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 14px;
         font-weight: 700;
         color: #000000;
@@ -1283,7 +1287,7 @@ export default function SolarHubStyles() {
         color: #111;
       }
       .services-page .cta-card p {
-        font-family: "DM Sans", sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 16px;
         line-height: 1.55;
         margin: 0 0 12px;

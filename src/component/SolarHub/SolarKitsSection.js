@@ -38,7 +38,7 @@ export default function SolarKitsSection() {
   }, [kitPaused, maxKitIndex]);
 
   return (
-    <section className="section section-tight-top">
+    <section className="section section-tight-top" style={{ paddingBottom: 60 }}>
       <div className="kits-container">
         <div className="sec-header">
           <h2>Solar Kits</h2>
