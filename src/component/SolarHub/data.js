@@ -1,7 +1,7 @@
 export const HERO_STATS = [
   { value: "11,000+ MT", label: "Solar structures\nsupplied" },
   { value: "40+ MW", label: "Mandated across\nRajasthan & Jharkhand" },
-  { value: "10+ Tier-1", label: "Brands" },
+  { value: "10+ ", label: "Tier-1 \nBrands" },
   { value: "Up to 61 Days*", label: "Collateral-free credit\n*T&C apply" },
 ];
 

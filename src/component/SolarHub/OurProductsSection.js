@@ -9,6 +9,25 @@ const SUBCATEGORY_ORDER = [
   "Solar Lighting Solutions",
 ];
 
+const PRODUCT_ORDER_BY_SUBCATEGORY = {
+  "solar panels & cells": ["TOPCon Solar Panel", "Bifacial Solar Panel"],
+};
+
+function sortProducts(subCategoryName, products = []) {
+  const priorityList =
+    PRODUCT_ORDER_BY_SUBCATEGORY[(subCategoryName || "").toLowerCase()];
+  if (!priorityList) return products;
+  const priorityIndex = (name) => {
+    const idx = priorityList.findIndex(
+      (n) => n.toLowerCase() === (name || "").toLowerCase(),
+    );
+    return idx === -1 ? priorityList.length : idx;
+  };
+  return [...products].sort(
+    (a, b) => priorityIndex(a?.name) - priorityIndex(b?.name),
+  );
+}
+
 function sortSubCategories(subCategories = []) {
   const priorityIndex = (name) => {
     const idx = SUBCATEGORY_ORDER.findIndex(
@@ -16,9 +35,12 @@ function sortSubCategories(subCategories = []) {
     );
     return idx === -1 ? SUBCATEGORY_ORDER.length : idx;
   };
-  return [...subCategories].sort(
-    (a, b) => priorityIndex(a?.name) - priorityIndex(b?.name)
-  );
+  return [...subCategories]
+    .sort((a, b) => priorityIndex(a?.name) - priorityIndex(b?.name))
+    .map((subCat) => ({
+      ...subCat,
+      products: sortProducts(subCat?.name, subCat?.products),
+    }));
 }
 
 export default function OurProductsSection({ categoryData, categoryProductOptions = [] }) {

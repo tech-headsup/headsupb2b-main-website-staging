@@ -133,7 +133,7 @@ export default function KitDetailPage({ kit }) {
                 </ul>
               )}
               <p className="kit-min-order">
-                Add 25+ kits order as minimum quantity required to order
+                Available for bulk orders of 25+ kits
               </p>
             </div>
           </div>

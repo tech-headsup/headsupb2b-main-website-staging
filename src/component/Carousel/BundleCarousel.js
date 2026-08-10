@@ -54,7 +54,7 @@ const BundleContent = ({ bundleData, bundleIndex, matchHeight }) => {
       <div className={`w-full ${matchHeight ? "flex-1 flex flex-col" : ""}`}>
         {/* Main Content Grid - Modified */}
         <div
-          className={`grid grid-cols-1 md:grid-cols-7 gap-4 sm:gap-6 md:gap-8 p-3 sm:p-4 md:p-8 ${matchHeight ? "md:flex-1 md:content-start" : ""}`}
+          className={`grid grid-cols-1 md:grid-cols-7 gap-4 sm:gap-6 md:gap-8 p-3 sm:p-4 md:px-8 md:pt-14 ${matchHeight ? "md:pb-3 md:flex-1 md:content-start" : "md:pb-8"}`}
         >
           {/* Left Column - Takes 2/5 width on md+ */}
           <div className="md:col-span-3 flex flex-col items-center justify-start">
@@ -97,11 +97,6 @@ const BundleContent = ({ bundleData, bundleIndex, matchHeight }) => {
               </div>
 
               <div>
-                {extras?.paragraph && (
-                  <p className="text-sm md:text-base text-black mb-4 leading-relaxed">
-                    {extras.paragraph}
-                  </p>
-                )}
                 <h3 className="text-lg font-bold text-gray-700 mb-3">
                   {extras ? "What We Supply" : "Key Products Included"}
                 </h3>
@@ -138,11 +133,6 @@ const BundleContent = ({ bundleData, bundleIndex, matchHeight }) => {
               ))}
             </div>
           </div>
-          {extras?.paragraph && (
-            <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-              {extras.paragraph}
-            </p>
-          )}
         </div>
 
         {/* CTA Section - Unchanged */}
