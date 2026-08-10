@@ -5,36 +5,6 @@ export const HERO_STATS = [
   { value: "Up to 61 Days*", label: "Collateral-free credit\n*T&C apply" },
 ];
 
-// export const SOLAR_FAQ = [
-//   {
-//     question: "What do you supply?",
-//     answer:
-//       "Panels, inverters, batteries, controllers, lighting, pumps, BOS — single products to complete kits and project bundles.",
-//   },
-//   {
-//     question: "What's in a solar kit?",
-//     answer:
-//       "Modules, inverter, DCDB/ACDB, cables, connectors, earthing set, lightning arrester and mounting structure. Ready to install.",
-//   },
-//   {
-//     question: "Are products certified?",
-//     answer:
-//       "Yes — matched to IEC, BIS and MNRE standards. Documentation provided on request.",
-//   },
-//   {
-//     question: "Lead time and delivery?",
-//     answer: "{{Typical range}}. Pan-India delivery, scheduled to your site.",
-//   },
-//   {
-//     question: "Do you offer credit?",
-//     answer: "Yes — collateral-free, up to 61 days for qualifying projects.*",
-//   },
-//   {
-//     question: "Minimum order?",
-//     answer: "{{State policy}}.",
-//   },
-// ];
-
 export const SOLAR_FAQ = [
   {
     question:
