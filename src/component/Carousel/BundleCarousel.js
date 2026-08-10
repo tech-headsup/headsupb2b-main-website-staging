@@ -10,12 +10,52 @@ import "swiper/css/navigation";
 import CallSVG from "@/assets/images/svg/CallSVG";
 import ChatSVG from "@/assets/images/svg/ChatSVG";
 
-const BundleContent = ({ bundleData, bundleIndex }) => {
+const BUNDLE_EXTRAS = {
+  "Solar-Powered EV Charging Hub": {
+    tagline:
+      "Turn idle land into a revenue-generating, green-energy charging destination.",
+    paragraph:
+      "Empty plots along highways and commercial zones are untapped assets — pair them with rooftop solar and EV chargers for a self-sustaining energy hub.",
+  },
+  "Warehouse Rooftop Solar + Captive Power": {
+    tagline: "Your warehouse roof is your largest idle asset — put it to work.",
+    paragraph:
+      "Warehouse loads peak during daylight — exactly when rooftop solar generates the most. Convert unused roof space into a captive power source that offsets bills.",
+  },
+  "Solar Street & Urban Lighting": {
+    tagline:
+      "Light every road, crossing, and public space — without drawing a single unit from the grid.",
+    paragraph:
+      "Grid-dependent street lighting means recurring bills, transformer load, and outage risk. Solar lighting eliminates all three at near-zero operating cost.",
+  },
+  "Solar-Powered Water Management": {
+    tagline:
+      "Pump water, power farms, and manage supply — all from the sun that's already overhead.",
+    paragraph:
+      "Agriculture and rural water supply run on diesel or erratic grid power. Solar replaces that with a system that works hardest when water is needed most.",
+  },
+};
+
+const styleWhyBundleIt = (html) =>
+  html?.replace(
+    /<(strong|em)>Why Bundle It<\/\1>/gi,
+    '<strong style="font-size:1.125rem;line-height:1.75rem;font-weight:700">Why Bundle It</strong>',
+  );
+
+const BundleContent = ({ bundleData, bundleIndex, matchHeight }) => {
+  const extras = BUNDLE_EXTRAS[bundleData?.name];
+  const productsHTML = extras
+    ? styleWhyBundleIt(bundleData?.keyProductsIncluded)
+    : bundleData?.keyProductsIncluded;
   return (
-    <div className="flex flex-col items-center w-full mt-5 border border-[#4A3772] rounded-2xl">
-      <div className="w-full">
+    <div
+      className={`flex flex-col items-center w-full mt-5 border border-[#4A3772] rounded-2xl ${matchHeight ? "h-full overflow-hidden" : ""}`}
+    >
+      <div className={`w-full ${matchHeight ? "flex-1 flex flex-col" : ""}`}>
         {/* Main Content Grid - Modified */}
-        <div className="grid grid-cols-1 md:grid-cols-7 gap-4 sm:gap-6 md:gap-8 p-3 sm:p-4 md:p-8">
+        <div
+          className={`grid grid-cols-1 md:grid-cols-7 gap-4 sm:gap-6 md:gap-8 p-3 sm:p-4 md:p-8 ${matchHeight ? "md:flex-1 md:content-start" : ""}`}
+        >
           {/* Left Column - Takes 2/5 width on md+ */}
           <div className="md:col-span-3 flex flex-col items-center justify-start">
             <div className="flex items-center gap-2 sm:gap-3 mb-4 w-full">
@@ -26,6 +66,12 @@ const BundleContent = ({ bundleData, bundleIndex }) => {
                 {bundleData?.name}
               </h2>
             </div>
+
+            {extras?.tagline && (
+              <p className="hidden md:block w-full text-base md:text-lg font-semibold text-[#4A3772] mb-4 leading-snug">
+                {extras.tagline}
+              </p>
+            )}
 
             <div className="bundle-image-container flex items-center justify-center w-full h-full mb-4 md:mb-0">
               <img
@@ -51,13 +97,18 @@ const BundleContent = ({ bundleData, bundleIndex }) => {
               </div>
 
               <div>
+                {extras?.paragraph && (
+                  <p className="text-sm md:text-base text-black mb-4 leading-relaxed">
+                    {extras.paragraph}
+                  </p>
+                )}
                 <h3 className="text-lg font-bold text-gray-700 mb-3">
-                  Key Products Included
+                  {extras ? "What We Supply" : "Key Products Included"}
                 </h3>
                 <div
                   className="text-base text-gray-600 prose prose-sm max-w-none"
                   dangerouslySetInnerHTML={{
-                    __html: bundleData?.keyProductsIncluded,
+                    __html: productsHTML,
                   }}
                 />
               </div>
@@ -67,6 +118,11 @@ const BundleContent = ({ bundleData, bundleIndex }) => {
 
         {/* Mobile Content - Unchanged */}
         <div className="md:hidden px-3 sm:px-4 py-4">
+          {extras?.tagline && (
+            <p className="text-sm font-semibold text-[#4A3772] mb-3 leading-snug">
+              {extras.tagline}
+            </p>
+          )}
           <div className="mb-4">
             <h3 className="text-sm font-semibold text-gray-700 mb-2">
               Ideal For:
@@ -82,6 +138,11 @@ const BundleContent = ({ bundleData, bundleIndex }) => {
               ))}
             </div>
           </div>
+          {extras?.paragraph && (
+            <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+              {extras.paragraph}
+            </p>
+          )}
         </div>
 
         {/* CTA Section - Unchanged */}
@@ -118,14 +179,18 @@ const BundleContent = ({ bundleData, bundleIndex }) => {
   );
 };
 
-export default function BundleCarousel({ bundles, equalSlides = false }) {
+export default function BundleCarousel({
+  bundles,
+  equalSlides = false,
+  matchHeight = false,
+}) {
   return (
     <>
       <Swiper
         slidesPerView={1}
         spaceBetween={30}
         centeredSlides={true}
-        autoHeight={true}
+        autoHeight={!matchHeight}
         pagination={{
           clickable: true,
         }}
@@ -136,7 +201,7 @@ export default function BundleCarousel({ bundles, equalSlides = false }) {
         }}
         loop={true}
         modules={[Pagination, Autoplay]}
-        className={`mySwiper pb-12 md:pb-16 ${equalSlides ? "mySwiper--equal" : ""}`}
+        className={`mySwiper pb-12 md:pb-16 ${equalSlides ? "mySwiper--equal" : ""} ${matchHeight ? "mySwiper--matchHeight" : ""}`}
         breakpoints={{
           768: {
             slidesPerView: 1,
@@ -155,6 +220,7 @@ export default function BundleCarousel({ bundles, equalSlides = false }) {
               key={bundleData?.name}
               bundleData={bundleData}
               bundleIndex={bundleIndex}
+              matchHeight={matchHeight}
             />
           </SwiperSlide>
         ))}
@@ -183,6 +249,21 @@ export default function BundleCarousel({ bundles, equalSlides = false }) {
             text-align: left !important;
             padding-left: 42.33% !important;
           }
+        }
+
+        /* Equal-height variant: all slides match tallest slide */
+        .mySwiper--matchHeight .swiper-wrapper {
+          align-items: stretch;
+        }
+        .mySwiper--matchHeight .swiper-slide {
+          height: auto !important;
+          display: flex;
+        }
+        .mySwiper--matchHeight .swiper-slide > * {
+          width: 100%;
+        }
+        .mySwiper--matchHeight .swiper-pagination {
+          margin-top: 2rem !important;
         }
 
         /* Solar Hub variant - dots centered on all breakpoints */

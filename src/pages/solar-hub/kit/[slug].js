@@ -132,6 +132,9 @@ export default function KitDetailPage({ kit }) {
                   ))}
                 </ul>
               )}
+              <p className="kit-min-order">
+                Add 25+ kits order as minimum quantity required to order
+              </p>
             </div>
           </div>
 
@@ -257,6 +260,7 @@ export default function KitDetailPage({ kit }) {
             setShow={setShowQuoteModal}
             endPoint={sendEmailToBuy}
             categoryProductOptions={[]}
+            gstRequired
           />
         </CommonModal>
       )}
@@ -406,9 +410,13 @@ function KitDetailStyles() {
         height: 36px;
         width: auto;
         object-fit: contain;
+        display: block;
       }
       .kit-brand-logos img[alt="ALMM"] {
-        height: 20px;
+        height: 18px;
+      }
+      .kit-brand-logos img[alt="Polycab"] {
+        height: 44px;
       }
       .kit-lead {
         font-family: "Montserrat", sans-serif;
@@ -521,6 +529,18 @@ function KitDetailStyles() {
         position: absolute;
         left: -16px;
         color: #b9b9b9;
+      }
+      .kit-min-order {
+        display: inline-block;
+        margin: 12px 0 0;
+        padding: 8px 14px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        color: #4A3772;
+        background: #F3EEFB;
+        border-left: 3px solid #4A3772;
+        border-radius: 6px;
       }
 
       .kit-tabs {

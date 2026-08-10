@@ -409,7 +409,11 @@ export default function CategoryPage({
       </div>
       <section className="secion_V_padding pt-0 bg-white">
         <div className="max-w-[1280px] mx-auto w-full px-6 md:px-12 lg:px-8">
-          <BundleCarousel bundles={categoryData?.bundles?.bundles} equalSlides={true} />
+          <BundleCarousel
+            bundles={categoryData?.bundles?.bundles}
+            equalSlides={true}
+            matchHeight={categoryData?.slug === "renewable-energy-solutions"}
+          />
         </div>
       </section>
 

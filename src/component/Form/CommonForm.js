@@ -13,22 +13,27 @@ import { addWebsiteLead } from "@/Contants/APIEndpoint";
 import FormField from "./FormField";
 
 // Validation Schema
-const validationSchema = Yup.object().shape({
-  name: Yup.string().required("Name is required"),
-  contactNo: Yup.string()
-    .required("Contact number is required")
-    .matches(/^[0-9]{10}$/, "Invalid contact number"),
-  email: Yup.string().email("Invalid email"),
-  category: Yup.object().required("Please select a category"),
-  product: Yup.array().of(Yup.object()).required("Please select a product"),
-  gstNumber: Yup.string().when("hasGst", {
-    is: true,
-    then: Yup.string().matches(/^\d{15}$/, "Invalid GST number"),
-  }),
-  pincode: Yup.string()
-    .required("Pincode is required")
-    .matches(/^[1-9][0-9]{5}$/, "Invalid pincode"),
-});
+const buildValidationSchema = (gstRequired) =>
+  Yup.object().shape({
+    name: Yup.string().required("Name is required"),
+    contactNo: Yup.string()
+      .required("Contact number is required")
+      .matches(/^[0-9]{10}$/, "Invalid contact number"),
+    email: Yup.string().email("Invalid email"),
+    category: Yup.object().required("Please select a category"),
+    product: Yup.array().of(Yup.object()).required("Please select a product"),
+    gstNumber: gstRequired
+      ? Yup.string()
+          .required("GST number is required")
+          .matches(/^\d{15}$/, "Invalid GST number")
+      : Yup.string().when("hasGst", {
+          is: true,
+          then: Yup.string().matches(/^\d{15}$/, "Invalid GST number"),
+        }),
+    pincode: Yup.string()
+      .required("Pincode is required")
+      .matches(/^[1-9][0-9]{5}$/, "Invalid pincode"),
+  });
 
 // Select Styles
 const selectStyles = {
@@ -118,6 +123,7 @@ export default function CommonForm({
   categorySlug,
   productSlug,
   categoryProductOptions,
+  gstRequired = false,
 }) {
   const router = useRouter();
   const selectRef = useRef(null);
@@ -136,7 +142,7 @@ export default function CommonForm({
     setValue,
     watch,
   } = useForm({
-    resolver: yupResolver(validationSchema),
+    resolver: yupResolver(useMemo(() => buildValidationSchema(gstRequired), [gstRequired])),
     defaultValues: {
       name: "",
       contactNo: getDemoPhone(),
@@ -380,35 +386,11 @@ export default function CommonForm({
           </FormField>
         </div>
 
-        {/* GST Question */}
-        <div className="w-full pt-1">
-          <label className="text-sm font-semibold block mb-2">
-            Do you have a GST number?
-          </label>
-          <div className="flex gap-2 sm:gap-3">
-            {[true, false].map((value) => (
-              <button
-                key={value}
-                type="button"
-                className={`flex-1 px-2.5 py-3 text-sm font-medium rounded-xl transition-colors ${
-                  hasGst === value
-                    ? "bg-[#4A3772] text-white"
-                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                }`}
-                onClick={() => setHasGst(value)}
-              >
-                {value ? "Yes" : "No"}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* GST Number Input */}
-        {hasGst === true && (
+        {gstRequired ? (
           <FormField
             label="GST Number"
+            required
             error={errors.gstNumber?.message}
-            animated
           >
             <Controller
               name="gstNumber"
@@ -419,23 +401,72 @@ export default function CommonForm({
                   type="text"
                   placeholder="Enter 15-digit GST number"
                   inputMode="numeric"
-                  className="w-full px-2.5 py-1 text-xs sm:text-sm border border-gray-300 rounded focus:border-[#4A3772] focus:ring-1 focus:ring-[#4A3772]"
+                  maxLength={15}
+                  className="w-full px-2.5 py-1 border-2 border-gray-300 mt-2 rounded-lg md:rounded-xl bg-gray-50 hover:bg-gray-100 flex items-center gap-1.5 sm:gap-2 cursor-pointer transition-colors outline-none placeholder:text-sm"
                 />
               )}
             />
           </FormField>
-        )}
+        ) : (
+          <>
+            {/* GST Question */}
+            <div className="w-full pt-1">
+              <label className="text-sm font-semibold block mb-2">
+                Do you have a GST number?
+              </label>
+              <div className="flex gap-2 sm:gap-3">
+                {[true, false].map((value) => (
+                  <button
+                    key={value}
+                    type="button"
+                    className={`flex-1 px-2.5 py-3 text-sm font-medium rounded-xl transition-colors ${
+                      hasGst === value
+                        ? "bg-[#4A3772] text-white"
+                        : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                    }`}
+                    onClick={() => setHasGst(value)}
+                  >
+                    {value ? "Yes" : "No"}
+                  </button>
+                ))}
+              </div>
+            </div>
 
-        {/* GST Status Message */}
-        {hasGst === false && (
-          <div className="w-full p-2.5 sm:p-3 bg-blue-50 rounded animate-fadeIn">
-            <label className="text-xs sm:text-sm font-semibold block mb-1">
-              GST Status
-            </label>
-            <p className="text-gray-700 text-xs sm:text-sm">
-              You have indicated that you don't have a GST number.
-            </p>
-          </div>
+            {/* GST Number Input */}
+            {hasGst === true && (
+              <FormField
+                label="GST Number"
+                error={errors.gstNumber?.message}
+                animated
+              >
+                <Controller
+                  name="gstNumber"
+                  control={control}
+                  render={({ field }) => (
+                    <input
+                      {...field}
+                      type="text"
+                      placeholder="Enter 15-digit GST number"
+                      inputMode="numeric"
+                      className="w-full px-2.5 py-1 text-xs sm:text-sm border border-gray-300 rounded focus:border-[#4A3772] focus:ring-1 focus:ring-[#4A3772]"
+                    />
+                  )}
+                />
+              </FormField>
+            )}
+
+            {/* GST Status Message */}
+            {hasGst === false && (
+              <div className="w-full p-2.5 sm:p-3 bg-blue-50 rounded animate-fadeIn">
+                <label className="text-xs sm:text-sm font-semibold block mb-1">
+                  GST Status
+                </label>
+                <p className="text-gray-700 text-xs sm:text-sm">
+                  You have indicated that you don't have a GST number.
+                </p>
+              </div>
+            )}
+          </>
         )}
 
         {/* Pincode Field */}

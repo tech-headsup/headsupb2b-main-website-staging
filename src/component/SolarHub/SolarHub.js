@@ -92,6 +92,7 @@ export default function SolarHub({
             setShow={setShowQuoteModal}
             endPoint={sendEmailToBuy}
             categoryProductOptions={categoryProductOptions}
+            gstRequired
           />
         </CommonModal>
       )}

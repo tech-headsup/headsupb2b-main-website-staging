@@ -18,7 +18,7 @@ export default function SupportingBuildSection({ bundles }) {
       </div>
       <section className="section section-no-top pt-0" style={{ paddingBottom: 16 }}>
         <div className="supporting-container">
-          <BundleCarousel bundles={bundles} equalSlides />
+          <BundleCarousel bundles={bundles} equalSlides matchHeight />
         </div>
       </section>
     </>

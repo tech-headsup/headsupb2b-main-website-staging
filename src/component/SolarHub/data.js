@@ -5,33 +5,107 @@ export const HERO_STATS = [
   { value: "Up to 61 Days*", label: "Collateral-free credit\n*T&C apply" },
 ];
 
+// export const SOLAR_FAQ = [
+//   {
+//     question: "What do you supply?",
+//     answer:
+//       "Panels, inverters, batteries, controllers, lighting, pumps, BOS — single products to complete kits and project bundles.",
+//   },
+//   {
+//     question: "What's in a solar kit?",
+//     answer:
+//       "Modules, inverter, DCDB/ACDB, cables, connectors, earthing set, lightning arrester and mounting structure. Ready to install.",
+//   },
+//   {
+//     question: "Are products certified?",
+//     answer:
+//       "Yes — matched to IEC, BIS and MNRE standards. Documentation provided on request.",
+//   },
+//   {
+//     question: "Lead time and delivery?",
+//     answer: "{{Typical range}}. Pan-India delivery, scheduled to your site.",
+//   },
+//   {
+//     question: "Do you offer credit?",
+//     answer: "Yes — collateral-free, up to 61 days for qualifying projects.*",
+//   },
+//   {
+//     question: "Minimum order?",
+//     answer: "{{State policy}}.",
+//   },
+// ];
+
 export const SOLAR_FAQ = [
   {
-    question: "What do you supply?",
+    question:
+      "What is the difference between N-Type TOPCon and Mono PERC solar panels?",
     answer:
-      "Panels, inverters, batteries, controllers, lighting, pumps, BOS — single products to complete kits and project bundles.",
+      "TOPCon uses newer N-Type silicon wafers, delivering higher efficiency (22%+), slower degradation, and better heat performance. Mono PERC uses older P-Type silicon — reliable and widely available but slightly lower on all three metrics. Choose TOPCon for long-term output; Mono PERC for budget flexibility.",
   },
   {
-    question: "What's in a solar kit?",
+    question:
+      "How do bifacial solar panels generate extra power, and where do they work best?",
     answer:
-      "Modules, inverter, DCDB/ACDB, cables, connectors, earthing set, lightning arrester and mounting structure. Ready to install.",
+      "Bifacial panels produce electricity from both sides — the rear captures reflected sunlight. Real-world rear-side gain in India is 8–15%, depending on mounting height and ground reflectivity. Best suited for ground-mount and carport installations; not effective on flush rooftop mounts where the rear gets no light.",
   },
   {
-    question: "Are products certified?",
+    question:
+      "What does ALMM approval mean, and why does it matter for my project?",
     answer:
-      "Yes — matched to IEC, BIS and MNRE standards. Documentation provided on request.",
+      "ALMM (Approved List of Models and Manufacturers) is an MNRE-maintained list. Solar panels used in government-funded or subsidised projects must be ALMM-listed. Even for private projects, it serves as a quality benchmark — confirming the module has passed domestic testing and meets Indian performance standards.",
   },
   {
-    question: "Lead time and delivery?",
-    answer: "{{Typical range}}. Pan-India delivery, scheduled to your site.",
+    question:
+      "How do I decide between a string inverter, a central inverter, and a hybrid inverter?",
+    answer:
+      "String inverters suit small-to-mid rooftop systems. Central inverters handle MW-scale utility projects. Hybrid inverters manage both solar conversion and battery charging in one unit — ideal for systems with energy storage or backup power needs. Your system size and storage requirement determine the right fit.",
   },
   {
-    question: "Do you offer credit?",
-    answer: "Yes — collateral-free, up to 61 days for qualifying projects.*",
+    question:
+      "What is a BMS in a battery, and what protections should I look for?",
+    answer:
+      "BMS (Battery Management System) is the electronic controller inside every lithium battery. It monitors cell health and protects against overcharge, over-discharge, over-current, short circuit, and over-temperature. Without a BMS, the battery is a safety risk. All batteries on our page include full BMS protection.",
   },
   {
-    question: "Minimum order?",
-    answer: "{{State policy}}.",
+    question:
+      "Can solar panels withstand heavy rain, hail, and extreme Indian summers?",
+    answer:
+      "Yes. Panels certified to IEC 61215 and IEC 61730 are tested against hail impact, high winds, humidity, and thermal cycling. Heat reduces output by roughly 0.3–0.5% per degree above 25°C, but this is factored into system design. ALMM-listed panels are built for 25+ years in Indian conditions.",
+  },
+  {
+    question:
+      "What is net metering, and do I need it for a rooftop solar installation?",
+    answer:
+      "Net metering lets you export excess solar electricity to the grid and receive a bill credit. It is available for grid-connected rooftop systems under state-specific policies and is essential for maximising financial returns. Off-grid and hybrid systems with battery storage do not require net metering.",
+  },
+  {
+    question:
+      "Why do some bundles include Industrial Safety Solutions — is safety gear really part of a solar procurement?",
+    answer:
+      "Yes. Solar installations involve working at height, heavy modules, and live DC wiring. MNRE guidelines require PPE — helmets, gloves, harnesses, safety jackets — at every site. Including safety gear in the bundle ensures the crew is equipped from day one without a separate procurement cycle.",
+  },
+  {
+    question: "How much rooftop area do I need to install a solar system?",
+    answer:
+      "Roughly 10 square metres (100 sq. ft.) of shadow-free rooftop area per 1 kW of capacity using standard monocrystalline panels. Higher-efficiency TOPCon panels reduce the space needed by 10–15%. Share your roof area and electricity consumption through the enquiry form for a sizing recommendation.",
+  },
+  {
+    question:
+      "What is the typical lifespan of a solar panel, and how does performance degrade over time?",
+    answer:
+      "Quality panels last 25–30 years. Manufacturers guarantee at least 80% output after 25 years. TOPCon panels degrade slower (~0.4%/year) than P-Type panels (~0.5–0.7%/year). Regular cleaning and avoiding physical damage are the two main factors that keep real-world performance close to the warranty curve.",
+  },
+  {
+    question:
+      "When should I choose an LFP battery over a standard Lithium-Ion battery for my project?",
+    answer:
+      "Choose LFP for projects needing long cycle life and daily deep discharge — warehouses, EV charging hubs, telecom towers. LFP delivers 6,000+ cycles versus 2,000–3,000 for standard Li-ion. Choose Li-ion where space is tight and weight matters. For solar storage with daily cycling, LFP pays for itself over time.",
+  },
+  {
+    question:
+      "What is an APFC panel, and why is it included in warehouse solar bundles?",
+    answer:
+      "APFC (Automatic Power Factor Correction) panels maintain healthy power factor by switching capacitor banks automatically. DISCOMs penalise commercial consumers if power factor drops below 0.9. When a warehouse adds solar to its existing electrical setup, an APFC panel keeps the combined load compliant and avoids penalty charges.",
   },
 ];
 
