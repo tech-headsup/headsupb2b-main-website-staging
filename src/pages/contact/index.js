@@ -38,7 +38,7 @@ export default function index({ categoryProductOptions }) {
   };
 
   return (
-    <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8 pt-10 md:pt-8 lg:pt-10 ll:pt-16 pb-16 md:pb-10 lg:pb-12">
+    <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8 pt-10 md:pt-8 lg:pt-10 ll:pt-16 pb-10 md:pb-10 lg:pb-10">
       <NextSeo
         title="Contact Us | HeadsupB2B"
         description="Contact for Construction Sand, Aggregates, Bricks, Stone, Metal Beam Crash Barriers, Metals and Steels, TMT, Electronic Products and Price | Call Now 9097476155"

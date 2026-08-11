@@ -175,7 +175,7 @@ export default function index({ data, initialDataa, categoryProductOptions }) {
 
         <PanIndiaText />
 
-        <div className="faq-gap">
+        <div className="faq-gap" style={{ paddingBottom: "2.5rem" }}>
           <FAQs FAQData={FAQDataProps} />
         </div>
       </div>

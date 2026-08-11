@@ -167,7 +167,7 @@ export default function ServicesPage() {
         </section>
 
         {/* BUILT FOR */}
-        <section className="section section-tight-top">
+        <section className="section section-tight-top section-tight-bottom">
           <div className="container">
             <div className="sec-header">
               <h2>Built For</h2>
@@ -205,7 +205,7 @@ export default function ServicesPage() {
         </section>
 
         {/* SERVICES */}
-        <section className="section section-no-top" id="services">
+        <section className="section section-no-top section-tight-bottom" id="services">
           <div className="container">
             <div className="sec-header">
               <h2>On-Demand B2B Execution</h2>
@@ -307,7 +307,7 @@ export default function ServicesPage() {
         </section>
 
         {/* HOW IT WORKS */}
-        <section className="section section-no-top">
+        <section className="section section-no-top section-tight-bottom">
           <div className="container">
             <div className="how-wrap">
               <div className="sec-header">
@@ -356,7 +356,7 @@ export default function ServicesPage() {
         </section>
 
         {/* VENDOR FORM */}
-        <section className="section section-tight-top" id="vendor-form">
+        <section className="section section-tight-top section-tight-bottom" id="vendor-form">
           <div className="container">
             <div className="vendor-section">
               <div className="v-left">
@@ -1061,6 +1061,9 @@ export default function ServicesPage() {
         }
         .services-page .section-tight-top {
           padding-top: 20px;
+        }
+        .services-page .section-tight-bottom {
+          padding-bottom: 40px;
         }
         .services-page .sec-header {
           text-align: center;

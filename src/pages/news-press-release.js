@@ -180,7 +180,7 @@ export default function NewsPressRelease() {
   ];
 
   return (
-    <div className="bg-white w-full mx-auto max-w-[1280px] px-6 md:px-12 lg:px-8 py-24">
+    <div className="bg-white w-full mx-auto max-w-[1280px] px-6 md:px-12 lg:px-8 pt-24 pb-10">
       {/* PAGE HEADING */}
       <h1
         className="text-center font-bold text-[#111] mb-10 leading-tight (1.25) text-3xl ms:text-3xl mm:text-4xl ml:text-[40px] t:text-[48px] l:text-[56px]"
