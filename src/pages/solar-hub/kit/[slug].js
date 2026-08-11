@@ -11,7 +11,37 @@ import { sendEmailToBuy } from "@/Contants/APIEndpoint";
 const TABS = [
   { id: "specs", label: "Product Specifications" },
   { id: "details", label: "Product Details" },
-  { id: "how", label: "How It Works" },
+  { id: "how", label: "How To Order" },
+];
+
+const HOW_TO_ORDER_STEPS = [
+  {
+    step: "01",
+    title: "Tell us what you need",
+    desc: "Pick a kit, browse products, or upload your BOM.",
+  },
+  {
+    step: "02",
+    title: "Get a quote",
+    desc: "Expert-checked pricing, back to you fast.",
+  },
+  {
+    step: "03",
+    title: "Confirm",
+    desc: "Approve the quote and lock your material.",
+  },
+  {
+    step: "04",
+    title: "Delivered",
+    desc: "Pan-India delivery, scheduled to your site.",
+  },
+];
+
+const HOW_TO_ORDER_PILLS = [
+  "Verified suppliers",
+  "Competitive pricing",
+  "Credit up to 61 days*",
+  "Pan-India delivery",
 ];
 
 export default function KitDetailPage({ kit }) {
@@ -196,14 +226,25 @@ export default function KitDetailPage({ kit }) {
             )}
 
             {activeTab === "how" && (
-              <div className="kit-how-grid">
-                {(kit.howItWorksSteps || []).map((s) => (
-                  <div key={s.step} className="kit-how-card">
-                    <div className="kit-how-step">{s.step}</div>
-                    <h4 className="kit-how-title">{s.title}</h4>
-                    <p className="kit-how-desc">{s.desc}</p>
-                  </div>
-                ))}
+              <div>
+                <p className="kit-how-subtitle">From enquiry to delivery</p>
+                <div className="kit-how-grid kit-how-grid-4">
+                  {HOW_TO_ORDER_STEPS.map((s) => (
+                    <div key={s.step} className="kit-how-card">
+                      <div className="kit-how-step">{s.step}</div>
+                      <h4 className="kit-how-title">{s.title}</h4>
+                      <p className="kit-how-desc">{s.desc}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="kit-how-pills">
+                  {HOW_TO_ORDER_PILLS.map((label) => (
+                    <span key={label} className="kit-how-pill">
+                      <span className="kit-how-pill-dot" />
+                      {label}
+                    </span>
+                  ))}
+                </div>
               </div>
             )}
           </div>
@@ -686,8 +727,52 @@ function KitDetailStyles() {
         line-height: 1.55;
         margin: 0;
       }
+      .kit-how-grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .kit-how-subtitle {
+        font-family: "Montserrat", sans-serif;
+        font-size: 22px;
+        font-weight: 800;
+        color: #111;
+        letter-spacing: -0.3px;
+        margin: 0 0 20px;
+      }
+      .kit-how-pills {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 20px;
+        margin-top: 28px;
+      }
+      .kit-how-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #f4f1fa;
+        border: 1px solid #eeeaf7;
+        border-radius: 999px;
+        padding: 8px 16px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        color: #4a3175;
+      }
+      .kit-how-pill-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #14a3b8;
+      }
       @media (max-width: 900px) {
-        .kit-how-grid {
+        .kit-how-grid,
+        .kit-how-grid-4 {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 560px) {
+        .kit-how-grid,
+        .kit-how-grid-4 {
           grid-template-columns: 1fr;
         }
       }

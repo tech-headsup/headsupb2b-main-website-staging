@@ -626,7 +626,7 @@ export default function SolarHubStyles() {
         font-size: 16px;
         font-weight: 700;
         color: #111;
-        margin: 0;
+        margin: 0 0 16px;
         line-height: 1.3;
       }
       .services-page .kit-desc {

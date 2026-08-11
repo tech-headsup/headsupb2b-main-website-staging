@@ -4,7 +4,7 @@ export default function HowItWorksSection() {
       <div className="how-container">
         <div className="how-wrap">
           <div className="sec-header">
-            <h2>How It Works</h2>
+            <h2>How To Order</h2>
             <p>
               From enquiry to delivery
             </p>

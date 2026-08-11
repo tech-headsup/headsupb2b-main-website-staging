@@ -8,10 +8,12 @@ const WHY_ITEMS = [
   { title: "Get the Most Competitive Prices", icon: CompetitivePriceSvg },
   { title: "Verified Suppliers & OEM Network", icon: VerifiedSvg },
   { title: "BOQ and Requirement Mapped Delivery", icon: BOQSvg },
-  { title: "Up to 61 days* Collateral Free Credit", icon: CollateralSvg },
+  { title: "Up to 61 days* Collateral Free Credit", icon: CollateralSvg, note: "*T&C apply" },
 ];
 
-export default function WhyHeadsupB2B({ onContactUs, heading = "Why Headsup B2B?" }) {
+const CREDIT_TITLE = "Up to 61 days* Collateral Free Credit";
+
+export default function WhyHeadsupB2B({ onContactUs, heading = "Why Headsup B2B?", showCreditNote = false }) {
   return (
     <div className="bg-[#f4f4f4] py-12 sm:py-16 md:py-20">
       <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8">
@@ -42,6 +44,14 @@ export default function WhyHeadsupB2B({ onContactUs, heading = "Why Headsup B2B?
               style={{ fontFamily: "'Manrope', sans-serif" }}
             >
               {item.title}
+              {showCreditNote && item.title === CREDIT_TITLE && (
+                <span
+                  className="ml-2 text-[#111] text-sm sm:text-base md:text-[17px] font-bold"
+                  style={{ fontFamily: "'Manrope', sans-serif" }}
+                >
+                  {item.note}
+                </span>
+              )}
             </span>
           </div>
         ))}

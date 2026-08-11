@@ -42,7 +42,7 @@ export default function SolarKitsSection() {
       <div className="kits-container">
         <div className="sec-header">
           <h2>Solar Kits</h2>
-          <p>Ready-to-install Project kits</p>
+          <p>Ready-to-install Project Kits</p>
         </div>
         <div
           className="kits-carousel"
@@ -86,7 +86,6 @@ export default function SolarKitsSection() {
                     <div className="kit-body">
                       <div className="kit-power">{kit.power}</div>
                       <h4 className="kit-title">{kit.fullTitle || kit.title}</h4>
-                      <p className="kit-desc">{kit.desc}</p>
                       <span className="kit-view">View Kit</span>
                     </div>
                   </Link>

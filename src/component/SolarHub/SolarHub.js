@@ -52,7 +52,7 @@ export default function SolarHub({
         />
          <HowItWorksSection />
         <SupportingBuildSection bundles={solarCategoryData?.bundles?.bundles} />
-        <WhyHeadsupB2B onContactUs={() => setShowSellModal(true)} heading="Why Choose Us?" />
+        <WhyHeadsupB2B onContactUs={() => setShowSellModal(true)} heading="Why Choose Us?" showCreditNote />
         <TrustedPartnersSection />
         <KnowledgeCenterSection knowledgeArticles={knowledgeArticles} />
         <FaqSection />
