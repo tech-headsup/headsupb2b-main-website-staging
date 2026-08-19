@@ -2,21 +2,24 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import LogoDark from "../../public/logo-dark.webp";
 import CommonModal from "@/component/Modal/CommonModal";
 import SellWithUsForm from "@/component/Form/Sell/SellWithUsForm";
 import { sendEmailToSell } from "@/Contants/APIEndpoint";
 import NewsTicker from "@/component/home/NewsTicker";
+import LanguageToggle from "@/component/LanguageToggle/LanguageToggle";
+import { useDynamicTranslate } from "@/lib/useDynamicTranslate";
 
 const NAV_LINKS = [
-  { href: "/services", label: "Services" },
-  { href: "/solar-hub", label: "Solar Hub" },
-  { href: "/ads-with-us", label: "Advertise with us" },
-  { href: "/news-press-release", label: "Newsroom" },
-  { href: "/blog", label: "Blogs" },
-  { href: "/careers", label: "Career" },
-  { href: "/contact", label: "Contact us" },
-  // { href: "/research", label: "Research" },
+  { href: "/services", key: "nav.services" },
+  { href: "/solar-hub", key: "nav.solarHub" },
+  { href: "/ads-with-us", key: "nav.advertise" },
+  { href: "/news-press-release", key: "nav.newsroom" },
+  { href: "/blog", key: "nav.blogs" },
+  { href: "/careers", key: "nav.career" },
+  { href: "/contact", key: "nav.contactUs" },
+  // { href: "/research", key: "nav.research" },
 ];
 
 /**
@@ -35,6 +38,8 @@ export default function Navigation({
   categoryProductOptions = [],
   scrolled = false,
 }) {
+  const { t } = useTranslation();
+  const dt = useDynamicTranslate();
   const [menuOpen, setMenuOpen] = useState(false);
   const [catMobileOpen, setCatMobileOpen] = useState(false);
   const [mobileCatExpanded, setMobileCatExpanded] = useState(null);
@@ -93,7 +98,7 @@ export default function Navigation({
                 className="flex items-center gap-1 text-[12px] xl:text-[14px] font-medium text-[#222] hover:text-[#4A3772] transition-colors duration-200 bg-transparent border-none cursor-pointer p-0"
                 onClick={() => setCatOpen((v) => !v)}
               >
-                Categories
+                {t("nav.categories")}
                 <svg
                   width="13" height="13" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" strokeWidth="2.5"
@@ -145,7 +150,7 @@ export default function Navigation({
                             }}
                             onClick={() => setCatOpen(false)}
                           >
-                            {cat.name}
+                            {dt(cat.name)}
                           </Link>
                           {hasSubs && (
                             <svg
@@ -176,7 +181,7 @@ export default function Navigation({
                         className="text-[11px] font-bold uppercase tracking-widest mb-3 px-1"
                         style={{ color: "#9b8ec4", fontFamily: "'Montserrat', sans-serif" }}
                       >
-                        {activeCategory?.name}
+                        {dt(activeCategory?.name)}
                       </p>
                       {activeSubcategories.map((sub) => (
                         <Link
@@ -190,7 +195,7 @@ export default function Navigation({
                             className="w-1.5 h-1.5 rounded-full flex-shrink-0"
                             style={{ background: "#7C6FED" }}
                           />
-                          {sub.name}
+                          {dt(sub.name)}
                         </Link>
                       ))}
                     </div>
@@ -200,7 +205,7 @@ export default function Navigation({
             </li>
 
             {/* Other nav links */}
-            {NAV_LINKS.map(({ href, label }) => {
+            {NAV_LINKS.map(({ href, key }) => {
               const isSolarHub = href === "/solar-hub";
               return (
                 <li key={href}>
@@ -212,7 +217,7 @@ export default function Navigation({
                         : "text-[12px] xl:text-[14px] font-medium no-underline text-[#222] hover:text-[#4A3772] transition-colors duration-200 whitespace-nowrap"
                     }
                   >
-                    {label}
+                    {t(key)}
                   </Link>
                 </li>
               );
@@ -220,7 +225,8 @@ export default function Navigation({
           </ul>
 
           {/* Desktop CTAs (lg and up) */}
-          <div className="hidden lg:flex items-center gap-5 flex-shrink-0">
+          <div className="hidden lg:flex items-center gap-3 xl:gap-4 flex-shrink-0">
+            <LanguageToggle compact />
             <button
               // className="text-[#4A3772] font-semibold text-[14px] bg-transparent border-none cursor-pointer hover:text-[#4A3772] transition-colors whitespace-nowrap"
 
@@ -228,7 +234,7 @@ export default function Navigation({
               style={{ background: "#80EBF7", color: "#1a1a2e" }}
               onClick={() => setShowSellWithUsForm(true)}
             >
-              Sell with us
+              {t("nav.sellWithUs")}
             </button>
             {/* <button
               className="rounded-full px-6 py-2 font-bold text-[14px] border-none cursor-pointer transition-all hover:-translate-y-px whitespace-nowrap"
@@ -241,7 +247,7 @@ export default function Navigation({
           {/* Mobile + Tablet hamburger (below lg) */}
           <div className="flex lg:hidden items-center">
             <button
-              aria-label="Toggle menu"
+              aria-label={t("nav.toggleMenu")}
               className="flex flex-col justify-center items-center gap-[5px] w-8 h-8 bg-transparent border-none cursor-pointer"
               onClick={() => setMenuOpen((prev) => !prev)}
             >
@@ -263,7 +269,7 @@ export default function Navigation({
                 className="flex items-center justify-between w-full py-2.5 text-sm font-semibold text-[#4A3772] bg-transparent border-none cursor-pointer"
                 onClick={() => setCatMobileOpen((v) => !v)}
               >
-                Categories
+                {t("nav.categories")}
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
                   style={{ transform: catMobileOpen ? "rotate(180deg)" : "none", transition: "transform 0.2s" }}>
@@ -284,7 +290,7 @@ export default function Navigation({
                             className="flex-1 block py-2.5 text-sm font-medium no-underline text-[#333] hover:text-[#4A3772]"
                             onClick={() => setMenuOpen(false)}
                           >
-                            {cat.name}
+                            {dt(cat.name)}
                           </Link>
                           {subs.length > 0 && (
                             <button
@@ -309,7 +315,7 @@ export default function Navigation({
                                 onClick={() => setMenuOpen(false)}
                               >
                                 <span className="w-1 h-1 rounded-full flex-shrink-0" style={{ background: "#7C6FED" }} />
-                                {sub.name}
+                                {dt(sub.name)}
                               </Link>
                             ))}
                           </div>
@@ -322,18 +328,21 @@ export default function Navigation({
             </div>
 
             <ul className="flex flex-col gap-1 list-none m-0 p-0 border-t border-gray-100 pt-2">
-              {NAV_LINKS.map(({ href, label }) => (
+              {NAV_LINKS.map(({ href, key }) => (
                 <li key={href}>
                   <Link href={href}
                     className="block py-2.5 text-sm font-medium no-underline text-[#222] hover:text-[#4A3772] transition-colors"
                     onClick={() => setMenuOpen(false)}>
-                    {label}
+                    {t(key)}
                   </Link>
                 </li>
               ))}
             </ul>
 
-            <div className="mt-3 pt-3 border-t border-gray-100">
+            <div className="mt-3 pt-3 border-t border-gray-100 flex flex-col gap-3">
+              <div className="flex justify-center">
+                <LanguageToggle />
+              </div>
               <button
                 className="w-full rounded-full px-7 py-2.5 font-bold text-sm border-none cursor-pointer"
                 style={{ background: "#80EBF7", color: "#1a1a2e" }}
@@ -342,7 +351,7 @@ export default function Navigation({
                   setShowSellWithUsForm(true);
                 }}
               >
-                Sell with us
+                {t("nav.sellWithUs")}
               </button>
             </div>
           </div>
@@ -353,7 +362,7 @@ export default function Navigation({
         <CommonModal
           isOpen={showSellWithUsForm}
           onClose={() => setShowSellWithUsForm(false)}
-          title="Sell With Us"
+          title={t("nav.sellWithUs")}
           closeOnBackdropClick={true}
           size="xl"
         >

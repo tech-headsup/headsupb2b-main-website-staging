@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import { useForm, Controller } from "react-hook-form";
 import Select from "react-select";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -6,6 +6,8 @@ import toast, { Toaster } from "react-hot-toast";
 import * as Yup from "yup";
 import makeAnimated from "react-select/animated";
 import { useRouter } from "next/router";
+import { useTranslation } from "react-i18next";
+import { useDynamicTranslate } from "@/lib/useDynamicTranslate";
 import { isGadSourcePresent } from "@/Utils/urlHelpers";
 import { addWebsiteLead } from "@/Contants/APIEndpoint";
 import { getDemoPhone } from "@/Utils/demoDefaults";
@@ -64,24 +66,39 @@ const selectStyles = {
 
 export default function WhatAreYouLookingFor({ initialData, categoryProductOptions }) {
   const Router = useRouter();
+  const { t, i18n } = useTranslation();
+  const dt = useDynamicTranslate();
   const animatedComponents = makeAnimated();
   const selectRef = useRef(null);
 
-  const schema = Yup.object().shape({
-    name: Yup.string().required("Name is required"),
+  const localizedCategoryOptions = useMemo(
+    () => (categoryProductOptions || []).map((opt) => ({
+      ...opt,
+      label: dt(opt.label, "categoryNames"),
+      products: (opt.products || []).map((p) => ({
+        ...p,
+        label: dt(p.label, "productNames"),
+      })),
+    })),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [categoryProductOptions, i18n.language]
+  );
+
+  const schema = useMemo(() => Yup.object().shape({
+    name: Yup.string().required(t("home.enquiryForm.errors.nameRequired")),
     contactNo: Yup.string()
-      .required("Contact number is required")
-      .matches(/^[0-9]{10}$/, "Invalid contact number"),
-    email: Yup.string().email("Invalid email"),
-    category: Yup.object().required("Category is required"),
-    product: Yup.array().min(1, "Select at least one product"),
+      .required(t("home.enquiryForm.errors.contactRequired"))
+      .matches(/^[0-9]{10}$/, t("home.enquiryForm.errors.contactInvalid")),
+    email: Yup.string().email(t("home.enquiryForm.errors.emailInvalid")),
+    category: Yup.object().required(t("home.enquiryForm.errors.categoryRequired")),
+    product: Yup.array().min(1, t("home.enquiryForm.errors.productRequired")),
     spec: Yup.string(),
-    quantity: Yup.string().required("Quantity is required"),
-    addressDeliveryLocation: Yup.string().required("Delivery address is required"),
+    quantity: Yup.string().required(t("home.enquiryForm.errors.quantityRequired")),
+    addressDeliveryLocation: Yup.string().required(t("home.enquiryForm.errors.addressRequired")),
     pincode: Yup.string()
-      .required("Pincode is required")
-      .matches(/^[1-9][0-9]{5}$/, "Invalid pincode"),
-  });
+      .required(t("home.enquiryForm.errors.pincodeRequired"))
+      .matches(/^[1-9][0-9]{5}$/, t("home.enquiryForm.errors.pincodeInvalid")),
+  }), [t]);
 
   const {
     register,
@@ -139,11 +156,11 @@ export default function WhatAreYouLookingFor({ initialData, categoryProductOptio
         setSelectedProducts([]);
         setSelectedCategory(null);
         selectRef.current?.clearValue();
-        toast.success("Your enquiry has been submitted!");
+        toast.success(t("home.enquiryForm.toastSuccess"));
         Router.push("/thank-you");
       })
       .catch((err) => {
-        toast.error(`Something went wrong: ${err.message}`);
+        toast.error(t("home.enquiryForm.toastError", { message: err.message }));
         setLoading(false);
       });
   };
@@ -155,20 +172,20 @@ export default function WhatAreYouLookingFor({ initialData, categoryProductOptio
         <form onSubmit={handleSubmit(onSubmit)}>
           {/* Row: Name + Contact */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5 mb-3 sm:mb-3.5">
-            <FormField label="Name" required error={errors.name?.message}>
+            <FormField label={t("home.enquiryForm.name.label")} required error={errors.name?.message}>
               <input
                 {...register("name")}
                 type="text"
-                placeholder="Enter your name"
+                placeholder={t("home.enquiryForm.name.placeholder")}
                 className={inputClass}
               />
             </FormField>
 
-            <FormField label="Contact Number" required error={errors.contactNo?.message}>
+            <FormField label={t("home.enquiryForm.contact.label")} required error={errors.contactNo?.message}>
               <input
                 {...register("contactNo")}
                 type="text"
-                placeholder="10-digit number"
+                placeholder={t("home.enquiryForm.contact.placeholder")}
                 maxLength={10}
                 inputMode="numeric"
                 className={inputClass}
@@ -181,11 +198,11 @@ export default function WhatAreYouLookingFor({ initialData, categoryProductOptio
 
           {/* Email */}
           <div className="mb-3 sm:mb-3.5">
-            <FormField label="Email" error={errors.email?.message}>
+            <FormField label={t("home.enquiryForm.email.label")} error={errors.email?.message}>
               <input
                 {...register("email")}
                 type="text"
-                placeholder="Enter your email"
+                placeholder={t("home.enquiryForm.email.placeholder")}
                 className={inputClass}
               />
             </FormField>
@@ -193,26 +210,26 @@ export default function WhatAreYouLookingFor({ initialData, categoryProductOptio
 
           {/* Row: Category + Products */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5 mb-3 sm:mb-3.5">
-            <FormField label="Category" required error={errors.category?.message}>
+            <FormField label={t("home.enquiryForm.category.label")} required error={errors.category?.message}>
               <Controller
                 name="category"
                 control={control}
                 render={({ field }) => (
                   <Select
                     {...field}
-                    options={categoryProductOptions}
+                    options={localizedCategoryOptions}
                     onChange={(opt) => {
                       field.onChange(opt);
                       setSelectedCategory(opt);
                     }}
-                    placeholder="Select category"
+                    placeholder={t("home.enquiryForm.category.placeholder")}
                     styles={selectStyles}
                   />
                 )}
               />
             </FormField>
 
-            <FormField label="Products" required error={errors.product?.message}>
+            <FormField label={t("home.enquiryForm.products.label")} required error={errors.product?.message}>
               <Controller
                 name="product"
                 control={control}
@@ -225,7 +242,7 @@ export default function WhatAreYouLookingFor({ initialData, categoryProductOptio
                       field.onChange(opt);
                       setSelectedProducts(opt);
                     }}
-                    placeholder="Select products"
+                    placeholder={t("home.enquiryForm.products.placeholder")}
                     isMulti
                     components={animatedComponents}
                     styles={selectStyles}
@@ -237,11 +254,11 @@ export default function WhatAreYouLookingFor({ initialData, categoryProductOptio
 
           {/* Specification */}
           <div className="mb-3 sm:mb-3.5">
-            <FormField label="Specification" error={errors.spec?.message}>
+            <FormField label={t("home.enquiryForm.specification.label")} error={errors.spec?.message}>
               <input
                 {...register("spec")}
                 type="text"
-                placeholder="e.g. size, grade, model"
+                placeholder={t("home.enquiryForm.specification.placeholder")}
                 className={inputClass}
               />
             </FormField>
@@ -249,20 +266,20 @@ export default function WhatAreYouLookingFor({ initialData, categoryProductOptio
 
           {/* Row: Quantity + Pincode */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5 mb-3 sm:mb-3.5">
-            <FormField label="Quantity" required error={errors.quantity?.message}>
+            <FormField label={t("home.enquiryForm.quantity.label")} required error={errors.quantity?.message}>
               <input
                 {...register("quantity")}
                 type="text"
-                placeholder="e.g. 100 units"
+                placeholder={t("home.enquiryForm.quantity.placeholder")}
                 className={inputClass}
               />
             </FormField>
 
-            <FormField label="Pincode" required error={errors.pincode?.message}>
+            <FormField label={t("home.enquiryForm.pincode.label")} required error={errors.pincode?.message}>
               <input
                 {...register("pincode")}
                 type="text"
-                placeholder="6-digit pincode"
+                placeholder={t("home.enquiryForm.pincode.placeholder")}
                 maxLength={6}
                 inputMode="numeric"
                 className={inputClass}
@@ -276,7 +293,7 @@ export default function WhatAreYouLookingFor({ initialData, categoryProductOptio
           {/* Delivery Address */}
           <div className="mb-3 sm:mb-3.5">
             <FormField
-              label="Delivery Address"
+              label={t("home.enquiryForm.deliveryAddress.label")}
               required
               error={errors.addressDeliveryLocation?.message}
             >
@@ -284,7 +301,7 @@ export default function WhatAreYouLookingFor({ initialData, categoryProductOptio
                 <textarea
                   {...register("addressDeliveryLocation")}
                   rows={2}
-                  placeholder="Enter delivery address..."
+                  placeholder={t("home.enquiryForm.deliveryAddress.placeholder")}
                   className="w-full resize-none border-none outline-none p-2 sm:p-2.5 text-gray-700 text-xs sm:text-sm bg-transparent placeholder-gray-400"
                 />
               </div>
@@ -305,10 +322,10 @@ export default function WhatAreYouLookingFor({ initialData, categoryProductOptio
               {loading ? (
                 <>
                   <div className="animate-spin rounded-full h-3 w-3 sm:h-4 sm:w-4 border-2 border-white border-t-transparent" />
-                  <span>Submitting...</span>
+                  <span>{t("home.enquiryForm.submitting")}</span>
                 </>
               ) : (
-                <span>Submit Enquiry</span>
+                <span>{t("home.enquiryForm.submit")}</span>
               )}
             </button>
           </div>

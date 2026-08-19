@@ -1,28 +1,15 @@
 
 import React, { useState, useEffect } from 'react';
+import { useTranslation, Trans } from 'react-i18next';
 
-const data = [
-  {
-    img: "/blog.png",
-    sub: (<>
-      <strong>Blog curation</strong> tailored to your brand with integrated backlinks
-    </> ),
-  },
-  {
-    img: "/ads.png",
-    sub:(<>
-      <strong>4 premium</strong> ad placement options for maximum visibility
-    </>) ,
-  },
-  {
-    img: "/audience.png",
-    sub: (<>
-      You write, we curate and amplify it with the <strong>right audience </strong>touchpoints
-    </>),
-  },
+const DATA = [
+  { img: "/blog.png", key: "ads.metrics.card1" },
+  { img: "/ads.png", key: "ads.metrics.card2" },
+  { img: "/audience.png", key: "ads.metrics.card3" },
 ];
 
 const MetricsCards = () => {
+  const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
@@ -31,7 +18,7 @@ const MetricsCards = () => {
     if (!isAutoPlaying) return;
 
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % data.length);
+      setCurrentSlide((prev) => (prev + 1) % DATA.length);
     }, 3000); // Change slide every 3 seconds
 
     return () => clearInterval(interval);
@@ -42,67 +29,71 @@ const MetricsCards = () => {
   const handleMouseLeave = () => setIsAutoPlaying(true);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % data.length);
-    setIsAutoPlaying(false); // Pause auto-play when user interacts
-    setTimeout(() => setIsAutoPlaying(true), 5000); // Resume after 5 seconds
+    setCurrentSlide((prev) => (prev + 1) % DATA.length);
+    setIsAutoPlaying(false);
+    setTimeout(() => setIsAutoPlaying(true), 5000);
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + data.length) % data.length);
-    setIsAutoPlaying(false); // Pause auto-play when user interacts
-    setTimeout(() => setIsAutoPlaying(true), 5000); // Resume after 5 seconds
+    setCurrentSlide((prev) => (prev - 1 + DATA.length) % DATA.length);
+    setIsAutoPlaying(false);
+    setTimeout(() => setIsAutoPlaying(true), 5000);
   };
 
   const goToSlide = (index) => {
     setCurrentSlide(index);
-    setIsAutoPlaying(false); // Pause auto-play when user interacts
-    setTimeout(() => setIsAutoPlaying(true), 5000); // Resume after 5 seconds
+    setIsAutoPlaying(false);
+    setTimeout(() => setIsAutoPlaying(true), 5000);
   };
 
   return (
     <section className="py-12 bg-white mt-8 -mx-12 md:-mx-10">
       <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8">
       <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-center mb-8 md:mb-10 lg:mb-12">
-        Our Unique Offerings Designed for Your Visibility
+        {t("ads.metrics.heading")}
       </h2>
 
       {/* Desktop/Tablet Grid - Hidden on mobile */}
       <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-        {data.map((m, i) => (
+        {DATA.map((m, i) => (
           <div
             key={i}
             className="bg-white/90 backdrop-blur-sm border border-gray-200 p-6 md:p-8 lg:p-10 rounded-2xl text-center shadow
             transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)]
             transform hover:scale-105 hover:shadow-xl"
           >
-            <img src={m.img} alt={m.sub} className="w-10 h-10 md:w-12 md:h-12 mb-4 mx-auto" />
-            <p className="mt-1 font-semibold text-sm md:text-base">{m.sub}</p>
+            <img src={m.img} alt={t(m.key)} className="w-10 h-10 md:w-12 md:h-12 mb-4 mx-auto" />
+            <p className="mt-1 font-semibold text-sm md:text-base">
+              <Trans i18nKey={m.key} components={{ strong: <strong /> }} />
+            </p>
           </div>
         ))}
       </div>
 
       {/* Mobile Slider - Visible only on mobile */}
       <div className="block md:hidden max-w-lg mx-auto">
-        <div 
+        <div
           className="relative overflow-hidden"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <div 
+          <div
             className="flex transition-transform duration-500 ease-in-out"
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
           >
-            {data.map((m, i) => (
+            {DATA.map((m, i) => (
               <div
                 key={i}
                 className="w-full flex-shrink-0 px-2"
               >
-                <div className="bg-white/90 backdrop-blur-sm border border-gray-200 p-8 rounded-2xl text-center shadow 
-                transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] 
+                <div className="bg-white/90 backdrop-blur-sm border border-gray-200 p-8 rounded-2xl text-center shadow
+                transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)]
                 transform hover:scale-105 hover:shadow-xl"
                 >
-                  <img src={m.img} alt={m.sub} className="w-12 h-12 mb-4 mx-auto" />
-                  <p className="mt-1 font-semibold text-md">{m.sub}</p>
+                  <img src={m.img} alt={t(m.key)} className="w-12 h-12 mb-4 mx-auto" />
+                  <p className="mt-1 font-semibold text-md">
+                    <Trans i18nKey={m.key} components={{ strong: <strong /> }} />
+                  </p>
                 </div>
               </div>
             ))}
@@ -111,7 +102,7 @@ const MetricsCards = () => {
 
         {/* Dots Indicator */}
         <div className="flex justify-center mt-6 space-x-2">
-          {data.map((_, i) => (
+          {DATA.map((_, i) => (
             <button
               key={i}
               onClick={() => goToSlide(i)}

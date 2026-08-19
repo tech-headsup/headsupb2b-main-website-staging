@@ -1,6 +1,7 @@
 import GetInTouch from "@/component/Form/Contact/GetInTouch";
 import Head from "next/head";
 import { useState, useCallback } from "react";
+import { useTranslation } from "react-i18next";
 
 /* ─── DATA ─── */
 const DATA = [
@@ -86,16 +87,9 @@ function getChipActiveClasses(key) {
     return map[key] || "bg-blue-500/15 border-blue-400 text-blue-400";
 }
 
-/* ─── STATS STRIP DATA ─── */
-const STRIP_STATS = [
-    { num: "₹0 BCD", label: "on ALMM-listed modules (exempt)", bar: "bg-amber-500", text: "text-amber-400" },
-    { num: "Jun 2026", label: "List-II (Cells) Mandatory Date", bar: "bg-emerald-500", text: "text-emerald-400" },
-    { num: "0 Chinese", label: "Manufacturers on ALMM", bar: "bg-blue-500", text: "text-blue-400" },
-    { num: "Jun 2028", label: "List-III (Wafers) Expected", bar: "bg-orange-500", text: "text-orange-400" },
-];
-
 /* ─── MAIN COMPONENT ─── */
 export default function AlmmDatabase() {
+    const { t } = useTranslation();
     const [activeTab, setActiveTab] = useState("list1");
     const [query, setQuery] = useState("");
     const [sort, setSort] = useState("rank");
@@ -105,6 +99,21 @@ export default function AlmmDatabase() {
     const toggleChip = useCallback((key) => {
         setChips((prev) => ({ ...prev, [key]: !prev[key] }));
     }, []);
+
+    /* ─── STATS STRIP DATA (i18n) ─── */
+    const STRIP_STATS_LABELS = t("almmDatabase.stripStats", { returnObjects: true }) || [];
+    const STRIP_STATS = [
+        { num: STRIP_STATS_LABELS[0]?.num || "₹0 BCD", label: STRIP_STATS_LABELS[0]?.label || "", bar: "bg-amber-500", text: "text-amber-400" },
+        { num: STRIP_STATS_LABELS[1]?.num || "Jun 2026", label: STRIP_STATS_LABELS[1]?.label || "", bar: "bg-emerald-500", text: "text-emerald-400" },
+        { num: STRIP_STATS_LABELS[2]?.num || "0 Chinese", label: STRIP_STATS_LABELS[2]?.label || "", bar: "bg-blue-500", text: "text-blue-400" },
+        { num: STRIP_STATS_LABELS[3]?.num || "Jun 2028", label: STRIP_STATS_LABELS[3]?.label || "", bar: "bg-orange-500", text: "text-orange-400" },
+    ];
+
+    const HERO_STATS = t("almmDatabase.heroStats", { returnObjects: true }) || [];
+    const TABS = t("almmDatabase.tabs", { returnObjects: true }) || [];
+    const CHIP_LABELS = t("almmDatabase.chipLabels", { returnObjects: true }) || {};
+    const SORT_OPTIONS = t("almmDatabase.sortOptions", { returnObjects: true }) || {};
+    const TABLE_HEADERS = t("almmDatabase.tableHeaders", { returnObjects: true }) || [];
 
     /* ─── FILTER + SORT ─── */
     const src = activeTab === "list1" ? DATA : DATA.filter((d) => d.lists === "both");
@@ -143,14 +152,14 @@ export default function AlmmDatabase() {
         <div className="bg-white text-slate-200 mt-10 min-h-screen font-['Syne',sans-serif]">
                     <Head>
     {/* ── Core ── */}
-    <title>India's Complete ALMM Solar Database</title>
+    <title>{t("almmDatabase.meta.seoTitle")}</title>
     <meta
         name="description"
-        content="The Approved List of Models & Manufacturers (ALMM) by MNRE — every certified solar module and cell manufacturer, their capacities, technologies, and eligibility for government projects."
+        content={t("almmDatabase.meta.seoDescription")}
     />
     <meta
         name="keywords"
-        content="ALMM India 2025, approved solar module manufacturers, MNRE ALMM list, List-I solar modules, List-II solar cells, solar procurement India, ALMM compliance 2026, solar EPC India, ALMM approved manufacturers"
+        content={t("almmDatabase.meta.seoKeywords")}
     />
 
     {/* ── Canonical ── */}
@@ -161,10 +170,10 @@ export default function AlmmDatabase() {
 
     {/* ── Open Graph ── */}
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="India's Complete ALMM Solar Database" />
+    <meta property="og:title" content={t("almmDatabase.meta.ogTitle")} />
     <meta
         property="og:description"
-        content="The Approved List of Models & Manufacturers (ALMM) by MNRE — every certified solar module and cell manufacturer, their capacities, technologies, and eligibility for government projects."
+        content={t("almmDatabase.meta.ogDescription")}
     />
     <meta property="og:url" content="https://www.headsupb2b.com/research/almm-database" />
     <meta property="og:site_name" content="Headsup B2B" />
@@ -179,10 +188,10 @@ export default function AlmmDatabase() {
 
     {/* ── Twitter / X ── */}
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="India's Complete ALMM Solar Database" />
+    <meta name="twitter:title" content={t("almmDatabase.meta.twitterTitle")} />
     <meta
         name="twitter:description"
-        content="The Approved List of Models & Manufacturers (ALMM) by MNRE — every certified solar module and cell manufacturer, their capacities, technologies, and eligibility for government projects."
+        content={t("almmDatabase.meta.twitterDescription")}
     />
     <meta name="twitter:site" content="@headsupb2b" />
     <meta name="twitter:creator" content="@headsupb2b" />
@@ -195,8 +204,8 @@ export default function AlmmDatabase() {
             __html: JSON.stringify({
                 "@context": "https://www.headsupb2b.com",
                 "@type": "Article",
-                headline: "India's Complete ALMM Solar Database",
-                description: "The Approved List of Models & Manufacturers (ALMM) by MNRE — every certified solar module and cell manufacturer, their capacities, technologies, and eligibility for government projects.",
+                headline: t("almmDatabase.meta.seoTitle"),
+                description: t("almmDatabase.meta.seoDescription"),
                 image: "https://www.headsupb2b.com/almm.png",
                 author: {
                     "@type": "Organization",
@@ -233,27 +242,21 @@ export default function AlmmDatabase() {
 
                 <div className="inline-flex items-center gap-1.5 bg-amber-500/10 border border-amber-500/25 rounded-full px-3 py-1 font-mono-ibm text-[10px] text-amber-400 tracking-widest uppercase mb-4">
                     <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse-dot" />
-                    MNRE ALMM — Updated Dec 2025
+                    {t("almmDatabase.hero.badge")}
                 </div>
 
                 <h1 className="text-[38px] md:text-[42px] font-extrabold tracking-[-1.5px] leading-[1.1] max-w-[700px] mb-3.5">
-                    India's Complete<br />
+                    {t("almmDatabase.hero.title1")}<br />
                     <span className="bg-gradient-to-r from-amber-500 to-amber-200 bg-clip-text text-transparent">
-                        ALMM Solar Database
+                        {t("almmDatabase.hero.title2")}
                     </span>
                 </h1>
                 <p className="text-[15px] text-white max-w-[580px] leading-relaxed mb-7">
-                    The Approved List of Models &amp; Manufacturers (ALMM) by MNRE — every certified solar module and cell manufacturer,
-                    their capacities, technologies, and eligibility for government projects.
+                    {t("almmDatabase.hero.subtitle")}
                 </p>
 
                 <div className="flex gap-7 flex-wrap">
-                    {[
-                        { num: "144 GW+", label: "Module Capacity (List-I)" },
-                        { num: "100+", label: "Module Manufacturers" },
-                        { num: "26.7 GW", label: "Cell Capacity (List-II)" },
-                        { num: "10", label: "Cell Manufacturers" },
-                    ].map(({ num, label }, i, arr) => (
+                    {HERO_STATS.map(({ num, label }, i, arr) => (
                         <div key={num} className="flex items-stretch gap-7">
                             <div className="flex flex-col">
                                 <span className="font-mono-ibm text-[26px] font-semibold text-amber-400 tracking-tight leading-none">{num}</span>
@@ -281,8 +284,8 @@ export default function AlmmDatabase() {
                 {/* Tab Group */}
                 <div className="flex gap-0.5 bg-lightHeadsup rounded-lg p-[3px] border border-[#1e3050]">
                     {[
-                        { id: "list1", label: "☀ List-I · Modules" },
-                        { id: "list2", label: "⚡ List-II · Cells" },
+                        { id: "list1", label: TABS[0] || "☀ List-I · Modules" },
+                        { id: "list2", label: TABS[1] || "⚡ List-II · Cells" },
                     ].map(({ id, label }) => (
                         <button
                             key={id}
@@ -304,7 +307,7 @@ export default function AlmmDatabase() {
                         type="text"
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
-                        placeholder="Search manufacturer, state, tech…"
+                        placeholder={t("almmDatabase.searchPlaceholder")}
                         className="w-full bg-headupb2b border border-[#1e3050] text-white rounded-lg py-2 pl-8 pr-3 font-mono-ibm text-xs outline-none focus:border-amber-500 transition-colors"
                     />
                 </div>
@@ -319,7 +322,7 @@ export default function AlmmDatabase() {
                                 ? getChipActiveClasses(key)
                                 : "border-[#1e3050] bg-headupb2b text-white hover:border-slate-400 hover:text-slate-200"}`}
                     >
-                        {label}
+                        {CHIP_LABELS[key] || label}
                     </button>
                 ))}
 
@@ -329,14 +332,14 @@ export default function AlmmDatabase() {
                     onChange={(e) => setSort(e.target.value)}
                     className="px-2.5 py-[7px] rounded-lg border border-[#1e3050] bg-headupb2b text-slate-200 text-[11px] cursor-pointer outline-none"
                 >
-                    <option value="rank">Sort: Rank</option>
-                    <option value="capacity">Sort: Capacity ↓</option>
-                    <option value="name">Sort: Name A–Z</option>
-                    <option value="year">Sort: Year Est.</option>
+                    <option value="rank">{SORT_OPTIONS.rank || "Sort: Rank"}</option>
+                    <option value="capacity">{SORT_OPTIONS.capacity || "Sort: Capacity ↓"}</option>
+                    <option value="name">{SORT_OPTIONS.name || "Sort: Name A–Z"}</option>
+                    <option value="year">{SORT_OPTIONS.year || "Sort: Year Est."}</option>
                 </select>
 
                 <div className="font-mono-ibm text-[11px] text-black ml-auto whitespace-nowrap">
-                    <b className="text-emerald-400">{filtered.length}</b> of {src.length}
+                    <b className="text-emerald-400">{filtered.length}</b> {t("almmDatabase.ofLabel")} {src.length}
                 </div>
             </div>
 
@@ -345,7 +348,7 @@ export default function AlmmDatabase() {
                 <table className="w-full border-collapse">
                     <thead>
                         <tr className="bg-[#687d9e] border-b-2 border-[#1e3050]">
-                            {["#", "Manufacturer", "State / Location", "ALMM Capacity", "Technology", "Watt Range", "Listed", "Est."].map((h) => (
+                            {(TABLE_HEADERS.length ? TABLE_HEADERS : ["#", "Manufacturer", "State / Location", "ALMM Capacity", "Technology", "Watt Range", "Listed", "Est."]).map((h) => (
                                 <th key={h} className="px-4 py-[11px] text-left text-[9px] font-bold tracking-[1.5px] uppercase text-white whitespace-nowrap">
                                     {h}
                                 </th>
@@ -357,7 +360,7 @@ export default function AlmmDatabase() {
                             <tr>
                                 <td colSpan={8} className="text-center py-20 text-[#4b6080]">
                                     <div className="text-5xl mb-3">🔍</div>
-                                    <div>No manufacturers match your current filters.</div>
+                                    <div>{t("almmDatabase.emptyState")}</div>
                                 </td>
                             </tr>
                         ) : (
@@ -413,11 +416,11 @@ export default function AlmmDatabase() {
                                         <td className="px-4 py-[11px]">
                                             {d.lists === "both" ? (
                                                 <span className="font-mono-ibm text-[9px] px-2 py-0.5 rounded font-semibold bg-violet-500/12 text-violet-400 border border-violet-500/25">
-                                                    I + II
+                                                    {t("almmDatabase.listedBoth")}
                                                 </span>
                                             ) : (
                                                 <span className="font-mono-ibm text-[9px] px-2 py-0.5 rounded font-semibold bg-orange-500/12 text-orange-400 border border-orange-500/20">
-                                                    List-I
+                                                    {t("almmDatabase.listedList1")}
                                                 </span>
                                             )}
                                         </td>
@@ -435,13 +438,13 @@ export default function AlmmDatabase() {
                 <div className="border-t border-b border-[#1e3050] bg-[#687d9e] px-6 py-9 flex items-center justify-between gap-6 flex-wrap">
                     <div>
                         <h2 className="text-[22px] font-extrabold text-white tracking-tight mb-1.5">
-                            Source Solar Modules from{" "}
+                            {t("almmDatabase.ctaHeading1")}{" "}
                             <span className="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
-                                ALMM-Listed Suppliers
+                                {t("almmDatabase.ctaHeading2")}
                             </span>
                         </h2>
                         <p className="text-[13px] text-white max-w-[480px] leading-relaxed">
-                            Headsup B2B connects solar EPCs, developers, and government agencies with verified, ALMM-compliant module suppliers across India. Get competitive quotes, verified quality, and T+1 payment support via Mintifi.
+                            {t("almmDatabase.ctaSubtitle")}
                         </p>
                     </div>
                     <div className="flex gap-2.5 flex-wrap">
@@ -454,7 +457,7 @@ export default function AlmmDatabase() {
                             onClick={() => setShowRequestQuote(true)}
                             style={{ background: "#00d4f5", fontFamily: "'DM Sans', sans-serif", boxShadow: "0 4px 15px rgba(0,212,245,0.35)" }}
                         >
-                            Talk to a Procurement Expert
+                            {t("almmDatabase.ctaButton")}
                         </button>
                     </div>
                 </div>

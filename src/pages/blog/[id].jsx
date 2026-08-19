@@ -11,6 +11,8 @@ import AboutAuthor from "@/component/Blog/AboutAuthor";
 import MobileDrawer from "@/component/Blog/MobileDrawer";
 import GetInTouch from "@/component/Blog/GetInTouch";
 import { wpPostToHashnodeDetail } from "@/lib/wpAdapter";
+import { useDynamicTranslate } from "@/lib/useDynamicTranslate";
+import { useTranslation } from "react-i18next";
 
 const WP_API_SERVER = process.env.WP_API_URL || "http://localhost:10008/wp-json/wp/v2";
 const BLOG_BASE = process.env.NEXT_PUBLIC_WP_BLOG_BASE || "http://localhost:10008";
@@ -46,14 +48,23 @@ export async function getServerSideProps(context) {
 }
 
 export default function BlogPage({ post, publication }) {
+  const dt = useDynamicTranslate();
+  const { i18n } = useTranslation();
   const { scrollYProgress } = useScroll();
   const triggerRef = useRef(null);
   const middleGridRef = useRef(null);
   const rightGridRef = useRef(null);
 
+  const localizedTitle = dt(post?.title, "blogTitles");
+  const localizedSeoTitle = dt(post?.seo?.title || post?.title, "blogTitles");
+  const localizedBrief = dt(post?.seo?.description || post?.brief, "blogExcerpts");
+
+  const bodyBundle = i18n.getResourceBundle(i18n.language, "translation")?.blogBodies || {};
+  const localizedBodyHtml = bodyBundle[post?.slug] || post?.content?.html || "";
+
   const seo = {
-    title: post?.seo?.title || post?.title,
-    description: post?.seo?.description || post?.brief,
+    title: localizedSeoTitle,
+    description: localizedBrief,
     url: `${SITE_URL}/blog/${post?.slug}`,
     image: post?.ogMetaData?.image || post?.coverImage?.url,
     date: post?.publishedAt,
@@ -121,7 +132,7 @@ export default function BlogPage({ post, publication }) {
 
       <div className="mx-auto w-full max-w-[1280px] px-6 md:px-12 lg:px-8 pt-16 md:pt-[72px] lg:pt-[72px] pb-8 md:pb-10">
         <PostHeader
-          title={post.title}
+          title={localizedTitle}
           coverImage={post.coverImage?.url}
           date={post.publishedAt}
           author={post.author}
@@ -147,14 +158,14 @@ export default function BlogPage({ post, publication }) {
           className="min-h-screen overflow-y-auto lg:px-2 lg:mt-0"
         >
           <div className="mx-auto max-w-3xl">
-            <MarkdownToHtml contentHtml={post.content?.html || ""} />
+            <MarkdownToHtml contentHtml={localizedBodyHtml} />
             {post.tags?.length > 0 && (
               <div className="mt-8 px-5 md:max-w-screen-md mx-auto">
                 <ul className="flex flex-wrap gap-2 text-sm">
                   {post.tags.map((tag) => (
                     <li key={tag.id}>
                       <div className="block rounded-full border px-2 py-1 font-medium hover:bg-slate-50 md:px-4 dark:border-neutral-800 dark:hover:bg-neutral-800">
-                        {tag.name || tag.slug}
+                        {dt(tag.name || tag.slug, "blogTags")}
                       </div>
                     </li>
                   ))}

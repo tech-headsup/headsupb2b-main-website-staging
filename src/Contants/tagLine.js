@@ -12,3 +12,18 @@ export const categoryTagline = {
     "Drainage, Irrigation & Utility Solutions": "End to end solutions for Projects",
     "High-Mast Poles": "Engineered structures for every height"
 }
+
+export const categoryTaglineKey = {
+    "Metal Solutions": "metalSolutions",
+    "Electrical Solutions": "electricalSolutions",
+    "Road Safety Solutions": "roadSafetySolutions",
+    "Building Materials": "buildingMaterials",
+    "Industrial Automation Solutions": "industrialAutomationSolutions",
+    "Petro-Chemical Solutions": "petroChemicalSolutions",
+    "Renewable Solutions": "renewableSolutions",
+    "Industrial Safety Solutions": "industrialSafetySolutions",
+    "Biomass": "biomass",
+    "Agro-Commodities": "agroCommodities",
+    "Drainage, Irrigation & Utility Solutions": "drainageIrrigationUtility",
+    "High-Mast Poles": "highMastPoles"
+}

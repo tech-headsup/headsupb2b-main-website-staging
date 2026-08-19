@@ -2,20 +2,23 @@ import researchData from '@/researchdata/researchData'
 import Link from 'next/link'
 import Image from 'next/image'
 import { format, parseISO } from 'date-fns'
+import { hi as hiLocale } from 'date-fns/locale'
 import { NextSeo } from 'next-seo'
+import { useTranslation } from 'react-i18next'
+import { useDynamicTranslate } from '@/lib/useDynamicTranslate'
 
 export default function ResearchIndex() {
-  const seoTitle = 'Research Hub - Headsup B2B'
-  const seoDescription =
-    "In-depth guides on solar procurement, energy infrastructure, and India's power sector."
+  const { t, i18n } = useTranslation()
+  const dt = useDynamicTranslate()
+  const isHindi = i18n.language?.startsWith('hi')
+  const dateLocale = isHindi ? { locale: hiLocale } : undefined
+  const dateFormatStr = isHindi ? 'LLLL d, yyyy' : 'LLL d, yyyy'
+  const seoTitle = t('research.seoTitle')
+  const seoDescription = t('research.seoDescription')
   const canonical = 'https://www.headsupb2b.com/research'
 
-  const sortedResearch = [...researchData].sort(
-    (a, b) => new Date(b.date || 0) - new Date(a.date || 0)
-  )
-
   return (
-    <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8 py-8 md:py-10 lg:py-12 ll:py-16">
+    <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8 pt-16 md:pt-[72px] lg:pt-[72px] pb-8 md:pb-10 lg:pb-12 ll:pb-16">
       <NextSeo
         title={seoTitle}
         description={seoDescription}
@@ -37,10 +40,10 @@ export default function ResearchIndex() {
       {/* Header */}
       <div className="text-center mb-8 md:mb-10 lg:mb-12">
         <h1 className="text-2xl md:text-3xl lg:text-4xl ll:text-5xl font-bold text-black">
-          Research Hub
+          {t('research.heading')}
         </h1>
         <p className="text-gray-500 mt-2 md:mt-3 text-sm md:text-base lg:text-lg max-w-[500px] lg:max-w-[600px] mx-auto">
-          In-depth guides on solar procurement, energy infrastructure, and India's power sector.
+          {t('research.subtitle')}
         </p>
       </div>
 
@@ -72,28 +75,28 @@ export default function ResearchIndex() {
                   {/* Category tag — optional, show if exists */}
                   {item.category && (
                     <span className="text-[10px] md:text-[11px] font-mono tracking-[1px] uppercase text-headupb2b bg-[#F4F1FA] px-2 py-0.5 rounded w-fit mb-2">
-                      {item.category}
+                      {dt(item.category, 'researchCategories')}
                     </span>
                   )}
 
                   {/* Title */}
                   <h2 className="font-bold text-base md:text-lg lg:text-xl text-black line-clamp-2 leading-snug">
-                    {item.title}
+                    {dt(item.title, 'knowledgeArticleTitles')}
                   </h2>
 
                   {/* Date */}
                   <p className="text-[11px] md:text-xs text-gray-400 mt-1 font-mono">
-                    {format(date, 'LLL d, yyyy')}
+                    {format(date, dateFormatStr, dateLocale)}
                   </p>
 
                   {/* Description */}
                   <p className="text-sm md:text-base text-gray-600 mt-2 line-clamp-3 flex-1">
-                    {item.description}
+                    {dt(item.description, 'researchDescriptions')}
                   </p>
 
                   {/* Read more */}
                   <div className="mt-4 text-[13px] md:text-sm font-semibold text-headupb2b flex items-center gap-1">
-                    Read Guide <span>→</span>
+                    {t('research.readGuide')} <span>→</span>
                   </div>
 
                 </div>

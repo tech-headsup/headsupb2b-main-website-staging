@@ -1,10 +1,12 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 export default function Download() {
+  const { t } = useTranslation();
   const fields = [
     {
       _id: 0,
-      title: 'Download Brochure',
+      key: 'footer.downloadBrochure',
       url: 'https://firebasestorage.googleapis.com/v0/b/headsupb2b-v2.appspot.com/o/Brochure%2FB2B%20Brochure2025-26.pdf?alt=media',
       active: true,
     },
@@ -23,7 +25,7 @@ export default function Download() {
                          bg-gradient-to-r from-[#80EBF7] to-purple-500
                          bg-[length:200%_auto] bg-clip-text text-transparent animate-gradient-x"
             >
-              {ele.title}
+              {t(ele.key)}
               <span className="absolute inset-x-0 bottom-0 h-[0.2px] bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
             </a>
           </li>

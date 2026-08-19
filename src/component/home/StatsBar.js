@@ -1,15 +1,17 @@
 "use client";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const STATS = [
-  { value: "500+", label: "Projects\nDelivered" },
-  { value: "20+", label: "States\nServed" },
-  { value: "1000+", label: "Verified\nSuppliers" },
-  { value: "250+", label: "Clients &\nPartners" },
-  { value: "1000+", label: "Product\nSKUs" },
+  { value: "500+", labelKey: "home.stats.projectsDelivered" },
+  { value: "20+", labelKey: "home.stats.statesServed" },
+  { value: "1000+", labelKey: "home.stats.verifiedSuppliers" },
+  { value: "250+", labelKey: "home.stats.clientsPartners" },
+  { value: "1000+", labelKey: "home.stats.productSkus" },
 ];
 
 export default function StatsBar() {
+  const { t } = useTranslation();
   const [hovered, setHovered] = useState(null);
 
   return (
@@ -45,7 +47,7 @@ export default function StatsBar() {
                 fontFamily: "'DM Sans', sans-serif",
               }}
             >
-              {stat.label}
+              {t(stat.labelKey)}
             </span>
           </div>
         ))}

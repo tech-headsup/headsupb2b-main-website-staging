@@ -1,24 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import CustomText from "../Text/CustomText";
-import { getLanguage } from "@/storage/storage";
+import { useTranslation } from "react-i18next";
 import Query from "@/assets/images/svg/Query form.svg";
 import Image from "next/image";
 import { sendEmailToBuy } from "@/Contants/APIEndpoint";
 import CommonFormForHomeBackup from "../Form/CommonFromHomeBackup";
 
 export default function WhatAreYouLookingFor({ initialData, categoryProductOptions }) {
-  const [currentLanguage, setCurrentLanguage] = useState(null);
-
-  useEffect(() => {
-    if (currentLanguage === null) {
-      let cl = getLanguage();
-      if (cl === undefined || cl === null) {
-        setCurrentLanguage("en");
-      } else {
-        setCurrentLanguage(cl);
-      }
-    }
-  }, []);
+  const { t } = useTranslation();
 
   return (
     <div className="shadow-lg rounded-2xl">
@@ -26,18 +15,20 @@ export default function WhatAreYouLookingFor({ initialData, categoryProductOptio
         <div className="text-center lg:text-left pt-6 sm:pt-8 md:pt-6 lg:pt-3 xl:pt-4 pb-6 sm:pb-8 md:pb-8 lg:pb-6 xl:pb-8 bg-[#4A3772] text-white col-span-1 lg:col-span-2 rounded-tl-2xl rounded-tr-2xl lg:rounded-tr-none lg:rounded-bl-2xl px-3 sm:px-4 md:px-6 lg:px-4 xl:px-6 2xl:pl-10 flex flex-col md:flex-row lg:flex-col justify-between items-center md:items-center lg:items-stretch gap-6">
           <div className="flex flex-col gap-1.5 sm:gap-2 md:gap-3 lg:gap-2 xl:gap-3">
             <CustomText
-              text={"what are"}
+              text={t("wayl.headingLine1")}
               className={`section_heading text-white ll:text-[45px] text-center md:text-left ll:pl-4`}
             />
             <CustomText
-              text={"you looking"}
+              text={t("wayl.headingLine2")}
               className={`section_heading text-white ll:text-[45px] text-center md:text-left ll:pl-4`}
             />
 
-            <CustomText
-              text={"for?"}
-              className={`section_heading text-white ll:text-[45px] text-center md:text-left ll:pl-4`}
-            />
+            {t("wayl.headingLine3") ? (
+              <CustomText
+                text={t("wayl.headingLine3")}
+                className={`section_heading text-white ll:text-[45px] text-center md:text-left ll:pl-4`}
+              />
+            ) : null}
           </div>
           <div className="flex justify-center items-end">
             <Image

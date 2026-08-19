@@ -235,6 +235,15 @@ export default function SolarHubStyles() {
         margin-bottom: 22px;
         animation: services-slideUp 0.7s ease-out 0.1s both;
       }
+      :lang(hi) .services-page .hero h1 {
+        line-height: 1.3;
+        letter-spacing: -0.3px;
+      }
+      :lang(hi) .services-page .hero h1 .yellow-highlight,
+      :lang(hi) .services-page .hero h1 > span {
+        display: inline-block;
+        margin: 0 4px;
+      }
       .services-page .hero h1 .gradient-text {
         background: linear-gradient(135deg, #5e3f99 0%, #b2a9c6 100%);
         -webkit-background-clip: text;
@@ -1704,6 +1713,10 @@ export default function SolarHubStyles() {
           font-size: 36px;
           letter-spacing: -1px;
           margin-bottom: 16px;
+        }
+        :lang(hi) .services-page .hero h1 {
+          letter-spacing: -0.3px;
+          line-height: 1.35;
         }
         .services-page .hero .subtitle {
           font-size: 15px;

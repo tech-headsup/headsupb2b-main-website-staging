@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { Star } from "lucide-react";
 import { useRouter } from "next/router";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import Modal from "../Modal/Modal";
 import CommonForm from "../Form/CommonForm";
 import { sendEmailToBuy } from "@/Contants/APIEndpoint";
 import CommonModal from "../Modal/CommonModal";
+import { useDynamicTranslate } from "@/lib/useDynamicTranslate";
 
 
 export default function ProductCardv2({ product, categoryName, categoryProductOptions }) {
   const router = useRouter();
+  const { t } = useTranslation();
+  const dt = useDynamicTranslate();
 
   const [show, setShow] = useState(false);
   const [selected, setSelected] = useState("");
@@ -34,7 +38,7 @@ export default function ProductCardv2({ product, categoryName, categoryProductOp
         <div className="bg-white px-1 pb-2 w-full">
           <div className="flex items-start justify-between mb-4">
             <h3 className="text-xl font-bold text-[#4A3772] leading-tight">
-              {product?.name}
+              {dt(product?.name, ["productNames", "categoryNames"])}
             </h3>
 
             {/* Marketing Labels */}
@@ -77,7 +81,7 @@ export default function ProductCardv2({ product, categoryName, categoryProductOp
                   className="flex items-start text-[#4A3772]"
                 >
                   <span className="w-36 flex-shrink-0 text-xs mr-3">
-                    {item?.name}
+                    {dt(item?.name, "specNames")}
                   </span>
                   <span className="text-xs">{item?.value}</span>
                 </div>
@@ -91,7 +95,7 @@ export default function ProductCardv2({ product, categoryName, categoryProductOp
         {/* Price */}
         <div className="px-1 pb-2 w-full">
           <p className="text-[#777676] text-[13px] font-montserrat">
-            Price available on Request
+            {t("productCard.priceOnRequest")}
           </p>
         </div>
         {/* Action Buttons */}
@@ -106,7 +110,7 @@ export default function ProductCardv2({ product, categoryName, categoryProductOp
             {/* <span className="w-3 h-3 mr-2 sm:w-5 sm:h-5 md:w-5 md:h-5 lg:w-6 lg:h-6 flex-shrink-0">
               <GetInstantQuoteSVG />
               </span> */}
-            Get Instant Quote
+            {t("productCard.getInstantQuote")}
           </Button>
           <Button
             className=" bg-white w-1/3 hover:bg-gray-50 text-[#4A3772 text-[12px] ll:text-[14px] font-bold py-1.5 rounded-xl border border-black transition-all duration-200 transform hover:-translate-y-0.5 flex items-center justify-center gap-2"
@@ -117,13 +121,13 @@ export default function ProductCardv2({ product, categoryName, categoryProductOp
             className="w-2 h-2 flex-shrink-0"
             alt="get_instant_quote"
             /> */}
-            Call Us
+            {t("productCard.callUs")}
           </Button>
         </div>
       {show ? (
         <CommonModal
           isOpen={show}
-          title={`Raise a Request for ${categoryName}`}
+          title={t("productCard.raiseRequest", { category: dt(categoryName) })}
           onClose={() => {
             setShow(false);
           }}

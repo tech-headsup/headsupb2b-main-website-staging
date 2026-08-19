@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import ProductCard from "../Card/ProductCard";
 import CustomText from "../Text/CustomText";
 
 export default function MainCategory({ initialDataa }) {
+  const { t } = useTranslation();
   const [showAllCategories, setShowAllCategories] = useState(false);
   const [width, setWidth] = useState(null);
   const isMobile = width < 768;
@@ -85,12 +87,12 @@ export default function MainCategory({ initialDataa }) {
       <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8">
         <div className="text-center">
           <h2 className="section_heading text-3xl md:text-[40px] font-extrabold text-center text-[#111]">
-            Our Categories
+            {t("home.categories.heading")}
           </h2>
         </div>
         <div className="text-center mb-10 pt-2">
           <CustomText
-            text="We have developed a multi-faceted expertise in various categories."
+            text={t("home.categories.subtitle")}
             className="section_sub_text"
           />
         </div>
@@ -108,7 +110,7 @@ export default function MainCategory({ initialDataa }) {
                   }
                   className="group cursor-pointer inline-flex items-center text-headupb2b font-medium py-2 px-4 text-md 4k:text-3xl hover:scale-x-105 transaction-delay"
                 >
-                  View All&nbsp;
+                  {t("common.viewAll")}&nbsp;
                   <span className="icon-left-arrow rotate-180 text-[18px] 4k:text-3xl" />
                 </div>
               </div>

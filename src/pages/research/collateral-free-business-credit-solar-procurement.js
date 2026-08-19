@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 import GetInTouch from "@/component/Form/Contact/GetInTouch";
 
 
@@ -132,20 +133,36 @@ const h3Style = {
   margin: "36px 0 12px",
 };
 
+const HTML = (html) => ({ dangerouslySetInnerHTML: { __html: html } });
+
 export default function CollateralFreeCreditPage() {
+    const { t } = useTranslation();
     const [showRequestQuote, setShowRequestQuote] = useState(false);
+
+    const HERO_PILLS = t("collateralFreeCredit.hero.pills", { returnObjects: true }) || [];
+    const STAT_STRIP = t("collateralFreeCredit.statStrip", { returnObjects: true }) || [];
+    const TOC = t("collateralFreeCredit.toc", { returnObjects: true }) || [];
+    const COMPARISON_ROWS = t("collateralFreeCredit.comparisonRows", { returnObjects: true }) || [];
+    const COMPARISON_HEADERS = t("collateralFreeCredit.comparisonHeaders", { returnObjects: true }) || [];
+    const PROJECT_ECONOMICS = t("collateralFreeCredit.projectEconomics", { returnObjects: true }) || [];
+    const QUALIFY_HEADERS = t("collateralFreeCredit.qualifyHeaders", { returnObjects: true }) || [];
+    const QUALIFY_ROWS = t("collateralFreeCredit.qualifyRows", { returnObjects: true }) || [];
+    const STRATEGIC_STEPS = t("collateralFreeCredit.strategicSteps", { returnObjects: true }) || [];
+    const TAKEAWAYS = t("collateralFreeCredit.takeaways", { returnObjects: true }) || [];
+    const TAGS = t("collateralFreeCredit.tags", { returnObjects: true }) || [];
+
   return (
-    
+
     <>
       <Head>
-        <title>Collateral-Free Business Credit for Solar Procurement</title>
+        <title>{t("collateralFreeCredit.meta.title")}</title>
         <meta
           name="description"
-          content="Working capital gaps are the silent killer of solar project margins. Here is how contractors, EPC firms, and developers can use collateral-free procurement credit to source better, faster — without stretching their balance sheet."
+          content={t("collateralFreeCredit.meta.description")}
         />
         <meta
           name="keywords"
-          content="Collateral-free credit, Solar procurement finance, EPC working capital, B2B procurement credit, Solar project financing, Trade credit India"
+          content={t("collateralFreeCredit.meta.keywords")}
         />
         <link
           rel="canonical"
@@ -154,11 +171,11 @@ export default function CollateralFreeCreditPage() {
         <meta property="og:type" content="article" />
         <meta
           property="og:title"
-          content="Collateral-Free Business Credit for Solar Procurement"
+          content={t("collateralFreeCredit.meta.ogTitle")}
         />
         <meta
           property="og:description"
-          content="Working capital gaps are the silent killer of solar project margins. Here is how contractors, EPC firms, and developers can use collateral-free procurement credit."
+          content={t("collateralFreeCredit.meta.ogDescription")}
         />
         <meta
           property="og:url"
@@ -173,11 +190,11 @@ export default function CollateralFreeCreditPage() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Collateral-Free Business Credit for Solar Procurement"
+          content={t("collateralFreeCredit.meta.twitterTitle")}
         />
         <meta
           name="twitter:description"
-          content="How contractors, EPC firms, and developers can use collateral-free procurement credit to protect project margins."
+          content={t("collateralFreeCredit.meta.twitterDescription")}
         />
         <meta
           name="twitter:image"
@@ -232,7 +249,7 @@ export default function CollateralFreeCreditPage() {
             <span className="inline-block bg-blue-500 text-white text-[11px] font-semibold tracking-[0.12em] uppercase px-[14px] py-[5px] rounded-[2px] mb-7"
               style={{ background: "#00d4f5", fontFamily: "'DM Sans', sans-serif", boxShadow: "0 4px 15px rgba(0,212,245,0.35)" }}
             >
-              HEADSUP B2B · FINANCE &amp; CREDIT · MAY 2025 · 5 MIN READ
+              {t("collateralFreeCredit.hero.badge")}
             </span>
 
             <h1
@@ -246,7 +263,7 @@ export default function CollateralFreeCreditPage() {
                 fontWeight: 700,
               }}
             >
-              Collateral-Free Business Credit for Solar Procurement
+              {t("collateralFreeCredit.hero.title")}
             </h1>
 
             <p
@@ -259,20 +276,12 @@ export default function CollateralFreeCreditPage() {
                 fontStyle: "italic",
               }}
             >
-              Working capital gaps are the silent killer of solar project
-              margins. Here is how contractors, EPC firms, and developers can use
-              collateral-free procurement credit to source better, faster —
-              without stretching their balance sheet.
+              {t("collateralFreeCredit.hero.subtitle")}
             </p>
 
             {/* pills */}
             <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-              {[
-                "5 min read",
-                "May 2025",
-                "For Contractors, EPC & Developers",
-                "B2B Procurement Finance",
-              ].map((label) => (
+              {HERO_PILLS.map((label) => (
                 <span
                   key={label}
                   style={{
@@ -326,31 +335,18 @@ export default function CollateralFreeCreditPage() {
             }}
           >
             <span style={{ fontSize: 18, flexShrink: 0, marginTop: 2 }}>📋</span>
-            <p style={{ fontSize: 15, color: "#1E3A5F", lineHeight: 1.65, margin: 0, fontStyle: "italic" }}>
-              <strong style={{ fontWeight: 700, fontStyle: "normal" }}>Who this is for:</strong>{" "}
-              Contractors, EPC firms, and solar project developers managing
-              procurement-to-payment gaps who want to understand how
-              collateral-free credit can unlock procurement efficiency and
-              protect project margins.
-            </p>
+            <p
+              style={{ fontSize: 15, color: "#1E3A5F", lineHeight: 1.65, margin: 0, fontStyle: "italic" }}
+              {...HTML(t("collateralFreeCredit.whoThisIsFor"))}
+            />
           </div>
 
           {/* ── INTRO ── */}
           <p style={{ ...p, fontSize: 20, fontWeight: 300, marginBottom: 22 }}>
-            You have won the tender. The project is live. The procurement plan
-            is ready. Then reality hits — you need to pay INR 2 crore for solar
-            panels before your first milestone payment arrives, 60 days from
-            now. Your bank overdraft is maxed. Your NBFC loan is still being
-            processed. Your supplier payment terms are T+15.
+            {t("collateralFreeCredit.intro1")}
           </p>
           <p style={p}>
-            This is not an edge case. It is the operating reality for thousands
-            of contractors and EPC firms executing solar projects across India.
-            Working capital gaps — the lag between procurement spend and
-            milestone receipts — are the most common and most underestimated
-            financial risk in renewable energy projects. The good news:
-            collateral-free business credit, purpose-built for B2B procurement,
-            is reshaping how contractors manage this challenge.
+            {t("collateralFreeCredit.intro2")}
           </p>
 
           {/* Stat strip */}
@@ -366,12 +362,7 @@ export default function CollateralFreeCreditPage() {
               margin: "36px 0",
             }}
           >
-            {[
-              { num: "60–90", unit: " Days", desc: "Avg. procurement-to-milestone gap" },
-              { num: "40–60", unit: "%", desc: "Project cost front-loaded to equipment" },
-              { num: "₹15 Cr", unit: "+", desc: "Working capital exposure for mid-size EPC" },
-              { num: "60", unit: " Days", desc: "Credit window on Headsup B2B" },
-            ].map(({ num, unit, desc }) => (
+            {STAT_STRIP.map(({ num, unit, desc }) => (
               <div
                 key={desc}
                 style={{
@@ -430,7 +421,7 @@ export default function CollateralFreeCreditPage() {
                 marginBottom: 18,
               }}
             >
-              What&apos;s in this guide
+              {t("collateralFreeCredit.tocLabel")}
             </div>
             <ol
               style={{
@@ -443,14 +434,7 @@ export default function CollateralFreeCreditPage() {
                 counterReset: "toc",
               }}
             >
-              {[
-                ["#working-capital-problem", "The working capital problem"],
-                ["#what-is-procurement-credit", "What is procurement credit?"],
-                ["#real-economics", "The real economics & savings"],
-                ["#who-qualifies", "Who qualifies for it"],
-                ["#strategic-uses", "5 strategic ways to use it"],
-                ["#takeaways", "Key takeaways"],
-              ].map(([href, label], i) => (
+              {TOC.map(([href, label], i) => (
                 <li key={href} style={{ counterIncrement: "toc" }}>
                   <a
                     href={href}
@@ -483,15 +467,9 @@ export default function CollateralFreeCreditPage() {
           </nav>
 
           {/* ── S1: Working Capital Problem ── */}
-          <Section id="working-capital-problem" title="The Working Capital Problem in Solar Projects">
+          <Section id="working-capital-problem" title={t("collateralFreeCredit.sections.s1.title")}>
             <p style={p}>
-              Solar project economics are structurally misaligned with
-              procurement cash flows. Milestone payments from the developer or
-              DISCOM typically arrive in weeks 14–18, but equipment procurement
-              must happen in weeks 4–8 — a 10-week cash gap on a single project.
-              Run three concurrently and you are looking at a INR 7–9 crore hole
-              in your working capital, funded entirely by your own balance sheet
-              or expensive short-term debt.
+              {t("collateralFreeCredit.sections.s1.p1")}
             </p>
 
             {/* Real-world scenario blockquote */}
@@ -516,7 +494,7 @@ export default function CollateralFreeCreditPage() {
                   marginBottom: 14,
                 }}
               >
-                Real-World Scenario
+                {t("collateralFreeCredit.sections.s1.scenarioLabel")}
               </div>
               <p
                 style={{
@@ -528,13 +506,7 @@ export default function CollateralFreeCreditPage() {
                   margin: 0,
                 }}
               >
-                &ldquo;We had three projects running simultaneously — 2 MW in
-                Gujarat, 1.5 MW in Rajasthan, and a rooftop project in Pune. Our
-                combined equipment procurement bill was INR 8.2 crore due in the
-                same 3-week window. Our bank overdraft limit was INR 3 crore. We
-                either delayed procurement, compromised on supplier quality, or
-                stretched our balance sheet. None of these options were
-                good.&rdquo;
+                {t("collateralFreeCredit.sections.s1.scenarioQuote")}
               </p>
             </div>
           </Section>
@@ -542,17 +514,9 @@ export default function CollateralFreeCreditPage() {
           <Rule />
 
           {/* ── S2: What is Procurement Credit ── */}
-          <Section id="what-is-procurement-credit" title="What Is Collateral-Free Procurement Credit?">
+          <Section id="what-is-procurement-credit" title={t("collateralFreeCredit.sections.s2.title")}>
             <p style={p}>
-              Procurement credit is a financing facility that lets businesses
-              purchase equipment now and pay later, without pledging physical
-              assets as security. Unlike a bank loan, it is embedded directly
-              into the procurement transaction: place your order, receive your
-              goods, and settle within an agreed window — typically 30, 45, or
-              60 days. For solar procurement this means sourcing panels,
-              inverters, cables, and balance-of-system components at the right
-              time, aligned with project timelines, without waiting for
-              milestone payments or drawing down expensive credit lines.
+              {t("collateralFreeCredit.sections.s2.p1")}
             </p>
 
             {/* Comparison Table */}
@@ -566,7 +530,7 @@ export default function CollateralFreeCreditPage() {
               >
                 <thead>
                   <tr className="bg-headupb2b">
-                    {["Traditional Financing", "Procurement Credit"].map(
+                    {COMPARISON_HEADERS.map(
                       (th) => (
                         <th
                           key={th}
@@ -587,28 +551,7 @@ export default function CollateralFreeCreditPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {[
-                    [
-                      "Requires property or fixed asset collateral",
-                      "No collateral required — assessed on business cash flows and order history",
-                    ],
-                    [
-                      "NBFC loans take 2–4 weeks to process and disburse",
-                      "Activated at point of purchase — no separate loan application",
-                    ],
-                    [
-                      "Working capital loans carry 14–18% annual interest",
-                      "Competitive credit cost built into procurement economics",
-                    ],
-                    [
-                      "Fixed limit — does not scale with project volume",
-                      "Scales with order volume and platform track record",
-                    ],
-                    [
-                      "Cash flow risk: funds arrive before suppliers are confirmed",
-                      "Pay only when milestone payments arrive — aligned cash flow",
-                    ],
-                  ].map(([trad, proc], i) => (
+                  {COMPARISON_ROWS.map(([trad, proc], i) => (
                     <tr key={i} style={{ background: i % 2 === 1 ? "#F4F1FA" : "#FFFFFF" }}>
                       <td
                         style={{
@@ -645,12 +588,9 @@ export default function CollateralFreeCreditPage() {
           <Rule />
 
           {/* ── S3: Real Economics ── */}
-          <Section id="real-economics" title="The Real Economics: What Procurement Credit Saves">
+          <Section id="real-economics" title={t("collateralFreeCredit.sections.s3.title")}>
             <p style={p}>
-              The savings from procurement credit are not theoretical. The table
-              below works through the math on a typical 2 MW ground-mount solar
-              project — the kind of contract being awarded across Rajasthan,
-              Gujarat, and UP every week.
+              {t("collateralFreeCredit.sections.s3.p1")}
             </p>
 
             {/* Project Economics Card */}
@@ -674,17 +614,10 @@ export default function CollateralFreeCreditPage() {
                   textTransform: "uppercase",
                 }}
               >
-                Project Economics — 2 MW Ground-Mount Solar
+                {t("collateralFreeCredit.sections.s3.economicsHeader")}
               </div>
               <div style={{ padding: "8px 0" }}>
-                {[
-                  ["Total project value", "₹6.0 crore", false],
-                  ["Equipment procurement cost (panels, inverters, BoS)", "₹3.2 crore", false],
-                  ["Procurement-to-milestone gap", "55 days", false],
-                  ["Cost of short-term NBFC loan at 18% p.a. for 55 days", "₹8.7 lakh", false],
-                  ["Cost of 60-day procurement credit facility", "₹4.5 lakh", false],
-                  ["Finance cost saving on this project", "₹4.2 lakh", true],
-                ].map(([label, value, highlight]) => (
+                {PROJECT_ECONOMICS.map(({ label, value, highlight }) => (
                   <div
                     key={label}
                     style={{
@@ -724,23 +657,16 @@ export default function CollateralFreeCreditPage() {
             </div>
 
             <p style={p}>
-              That INR 4.2 lakh saving drops directly to project margin on a
-              single project. For a contractor running 8–10 projects per year
-              this compounds into INR 30–40 lakh in annual margin improvement,
-              purely from optimising procurement finance.
+              {t("collateralFreeCredit.sections.s3.p2")}
             </p>
           </Section>
 
           <Rule />
 
           {/* ── S4: Who Qualifies ── */}
-          <Section id="who-qualifies" title="Who Qualifies for Collateral-Free Procurement Credit?">
+          <Section id="who-qualifies" title={t("collateralFreeCredit.sections.s4.title")}>
             <p style={p}>
-              The eligibility framework is significantly more accessible than
-              traditional bank lending. Contractors with 1–3 years of operating
-              history and even INR 50 lakh turnover can access meaningful credit
-              limits — limits that scale with usage and repayment track record,
-              not just historical revenue.
+              {t("collateralFreeCredit.sections.s4.p1")}
             </p>
 
             <div style={{ overflowX: "auto", margin: "28px 0" }}>
@@ -753,7 +679,7 @@ export default function CollateralFreeCreditPage() {
               >
                 <thead>
                   <tr className="bg-headupb2b">
-                    {["Business Profile", "Credit Limit", "Key Requirements"].map(
+                    {QUALIFY_HEADERS.map(
                       (th) => (
                         <th
                           key={th}
@@ -774,32 +700,7 @@ export default function CollateralFreeCreditPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {[
-                    [
-                      "Established EPC (5+ yrs, ₹5 Cr+ turnover)",
-                      "₹1–5 crore",
-                      "GST returns, ITR, bank statements",
-                      "green",
-                    ],
-                    [
-                      "Mid-size contractor (3–5 yrs, ₹1–5 Cr)",
-                      "₹25 L – 1 crore",
-                      "GST, 2-year ITR, order book",
-                      "blue",
-                    ],
-                    [
-                      "New EPC company (1–3 years)",
-                      "₹10–25 lakh",
-                      "GST registration, project LOI/PO",
-                      "amber",
-                    ],
-                    [
-                      "Solar developer / IPP",
-                      "₹2–10 crore",
-                      "Project documents, financials",
-                      "green",
-                    ],
-                  ].map(([profile, limit, req, badgeVar], i) => (
+                  {QUALIFY_ROWS.map(([profile, limit, req, badgeVar], i) => (
                     <tr key={profile} style={{ background: i % 2 === 1 ? "#F4F1FA" : "#FFFFFF" }}>
                       <td
                         style={{
@@ -843,12 +744,9 @@ export default function CollateralFreeCreditPage() {
           <Rule />
 
           {/* ── S5: 5 Strategic Ways ── */}
-          <Section id="strategic-uses" title="5 Strategic Ways to Use Procurement Credit">
+          <Section id="strategic-uses" title={t("collateralFreeCredit.sections.s5.title")}>
             <p style={p}>
-              Knowing that procurement credit exists is one thing — deploying it
-              for measurable margin gain is another. Below are the five
-              strategies leading EPC firms use to extract real value from a
-              collateral-free credit facility.
+              {t("collateralFreeCredit.sections.s5.p1")}
             </p>
 
             {/* Steps */}
@@ -864,33 +762,7 @@ export default function CollateralFreeCreditPage() {
                   background: "#DDE8DB",
                 }}
               />
-              {[
-                {
-                  num: 1,
-                  title: "Front-load procurement",
-                  desc: "Lock in panel and inverter prices at project start while keeping own capital available for civil work and labour costs that do not qualify for trade credit.",
-                },
-                {
-                  num: 2,
-                  title: "Run concurrent projects without capital constraints",
-                  desc: "With INR 50 lakh of own working capital and INR 2 crore in procurement credit, a contractor can execute INR 2.5 crore of concurrent procurement — a 5x effective capital multiplier.",
-                },
-                {
-                  num: 3,
-                  title: "Negotiate better prices by committing faster",
-                  desc: "A pre-approved credit limit lets you issue purchase orders within hours rather than waiting for bank disbursements — giving you negotiating leverage that cash-constrained competitors simply do not have.",
-                },
-                {
-                  num: 4,
-                  title: "Avoid emergency procurement at premium prices",
-                  desc: "Without credit headroom, contractors defer procurement until milestone payments arrive, then face rushed sourcing at whatever price the market offers. A standing facility eliminates this margin leak.",
-                },
-                {
-                  num: 5,
-                  title: "Protect supplier relationships",
-                  desc: "Delayed payments erode your position in supplier queues. A credit facility that guarantees on-time payment — even when your own milestone receipts are delayed — protects your sourcing priority for future projects.",
-                },
-              ].map(({ num, title, desc }) => (
+              {STRATEGIC_STEPS.map(({ num, title, desc }) => (
                 <div
                   key={num}
                   style={{ position: "relative", marginBottom: 32 }}
@@ -945,11 +817,9 @@ export default function CollateralFreeCreditPage() {
           <Rule />
 
           {/* ── S6: Key Takeaways ── */}
-          <Section id="takeaways" title="Key Takeaways">
+          <Section id="takeaways" title={t("collateralFreeCredit.sections.s6.title")}>
             <p style={p}>
-              The five points below summarise the strategic case for building
-              collateral-free procurement credit into every solar project
-              workflow.
+              {t("collateralFreeCredit.sections.s6.p1")}
             </p>
 
             <div
@@ -960,13 +830,7 @@ export default function CollateralFreeCreditPage() {
                 margin: "28px 0",
               }}
             >
-              {[
-                "Working capital gaps are structural in solar projects — plan for them proactively, not reactively.",
-                "Collateral-free credit is a procurement tool, not a last resort. Leading EPC firms use it to procure smarter and protect margins across their project portfolio.",
-                "The economics are compelling: the cost of well-structured procurement credit is almost always lower than expensive NBFC debt, deferred procurement, or quality-compromised sourcing.",
-                "Eligibility is more accessible than most contractors think. One or more years of operating history and clean GST filings is typically sufficient — no property pledge required.",
-                "Platform-embedded credit is the future of B2B procurement finance, integrating verified sourcing, quality assurance, and financing into a single workflow.",
-              ].map((text, i) => (
+              {TAKEAWAYS.map((text, i) => (
                 <div
                   key={i}
                   style={{
@@ -1031,7 +895,7 @@ export default function CollateralFreeCreditPage() {
                 lineHeight: 1.25,
               }}
             >
-              Access Up to 60-Day Collateral-Free Credit on Solar Procurement
+              {t("collateralFreeCredit.cta.heading")}
             </h2>
             <p
               style={{
@@ -1041,9 +905,7 @@ export default function CollateralFreeCreditPage() {
                 fontSize: 16,
               }}
             >
-              Headsup B2B offers integrated procurement credit for contractors,
-              EPC firms, and developers — no collateral, no delays, embedded
-              directly in your sourcing workflow.
+              {t("collateralFreeCredit.cta.subtitle")}
             </p>
             <div
               style={{
@@ -1053,8 +915,7 @@ export default function CollateralFreeCreditPage() {
                 letterSpacing: "0.03em",
               }}
             >
-              500+ projects delivered &nbsp;│&nbsp; 1,000+ verified suppliers
-              &nbsp;│&nbsp; Pan-India fulfilment
+              {t("collateralFreeCredit.cta.stats")}
             </div>
             <button
               type="button"
@@ -1072,7 +933,7 @@ export default function CollateralFreeCreditPage() {
                 letterSpacing: "0.03em",
               }}
             >
-              Apply for Procurement Credit →
+              {t("collateralFreeCredit.cta.button")}
             </button>
           </div>
 
@@ -1105,19 +966,20 @@ export default function CollateralFreeCreditPage() {
                   letterSpacing: "0.05em",
                 }}
               >
-                HB
+                {t("collateralFreeCredit.footer.avatar")}
               </div>
               <div>
                 <div style={{ fontSize: 13.5, color: "#181C18", fontWeight: 600 }}>
-                  Headsup B2B Editorial Team
+                  {t("collateralFreeCredit.footer.team")}
                 </div>
-                <div style={{ fontSize: 12, color: "#6B7468" }}>
-                  Finance &amp; Credit · headsupb2b.com
-                </div>
+                <div
+                  style={{ fontSize: 12, color: "#6B7468" }}
+                  {...HTML(t("collateralFreeCredit.footer.byline"))}
+                />
               </div>
             </div>
             <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-              {["Procurement Credit", "Working Capital", "Solar Finance", "EPC", "B2B Credit", "Trade Finance", "India Solar"].map(
+              {TAGS.map(
                 (tag) => (
                   <span
                     key={tag}

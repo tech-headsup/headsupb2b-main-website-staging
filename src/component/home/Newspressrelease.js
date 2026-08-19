@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
@@ -11,7 +12,98 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 
+function localizeTag(t, rawTag) {
+  const match = rawTag.match(/^Press Release - (\d{1,2}) (\w{3}) (\d{4})$/);
+  if (!match) return rawTag;
+  const [, day, month, year] = match;
+  const label = t("home.newsPress.pressLabel", { defaultValue: "Press Release" });
+  const translatedMonth = t(`home.newsPress.months.${month}`, { defaultValue: month });
+  return `${label} - ${day} ${translatedMonth} ${year}`;
+}
+
+const RS_2500_CR_LOGOS = [
+  {
+    image: "/news_logos/18.png",
+    link: "https://www.news18.com/agency-feeds/headsup-b2b-sees-rs-2500-cr-revenue-by-2030-founder-10101276.html",
+    title: "News18",
+  },
+  {
+    image: "/news_logos/daily.jpeg",
+    link: "https://www.dailyexcelsior.com/headsup-b2b-sees-rs-2500-cr-revenue-by-2030-founder/",
+    title: "Daily Excelsior",
+  },
+  {
+    image: "/news_logos/times.jpeg",
+    link: "https://economictimes.indiatimes.com/news/company/corporate-trends/headsup-b2b-sees-rs-2500-crore-revenue-by-2030-founder/articleshow/131218538.cms",
+    title: "Economic Times",
+  },
+  {
+    image: "/news_logos/pti.png",
+    link: "https://www.ptinews.com/story/business/headsup-b2b-sees-rs-2-500-cr-revenue-by-2030-founder/3684697",
+    title: "PTI",
+  },
+  {
+    image: "/news_logos/rediff.png",
+    link: "https://money.rediff.com/news/market/headsup-b2b-rs-2-500-cr-revenue-target-by-2030/47356720260520",
+    title: "Rediff Money",
+  },
+  {
+    image: "/news_logos/drum.png",
+    link: "https://www.newsdrum.in/business/headsup-b2b-sees-rs-2500-cr-revenue-by-2030-founder-11853908",
+    title: "News Drum",
+  },
+  {
+    image: "/news_logos/scrap-com.png",
+    link: "https://article.wn.com/view-scrap/2026/05/20/HeadsUp_B2B_sees_Rs_2500_crore_revenue_by_2030_Founder/",
+    title: "WN",
+  },
+  {
+    image: "/news_logos/devdiscourse.png",
+    link: "https://www.devdiscourse.com/article/headlines/3914868-headsup-b2b-sees-rs-2500-cr-revenue-by-2030-founder",
+    title: "Dev Discourse",
+  },
+  {
+    image: "/news_logos/economic-times.jpg",
+    link: "https://www.msn.com/en-in/money/other/headsup-b2b-sees-rs-2-500-crore-revenue-by-2030-founder/ar-AA23D2Q6",
+    title: "MSN",
+  },
+];
+
+const INA_SOLAR_LOGOS = [
+  {
+    image: "/news_logos/18.png",
+    link: "https://www.news18.com/agency-feeds/headsup-b2b-enters-into-partnership-with-ina-solar-10251824.html",
+    title: "News18",
+  },
+  {
+    image: "/news_logos/energetica.jpeg",
+    link: "https://www.energetica-india.net/news/headsup-b2b-partners-with-ina-solar-to-expand-solar-distribution-targets-inr-150-crore-annual-revenue",
+    title: "Energetica India",
+  },
+  {
+    image: "/news_logos/saur-energy.webp",
+    link: "https://www.saurenergy.com/solar-energy-news/headsup-b2b-signs-ina-solar-distribution-deal-targets-rs-150-crore-solar-revenue-12231159",
+    title: "Saur Energy",
+  },
+  {
+    image: "/news_logos/hans-india.png",
+    link: "https://www.thehansindia.com/business/headsup-b2b-signs-deal-with-ina-solar-1105153",
+    title: "The Hans India",
+  },
+  {
+    image: "/news_logos/pti.png",
+    link: "https://www.ptinews.com/detail/business/HeadsUp-B2B-enters-into-partnership-with-INA-Solar/3932329",
+    title: "PTI",
+  },
+];
+
 const NEWS_ITEMS = [
+  {
+    tag: "Press Release - 13 Aug 2026",
+    title: "Headsup B2B enters into partnership with INA Solar",
+    image: "/news-image/ina-solar.jpg",
+    logos: INA_SOLAR_LOGOS,
+  },
   {
     tag: "Press Release - 16 Jan 2026",
     title: "Headsup B2B Secures Mandate for 40+ MW of Solar Panels and Ancillary Products Across Rajasthan and Jharkhand",
@@ -63,56 +155,8 @@ const NEWS_ITEMS = [
   {
     tag: "Press Release - 20 May 2026",
     title: "Headsup B2B sees Rs 2,500 cr revenue by 2030: Founder",
-    link: "https://www.news18.com/agency-feeds/headsup-b2b-sees-rs-2500-cr-revenue-by-2030-founder-10101276.html",
-    image: "/news-image/news-18.jpg",
-  },
-  {
-    tag: "Press Release - 20 May 2026",
-    title: "Headsup B2B sees Rs 2,500 cr revenue by 2030: Founder",
-    link: "https://www.dailyexcelsior.com/headsup-b2b-sees-rs-2500-cr-revenue-by-2030-founder/",
-    image: "/news-image/daily-excelsior.jpg",
-  },
-  {
-    tag: "Press Release - 20 May 2026",
-    title: "Headsup B2B sees Rs 2,500 cr revenue by 2030: Founder",
-    link: "https://economictimes.indiatimes.com/news/company/corporate-trends/headsup-b2b-sees-rs-2500-crore-revenue-by-2030-founder/articleshow/131218538.cms",
-    image: "/news-image/et.jpg",
-  },
-  {
-    tag: "Press Release - 20 May 2026",
-    title: "Headsup B2B sees Rs 2,500 cr revenue by 2030: Founder",
-    link: "https://www.ptinews.com/story/business/headsup-b2b-sees-rs-2-500-cr-revenue-by-2030-founder/3684697",
     image: "/news-image/pti.png",
-  },
-  {
-    tag: "Press Release - 20 May 2026",
-    title: "Headsup B2B sees Rs 2,500 cr revenue by 2030: Founder",
-    link: "https://money.rediff.com/news/market/headsup-b2b-rs-2-500-cr-revenue-target-by-2030/47356720260520",
-    image: "/news-image/rediff-money.png",
-  },
-  {
-    tag: "Press Release - 20 May 2026",
-    title: "Headsup B2B sees Rs 2,500 cr revenue by 2030: Founder",
-    link: "https://www.newsdrum.in/business/headsup-b2b-sees-rs-2500-cr-revenue-by-2030-founder-11853908",
-    image: "/news-image/news-drum.jpg",
-  },
-  {
-    tag: "Press Release - 20 May 2026",
-    title: "Headsup B2B sees Rs 2,500 cr revenue by 2030: Founder",
-    link: "https://article.wn.com/view-scrap/2026/05/20/HeadsUp_B2B_sees_Rs_2500_crore_revenue_by_2030_Founder/",
-    image: "/news-image/wn.png",
-  },
-  {
-    tag: "Press Release - 20 May 2026",
-    title: "Headsup B2B sees Rs 2,500 cr revenue by 2030: Founder",
-    link: "https://www.devdiscourse.com/article/headlines/3914868-headsup-b2b-sees-rs-2500-cr-revenue-by-2030-founder",
-    image: "/news-image/dev-discourse.png",
-  },
-  {
-    tag: "Press Release - 20 May 2026",
-    title: "Headsup B2B sees Rs 2,500 cr revenue by 2030: Founder",
-    link: "https://www.msn.com/en-in/money/other/headsup-b2b-sees-rs-2-500-crore-revenue-by-2030-founder/ar-AA23D2Q6?ocid=BingNewsVerp",
-    image: "/news-image/msn-1.png",
+    logos: RS_2500_CR_LOGOS,
   },
   {
     tag: "Press Release - 29 May 2026",
@@ -129,6 +173,15 @@ const NEWS_ITEMS = [
 ];
 
 export default function NewsPressRelease() {
+  const { t, i18n } = useTranslation();
+  const bundle = i18n.getResourceBundle(i18n.language, "translation");
+  const translateTitle = (title) => bundle?.newsroom?.titles?.[title] || title;
+
+  const sortedNews = [...NEWS_ITEMS].sort((a, b) => {
+    const getDate = (item) => new Date(item.tag.replace("Press Release - ", ""));
+    return getDate(b) - getDate(a);
+  });
+
   return (
     <div className="-mx-4 sm:-mx-6 md:-mx-12 lg:-mx-20 xl:-mx-28">
     <div className="bg-white max-w-[1280px] mx-auto w-full px-6 md:px-12 lg:px-8 pt-12 sm:pt-16">
@@ -137,7 +190,7 @@ export default function NewsPressRelease() {
           className="text-2xl sm:text-3xl md:text-[40px] font-bold text-[#111]"
           style={{ fontFamily: "'Montserrat', sans-serif" }}
         >
-          Latest Press Releases
+          {t("home.newsPress.heading", { defaultValue: "Latest Press Releases" })}
         </h2>
       </div>
 
@@ -169,15 +222,15 @@ export default function NewsPressRelease() {
           },
         }}
         className="w-full news-press-swiper"
-        style={{ minHeight: 460 }}
+        style={{ minHeight: 520 }}
       >
-        {NEWS_ITEMS.map((item, i) => (
+        {sortedNews.map((item, i) => (
           <SwiperSlide key={i}>
             <div
-              className="flex flex-col h-[440px] overflow-hidden rounded-2xl border border-[#e5e5e5] transition-all duration-200 hover:shadow-[0_8px_30px_rgba(74,55,114,0.1)] hover:border-[#c5b8e8] bg-white mb-4"
+              className="flex flex-col h-[500px] overflow-hidden rounded-2xl border border-[#e5e5e5] transition-all duration-200 hover:shadow-[0_8px_30px_rgba(74,55,114,0.1)] hover:border-[#c5b8e8] bg-white mb-4"
             >
               {/* IMAGE */}
-              <div className="relative w-full h-[220px]">
+              <div className="relative w-full h-[220px] shrink-0">
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -194,26 +247,47 @@ export default function NewsPressRelease() {
                     className="text-xs text-[#888] leading-snug"
                     style={{ fontFamily: "'DM Sans', sans-serif" }}
                   >
-                    {item.tag}
+                    {localizeTag(t, item.tag)}
                   </span>
 
                   <p className="text-[15px] sm:text-[16px] font-bold text-[#111] leading-snug min-h-[90px]" style={{ fontFamily: "'Manrope', sans-serif" }}>
-                    {item.title}
+                    {translateTitle(item.title)}
                   </p>
                 </div>
 
-                <a
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-fit rounded-lg px-4 sm:px-5 py-2 sm:py-2.5 text-xs font-bold text-white no-underline transition-all duration-200 hover:-translate-y-px hover:opacity-90"
-                  style={{
-                    background: "#4A3772",
-                    fontFamily: "'DM Sans', sans-serif",
-                  }}
-                >
-                  Read More
-                </a>
+                {item.logos ? (
+                  <div className="grid grid-cols-3 gap-2">
+                    {item.logos.map((logo, li) => (
+                      <a
+                        key={li}
+                        href={logo.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="relative h-6 overflow-hidden"
+                      >
+                        <Image
+                          src={logo.image}
+                          alt={logo.title}
+                          fill
+                          className="object-contain"
+                        />
+                      </a>
+                    ))}
+                  </div>
+                ) : (
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-fit rounded-lg px-4 sm:px-5 py-2 sm:py-2.5 text-xs font-bold text-white no-underline transition-all duration-200 hover:-translate-y-px hover:opacity-90"
+                    style={{
+                      background: "#4A3772",
+                      fontFamily: "'DM Sans', sans-serif",
+                    }}
+                  >
+                    {t("common.readMore", { defaultValue: "Read More" })}
+                  </a>
+                )}
               </div>
             </div>
           </SwiperSlide>
@@ -229,7 +303,7 @@ export default function NewsPressRelease() {
               fontFamily: "'DM Sans', sans-serif",
             }}
           >
-            View All
+            {t("common.viewAll", { defaultValue: "View All" })}
             <GoArrowRight className="w-4 h-4" />
           </Button>
         </Link>
@@ -238,7 +312,7 @@ export default function NewsPressRelease() {
         <div className="flex items-center gap-3 md:absolute md:right-0">
           <button
             type="button"
-            aria-label="Previous news"
+            aria-label={t("home.newsPress.prevAria", { defaultValue: "Previous news" })}
             className="custom-prev w-12 h-12 rounded-full border border-[#ddd] flex items-center justify-center hover:bg-[#f5f5f5] transition"
           >
             <GoArrowLeft aria-hidden="true" className="w-5 h-5 text-[#111]" />
@@ -246,7 +320,7 @@ export default function NewsPressRelease() {
 
           <button
             type="button"
-            aria-label="Next news"
+            aria-label={t("home.newsPress.nextAria", { defaultValue: "Next news" })}
             className="custom-next w-12 h-12 rounded-full border border-[#ddd] flex items-center justify-center hover:bg-[#f5f5f5] transition"
           >
             <GoArrowRight aria-hidden="true" className="w-5 h-5 text-[#111]" />

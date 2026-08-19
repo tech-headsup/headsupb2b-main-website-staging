@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import HeroSection from "./HeroSection";
 import MetricsCards from "./MetricsCards";
 import FeaturesGrid from "./FeaturesGrid";
@@ -9,15 +10,12 @@ import { NextSeo } from "next-seo";
 import { getAllProducts } from "@/Contants/APIEndpoint";
 
 function index({productData}) {
+  const { t } = useTranslation();
   return (
     <div>
       <NextSeo
-        title={
-          "Promote Your Products and Get Traffic/ Lead | Advertise with us"
-        }
-        description={
-          "Promote Your Products and Get Traffic/ Lead | Advertise with us"
-        }
+        title={t("ads.meta.title")}
+        description={t("ads.meta.description")}
         canonical={"https://www.headsupb2b.com/ads-with-us"}
       />
       <main className="bg-gray-50 p-10 ll:mt-24">

@@ -1,22 +1,27 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/router";
+import { useTranslation } from "react-i18next";
 import { getDemoPhone } from "@/Utils/demoDefaults";
 const SEND_MAIL_ENDPOINT = "/api/sendMail";
-// Define schema using yup
-const schema = yup.object().shape({
-  name: yup.string().required("Name is required"),
-  contactNo: yup
-    .string()
-    .required("Contact number is required")
-    .matches(/^[0-9]{10}$/, "Invalid contact number"),
-  email: yup.string().email("Invalid email"),
-});
 
 export default function GetInTouch() {
+  const { t } = useTranslation();
   const router = useRouter();
+  const schema = useMemo(
+    () =>
+      yup.object().shape({
+        name: yup.string().required(t("blogPage.form.errors.nameRequired")),
+        contactNo: yup
+          .string()
+          .required(t("blogPage.form.errors.contactRequired"))
+          .matches(/^[0-9]{10}$/, t("blogPage.form.errors.contactInvalid")),
+        email: yup.string().email(t("blogPage.form.errors.emailInvalid")),
+      }),
+    [t]
+  );
   const {
     register,
     handleSubmit,
@@ -67,14 +72,14 @@ export default function GetInTouch() {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-6">
             <h2 className={`text-2xl text-white text-center font-semibold`}>
-              Get In Touch
+              {t("blogPage.getInTouch")}
             </h2>
           </div>
           <div className="rounded-xl">
             <div className="my-3">
               <input
                 {...register("name")}
-                placeholder="Name*"
+                placeholder={t("blogPage.form.namePlaceholder")}
                 className="bg-transparent text-white placeholder:text-white placehoder:px-[-4px] w-full border-b mb-2 outline-none"
               />
               {errors.name && (
@@ -84,7 +89,7 @@ export default function GetInTouch() {
             <div className="my-3">
               <input
                 {...register("contactNo")}
-                placeholder="Contact No*"
+                placeholder={t("blogPage.form.contactPlaceholder")}
                 className="bg-transparent text-white placeholder:text-white placehoder:px-[-4px] w-full border-b mb-2 outline-none"
               />
               {errors.contactNo && (
@@ -94,14 +99,14 @@ export default function GetInTouch() {
             <div className="my-3">
               <input
                 {...register("address")}
-                placeholder="Address"
+                placeholder={t("blogPage.form.addressPlaceholder")}
                 className="bg-transparent text-white placeholder:text-white placehoder:px-[-4px] w-full border-b mb-2 outline-none"
               />
             </div>
             <div className="my-3">
               <input
                 {...register("email")}
-                placeholder="Email"
+                placeholder={t("blogPage.form.emailPlaceholder")}
                 className="bg-transparent text-white placeholder:text-white placehoder:px-[-4px] w-full border-b mb-2 outline-none"
               />
               {errors.email && (
@@ -110,7 +115,7 @@ export default function GetInTouch() {
             </div>
             <div className="my-3">
               <label htmlFor="message" className="text-lg text-white">
-                Message
+                {t("blogPage.form.messageLabel")}
               </label>
             </div>
             <textarea
@@ -124,7 +129,7 @@ export default function GetInTouch() {
                 type="submit"
                 className="bg-white text-headupb2b py-2 px-8 font-medium text-xl rounded-md hover:scale-105 delay"
               >
-                {loading ? "Sending..." : "Send"}
+                {loading ? t("blogPage.form.sending") : t("blogPage.form.send")}
               </button>
               {messageSent && <div id="messageSent"></div>}
             </div>

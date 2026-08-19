@@ -1,54 +1,35 @@
+import { useTranslation } from "react-i18next";
+
+const PILLS = ["verified", "pricing", "credit", "delivery"];
+
 export default function HowItWorksSection() {
+  const { t } = useTranslation();
   return (
     <section className="section section-no-top how-section" style={{ paddingBottom: 40 }}>
       <div className="how-container">
         <div className="how-wrap">
           <div className="sec-header">
-            <h2>How To Order</h2>
+            <h2>{t("solar.how.heading")}</h2>
             <p>
-              From enquiry to delivery
+              {t("solar.how.subtitle")}
             </p>
           </div>
           <div className="steps-row">
-            <div className="step-item">
-              <div className="step-num">1</div>
-              <h4>Tell us what you need</h4>
-              <p className="font-medium">
-                Pick a kit, browse products, <br /> or upload your BOM.
-              </p>
-            </div>
-            <div className="step-item">
-              <div className="step-num">2</div>
-              <h4>Get a quote</h4>
-              <p className="font-medium">
-                Expert-checked pricing, <br /> back to you fast.
-              </p>
-            </div>
-            <div className="step-item">
-              <div className="step-num">3</div>
-              <h4>Confirm</h4>
-              <p className="font-medium">
-                Approve the quote and <br /> lock your material.
-              </p>
-            </div>
-            <div className="step-item">
-              <div className="step-num">4</div>
-              <h4>Delivered</h4>
-              <p className="font-medium">
-                Pan-India delivery, <br /> scheduled to your site.
-              </p>
-            </div>
+            {[1, 2, 3, 4].map((n) => (
+              <div key={n} className="step-item">
+                <div className="step-num">{n}</div>
+                <h4>{t(`solar.how.step${n}.title`)}</h4>
+                <p className="font-medium">
+                  {t(`solar.how.step${n}.desc`)}
+                </p>
+              </div>
+            ))}
           </div>
           <div className="how-pills">
-            {[
-              "Verified suppliers",
-              "Competitive pricing",
-              "Credit up to 61 days*",
-              "Pan-India delivery",
-            ].map((label) => (
-              <span key={label} className="how-pill">
+            {PILLS.map((k) => (
+              <span key={k} className="how-pill">
                 <span className="how-pill-dot" />
-                {label}
+                {t(`solar.how.pills.${k}`)}
               </span>
             ))}
           </div>

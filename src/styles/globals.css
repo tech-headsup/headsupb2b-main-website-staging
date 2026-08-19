@@ -790,3 +790,42 @@ span.has-dot::before {
 .hashnode-content-style tbody tr:last-child td {
 	border-bottom: none;
 }
+
+/* Devanagari (Hindi) text rendering fixes
+   Devanagari has top matras (ि ी े ै ो ौ ं ः) and bottom matras (ु ू ृ) that get clipped
+   when line-height is too tight or containers have tight vertical padding. */
+html[lang="hi"] * {
+	line-height: 1.5;
+}
+html[lang="hi"] h1,
+html[lang="hi"] h2,
+html[lang="hi"] h3,
+html[lang="hi"] h4,
+html[lang="hi"] h5,
+html[lang="hi"] h6 {
+	line-height: 1.35 !important;
+	padding-top: 0.15em;
+	padding-bottom: 0.1em;
+}
+html[lang="hi"] .leading-none,
+html[lang="hi"] .leading-tight,
+html[lang="hi"] [class*="leading-[1.0"],
+html[lang="hi"] [class*="leading-[1.1"],
+html[lang="hi"] [class*="leading-[1.2"] {
+	line-height: 1.35 !important;
+}
+html[lang="hi"] button,
+html[lang="hi"] a.btn,
+html[lang="hi"] [class*="rounded-full"],
+html[lang="hi"] [class*="rounded-md"],
+html[lang="hi"] [class*="rounded-lg"] {
+	line-height: 1.5;
+}
+/* Badge/pill containers: give room for top+bottom matras */
+html[lang="hi"] span[class*="rounded-full"],
+html[lang="hi"] div[class*="rounded-full"] {
+	padding-top: 0.35em;
+	padding-bottom: 0.35em;
+	line-height: 1.4;
+}
+

@@ -1,5 +1,7 @@
 import { getAllCategoryAndNameData } from "@/Contants/APIEndpoint";
 import { useQuery } from "@tanstack/react-query";
+import { useTranslation } from "react-i18next";
+import { useDynamicTranslate } from "@/lib/useDynamicTranslate";
 
 // Fetch function
 const fetchCategoriesNameAndSlug = async () => {
@@ -19,6 +21,8 @@ const fetchCategoriesNameAndSlug = async () => {
 };
 
 export default function Category() {
+  const { t } = useTranslation();
+  const dt = useDynamicTranslate();
   const {
     data: allCategoryData,
     isLoading,
@@ -32,26 +36,26 @@ export default function Category() {
   });
 
   if (isLoading) {
-    return <div className="py-4">Loading categories...</div>;
+    return <div className="py-4">{t('common.loadingCategories')}</div>;
   }
 
   if (isError) {
     return (
       <div className="py-4 text-red-500">
-        Error: {error?.message || 'Failed to load categories'}
+        {t('common.error')}: {error?.message || 'Failed to load categories'}
       </div>
     );
   }
 
   if (!allCategoryData || allCategoryData.length === 0) {
-    return <div className="py-4">No categories available</div>;
+    return <div className="py-4">{t('common.noCategories')}</div>;
   }
 
   return (
     <div className="overflow-hidden relative py-4">
       <div className="mb-2">
         <label className="text-xl font-bold tracking-wide 4k:text-4xl">
-          Categories
+          {t('footer.categories')}
         </label>
       </div>
 
@@ -61,7 +65,7 @@ export default function Category() {
             <div key={ele.slug || index} className="inline-block">
               <a href={`/${ele.slug}`}>
                 <label className="font-normal text-[15px] leading-5 cursor-pointer relative inline-block group 4k:text-2xl">
-                  {ele.name}
+                  {dt(ele.name)}
                   <span className="absolute inset-x-0 bottom-0 h-[0.2px] bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
                   <span className="ml-3">|</span>
                 </label>
@@ -74,7 +78,7 @@ export default function Category() {
             <div key={`duplicate-${ele.slug || index}`} className="inline-block">
               <a href={`/${ele.slug}`}>
                 <label className="font-normal text-[15px] leading-5 cursor-pointer relative inline-block group 4k:text-2xl">
-                  {ele.name}
+                  {dt(ele.name)}
                   <span className="absolute inset-x-0 bottom-0 h-[0.2px] bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
                   <span className="ml-3">|</span>
                 </label>

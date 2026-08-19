@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Upload } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import FormField from "./Form/FormField";
 import { getDemoPhone } from "@/Utils/demoDefaults";
 
 const UploadQuote = () => {
+  const { t } = useTranslation();
   const [selectedFile, setSelectedFile] = useState(null);
   const [note, setNote] = useState("");
   const [name, setName] = useState("");
@@ -38,17 +40,17 @@ const UploadQuote = () => {
     const newErrors = {};
 
     if (!name.trim()) {
-      newErrors.name = "Name is required";
+      newErrors.name = t("uploadQuote.errors.nameRequired");
     }
 
     if (!contactNo) {
-      newErrors.contactNo = "Contact number is required";
+      newErrors.contactNo = t("uploadQuote.errors.contactRequired");
     } else if (!/^[0-9]{10}$/.test(contactNo)) {
-      newErrors.contactNo = "Invalid contact number";
+      newErrors.contactNo = t("uploadQuote.errors.contactInvalid");
     }
 
     if (!selectedFile) {
-      newErrors.file = "Please select a file to upload";
+      newErrors.file = t("uploadQuote.errors.fileRequired");
     }
 
     setErrors(newErrors);
@@ -76,18 +78,18 @@ const UploadQuote = () => {
       const result = await response.json();
 
       if (response.ok) {
-        alert("Quote uploaded successfully!");
+        alert(t("uploadQuote.alerts.success"));
         setSelectedFile(null);
         setNote("");
         setName("");
         setContactNo("");
         setErrors({});
       } else {
-        throw new Error(result.error || "Failed to upload quote");
+        throw new Error(result.error || t("uploadQuote.alerts.failedFallback"));
       }
     } catch (error) {
       console.error("Error uploading quote:", error);
-      alert(`Error uploading quote: ${error.message}`);
+      alert(t("uploadQuote.alerts.error", { message: error.message }));
     } finally {
       setIsSubmitting(false);
     }
@@ -102,19 +104,19 @@ const UploadQuote = () => {
       {/* Form Content */}
       <div className="p-3 sm:p-4 md:p-5 lg:p-6 space-y-3 sm:space-y-3.5 md:space-y-4">
         {/* Name Field */}
-        <FormField label="Name" required error={errors.name}>
+        <FormField label={t("uploadQuote.labels.name")} required error={errors.name}>
           <input
             type="text"
             value={name}
             onChange={handleNameChange}
-            placeholder="Enter your name"
+            placeholder={t("uploadQuote.placeholders.name")}
             className="w-full px-2.5 py-1 border-2 border-gray-300 mt-2 rounded-lg md:rounded-xl bg-gray-50 hover:bg-gray-100 flex items-center gap-1.5 sm:gap-2 cursor-pointer transition-colors outline-none placeholder:text-sm"
           />
         </FormField>
 
         {/* Contact Number Field */}
         <FormField
-          label="Contact Number"
+          label={t("uploadQuote.labels.contactNumber")}
           required
           error={errors.contactNo}
         >
@@ -122,7 +124,7 @@ const UploadQuote = () => {
             type="text"
             value={contactNo}
             onChange={handleContactChange}
-            placeholder="10-digit number"
+            placeholder={t("uploadQuote.placeholders.contact")}
             inputMode="numeric"
             maxLength={10}
             className="w-full px-2.5 py-1 border-2 border-gray-300 mt-2 rounded-lg md:rounded-xl bg-gray-50 hover:bg-gray-100 flex items-center gap-1.5 sm:gap-2 cursor-pointer transition-colors outline-none placeholder:text-sm"
@@ -132,7 +134,7 @@ const UploadQuote = () => {
         {/* File Upload Section */}
         <div className="space-y-1.5 sm:space-y-2">
           <label className="block text-xs sm:text-sm md:text-base font-semibold text-gray-900">
-            Attach Quotation <span className="text-red-500">*</span>
+            {t("uploadQuote.labels.attachQuotation")} <span className="text-red-500">*</span>
           </label>
           <div
             className={`w-full p-2.5 sm:p-3 md:p-4 border-2 border-dashed ${
@@ -145,7 +147,7 @@ const UploadQuote = () => {
           >
             <Upload className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-gray-400 flex-shrink-0" />
             <span className="text-gray-600 text-xs sm:text-xs md:text-sm truncate">
-              {selectedFile ? selectedFile.name : "Select file"}
+              {selectedFile ? selectedFile.name : t("uploadQuote.placeholders.selectFile")}
             </span>
           </div>
           <input
@@ -162,14 +164,14 @@ const UploadQuote = () => {
             </p>
           )}
           <p className="text-[9px] sm:text-xs text-gray-500">
-            PDF, DOC, DOCX, JPG, PNG
+            {t("uploadQuote.labels.allowedFormats")}
           </p>
         </div>
 
         {/* Notes Section */}
         <div className="space-y-1.5 sm:space-y-2">
           <label className="block text-xs sm:text-sm md:text-base font-semibold text-gray-900">
-            Requirements (Optional)
+            {t("uploadQuote.labels.requirements")}
           </label>
           <div className="w-full border-2 border-gray-300 rounded-lg md:rounded-xl bg-white overflow-hidden">
             <textarea
@@ -177,7 +179,7 @@ const UploadQuote = () => {
               onChange={handleNoteChange}
               rows="2"
               className="w-full resize-none border-none outline-none p-2 sm:p-2.5 md:p-3 text-gray-700 text-xs sm:text-xs md:text-sm bg-transparent placeholder-gray-400"
-              placeholder="Add notes..."
+              placeholder={t("uploadQuote.placeholders.notes")}
             />
           </div>
         </div>
@@ -196,10 +198,10 @@ const UploadQuote = () => {
             {isSubmitting ? (
               <>
                 <div className="animate-spin rounded-full h-3 w-3 sm:h-4 sm:w-4 border-2 border-white border-t-transparent"></div>
-                <span>Uploading...</span>
+                <span>{t("uploadQuote.buttons.uploading")}</span>
               </>
             ) : (
-              <span>Submit Quote</span>
+              <span>{t("uploadQuote.buttons.submit")}</span>
             )}
           </button>
         </div>

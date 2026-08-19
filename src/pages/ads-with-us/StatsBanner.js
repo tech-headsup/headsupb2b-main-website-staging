@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
+import { useTranslation } from "react-i18next";
 import "swiper/css";
 import "swiper/css/pagination";
 import GenericForm from "./GenericForm"; // Uncomment and adjust path as needed
 import ModalPopUp from "./ModalPopUp"; // Uncomment and adjust path as needed
 
 const sliderData = [
-  { img: "/B2b ad banner website - 2026-01.jpg", alt: "Happy Advertisers" },
-  { img: "/B2b ad banner website - 2026-02.jpg", alt: "Revenue Generated" },
-  { img: "/B2b ad banner website - 2026-03.jpg", alt: "Average ROAS" },
+  { img: "/B2b ad banner website - 2026-01.jpg", altKey: "ads.stats.happyAdvertisers" },
+  { img: "/B2b ad banner website - 2026-02.jpg", altKey: "ads.stats.revenue" },
+  { img: "/B2b ad banner website - 2026-03.jpg", altKey: "ads.stats.roas" },
 ];
 
 const StatsBanner = ({productOptions}) => {
+  const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleImageClick = () => {
@@ -52,7 +54,7 @@ const StatsBanner = ({productOptions}) => {
                   >
                     <img
                       src={item.img}
-                      alt={item.alt}
+                      alt={t(item.altKey)}
                       className="w-full h-full object-cover"
                     />
                   </div>

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useMemo, useState, useRef } from "react";
 import { useForm, Controller } from "react-hook-form";
 import Select from "react-select";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -6,7 +6,9 @@ import toast, { Toaster } from "react-hot-toast";
 import Ripples from "react-ripples";
 import * as Yup from "yup";
 import { useRouter } from "next/router";
+import { useTranslation } from "react-i18next";
 import { getDemoPhone } from "@/Utils/demoDefaults";
+import { useDynamicTranslate } from "@/lib/useDynamicTranslate";
 import FormField from "../FormField";
 
 export default function SellWithUsForm({
@@ -15,27 +17,35 @@ export default function SellWithUsForm({
   className,
 }) {
   const Router = useRouter();
+  const { t } = useTranslation();
+  const dt = useDynamicTranslate();
   const [loading, setLoading] = useState(false);
   const selectRef = useRef(null);
 
-  const categoryOptions = categoryProductOptions || [];
+  const categoryOptions = useMemo(
+    () => (categoryProductOptions || []).map((opt) => ({
+      ...opt,
+      label: dt(opt.label, "categoryNames"),
+    })),
+    [categoryProductOptions, dt]
+  );
 
-  const schema = Yup.object().shape({
+  const schema = useMemo(() => Yup.object().shape({
     name: Yup.string()
-      .required("Name is required")
-      .min(2, "Name must be at least 2 characters"),
+      .required(t("sellWithUs.errors.nameRequired"))
+      .min(2, t("sellWithUs.errors.nameMin")),
     contactNo: Yup.string()
-      .required("Contact number is required")
-      .matches(/^[0-9]{10}$/, "Invalid contact number"),
+      .required(t("sellWithUs.errors.contactRequired"))
+      .matches(/^[0-9]{10}$/, t("sellWithUs.errors.contactInvalid")),
     email: Yup.string()
-      .email("Invalid email"),
+      .email(t("sellWithUs.errors.emailInvalid")),
     category: Yup.object()
       .nullable()
-      .required("Please select a category"),
+      .required(t("sellWithUs.errors.categoryRequired")),
     message: Yup.string()
-      .min(10, "Message must be at least 10 characters")
-      .max(500, "Message cannot exceed 500 characters"),
-  });
+      .min(10, t("sellWithUs.errors.messageMin"))
+      .max(500, t("sellWithUs.errors.messageMax")),
+  }), [t]);
 
   const {
     register,
@@ -86,14 +96,14 @@ export default function SellWithUsForm({
       .then((emailData) => {
         reset();
         setLoading(false);
-        toast.success("Thank you! We'll contact you soon.");
+        toast.success(t("sellWithUs.toast.success"));
         setShow?.(false);
         selectRef.current?.clearValue();
         Router.push("/thank-you");
       })
       .catch((error) => {
         console.error("API Error:", error);
-        toast.error(`Something went wrong: ${error.message}`);
+        toast.error(t("sellWithUs.toast.error", { message: error.message }));
         setLoading(false);
       });
   };
@@ -175,28 +185,28 @@ export default function SellWithUsForm({
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 sm:space-y-4">
         {/* Name Field */}
         <FormField
-          label="Name"
+          label={t("sellWithUs.labels.name")}
           required
           error={errors.name?.message}
         >
           <input
             {...register("name")}
             type="text"
-            placeholder="Enter your name"
+            placeholder={t("sellWithUs.placeholders.name")}
             className="w-full px-2.5 py-1 border-2 border-gray-300 mt-2 rounded-lg md:rounded-xl bg-gray-50 hover:bg-gray-100 flex items-center gap-1.5 sm:gap-2 cursor-pointer transition-colors outline-none placeholder:text-sm"
           />
         </FormField>
 
         {/* Contact Number Field */}
         <FormField
-          label="Contact Number"
+          label={t("sellWithUs.labels.contactNumber")}
           required
           error={errors.contactNo?.message}
         >
           <input
             {...register("contactNo")}
             type="text"
-            placeholder="10-digit number"
+            placeholder={t("sellWithUs.placeholders.contact")}
             inputMode="numeric"
             className="w-full px-2.5 py-1 border-2 border-gray-300 mt-2 rounded-lg md:rounded-xl bg-gray-50 hover:bg-gray-100 flex items-center gap-1.5 sm:gap-2 cursor-pointer transition-colors outline-none placeholder:text-sm"
             onInput={(e) => {
@@ -208,20 +218,20 @@ export default function SellWithUsForm({
 
         {/* Email Field */}
         <FormField
-          label="Email"
+          label={t("sellWithUs.labels.email")}
           error={errors.email?.message}
         >
           <input
             {...register("email")}
             type="email"
-            placeholder="Enter your email"
+            placeholder={t("sellWithUs.placeholders.email")}
             className="w-full px-2.5 py-1 border-2 border-gray-300 mt-2 rounded-lg md:rounded-xl bg-gray-50 hover:bg-gray-100 flex items-center gap-1.5 sm:gap-2 cursor-pointer transition-colors outline-none placeholder:text-sm"
           />
         </FormField>
 
         {/* Category Field */}
         <FormField
-          label="Select Category"
+          label={t("sellWithUs.labels.category")}
           required
           error={errors.category?.message}
         >
@@ -234,12 +244,12 @@ export default function SellWithUsForm({
                 ref={selectRef}
                 options={[
                   ...(categoryOptions || []),
-                  { value: "other", label: "Other" },
+                  { value: "other", label: t("sellWithUs.labels.other") },
                 ]}
                 onChange={(selected) => {
                   field.onChange(selected);
                 }}
-                placeholder="Select category"
+                placeholder={t("sellWithUs.placeholders.category")}
                 styles={selectStyles}
                 classNamePrefix="react-select"
               />
@@ -249,7 +259,7 @@ export default function SellWithUsForm({
 
         {/* Message Field */}
         <FormField
-          label="Message (Optional)"
+          label={t("sellWithUs.labels.message")}
           error={errors.message?.message}
         >
           <div className="w-full border-2 border-gray-300 mt-2 rounded-lg md:rounded-xl bg-gray-50 hover:bg-gray-100 overflow-hidden transition-colors">
@@ -257,7 +267,7 @@ export default function SellWithUsForm({
               {...register("message")}
               rows="3"
               className="w-full resize-none border-none outline-none px-2.5 py-1 text-gray-700 text-sm bg-transparent placeholder-gray-400 placeholder:text-sm"
-              placeholder="Add notes..."
+              placeholder={t("sellWithUs.placeholders.message")}
               maxLength={500}
             />
           </div>
@@ -271,7 +281,7 @@ export default function SellWithUsForm({
               disabled={loading}
               className="w-full bg-gradient-to-b from-[#402A6F] to-[#4A3772] text-white px-3 sm:px-4 py-2.5 sm:py-3 font-semibold text-xs sm:text-sm tracking-wider rounded-md hover:shadow-lg transition-all disabled:opacity-70 disabled:cursor-not-allowed"
             >
-              {loading ? "Sending..." : "Submit"}
+              {loading ? t("sellWithUs.buttons.sending") : t("sellWithUs.buttons.submit")}
             </button>
           </Ripples>
         </div>

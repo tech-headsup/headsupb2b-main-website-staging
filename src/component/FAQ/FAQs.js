@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import HeaderTitle from "../Header/HeaderTitle";
 import SubHeader from "../Header/SubHeader";
 import { Language } from "@/locales/Language";
@@ -13,6 +14,7 @@ import {
 import { GradientText } from "@/Contants/constant";
 
 export default function FAQs({ FAQData = [] }) {
+  const { t } = useTranslation();
   const [selected, setSelected] = useState(null);
 
   const splitFAQs = (data) => {
@@ -26,10 +28,10 @@ export default function FAQs({ FAQData = [] }) {
     <div className="-mx-4 sm:-mx-6 md:-mx-12 lg:-mx-20 xl:-mx-28">
     <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8">
       <div className="flex flex-col items-center justify-center">
-        <h3 className="section_heading">FAQs</h3>
+        <h3 className="section_heading">{t("home.faqs.heading")}</h3>
         <div className="text-center mt-3 mx-8 text-xs leading-4 mm:leading-4 mm:text-xs md:text-[16px] md:leading-6">
           <label className="section_sub_text">
-            Find the answers to all of our most frequently asked questions
+            {t("home.faqs.subtitle")}
           </label>
         </div>
       </div>
@@ -40,6 +42,12 @@ export default function FAQs({ FAQData = [] }) {
             <div key={columnIndex}>
               {faqs.map((item, index) => {
                 const itemValue = `item-${columnIndex}-${index}`;
+                const question = item.key
+                  ? t(`home.faqs.items.${item.key}.question`, { defaultValue: item.question })
+                  : item.question;
+                const answer = item.key
+                  ? t(`home.faqs.items.${item.key}.answer`, { defaultValue: item.answer })
+                  : item.answer;
                 return (
                   <AccordionItem
                     key={itemValue}
@@ -51,10 +59,10 @@ export default function FAQs({ FAQData = [] }) {
                         selected === itemValue ? "rounded-t-xl" : "rounded-xl"
                       }`}
                     >
-                      {item.question}
+                      {question}
                     </AccordionTrigger>
                     <AccordionContent className="bg-AccordColor p-4 rounded-b-xl">
-                      <p dangerouslySetInnerHTML={{ __html: item.answer }} />
+                      <p dangerouslySetInnerHTML={{ __html: answer }} />
                     </AccordionContent>
                   </AccordionItem>
                 );

@@ -6,6 +6,7 @@ import Script from "next/script";
 import dynamic from "next/dynamic";
 import { GraphQLClient } from "graphql-request";
 import { useRouter } from "next/router";
+import { useTranslation } from "react-i18next";
 import {
   getAllCategoryData,
   sendEmailToBuy,
@@ -48,6 +49,7 @@ const CreditForm = dynamic(() => import("@/component/Form/CreditForm"), { ssr: f
 const endpoint = "https://gql.hashnode.com";
 
 export default function index({ data, initialDataa, categoryProductOptions }) {
+  const { t } = useTranslation();
   const canonical = "https://www.headsupb2b.com/";
 
   function schema() {
@@ -149,10 +151,10 @@ export default function index({ data, initialDataa, categoryProductOptions }) {
       <WhoWeServe />
 
       {/* 5. WHY HEADSUP B2B */}
-      <WhyHeadsupB2B onContactUs={() => setShowGetQuoteModal("Contact Us Today")} />
+      <WhyHeadsupB2B onContactUs={() => setShowGetQuoteModal(t("home.modals.contactToday"))} />
 
       {/* 6. HOW IT WORKS */}
-      <HowItWorks onSubmit={() => setShowGetQuoteModal("Submit Your Requirement Today")} />
+      <HowItWorks onSubmit={() => setShowGetQuoteModal(t("home.modals.submitToday"))} />
 
       {/* 7. TESTIMONIALS */}
       <TestimonialsCarousel />
@@ -187,8 +189,8 @@ export default function index({ data, initialDataa, categoryProductOptions }) {
         <CommonModal
           isOpen={showCreditModal}
           onClose={() => setShowCreditModal(false)}
-          title="Want to Avail Collateral Free Credit* for upto 61 Days?"
-          subTitle="*T&C apply"
+          title={t("home.modals.credit.title")}
+          subTitle={t("home.modals.credit.subtitle")}
           size="xl"
         >
           <CreditForm close={() => setShowCreditModal(false)} />
@@ -198,7 +200,7 @@ export default function index({ data, initialDataa, categoryProductOptions }) {
       {getInstantQuoteModal && (
         <CommonModal
           isOpen={getInstantQuoteModal}
-          title="Get a Quote"
+          title={t("home.modals.quote.title")}
           onClose={() => setgetInstantQuoteModal(false)}
           size="xl"
         >
@@ -214,7 +216,7 @@ export default function index({ data, initialDataa, categoryProductOptions }) {
         <CommonModal
           isOpen={showGetQuoteModal}
           onClose={() => setShowGetQuoteModal(false)}
-          title={showGetQuoteModal || "Raise a Request"}
+          title={showGetQuoteModal || t("home.modals.raiseRequest")}
           closeOnBackdropClick={true}
           size="xl"
         >
@@ -226,8 +228,8 @@ export default function index({ data, initialDataa, categoryProductOptions }) {
         <CommonModal
           isOpen={showUploadQuoteModal}
           onClose={() => setShowUploadQuoteModal(false)}
-          title="Have an Existing Product Quote?"
-          subTitle="Upload Below and Unlock Better Pricing!"
+          title={t("home.modals.uploadQuote.title")}
+          subTitle={t("home.modals.uploadQuote.subtitle")}
           closeOnBackdropClick={true}
           size="md"
         >
@@ -239,7 +241,7 @@ export default function index({ data, initialDataa, categoryProductOptions }) {
         <CommonModal
           isOpen={showSellWithUsFrom}
           onClose={() => setShowSellWithUsFrom(false)}
-          title="Sell With Us"
+          title={t("home.modals.sellWithUs.title")}
           closeOnBackdropClick={true}
           size="xl"
         >

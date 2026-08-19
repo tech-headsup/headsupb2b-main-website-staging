@@ -1,6 +1,7 @@
 import Layout from "@/Layout/Layout";
 import { getLanguage, setLanguage } from "@/storage/storage";
 import "@/styles/globals.css";
+import "@/lib/i18n";
 // import "@/styles/icon.css";
 import { useEffect } from "react";
 import {

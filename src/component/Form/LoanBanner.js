@@ -1,6 +1,8 @@
 import { FaRupeeSign } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 export default function LoanBanner() {
+  const { t } = useTranslation();
   return (
     <div
       className={`bg-[#F84F4F] text-white rounded-lg flex items-center justify-between shadow-md flex-wrap w-full md:w-[500px] px-3 py-1`}
@@ -17,12 +19,12 @@ export default function LoanBanner() {
         <span
           className={`font-normal overflow-hidden text-ellipsis text-sm ml-3`}
         >
-          Avail Collateral Free Credit for upto 61 days now!
+          {t("home.loanBanner.text")}
         </span>
         <span
           className={`text-white/80 whitespace-nowrap flex-shrink-0 text-[10px] ml-2`}
         >
-          *TnC apply
+          {t("home.loanBanner.tnc")}
         </span>
       </div>
     </div>

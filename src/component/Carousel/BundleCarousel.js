@@ -2,6 +2,8 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, Navigation } from "swiper/modules";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
+import { useDynamicTranslate } from "@/lib/useDynamicTranslate";
 
 // Import Swiper styles
 import "swiper/css";
@@ -36,17 +38,73 @@ const BUNDLE_EXTRAS = {
   },
 };
 
-const styleWhyBundleIt = (html) =>
-  html?.replace(
-    /<(strong|em)>Why Bundle It<\/\1>/gi,
-    '<strong style="font-size:1.125rem;line-height:1.75rem;font-weight:700">Why Bundle It</strong>',
+// Translate <strong>Label</strong>: item, item, item patterns using dictionaries.
+// Unknown items fall back to English. Also styles the "Why Bundle It" heading.
+const WHY_BUNDLE_STYLE = "font-size:1.125rem;line-height:1.75rem;font-weight:700";
+const translateBundleHTML = (html, dt, bundleName) => {
+  if (!html) return html;
+
+  const whyLabel = dt("Why Bundle It", ["bundleLabels", "categoryNames"]);
+  const bodyTranslation = bundleName ? dt(bundleName, "bundleWhyBundleItBody") : null;
+  const useTranslatedBody = bodyTranslation && bodyTranslation !== bundleName;
+
+  // Pass A: Locate the <li> containing "Why Bundle It" and rewrite it.
+  // The CMS emits several variants — <strong>Why Bundle It</strong>,
+  // <strong><em>Why Bundle It</em>:</strong>, or with the colon in a separate
+  // <strong> — so we normalise the whole list item instead of pattern-matching
+  // the label markup.
+  let result = html.replace(
+    /<li\b[^>]*>(?:(?!<\/li>)[\s\S])*?why bundle it(?:(?!<\/li>)[\s\S])*?<\/li>/gi,
+    (liMatch) => {
+      const text = liMatch
+        .replace(/<[^>]+>/g, " ")
+        .replace(/&nbsp;/g, " ")
+        .replace(/&amp;/g, "&")
+        .replace(/\s+/g, " ")
+        .trim();
+      const bodyMatch = text.match(/why bundle it\s*:?\s*(.*)/i);
+      const originalBody = bodyMatch ? bodyMatch[1].trim() : "";
+      const body = useTranslatedBody ? bodyTranslation : originalBody;
+      const styledLabel = `<strong style="${WHY_BUNDLE_STYLE}"><em>${whyLabel}</em>:</strong>`;
+      const bodyHtml = body ? `<em><br>${body}</em>` : "";
+      return `<li><p><span style="color: rgb(0, 0, 0)">${styledLabel}${bodyHtml}</span></p></li>`;
+    }
   );
 
+  // Pass B: Translate other <strong>Label</strong>: item, item, item patterns.
+  result = result.replace(
+    /<strong(?:\s[^>]*)?>([^<]+)<\/strong>(\s*:?\s*)([^<]+)/g,
+    (match, rawLabel, sep, rawItems) => {
+      const cleanLabel = rawLabel.replace(/&amp;/g, "&").replace(/[:\s]+$/, "").trim();
+      if (/^why bundle it$/i.test(cleanLabel)) return match; // already handled in Pass A
+      const translatedLabel = dt(cleanLabel, ["bundleLabels", "categoryNames"]);
+      const separator = sep.includes(":") ? sep : ": ";
+      const items = rawItems
+        .replace(/&nbsp;/g, " ")
+        .split(/,\s*/)
+        .map((raw) => {
+          const clean = raw.replace(/&amp;/g, "&").trim();
+          if (!clean) return raw;
+          const t = dt(clean, ["bundleItems", "productNames"]);
+          return raw.replace(clean, t);
+        })
+        .join(", ");
+      return `<strong>${translatedLabel}</strong>${separator}${items}`;
+    }
+  );
+
+  return result;
+};
+
 const BundleContent = ({ bundleData, bundleIndex, matchHeight }) => {
+  const { t } = useTranslation();
+  const dt = useDynamicTranslate();
   const extras = BUNDLE_EXTRAS[bundleData?.name];
-  const productsHTML = extras
-    ? styleWhyBundleIt(bundleData?.keyProductsIncluded)
-    : bundleData?.keyProductsIncluded;
+  const productsHTML = translateBundleHTML(bundleData?.keyProductsIncluded, dt, bundleData?.name);
+  const localizedTagline = dt(bundleData?.name, "bundleTaglines");
+  const tagline = localizedTagline && localizedTagline !== bundleData?.name
+    ? localizedTagline
+    : extras?.tagline;
   return (
     <div
       className={`flex flex-col items-center w-full mt-5 border border-[#4A3772] rounded-2xl ${matchHeight ? "h-full overflow-hidden" : ""}`}
@@ -63,13 +121,13 @@ const BundleContent = ({ bundleData, bundleIndex, matchHeight }) => {
                 {bundleIndex + 1}
               </div> */}
               <h2 className="text-lg sm:text-xl md:text-2xl text-[#4A3772] font-bold break-words">
-                {bundleData?.name}
+                {dt(bundleData?.name, "bundleNames")}
               </h2>
             </div>
 
-            {extras?.tagline && (
+            {tagline && (
               <p className="hidden md:block w-full text-base md:text-lg font-semibold text-[#4A3772] mb-4 leading-snug">
-                {extras.tagline}
+                {tagline}
               </p>
             )}
 
@@ -91,14 +149,14 @@ const BundleContent = ({ bundleData, bundleIndex, matchHeight }) => {
                     key={i}
                     className="bg-[#EEE4FF] w-fit font-bold px-10 py-2 rounded-full text-xs sm:text-sm"
                   >
-                    {item}
+                    {dt(item, ["idealForNames", "categoryNames"])}
                   </span>
                 ))}
               </div>
 
               <div>
                 <h3 className="text-lg font-bold text-gray-700 mb-3">
-                  {extras ? "What We Supply" : "Key Products Included"}
+                  {extras ? t("bundle.whatWeSupply") : t("bundle.keyProducts")}
                 </h3>
                 <div
                   className="text-base text-gray-600 prose prose-sm max-w-none"
@@ -113,14 +171,14 @@ const BundleContent = ({ bundleData, bundleIndex, matchHeight }) => {
 
         {/* Mobile Content - Unchanged */}
         <div className="md:hidden px-3 sm:px-4 py-4">
-          {extras?.tagline && (
+          {tagline && (
             <p className="text-sm font-semibold text-[#4A3772] mb-3 leading-snug">
-              {extras.tagline}
+              {tagline}
             </p>
           )}
           <div className="mb-4">
             <h3 className="text-sm font-semibold text-gray-700 mb-2">
-              Ideal For:
+              {t("bundle.idealFor")}
             </h3>
             <div className="flex flex-wrap gap-2">
               {bundleData?.idealFor?.map((item, i) => (
@@ -128,7 +186,7 @@ const BundleContent = ({ bundleData, bundleIndex, matchHeight }) => {
                   key={i}
                   className="bg-[#EEE4FF] font-bold px-2.5 py-1 rounded-full text-[10px] sm:text-xs"
                 >
-                  {item}
+                  {dt(item, "idealForNames") || dt(item, "categoryNames")}
                 </span>
               ))}
             </div>
@@ -139,7 +197,7 @@ const BundleContent = ({ bundleData, bundleIndex, matchHeight }) => {
         <div className="bg-[#4A3772] rounded-b-2xl py-3 sm:py-4 md:py-6 px-3 sm:px-4 md:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             <h3 className="text-base sm:text-lg md:text-xl font-medium text-white order-1 sm:order-none">
-              Get in touch with us
+              {t("bundle.getInTouch")}
             </h3>
             <div className="flex gap-2 sm:gap-3 md:gap-4">
               <Link
@@ -149,7 +207,7 @@ const BundleContent = ({ bundleData, bundleIndex, matchHeight }) => {
                 <span className="inline-block w-5 h-5 mr-2">
                   <CallSVG />
                 </span>
-                Call us
+                {t("bundle.callUs")}
               </Link>
               <Link
                 href="https://wa.me/+918595736388"
@@ -159,7 +217,7 @@ const BundleContent = ({ bundleData, bundleIndex, matchHeight }) => {
                 <span className="inline-block w-6 h-6 mr-2">
                   <ChatSVG />
                 </span>
-                Chat with us
+                {t("bundle.chatWithUs")}
               </Link>
             </div>
           </div>

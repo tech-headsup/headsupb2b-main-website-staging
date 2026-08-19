@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
+import { useTranslation } from "react-i18next";
 import { SOLAR_PARTNERS_RESPONSE } from "./solarPartners";
 
 const CERTIFICATIONS = [
@@ -17,14 +18,15 @@ const CERTIFICATIONS = [
 ];
 
 export default function TrustedPartnersSection() {
+  const { t } = useTranslation();
   const partners = SOLAR_PARTNERS_RESPONSE?.doc?.[0]?.partner || [];
 
   return (
     <section className="section section-no-top" style={{ paddingTop: 40, paddingBottom: 40 }}>
       <div className="tp-container">
         <div className="tp-wrap">
-          <h2 className="tp-heading">Our Trusted Partners</h2>
-          <p className="tp-sub">Sourced from India&apos;s leading manufacturers</p>
+          <h2 className="tp-heading">{t("solar.trusted.heading")}</h2>
+          <p className="tp-sub">{t("solar.trusted.subtitle")}</p>
           <div className="tp-marquee">
             <Marquee pauseOnHover speed={40} gradient={false}>
               {partners.map((ele, i) => (
@@ -47,7 +49,7 @@ export default function TrustedPartnersSection() {
             </Marquee>
           </div>
           <div className="tp-certs">
-            <h2 className="tp-heading">Certifications</h2>
+            <h2 className="tp-heading">{t("solar.trusted.certifications")}</h2>
             <div className="tp-certs-list">
               {CERTIFICATIONS.map((c) => (
                 <span key={c} className="tp-cert-chip">{c}</span>

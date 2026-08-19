@@ -1,7 +1,9 @@
 "use client";
 
 import React, { useState, useEffect, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import ProductCardv2 from "@/component/Card/ProductCardv2";
+import { useDynamicTranslate } from "@/lib/useDynamicTranslate";
 
 const SUBCATEGORY_ORDER = [
   "Solar Panels & Cells",
@@ -44,6 +46,8 @@ function sortSubCategories(subCategories = []) {
 }
 
 export default function OurProductsSection({ categoryData, categoryProductOptions = [] }) {
+  const { t } = useTranslation();
+  const dt = useDynamicTranslate();
   const orderedSubCategories = useMemo(
     () => sortSubCategories(categoryData?.subCategories),
     [categoryData]
@@ -65,7 +69,7 @@ export default function OurProductsSection({ categoryData, categoryProductOption
     <section className="section section-no-top" style={{ paddingBottom: 20 }}>
       <div className="max-w-[1280px] mx-auto w-full px-6 md:px-12 lg:px-8">
         <h2 className="section_heading text-center text-[#111] text-3xl md:text-[40px] font-extrabold" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-          Our Products
+          {t("solar.products.heading")}
         </h2>
 
         <div className="mt-8 ll:mt-[70px] flex flex-wrap gap-2 justify-center">
@@ -80,7 +84,7 @@ export default function OurProductsSection({ categoryData, categoryProductOption
                 onClick={() => setSelectedSubCategory(item)}
                 className={`px-7 ll:px-9 py-3 rounded-full text-base ll:text-xl font-semibold hover:bg-[#4A3772] hover:text-white transition-colors ${selectedClass}`}
               >
-                <h3 className="inline-block">{item?.name}</h3>
+                <h3 className="inline-block">{dt(item?.name)}</h3>
               </button>
             );
           })}
@@ -89,12 +93,12 @@ export default function OurProductsSection({ categoryData, categoryProductOption
         <div className="bg-white flex flex-col py-8 pb-8 mt-5 rounded-2xl">
           <div className="w-full flex justify-between items-center">
             <span className="text-base font-medium capitalize text-gray-500 truncate">
-              {`Home > ${categoryData?.name} > ${selectedSubCategory?.name}`}
+              {`${t("category.home")} > ${dt(categoryData?.name)} > ${dt(selectedSubCategory?.name)}`}
             </span>
             <span className="text-base hidden sm:inline font-semibold text-gray-600">
               {selectedSubCategory?.products?.length === 1
-                ? `1 Product`
-                : `${selectedSubCategory?.products?.length || 0} Products`}
+                ? t("category.productSingular")
+                : t("category.productPlural", { count: selectedSubCategory?.products?.length || 0 })}
             </span>
           </div>
           <hr className="border-b mt-6 border-[#B6B6B6] w-full" />
@@ -125,7 +129,7 @@ export default function OurProductsSection({ categoryData, categoryProductOption
                     isVisible && (
                       <div className="w-full py-6 sm:py-8 text-center">
                         <p className="text-xs sm:text-sm md:text-base text-gray-500">
-                          No products available in {subCat.name}
+                          {t("solar.products.noProducts", { name: dt(subCat.name) })}
                         </p>
                       </div>
                     )

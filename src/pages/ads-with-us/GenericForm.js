@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Select from "react-select";
+import { useTranslation } from "react-i18next";
 import {
   adsWithUs,
 } from "@/Contants/APIEndpoint";
@@ -18,7 +19,7 @@ const GenericForm = ({
   setIsModalOpen,
   toast,
 }) => {
-  
+  const { t } = useTranslation();
 
   // --- DEFAULT STATE MANAGEMENT ---
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -35,7 +36,7 @@ const GenericForm = ({
       const result = await submitFormData(formData);
 
       if (toast) {
-        toast.success("Form submitted successfully!");
+        toast.success(t("ads.form.toast.success"));
       }
 
       if (setIsModalOpen) {
@@ -46,7 +47,7 @@ const GenericForm = ({
       console.error("Form submission error:", error);
 
       if (toast) {
-        toast.error(`Something went wrong: ${error.message}`);
+        toast.error(t("ads.form.toast.error", { message: error.message }));
       }
     } finally {
       setIsSubmitting(false);
@@ -54,62 +55,66 @@ const GenericForm = ({
   };
 
   // --- DEFAULT FORM SCHEMA ---
-  const defaultFormSchema = yup.object().shape({
-    name: yup.string().required("Name is required"),
-    contactNo: yup
-      .string()
-      .required("Contact number is required")
-      .matches(/^\d{10}$/, "Must be exactly 10 digits"),
-    email: yup.string().email("Invalid email").required("Email is required"),
-    budget: yup
-      .number()
-      .typeError("Budget must be a number")
-      .positive("Budget must be positive")
-      .required("Budget is required"),
+  const defaultFormSchema = useMemo(
+    () =>
+      yup.object().shape({
+        name: yup.string().required(t("ads.form.errors.nameRequired")),
+        contactNo: yup
+          .string()
+          .required(t("ads.form.errors.contactRequired"))
+          .matches(/^\d{10}$/, t("ads.form.errors.contactInvalid")),
+        email: yup.string().email(t("ads.form.errors.emailInvalid")).required(t("ads.form.errors.emailRequired")),
+        budget: yup
+          .number()
+          .typeError(t("ads.form.errors.budgetNumber"))
+          .positive(t("ads.form.errors.budgetPositive"))
+          .required(t("ads.form.errors.budgetRequired")),
 
-    additionalComments: yup.string(),
-  });
+        additionalComments: yup.string(),
+      }),
+    [t]
+  );
 
   // --- DEFAULT FORM FIELDS ---
   const defaultInputs = [
     {
       key: "name",
-      label: "Name",
+      label: t("ads.form.labels.name"),
       type: "text",
-      placeholder: "Enter your name",
+      placeholder: t("ads.form.placeholders.name"),
     },
     {
       key: "contactNo",
-      label: "Contact Number",
+      label: t("ads.form.labels.contactNo"),
       type: "tel",
-      placeholder: "Enter 10-digit contact number",
+      placeholder: t("ads.form.placeholders.contactNo"),
     },
     {
       key: "email",
-      label: "Email Address",
+      label: t("ads.form.labels.email"),
       type: "email",
-      placeholder: "Enter your email",
+      placeholder: t("ads.form.placeholders.email"),
     },
     {
       key: "budget",
-      label: "Monthly Budget",
+      label: t("ads.form.labels.budget"),
       type: "number",
-      placeholder: "Enter your budget",
+      placeholder: t("ads.form.placeholders.budget"),
     },
     {
       key: "product",
-      label: "Product",
+      label: t("ads.form.labels.product"),
       type: "select",
-      placeholder: "Select a product",
+      placeholder: t("ads.form.placeholders.product"),
       options: productOptions,
       isLoading: false,
       disabled: false,
     },
     {
       key: "additionalComments",
-      label: "Additional Comments",
+      label: t("ads.form.labels.additionalComments"),
       type: "textarea",
-      placeholder: "Any additional information or requirements...",
+      placeholder: t("ads.form.placeholders.additionalComments"),
     },
   ];
 
@@ -117,7 +122,7 @@ const GenericForm = ({
   const defaultButtons = [
     {
       type: "submit",
-      label: isSubmitting ? "Submitting..." : "Submit",
+      label: isSubmitting ? t("ads.form.buttons.submitting") : t("ads.form.buttons.submit"),
       disabled: isSubmitting,
       className:
         "bg-headupb2b text-white",
@@ -189,7 +194,7 @@ const GenericForm = ({
                       isDisabled={input?.disabled}
                       isLoading={input?.isLoading}
                       options={productOptions}
-                      placeholder={input.placeholder || "Select an option"}
+                      placeholder={input.placeholder || t("ads.form.selectAnOption")}
                       onChange={(selectedOption) => {
                         field.onChange(selectedOption?.value || null);
                       }}
@@ -206,7 +211,7 @@ const GenericForm = ({
                         placeholder: () =>
                           `text-sm ${input.isLoading ? "text-orange-500" : "text-gray-400"}`,
                       }}
-                      loadingMessage={() => "Loading options..."}
+                      loadingMessage={() => t("ads.form.loadingOptions")}
                     />
 
                     {input.isLoading && (

@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useMemo, useRef } from "react";
 import { useForm, Controller } from "react-hook-form";
 import Select from "react-select";
+import { useTranslation } from "react-i18next";
 import getProductOptions, {
   getCategoryOptions,
 } from "@/Contants/Functions/getProductOptions";
@@ -28,6 +29,7 @@ export default function CommonFormForHomeBackup({
   categoryProductOptions,
 }) {
   const Router = useRouter();
+  const { t } = useTranslation();
 
   const selectedCategoryName = categoryName !== undefined ? categoryName : "";
   const selectedProduct =
@@ -36,22 +38,22 @@ export default function CommonFormForHomeBackup({
 
   const animatedComponents = makeAnimated();
 
-  const schema = Yup.object().shape({
-    name: Yup.string().required("Name is required"),
+  const schema = useMemo(() => Yup.object().shape({
+    name: Yup.string().required(t("wayl.errors.nameRequired")),
     contactNo: Yup.string()
-      .required("Contact number is required")
-      .matches(/^[0-9]{10}$/, "Invalid contact number"),
+      .required(t("wayl.errors.contactRequired"))
+      .matches(/^[0-9]{10}$/, t("wayl.errors.contactInvalid")),
     email: Yup.string()
-      .email("Invalid email"),
-    category: Yup.object().required("Category is required"),
-    product: Yup.array().min(1, "Select at least one product"),
+      .email(t("wayl.errors.emailInvalid")),
+    category: Yup.object().required(t("wayl.errors.categoryRequired")),
+    product: Yup.array().min(1, t("wayl.errors.productMin")),
     spec: Yup.string(),
-    quantity: Yup.string().required("Quantity is required"),
-    addressDeliveryLocation: Yup.string().required("Delivery address is required"),
+    quantity: Yup.string().required(t("wayl.errors.quantityRequired")),
+    addressDeliveryLocation: Yup.string().required(t("wayl.errors.deliveryRequired")),
     pincode: Yup.string()
-      .required("Pincode is required")
-      .matches(/^[1-9][0-9]{5}$/, "Invalid pincode"),
-  });
+      .required(t("wayl.errors.pincodeRequired"))
+      .matches(/^[1-9][0-9]{5}$/, t("wayl.errors.pincodeInvalid")),
+  }), [t]);
 
   const {
     register,
@@ -184,7 +186,7 @@ export default function CommonFormForHomeBackup({
             <input
               {...register("name")}
               type="text"
-              placeholder="Name*"
+              placeholder={t("wayl.placeholders.name")}
               className="outline-none rounded-lg text-black text-xs sm:text-sm w-full px-2 sm:px-2.5 py-2 border border-[#B6B6B6] font-medium placeholder:text-[10px] sm:placeholder:text-xs placeholder:font-medium placeholder:text-gray-500"
             />
             {errors.name && (
@@ -200,7 +202,7 @@ export default function CommonFormForHomeBackup({
               {...register("contactNo")}
               maxLength={10}
               type="text"
-              placeholder="Contact*"
+              placeholder={t("wayl.placeholders.contact")}
               className="outline-none rounded-lg text-black text-xs sm:text-sm w-full px-2 sm:px-2.5 py-2 border border-[#B6B6B6] font-medium placeholder:text-[10px] sm:placeholder:text-xs placeholder:font-medium placeholder:text-gray-500"
               onInput={(e) => {
                 e.target.value = e.target.value.replace(/[^0-9]/g, "");
@@ -218,7 +220,7 @@ export default function CommonFormForHomeBackup({
             <input
               {...register("email")}
               type="text"
-              placeholder="Email"
+              placeholder={t("wayl.placeholders.email")}
               className="outline-none rounded-lg text-black text-xs sm:text-sm w-full px-2 sm:px-2.5 py-2 border border-[#B6B6B6] font-medium placeholder:text-[10px] sm:placeholder:text-xs placeholder:font-medium placeholder:text-gray-500"
             />
             {errors.email && (
@@ -246,7 +248,7 @@ export default function CommonFormForHomeBackup({
                   )}
                   placeholder={
                     <div className="text-gray-500 text-[10px] sm:text-xs font-medium">
-                      Category*
+                      {t("wayl.placeholders.category")}
                     </div>
                   }
                   styles={{
@@ -309,7 +311,7 @@ export default function CommonFormForHomeBackup({
                   }}
                   placeholder={
                     <div className="text-gray-500 text-[10px] sm:text-xs font-medium">
-                      Products*
+                      {t("wayl.placeholders.products")}
                     </div>
                   }
                   isMulti
@@ -361,7 +363,7 @@ export default function CommonFormForHomeBackup({
             <input
               {...register("spec")}
               type="text"
-              placeholder="Specification"
+              placeholder={t("wayl.placeholders.specification")}
               className="outline-none rounded-lg text-black text-xs sm:text-sm w-full px-2 sm:px-2.5 py-2 border border-[#B6B6B6] font-medium placeholder:text-[10px] sm:placeholder:text-xs placeholder:font-medium placeholder:text-gray-500"
             />
             {errors.spec && (
@@ -376,7 +378,7 @@ export default function CommonFormForHomeBackup({
             <input
               {...register("quantity")}
               type="text"
-              placeholder="Quantity*"
+              placeholder={t("wayl.placeholders.quantity")}
               className="outline-none rounded-lg text-black text-xs sm:text-sm w-full px-2 sm:px-2.5 py-2 border border-[#B6B6B6] font-medium placeholder:text-[10px] sm:placeholder:text-xs placeholder:font-medium placeholder:text-gray-500"
             />
             {errors.quantity && (
@@ -391,7 +393,7 @@ export default function CommonFormForHomeBackup({
             <input
               {...register("addressDeliveryLocation")}
               type="text"
-              placeholder="Delivery Address*"
+              placeholder={t("wayl.placeholders.deliveryAddress")}
               className="outline-none rounded-lg text-black text-xs sm:text-sm w-full px-2 sm:px-2.5 py-2 border border-[#B6B6B6] font-medium placeholder:text-[10px] sm:placeholder:text-xs placeholder:font-medium placeholder:text-gray-500"
             />
             {errors.addressDeliveryLocation && (
@@ -406,7 +408,7 @@ export default function CommonFormForHomeBackup({
             <input
               {...register("pincode")}
               type="text"
-              placeholder="Pincode*"
+              placeholder={t("wayl.placeholders.pincode")}
               className="outline-none rounded-lg text-black text-xs sm:text-sm w-full px-2 sm:px-2.5 py-2 border border-[#B6B6B6] font-medium placeholder:text-[10px] sm:placeholder:text-xs placeholder:font-medium placeholder:text-gray-500"
             />
             {errors.pincode && (
@@ -425,7 +427,7 @@ export default function CommonFormForHomeBackup({
               disabled={loading}
               className="bg-[#80EBF7] font-bold text-[#4A3772] text-base sm:text-base px-4 sm:px-8 py-3 sm:py-3 md:py-3 tracking-wider rounded-lg hover:text-white hover:bg-[#4A3772] transition-colors w-full disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {loading ? "Sending..." : "Submit"}
+              {loading ? t("wayl.buttons.sending") : t("wayl.buttons.submit")}
             </button>
             {messageSent && <div id="messageSent"></div>}
           </Ripples>

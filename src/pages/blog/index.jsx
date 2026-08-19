@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { NextSeo } from "next-seo";
 import { CgFileDocument } from "react-icons/cg";
 import { HiChevronDown } from "react-icons/hi2";
+import { useTranslation } from "react-i18next";
 
 import Blog from "@/component/Blog/Blogs";
 import { HeroPost } from "@/component/Blog/BlogHeader/hero-post";
@@ -66,6 +67,7 @@ function BlogHeaderSection({ edges }) {
 }
 
 export default function BlogIndex({ initialEdges, totalPages, totalPosts, error }) {
+  const { t } = useTranslation();
   const [edges, setEdges] = useState(initialEdges || []);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
@@ -133,8 +135,8 @@ export default function BlogIndex({ initialEdges, totalPages, totalPosts, error 
             </div>
             <p className="text-xl font-semibold">
               {error
-                ? `Could not load posts: ${error}`
-                : "Hang tight! We're drafting the first article."}
+                ? `${t("blogPage.loadErrorPrefix")}: ${error}`
+                : t("blogPage.emptyState")}
             </p>
           </div>
         </div>
@@ -146,7 +148,7 @@ export default function BlogIndex({ initialEdges, totalPages, totalPosts, error 
         <div className="my-8 bg-[#faf5ff] grid grid-cols-4 rounded-lg px-5 py-5 md:py-10 dark:bg-neutral-900">
           <div className="col-span-full md:col-span-2 md:col-start-2">
             <h2 className="text-[#4A3772] dark:text-primary-500 mb-5 text-center text-lg font-semibold">
-              Subscribe to our newsletter for updates and changelog.
+              {t("blogPage.subscribeHeading")}
             </h2>
             <SubscribeForm />
           </div>
@@ -156,7 +158,7 @@ export default function BlogIndex({ initialEdges, totalPages, totalPosts, error 
       {morePosts.length > 0 && (
         <section className="mb-10 flex flex-col items-start gap-10">
           <h2 className="text-xl font-bold leading-tight tracking-tight text-slate-900 dark:text-neutral-50 lg:text-3xl">
-            More Posts
+            {t("blogPage.morePosts")}
           </h2>
           <Blog blogData={morePosts} from="blog" />
 
@@ -164,7 +166,7 @@ export default function BlogIndex({ initialEdges, totalPages, totalPosts, error 
 
           {loadError && (
             <div className="w-full text-center text-sm text-red-600">
-              Failed to load more: {loadError}
+              {t("blogPage.loadMoreErrorPrefix")}: {loadError}
             </div>
           )}
 
@@ -177,38 +179,37 @@ export default function BlogIndex({ initialEdges, totalPages, totalPosts, error 
                 className="rounded-full flex gap-2"
               >
                 <HiChevronDown />
-                {loading ? "Loading…" : "Load more posts"}
+                {loading ? t("blogPage.loading") : t("blogPage.loadMore")}
               </Button>
             ) : (
               <p className="text-sm text-slate-500 dark:text-neutral-400">
-                You&apos;ve reached the end.
+                {t("blogPage.endOfPosts")}
               </p>
             )}
           </div>
           {totalPosts > 0 && (
             <p className="w-full text-center text-xs uppercase tracking-wider text-slate-400">
-              {edges.length} of {totalPosts} posts
+              {t("blogPage.postsCount", { shown: edges.length, total: totalPosts })}
             </p>
           )}
         </section>
       )}
 
       <NextSeo
-        title="Blog - Headsup B2B"
-        description="Explore latest blogs on construction materials, solar solutions, and industry insights."
+        title={t("blogPage.seoTitle")}
+        description={t("blogPage.seoDescription")}
         canonical={dynamicCanonical}
         openGraph={{
           type: "website",
           url: dynamicCanonical,
-          title: "Blog - Headsup B2B",
-          description:
-            "Explore latest blogs on construction materials, solar solutions, and industry insights.",
+          title: t("blogPage.seoTitle"),
+          description: t("blogPage.seoDescription"),
           images: [
             {
               url: "https://www.headsupb2b.com/images/solar-dc-cables.jpg",
               width: 1200,
               height: 630,
-              alt: "Headsup B2B Blog",
+              alt: t("blogPage.seoImageAlt"),
             },
           ],
           site_name: "Headsup B2B",

@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
+import { useTranslation } from "react-i18next";
+import { useDynamicTranslate } from "@/lib/useDynamicTranslate";
 import { useParams } from "next/navigation";
 import { NextSeo } from "next-seo";
 import Head from "next/head";
@@ -50,8 +52,16 @@ export default function CategoryPage({
   initialSeo,
 }) {
   const router = useRouter();
+  const { t, i18n } = useTranslation();
+  const dt = useDynamicTranslate();
   const [formVisible, setFormVisible] = useState(false);
   const params = useParams();
+
+  const bundle = i18n.getResourceBundle(i18n.language, "translation");
+  const translatedDescription = bundle?.categoryDescriptions?.[categoryData?.slug];
+  const descriptionParagraphs = translatedDescription || categoryData?.serviceDescriptor;
+  const translatedFaqs = bundle?.categoryFaqs?.[categoryData?.slug];
+  const faqData = translatedFaqs?.length ? translatedFaqs : categoryData?.faqs?.faqs;
   const [show, setShow] = useState(false);
   const [selected, setSelected] = useState("");
   const [showUploadQuoteForm, setshowUploadQuoteForm] = useState(false);
@@ -159,8 +169,7 @@ export default function CategoryPage({
 
   if (router.isFallback) return <LoadingSpinner />;
 
-  const visionText =
-    "At Headsup B2B, we supply products that empowers India's infrastructure and its industries. We realise every sector's unique needs and our wide range of products ensures that we deliver the right solution for every project.";
+  const visionText = t("category.vision");
 
   return (
     <div>
@@ -222,12 +231,12 @@ export default function CategoryPage({
 
             {/* Title */}
             <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold opacity-1 text-center mt-4 md:mt-6 lg:mt-8 xl:mt-10">
-              {categoryData?.title}
+              {dt(categoryData?.title, "categoryTitles")}
             </h1>
 
             {/* Slogan */}
             <div className="text-center text-white text-base sm:text-lg md:text-xl lg:text-2xl mt-3 md:mt-4 lg:mt-5 px-4">
-              {categoryData?.slogan}
+              {dt(categoryData?.slogan, "categorySlogans")}
             </div>
 
             {/* Stats */}
@@ -243,7 +252,7 @@ export default function CategoryPage({
                         {item?.value}
                       </div>
                       <div className="mt-1 text-[#4A3772] text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-center">
-                        {item?.name}
+                        {dt(item?.name, "statNames")}
                       </div>
                     </div>
                   ))}
@@ -264,7 +273,7 @@ export default function CategoryPage({
               <BannerButtons
                 bg={"bg-white hover:bg-gray-200"}
                 icon={<GetInstantQuoteSVG />}
-                text="Get Instant Quote"
+                text={t("category.buttons.getInstantQuote")}
                 onClick={() => {
                   handleNavigate();
                   handleClick();
@@ -273,14 +282,14 @@ export default function CategoryPage({
               <BannerButtons
                 bg={"bg-[#80EBF7] hover:bg-[#6dd9e5]"}
                 icon={<UploadQuoteSVG />}
-                text="Upload Quote"
-                subText={"To Unlock Better Pricing "}
+                text={t("category.buttons.uploadQuote")}
+                subText={t("category.buttons.uploadQuoteSub")}
                 onClick={() => setshowUploadQuoteForm(true)}
               />
               {localBrochureUrl ? (
                 <BannerButtons
                   icon={<DownloadSVG />}
-                  text="Download Brochure"
+                  text={t("category.buttons.downloadBrochure")}
                   bg={"bg-white hover:bg-gray-200"}
                   onClick={() => setshowDownloadBrochureForm(true)}
                 />
@@ -296,10 +305,10 @@ export default function CategoryPage({
         className="secion_V_padding bg-[#D9D9D96B]"
       >
       <div className="max-w-[1280px] mx-auto w-full px-6 md:px-12 lg:px-8">
-        <h2 className="section_heading">{`${categoryData?.name}`}</h2>
-        {categoryData?.serviceDescriptor?.map((item) => (
+        <h2 className="section_heading">{dt(categoryData?.name)}</h2>
+        {descriptionParagraphs?.map((item, idx) => (
           <div
-            key={item}
+            key={idx}
             dangerouslySetInnerHTML={{ __html: item }}
             className={`section_sub_text mt-8 ll:mt-7 break-words ${
               categoryData?.slug === "high-mast-poles"
@@ -308,7 +317,7 @@ export default function CategoryPage({
             }`}
           />
         ))}
-         <h2 className="section_heading mt-14">{`Our Products`}</h2>
+         <h2 className="section_heading mt-14">{t("category.ourProducts")}</h2>
 
         <div className="mt-8 ll:mt-[70px] flex flex-wrap gap-2 justify-center">
           {categoryData?.subCategories?.map((item) => {
@@ -322,7 +331,7 @@ export default function CategoryPage({
                 onClick={() => handleSubCategoryClick(item)}
                 className={`px-7 ll:px-9 py-3 rounded-full text-base ll:text-xl font-semibold hover:bg-[#4A3772] hover:text-white transition-colors ${selectedClass}`}
               >
-                <h3 className="inline-block">{item?.name}</h3>
+                <h3 className="inline-block">{dt(item?.name)}</h3>
               </button>
             );
           })}
@@ -331,12 +340,12 @@ export default function CategoryPage({
         <div className="bg-white flex flex-col px-2 ll:px-10 py-8 pb-20 mt-5 rounded-2xl">
           <div className="w-full flex justify-between items-center">
             <span className="text-base font-semibold capitalize text-gray-800 truncate">
-              {`Home > ${categoryData?.name} > ${selectedSubCategory?.name}`}
+              {`${t("category.home")} > ${dt(categoryData?.name)} > ${dt(selectedSubCategory?.name)}`}
             </span>
             <span className="text-base hidden sm:inline font-semibold text-gray-600">
               {selectedSubCategory?.products?.length === 1
-                ? `1 Product`
-                : `${selectedSubCategory?.products?.length || 0} Products`}
+                ? t("category.productSingular")
+                : t("category.productPlural", { count: selectedSubCategory?.products?.length || 0 })}
             </span>
           </div>
           <hr className="border-b mt-6 border-[#B6B6B6] w-full" />
@@ -367,7 +376,7 @@ export default function CategoryPage({
                     isVisible && (
                       <div className="w-full py-6 sm:py-8 text-center">
                         <p className="text-xs sm:text-sm md:text-base text-gray-500">
-                          No products available in {subCat.name}
+                          {t("category.noProducts", { name: dt(subCat.name) })}
                         </p>
                       </div>
                     )
@@ -378,9 +387,7 @@ export default function CategoryPage({
           </div>
         </div>
         <label className="section_sub_text mt-10">
-          Each product and category comes with specifications, varying size
-          dimensions, and expert-backed recommendations. So whether you are an
-          engineer, contractor or procurement manager - we've got you covered!
+          {t("category.productsFooter")}
         </label>
       </div>
       </section>
@@ -389,7 +396,7 @@ export default function CategoryPage({
       <section className="secion_V_padding bg-white">
         <div className="max-w-[1280px] mx-auto w-full px-6 md:px-12 lg:px-8">
           <ReliableSupplyPartnerCarousel
-            tabText1="Reliable Supply Partners"
+            tabText1={t("category.reliablePartners")}
             twoRows={false}
             partnerCompanyList={categoryData?.rsp}
             visionText={visionText}
@@ -400,10 +407,9 @@ export default function CategoryPage({
       {/* Bundles */}
       <div className="max-w-[1280px] mx-auto w-full px-6 md:px-12 lg:px-8">
         <div className="flex flex-col w-full">
-          <h2 className="section_heading mt-20 pl-0">Supporting Every Build</h2>
+          <h2 className="section_heading mt-20 pl-0">{t("category.supportingBuild")}</h2>
           <p className="section_sub_text w-full mt-5">
-            Explore our Customised Bundles, combining all your project needs for
-            better rates!
+            {t("category.bundlesSubtitle")}
           </p>
         </div>
       </div>
@@ -420,21 +426,18 @@ export default function CategoryPage({
       {/* Why Choose Us */}
       <section className="secion_V_padding bg-[#D9D9D96B]">
         <div className="max-w-[1280px] mx-auto w-full px-6 md:px-12 lg:px-8 flex flex-col items-center">
-          <h6 className="section_heading">Why Choose Us?</h6>
+          <h6 className="section_heading">{t("category.whyChoose.heading")}</h6>
           <p className="section_sub_text w-full mt-5">
-            Choosing the right partner for your projects ensures that you never
-            face unnecessary delays or compromises. At Headsup B2B, our focus is
-            on supplying more than materials - we focus on solving all of your
-            procurement challenges.
+            {t("category.whyChoose.subtitle")}
           </p>
           <div className="w-full grid grid-cols-1 t:grid-cols-2 l:grid-cols-3 ll:grid-cols-4 4k:grid-cols-4 gap-2 sm:gap-5 justify-items-center mt-5">
             {[
-              { icon: <ExpertConsultationIcon />, label: "Expert Consultation" },
-              { icon: <PremiumQualityIcon />, label: "Premium Quality Products" },
-              { icon: <ComprehensiveRangeIcon />, label: "Comprehensive Range" },
+              { icon: <ExpertConsultationIcon />, label: t("category.whyChoose.expert") },
+              { icon: <PremiumQualityIcon />, label: t("category.whyChoose.premium") },
+              { icon: <ComprehensiveRangeIcon />, label: t("category.whyChoose.range") },
               {
                 icon: <RelationshipOfTrustIcon />,
-                label: "Relationship of Trust",
+                label: t("category.whyChoose.trust"),
               },
             ].map((item) => (
               <span
@@ -474,7 +477,7 @@ export default function CategoryPage({
             key="FAQ"
           />
         )}
-        <FAQs FAQData={categoryData?.faqs?.faqs} />
+        <FAQs FAQData={faqData} />
       </section>
 
       {/* Modals */}
@@ -482,8 +485,8 @@ export default function CategoryPage({
         <CommonModal
           isOpen={formVisible}
           onClose={() => setFormVisible(false)}
-          title={"Want to Avail Collateral Free Credit* for upto 61 Days?"}
-          subTitle={"*T&C apply"}
+          title={t("category.modals.creditTitle")}
+          subTitle={t("category.modals.creditSubtitle")}
           size="xl"
         >
           <CreditForm close={() => setFormVisible(false)} />
@@ -492,8 +495,8 @@ export default function CategoryPage({
 
       {showUploadQuoteForm && (
         <CommonModal
-          title={"Have an Existing Product Quote?"}
-          subTitle={"Upload Below and Unlock Better Pricing!"}
+          title={t("category.modals.uploadTitle")}
+          subTitle={t("category.modals.uploadSubtitle")}
           isOpen={showUploadQuoteForm}
           onClose={() => setshowUploadQuoteForm(false)}
           size="md"
@@ -505,7 +508,7 @@ export default function CategoryPage({
       {show && (
         <CommonModal
           isOpen={show}
-          title={`Raise a Request for ${categoryData?.name}`}
+          title={t("category.modals.raiseRequest", { category: dt(categoryData?.name) })}
           onClose={() => setShow(false)}
           size="xl"
         >
@@ -524,8 +527,8 @@ export default function CategoryPage({
       {showDownloadBrochureForm && (
         <CommonModal
           isOpen={showDownloadBrochureForm}
-          title={`Download Brochure`}
-          subTitle={`Please provide your details to download the brochure for ${categoryData?.name}`}
+          title={t("category.modals.downloadTitle")}
+          subTitle={t("category.modals.downloadSubtitle", { category: dt(categoryData?.name) })}
           onClose={() => setshowDownloadBrochureForm(false)}
           size="md"
         >

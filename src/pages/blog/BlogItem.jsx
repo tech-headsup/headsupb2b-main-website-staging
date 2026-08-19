@@ -4,12 +4,21 @@ import DefaultImage from '@/assets/images/category/default.png'
 import CustomRipple from '@/component/Form/Button/CustomRipple'
 import Link from 'next/link'
 import { format, parseISO } from 'date-fns'
+import { hi as hiLocale } from 'date-fns/locale'
+import { useTranslation } from 'react-i18next'
+import { useDynamicTranslate } from '@/lib/useDynamicTranslate'
 
 export default function BlogItem({ ele }) {
+  const { t, i18n } = useTranslation()
+  const dt = useDynamicTranslate()
   const imageUrl = ele?.node?.coverImage?.url || DefaultImage
-  const title = ele?.node?.title || 'No Title'
+  const rawTitle = ele?.node?.title || t('blogPage.noTitle')
+  const title = dt(rawTitle, 'blogTitles')
   const dateString = ele?.node?.publishedAt || new Date().toISOString()
   const date = parseISO(dateString)
+  const isHindi = i18n.language?.startsWith('hi')
+  const dateLocale = isHindi ? { locale: hiLocale } : undefined
+  const dateFormatStr = isHindi ? 'LLLL d, yyyy' : 'LLL d, yyyy'
 
   return (
     <Link href={"/blog/" + ele?.node?.slug}>
@@ -42,7 +51,7 @@ export default function BlogItem({ ele }) {
           {/* Button on left, date on right — pinned to bottom */}
           <div className="flex items-center justify-between mt-auto pt-2">
             <CustomRipple
-              text="Read more"
+              text={t('blogPage.readMore')}
               className="ripple cursor-pointer text-[14px] px-5 py-2.5"
             />
             <time
@@ -50,7 +59,7 @@ export default function BlogItem({ ele }) {
               dateTime={dateString}
               style={{ fontFamily: "'DM Sans', sans-serif" }}
             >
-              {format(date, 'LLL d, yyyy')}
+              {format(date, dateFormatStr, dateLocale)}
             </time>
           </div>
         </div>

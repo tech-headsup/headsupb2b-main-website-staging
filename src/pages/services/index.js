@@ -4,14 +4,68 @@ import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
 import { sendVendorOnboarding } from "@/Contants/APIEndpoint";
 import { getDemoPhone } from "@/Utils/demoDefaults";
 
+const SERVICE_ITEMS = [
+  { key: "painting", icon: "/Ondemand/Painting.png" },
+  { key: "electrical", icon: "/Ondemand/Electrical.png" },
+  { key: "plumbing", icon: "/Ondemand/Plumbing.png" },
+  { key: "hvac", icon: "/Ondemand/AC.png" },
+  { key: "fire", icon: "/Ondemand/Fire.png", iconSize: 18 },
+  { key: "amc", icon: "/Ondemand/ACM.png" },
+  { key: "solar", icon: "/Ondemand/Solar.png" },
+  { key: "bess", icon: "/Ondemand/BESS.png", iconSize: 14 },
+  { key: "landscaping", icon: "/Ondemand/Contract.png" },
+];
+
+const AUDIENCE_CARDS = [
+  { icon: "/worker.png", key: "contractors" },
+  { icon: "/drawing-tools.png", key: "architects" },
+  { icon: "/facility-management.png", key: "facility" },
+  { icon: "/industrial-park.png", key: "industrial" },
+];
+
+const VENDOR_BENEFITS = [
+  { icon: "/Grow-your-business/1.png", key: "pipeline" },
+  { icon: "/Grow-your-business/2.png", key: "payments" },
+  { icon: "/Grow-your-business/3.png", key: "ratings" },
+  { icon: "/Grow-your-business/4.png", key: "onboarding" },
+  { icon: "/Grow-your-business/5.png", key: "hardware" },
+];
+
+const VENDOR_TYPE_KEYS = [
+  "serviceProvider",
+  "hardware",
+  "fabrication",
+  "solarEpc",
+  "multiTrade",
+];
+
+const SERVICE_CATEGORY_KEYS = [
+  "painting",
+  "electrical",
+  "plumbing",
+  "hvac",
+  "fire",
+  "civil",
+  "interior",
+  "solar",
+  "bess",
+  "amc",
+  "hardware",
+  "multiTrade",
+  "other",
+];
+
+const TEAM_SIZE_KEYS = ["small", "medium", "large", "xlarge"];
+
 const HERO_STATS = [
-  { value: "₹210 Cr+", label: "FY26\nRevenue" },
-  { value: "2,200+", label: "Transactions\nExecuted" },
-  { value: "8 Cr+", label: "Business for\nexecution partners" },
-  { value: "Pan India", label: "Service\nCoverage" },
+  { value: "₹210 Cr+", labelKey: "services.stats.revenue" },
+  { value: "2,200+", labelKey: "services.stats.transactions" },
+  { value: "8 Cr+", labelKey: "services.stats.partners" },
+  { valueKey: "services.stats.panIndia", labelKey: "services.stats.coverage" },
 ];
 
 const initialForm = {
@@ -28,6 +82,7 @@ const initialForm = {
 };
 
 export default function ServicesPage() {
+  const { t } = useTranslation();
   const [form, setForm] = useState({ ...initialForm, contactNo: getDemoPhone() });
   const [submitting, setSubmitting] = useState(false);
   const [status, setStatus] = useState(null); // { type: "success" | "error", message: string }
@@ -44,21 +99,21 @@ export default function ServicesPage() {
     const required = ["businessName", "contactPerson", "contactNo", "email"];
     const missing = required.find((k) => !form[k].trim());
     if (missing) {
-      setStatus({ type: "error", message: "Please fill in Business Name, Contact Person, Phone and Email." });
+      setStatus({ type: "error", message: t("services.vendor.form.errors.required") });
       return;
     }
     if (!/^\S+@\S+\.\S+$/.test(form.email)) {
-      setStatus({ type: "error", message: "Please enter a valid email address." });
+      setStatus({ type: "error", message: t("services.vendor.form.errors.invalidEmail") });
       return;
     }
 
     setSubmitting(true);
     try {
       await axios.post("/api/sendVendorMail", form);
-      setStatus({ type: "success", message: "Submitted — our team will review and reach out shortly." });
+      setStatus({ type: "success", message: t("services.vendor.form.successMessage") });
       setForm({ ...initialForm, contactNo: getDemoPhone() });
     } catch (err) {
-      setStatus({ type: "error", message: "Something went wrong. Please try again." });
+      setStatus({ type: "error", message: t("services.vendor.form.errors.unknown") });
     } finally {
       setSubmitting(false);
     }
@@ -67,11 +122,9 @@ export default function ServicesPage() {
   return (
     <>
       <Head>
-        <title>Headsup B2B Services | Infrastructure Execution, MEP, Solar, BESS & AMC</title>
-        <meta
-          name="description"
-          content="Headsup B2B delivers procurement-backed execution services for infrastructure projects, including painting, MEP, HVAC, fire fighting, solar, BESS. Pure B2B."
-        />
+        <title>{t("services.metaTitle")}</title>
+        <meta name="description" content={t("services.metaDescription")} />
+        <link rel="canonical" href="https://www.headsupb2b.com/services" />
       </Head>
 
       <div className="services-page">
@@ -86,25 +139,22 @@ export default function ServicesPage() {
               <div className="hero-content">
 
                 <h1>
-                  Beyond Materials.
+                  {t("services.hero.headline1")}
                   <br />
-                  <span className="gradient-text">Execution, On Demand.</span>
+                  <span className="gradient-text">{t("services.hero.headline2")}</span>
                 </h1>
                 <p className="subtitle">
-                  Procurement-backed services for infrastructure, commercial, and
-                  industrial projects - from painting and MEP to solar, BESS, AMC. 
-                  Headsup B2B connects buyers with verified execution partners and 
-                  project-ready materials. Pure B2B. No retail.
+                  {t("services.hero.subtitle")}
                 </p>
                 <div className="hero-btns">
                   <a href="#services" className="btn-glow">
-                    Explore Services
+                    {t("services.hero.exploreCta")}
                     <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                       <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
                   </a>
                   <a href="#vendor-form" className="btn-outline">
-                    Earn with us, Become our vendor
+                    {t("services.hero.vendorCta")}
                     <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                       <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
@@ -132,7 +182,7 @@ export default function ServicesPage() {
               <div className="hero-stats" style={{ background: "#e8e4f7" }}>
                 {HERO_STATS.map((stat, i) => (
                   <div
-                    key={stat.value}
+                    key={stat.labelKey}
                     onMouseEnter={() => setHoveredStat(i)}
                     onMouseLeave={() => setHoveredStat(null)}
                     className="hero-stat"
@@ -142,13 +192,13 @@ export default function ServicesPage() {
                     }}
                   >
                     <span
-                      className="hero-stat-val"///
+                      className="hero-stat-val"
                       style={{
                         color: hoveredStat === i ? "#ffffff" : "#4A3772",
                         fontFamily: "'Montserrat', sans-serif",
                       }}
                     >
-                      {stat.value}
+                      {stat.valueKey ? t(stat.valueKey) : stat.value}
                     </span>
                     <span
                       className="hero-stat-lbl"
@@ -157,7 +207,7 @@ export default function ServicesPage() {
                         fontFamily: "'Montserrat', sans-serif",
                       }}
                     >
-                      {stat.label}
+                      {t(stat.labelKey)}
                     </span>
                   </div>
                 ))}
@@ -170,22 +220,17 @@ export default function ServicesPage() {
         <section className="section section-tight-top section-tight-bottom">
           <div className="container">
             <div className="sec-header">
-              <h2>Built For</h2>
+              <h2>{t("services.builtFor.heading")}</h2>
               <p>
-                Trusted by teams across the construction, infrastructure, and
-                facility management ecosystem.
+                {t("services.builtFor.subtitle")}
               </p>
             </div>
             <div className="audience-grid">
-              {[
-                { icon: "/worker.png", title: "Contractors & Builders", isImage: true },
-                { icon: "/drawing-tools.png", title: "Architects & Designers", isImage: true },
-                { icon: "/facility-management.png", title: "Facility Managers", isImage: true },
-                { icon: "/industrial-park.png", title: "Industrial & Infra Teams", isImage: true },
-              ].map(({ icon, title, isImage }) => (
-                <div key={title} className="audience-card">
-                  <div className="audience-card-icon">
-                    {isImage ? (
+              {AUDIENCE_CARDS.map(({ icon, key }) => {
+                const title = t(`services.builtFor.${key}`);
+                return (
+                  <div key={key} className="audience-card">
+                    <div className="audience-card-icon">
                       <Image
                         src={icon}
                         alt={title}
@@ -193,13 +238,11 @@ export default function ServicesPage() {
                         height={64}
                         style={{ objectFit: "contain" }}
                       />
-                    ) : (
-                      icon
-                    )}
+                    </div>
+                    <h4>{title}</h4>
                   </div>
-                  <h4>{title}</h4>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
@@ -208,100 +251,53 @@ export default function ServicesPage() {
         <section className="section section-no-top section-tight-bottom" id="services">
           <div className="container">
             <div className="sec-header">
-              <h2>On-Demand B2B Execution</h2>
+              <h2>{t("services.onDemand.heading")}</h2>
               <p>
-                Materials and manpower, delivered together. Verified vendors,
-                BOQ-aligned pricing, and local fulfilment through our hardware
-                and contractor network.
+                {t("services.onDemand.subtitle")}
               </p>
             </div>
             <div className="services-grid">
-              {[
-                {
-                  icon: "/Ondemand/Painting.png",
-                  title: "Painting & Flooring Services",
-                  desc: "Interior and exterior painting for commercial, residential, industrial, and institutional projects, including priming, putty, texture work, and specialty coatings.",
-                },
-                {
-                  icon: "/Ondemand/Electrical.png",
-                  title: "Electrical Services",
-                  desc: "HT/LT installations, panel erection, cable laying, earthing, and lighting systems for new builds, retrofits, and maintenance contracts.",
-                },
-                {
-                  icon: "/Ondemand/Plumbing.png",
-                  title: "Plumbing & Sanitary",
-                  desc: "End-to-end plumbing for high-rises and commercial complexes, including drainage, water supply, STP/WTP, and sanitary fitting installation.",
-                },
-                {
-                  icon: "/Ondemand/AC.png",
-                  title: "HVAC & AC Services",
-                  desc: "VRF/VRV systems, split and ducted ACs, chiller plants, and ventilation services for installation, repair, and annual maintenance across commercial and industrial sites.",
-                },
-                {
-                  icon: "/Ondemand/Fire.png",
-                  title: "Fire Fighting Systems",
-                  desc: "Design, installation, testing, and upgrade support for sprinkler, hydrant, detection, and suppression systems, including support for local fire NOC processes where required.",
-                  iconSize: 18,
-                },
-                {
-                  icon: "/Ondemand/ACM.png",
-                  title: "Annual Maintenance (AMC)",
-                  desc: "Comprehensive maintenance contracts for MEP systems, façades, and common areas, with preventive schedules and breakdown support backed by service-level commitments.",
-                },
-                {
-                  icon: "/Ondemand/Solar.png",
-                  title: "Solar Plant Installation",
-                  desc: "Rooftop and ground-mounted solar systems for commercial, industrial, and institutional sites, covering design, procurement, installation, net metering support, and O&M.",
-                },
-                {
-                  icon: "/Ondemand/BESS.png",
-                  title: "BESS Retrofitting",
-                  desc: "Battery energy storage solutions for government buildings, commercial complexes, and industrial facilities, including DG-replacement use cases where technically and commercially viable.",
-                  iconSize: 14,
-                },
-                {
-                  icon: "/Ondemand/Contract.png",
-                  title: "Landscaping",
-                  desc: "Lawn development, plantation, irrigation, hardscaping, and softscaping for commercial complexes, government buildings, and industrial facilities with design support.",
-                },
-
-              ].map(({ icon, title, desc, iconSize = 22 }) => (
-                <div
-                  key={title}
-                  className="border border-[#e5e5e5] rounded-2xl p-5 sm:p-6 flex flex-col gap-3 bg-white transition-all duration-200 hover:shadow-[0_8px_30px_rgba(74,55,114,0.1)] hover:border-[#c5b8e8]"
-                >
-                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#f0eef8] flex items-center justify-center flex-shrink-0 overflow-hidden">
-                    <Image
-                      src={icon}
-                      alt={title}
-                      width={iconSize}
-                      height={iconSize}
-                      style={{ objectFit: "contain", display: "block" }}
-                    />
+              {SERVICE_ITEMS.map(({ icon, key, iconSize = 22 }) => {
+                const title = t(`services.onDemand.items.${key}.title`);
+                const desc = t(`services.onDemand.items.${key}.desc`);
+                return (
+                  <div
+                    key={key}
+                    className="border border-[#e5e5e5] rounded-2xl p-5 sm:p-6 flex flex-col gap-3 bg-white transition-all duration-200 hover:shadow-[0_8px_30px_rgba(74,55,114,0.1)] hover:border-[#c5b8e8]"
+                  >
+                    <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#f0eef8] flex items-center justify-center flex-shrink-0 overflow-hidden">
+                      <Image
+                        src={icon}
+                        alt={title}
+                        width={iconSize}
+                        height={iconSize}
+                        style={{ objectFit: "contain", display: "block" }}
+                      />
+                    </div>
+                    <p
+                      className="text-[17px] font-bold text-[#111] leading-snug"
+                      style={{ fontFamily: "'Manrope', sans-serif" }}
+                    >
+                      {title}
+                    </p>
+                    <p
+                      className="text-sm text-[#666] leading-relaxed flex-1"
+                      style={{ fontFamily: "'DM Sans', sans-serif" }}
+                    >
+                      {desc}
+                    </p>
+                    <button
+                      onClick={() => {
+                        window.location.href = "tel:+919911902943";
+                      }}
+                      className="w-fit rounded-lg px-5 py-2.5 font-bold text-[14px] text-black border-none cursor-pointer transition-all duration-200 hover:bg-[#00b8d9] hover:-translate-y-px"
+                      style={{ background: "#80EBF7", fontFamily: "'DM Sans', sans-serif" }}
+                    >
+                      {t("services.onDemand.talkToUs")}
+                    </button>
                   </div>
-                  <p
-                    className="text-[17px] font-bold text-[#111] leading-snug"
-                    style={{ fontFamily: "'Manrope', sans-serif" }}
-                  >
-                    {title}
-                  </p>
-                  <p
-                    className="text-sm text-[#666] leading-relaxed flex-1"
-                    style={{ fontFamily: "'DM Sans', sans-serif" }}
-                  >
-                    {desc}
-                  </p>
-                  <button
-                    onClick={() => {
-                      window.location.href = "tel:+919911902943";
-                    }}
-                    className="w-fit rounded-lg px-5 py-2.5 font-bold text-[14px] text-black border-none cursor-pointer transition-all duration-200 hover:bg-[#00b8d9] hover:-translate-y-px"
-                    style={{ background: "#80EBF7", fontFamily: "'DM Sans', sans-serif" }}
-                  >
-                    Talk to us
-                  </button>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
@@ -311,45 +307,19 @@ export default function ServicesPage() {
           <div className="container">
             <div className="how-wrap">
               <div className="sec-header">
-                <h2>Requirement to Execution</h2>
+                <h2>{t("services.how.heading")}</h2>
                 <p>
-                  Structured, transparent, and tracked - for both clients and
-                  vendors.
+                  {t("services.how.subtitle")}
                 </p>
               </div>
               <div className="steps-row">
-                <div className="step-item">
-                  <div className="step-num">1</div>
-                  <h4>Raise a Requirement</h4>
-                  <p>
-                    Share your scope, location, BOQ or requirement note, and
-                    timeline with Headsup B2B.
-                  </p>
-                </div>
-                <div className="step-item">
-                  <div className="step-num">2</div>
-                  <h4>Vendor Matching</h4>
-                  <p>
-                    We match the requirement with verified vendors based on
-                    capability, location, and capacity.
-                  </p>
-                </div>
-                <div className="step-item">
-                  <div className="step-num">3</div>
-                  <h4>Commercial Alignment</h4>
-                  <p>
-                    Receive BOQ-aligned commercial quotes with defined scope,
-                    timelines, and execution clarity.
-                  </p>
-                </div>
-                <div className="step-item">
-                  <div className="step-num">4</div>
-                  <h4>Execute &amp; Deliver</h4>
-                  <p>
-                    Execution moves on ground with material support, quality
-                    checks, and timeline tracking.
-                  </p>
-                </div>
+                {[1,2,3,4].map((n) => (
+                  <div key={n} className="step-item">
+                    <div className="step-num">{n}</div>
+                    <h4>{t(`services.how.step${n}.title`)}</h4>
+                    <p>{t(`services.how.step${n}.desc`)}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -361,130 +331,57 @@ export default function ServicesPage() {
             <div className="vendor-section">
               <div className="v-left">
                 <h2>
-                  Grow Your Business.
+                  {t("services.vendor.headline1")}
                   <br />
-                  <span className="hl">Join as a Vendor.</span>
+                  <span className="hl">{t("services.vendor.headline2")}</span>
                 </h2>
                 <p>
-                  We are onboarding service providers, hardware shops, solar
-                  EPCs, fabrication units, and contractors across India. Access
-                  a structured pipeline of project-led demand without chasing
-                  fragmented leads.
+                  {t("services.vendor.description")}
                 </p>
                 <div className="v-benefits">
-                  <div className="v-benefit">
-                    <div className="vb-icon">
-                      <Image
-                        src="/Grow-your-business/1.png"
-                        alt="Verified Project Pipeline"
-                        width={28}
-                        height={28}
-                        style={{ objectFit: "contain", width: "70%", height: "70%" }}
-                      />
-                    </div>
-                    <div className="vb-text">
-                      <h5>Verified Project Pipeline</h5>
-                      <p>
-                        Access real construction, commercial, and infrastructure
-                        demand - not retail enquiries.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="v-benefit">
-                    <div className="vb-icon">
-                      <Image
-                        src="/Grow-your-business/2.png"
-                        alt="Structured Payments"
-                        width={28}
-                        height={28}
-                        style={{ objectFit: "contain", width: "70%", height: "70%" }}
-                      />
-                    </div>
-                    <div className="vb-text">
-                      <h5>Structured Payments</h5>
-                      <p>
-                        Commercial cycles are supported through a structured
-                        procurement and finance model.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="v-benefit">
-                    <div className="vb-icon">
-                      <Image
-                        src="/Grow-your-business/3.png"
-                        alt="Ratings & Repeat Work"
-                        width={28}
-                        height={28}
-                        style={{ objectFit: "contain", width: "70%", height: "70%" }}
-                      />
-                    </div>
-                    <div className="vb-text">
-                      <h5>Ratings &amp; Repeat Work</h5>
-                      <p>
-                        Reliable vendors build visibility and improve access to
-                        repeat allocation opportunities.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="v-benefit">
-                    <div className="vb-icon">
-                      <Image
-                        src="/Grow-your-business/4.png"
-                        alt="Zero Onboarding Cost"
-                        width={28}
-                        height={28}
-                        style={{ objectFit: "contain", width: "70%", height: "70%" }}
-                      />
-                    </div>
-                    <div className="vb-text">
-                      <h5>Zero Onboarding Cost</h5>
-                      <p>
-                        No registration fees. No subscription. Start with
-                        qualified demand, not more overhead.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="v-benefit">
-                    <div className="vb-icon">
-                      <Image
-                        src="/Grow-your-business/5.png"
-                        alt="Hardware Shop Partners"
-                        width={28}
-                        height={28}
-                        style={{ objectFit: "contain", width: "70%", height: "70%" }}
-                      />
-                    </div>
-                    <div className="vb-text">
-                      <h5>Hardware Shop Partners</h5>
-                      <p>
-                        Local shops can act as fulfilment nodes while Headsup
-                        routes demand through the network.
-                      </p>
-                    </div>
-                  </div>
+                  {VENDOR_BENEFITS.map(({ icon, key }) => {
+                    const title = t(`services.vendor.benefits.${key}.title`);
+                    const desc = t(`services.vendor.benefits.${key}.desc`);
+                    return (
+                      <div key={key} className="v-benefit">
+                        <div className="vb-icon">
+                          <Image
+                            src={icon}
+                            alt={title}
+                            width={28}
+                            height={28}
+                            style={{ objectFit: "contain", width: "70%", height: "70%" }}
+                          />
+                        </div>
+                        <div className="vb-text">
+                          <h5>{title}</h5>
+                          <p>{desc}</p>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
               <form className="v-form" onSubmit={handleSubmit} noValidate>
-                <h3>Register Your Business</h3>
+                <h3>{t("services.vendor.form.heading")}</h3>
                 <p>
-                  Complete the form in under 2 minutes. Our team will review and
-                  reach out shortly.
+                  {t("services.vendor.form.subtitle")}
                 </p>
                 <div className="f-row">
                   <div className="f-group">
-                    <label>Business Name</label>
+                    <label>{t("services.vendor.form.labels.businessName")}</label>
                     <input
                       type="text"
-                      placeholder="e.g. Sharma Electricals"
+                      placeholder={t("services.vendor.form.placeholders.businessName")}
                       value={form.businessName}
                       onChange={handleChange("businessName")}
                     />
                   </div>
                   <div className="f-group">
-                    <label>Contact Person</label>
+                    <label>{t("services.vendor.form.labels.contactPerson")}</label>
                     <input
                       type="text"
-                      placeholder="Full name"
+                      placeholder={t("services.vendor.form.placeholders.contactPerson")}
                       value={form.contactPerson}
                       onChange={handleChange("contactPerson")}
                     />
@@ -492,19 +389,19 @@ export default function ServicesPage() {
                 </div>
                 <div className="f-row">
                   <div className="f-group">
-                    <label>Phone</label>
+                    <label>{t("services.vendor.form.labels.phone")}</label>
                     <input
                       type="tel"
-                      placeholder="+91 98XXX XXXXX"
+                      placeholder={t("services.vendor.form.placeholders.phone")}
                       value={form.contactNo}
                       onChange={handleChange("contactNo")}
                     />
                   </div>
                   <div className="f-group">
-                    <label>Email</label>
+                    <label>{t("services.vendor.form.labels.email")}</label>
                     <input
                       type="email"
-                      placeholder="name@company.com"
+                      placeholder={t("services.vendor.form.placeholders.email")}
                       value={form.email}
                       onChange={handleChange("email")}
                     />
@@ -512,19 +409,19 @@ export default function ServicesPage() {
                 </div>
                 <div className="f-row">
                   <div className="f-group">
-                    <label>City / Region</label>
+                    <label>{t("services.vendor.form.labels.city")}</label>
                     <input
                       type="text"
-                      placeholder="e.g. Delhi NCR"
+                      placeholder={t("services.vendor.form.placeholders.city")}
                       value={form.city}
                       onChange={handleChange("city")}
                     />
                   </div>
                   <div className="f-group">
-                    <label>Primary Service Area</label>
+                    <label>{t("services.vendor.form.labels.serviceArea")}</label>
                     <input
                       type="text"
-                      placeholder="e.g. NCR, Haryana, Punjab"
+                      placeholder={t("services.vendor.form.placeholders.serviceArea")}
                       value={form.serviceArea}
                       onChange={handleChange("serviceArea")}
                     />
@@ -532,51 +429,44 @@ export default function ServicesPage() {
                 </div>
                 <div className="f-row">
                   <div className="f-group">
-                    <label>You Are A...</label>
+                    <label>{t("services.vendor.form.labels.vendorType")}</label>
                     <select value={form.vendorType} onChange={handleChange("vendorType")}>
-                      <option value="">Select your vendor type</option>
-                      <option>Service Provider / Contractor</option>
-                      <option>Local Hardware Shop</option>
-                      <option>Fabrication / Manufacturing Unit</option>
-                      <option>Solar EPC / Installer</option>
-                      <option>Multi-Trade Crew</option>
+                      <option value="">{t("services.vendor.form.placeholders.vendorType")}</option>
+                      {VENDOR_TYPE_KEYS.map((k) => (
+                        <option key={k} value={t(`services.vendor.form.vendorTypes.${k}`)}>
+                          {t(`services.vendor.form.vendorTypes.${k}`)}
+                        </option>
+                      ))}
                     </select>
                   </div>
                   <div className="f-group">
-                    <label>Service Category</label>
+                    <label>{t("services.vendor.form.labels.serviceCategory")}</label>
                     <select value={form.serviceCategory} onChange={handleChange("serviceCategory")}>
-                      <option value="">Select primary service</option>
-                      <option>Painting Services</option>
-                      <option>Electrical Works</option>
-                      <option>Plumbing &amp; Sanitary</option>
-                      <option>HVAC &amp; AC Services</option>
-                      <option>Fire Fighting Systems</option>
-                      <option>Civil &amp; Structural</option>
-                      <option>Interior Fit-Outs</option>
-                      <option>Solar Plant Installation</option>
-                      <option>BESS / Energy Storage</option>
-                      <option>Annual Maintenance (AMC)</option>
-                      <option>Hardware / Building Material Supply</option>
-                      <option>Multi-Trade (Materials + Labour)</option>
-                      <option>Other</option>
+                      <option value="">{t("services.vendor.form.placeholders.serviceCategory")}</option>
+                      {SERVICE_CATEGORY_KEYS.map((k) => (
+                        <option key={k} value={t(`services.vendor.form.serviceCategories.${k}`)}>
+                          {t(`services.vendor.form.serviceCategories.${k}`)}
+                        </option>
+                      ))}
                     </select>
                   </div>
                 </div>
                 <div className="f-group">
-                  <label>Team Size</label>
+                  <label>{t("services.vendor.form.labels.teamSize")}</label>
                   <select value={form.teamSize} onChange={handleChange("teamSize")}>
-                    <option value="">How many in your crew?</option>
-                    <option>1-5</option>
-                    <option>6-15</option>
-                    <option>16-50</option>
-                    <option>50+</option>
+                    <option value="">{t("services.vendor.form.placeholders.teamSize")}</option>
+                    {TEAM_SIZE_KEYS.map((k) => (
+                      <option key={k} value={t(`services.vendor.form.teamSizes.${k}`)}>
+                        {t(`services.vendor.form.teamSizes.${k}`)}
+                      </option>
+                    ))}
                   </select>
                 </div>
                 <div className="f-group">
-                  <label>Experience / Notable Projects (Optional)</label>
+                  <label>{t("services.vendor.form.labels.experience")}</label>
                   <textarea
                     rows={3}
-                    placeholder="Briefly describe your past work, project types, or notable clients..."
+                    placeholder={t("services.vendor.form.placeholders.experience")}
                     value={form.experience}
                     onChange={handleChange("experience")}
                   />
@@ -587,7 +477,7 @@ export default function ServicesPage() {
                   </div>
                 )}
                 <button type="submit" className="btn-submit-glow" disabled={submitting}>
-                  {submitting ? "Submitting…" : "Submit & Get Started"}
+                  {submitting ? t("services.vendor.form.submitting") : t("services.vendor.form.submit")}
                 </button>
               </form>
             </div>

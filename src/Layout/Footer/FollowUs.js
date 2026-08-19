@@ -1,8 +1,10 @@
 import Link from 'next/link';
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { FaLinkedinIn, FaFacebookF, FaInstagram, FaWhatsapp, FaYoutube } from "react-icons/fa";
 
 export default function FollowUs() {
+  const { t } = useTranslation();
 
   const fields = [
     { _id: 0, label: 'LinkedIn', icon: <FaLinkedinIn />, url: 'https://www.linkedin.com/company/headsupb2b/', active: true },
@@ -14,7 +16,7 @@ export default function FollowUs() {
 
   return (
     <div className='flex flex-col justify-center'>
-      <h2 className="mb-1 text-xl font-semibold text-white l:text-left mm:text-center 4k:text-4xl 4k:pb-2">Follow Us</h2>
+      <h2 className="mb-1 text-xl font-semibold text-white l:text-left mm:text-center 4k:text-4xl 4k:pb-2">{t('footer.followUs')}</h2>
       <ul className="mt-2 font-medium text-white flex ms:justify-evenly t:justify-center l:justify-start mm:space-x-12 t:space-x-2 l:space-x-1 ll:space-x-2 4k:space-x-4 ">
         {fields?.map((ele) => (
           <Link

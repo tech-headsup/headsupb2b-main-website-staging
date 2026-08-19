@@ -1,6 +1,8 @@
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 export default function HeroSection({ onOpenSellModal, onOpenQuoteModal }) {
+  const { t } = useTranslation();
   return (
     <section className="hero">
       <div className="hero-bg" />
@@ -12,22 +14,22 @@ export default function HeroSection({ onOpenSellModal, onOpenQuoteModal }) {
           <div className="hero-content">
 
             <h1>
-              Everything you need to
-              <span className="yellow-highlight"> source solar</span>{" "}
-              <span>for your project in one place.</span>
+              {t("solar.hero.headline1")}
+              <span className="yellow-highlight"> {t("solar.hero.headline2")}</span>{" "}
+              <span>{t("solar.hero.headline3")}</span>
             </h1>
             <p className="subtitle">
-              Products, project kits, expertise and credit — from India's infrastructure sourcing partner.
+              {t("solar.hero.subtitle")}
             </p>
             <div className="hero-btns">
               <button type="button" className="btn-glow" onClick={onOpenQuoteModal}>
-                Get a Quote
+                {t("solar.hero.getQuote")}
                 <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </button>
               <button type="button" className="btn-outline" onClick={onOpenSellModal}>
-                Upload Your BOM
+                {t("solar.hero.uploadBom")}
                 <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>

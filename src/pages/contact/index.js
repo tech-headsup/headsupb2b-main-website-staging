@@ -4,6 +4,7 @@ import CustomText from "@/component/Text/CustomText";
 import Image from "next/image";
 import React, { useState } from "react";
 import Ripples from "react-ripples";
+import { useTranslation } from "react-i18next";
 import Buy from "@/assets/images/svg/buy.svg";
 import Sell from "@/assets/images/svg/sell.svg";
 import Expert from '@/assets/images/svg/contacts-expert.svg';
@@ -24,6 +25,7 @@ import UploadQuote from "@/component/UploadQuote";
 import { useRouter } from "next/router";
 
 export default function index({ categoryProductOptions }) {
+  const { t } = useTranslation();
 
   const [showBuyModal, setShowBuyModal] = useState(false);
   const [showSellModal, setShowSellModal] = useState(false);
@@ -40,15 +42,14 @@ export default function index({ categoryProductOptions }) {
   return (
     <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8 pt-10 md:pt-8 lg:pt-10 ll:pt-16 pb-10 md:pb-10 lg:pb-10">
       <NextSeo
-        title="Contact Us | HeadsupB2B"
-        description="Contact for Construction Sand, Aggregates, Bricks, Stone, Metal Beam Crash Barriers, Metals and Steels, TMT, Electronic Products and Price | Call Now 9097476155"
+        title={t("contact.metaTitle")}
+        description={t("contact.metaDescription")}
         canonical={dynamicCanonicalUrl}
         openGraph={{
           type: "website",
           url: "https://www.headsupb2b.com/contact",
-          title: "Contact Us | HeadsupB2B",
-          description:
-            "Contact for Construction Sand, Aggregates, Bricks, Stone, Metal Beam Crash Barriers, Metals and Steels, TMT, Electronic Products and Price | Call Now +918595736388",
+          title: t("contact.metaTitle"),
+          description: t("contact.ogDescription"),
           site_name: "Headsup B2B",
           images: [
             {
@@ -84,7 +85,7 @@ export default function index({ categoryProductOptions }) {
             </div>
             <div className="my-3">
               <CustomText
-                text={"Want to Buy?"}
+                text={t("contact.wantToBuy")}
                 className={"text-headupb2b text-2xl md:text-2xl lg:text-3xl ll:text-4xl font-bold"}
               />
             </div>
@@ -96,7 +97,7 @@ export default function index({ categoryProductOptions }) {
                   className="text-white py-2 px-4 text-base md:text-lg lg:text-xl cursor-pointer"
                   onClick={() => setShowBuyModal(true)}
                 >
-                  Click here
+                  {t("contact.clickHere")}
                 </label>
               </Ripples>
             </div>
@@ -111,7 +112,7 @@ export default function index({ categoryProductOptions }) {
             </div>
             <div className="my-3">
               <CustomText
-                text={"Want to Sell?"}
+                text={t("contact.wantToSell")}
                 className={"text-headupb2b text-2xl md:text-2xl lg:text-3xl ll:text-4xl font-bold"}
               />
             </div>
@@ -123,7 +124,7 @@ export default function index({ categoryProductOptions }) {
                   className="text-white py-2 px-4 text-base md:text-lg lg:text-xl cursor-pointer"
                   onClick={() => setShowSellModal(true)}
                 >
-                  Click here
+                  {t("contact.clickHere")}
                 </label>
               </Ripples>
             </div>
@@ -138,7 +139,7 @@ export default function index({ categoryProductOptions }) {
             </div>
             <div className="my-3">
               <CustomText
-                text={"Get in Touch with Sachin"}
+                text={t("contact.getInTouchExpert")}
                 className={"text-headupb2b text-2xl md:text-2xl lg:text-3xl ll:text-4xl font-bold leading-tight"}
               />
             </div>
@@ -150,7 +151,7 @@ export default function index({ categoryProductOptions }) {
                   className="text-white py-2 px-4 text-base md:text-lg lg:text-xl cursor-pointer"
                   onClick={handleCallUs}
                 >
-                  Call Us
+                  {t("contact.callUs")}
                 </label>
               </Ripples>
             </div>
@@ -170,7 +171,7 @@ export default function index({ categoryProductOptions }) {
             setShowBuyModal(false);
             setActiveTab("new");
           }}
-          title="Want to Buy"
+          title={t("contact.modals.buy")}
           closeOnBackdropClick={true}
           size="lg"
         >
@@ -184,7 +185,7 @@ export default function index({ categoryProductOptions }) {
               }`}
               onClick={() => setActiveTab("new")}
             >
-              New Quote
+              {t("contact.tabs.newQuote")}
             </button>
             <button
               className={`px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 rounded-full font-medium text-xs sm:text-sm md:text-base transition-all ${
@@ -194,7 +195,7 @@ export default function index({ categoryProductOptions }) {
               }`}
               onClick={() => setActiveTab("upload")}
             >
-              Upload Quote
+              {t("contact.tabs.uploadQuote")}
             </button>
           </div>
 
@@ -223,7 +224,7 @@ export default function index({ categoryProductOptions }) {
         <CommonModal
           isOpen={showSellModal}
           onClose={() => setShowSellModal(false)}
-          title="Sell With Us"
+          title={t("contact.modals.sell")}
           closeOnBackdropClick={true}
           size="xl"
         >

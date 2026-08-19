@@ -9,7 +9,7 @@ export const CoverImage = ({ title, src, slug, priority = false }) => {
       <Image
         src={src}
         alt={title}
-        className="w-full h-auto rounded-xl border object-cover hover:opacity-90 dark:border-neutral-800"
+        className="w-full h-auto rounded-xl border object-fit hover:opacity-90 dark:border-neutral-800"
         fill
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 900px"
         quality={70}

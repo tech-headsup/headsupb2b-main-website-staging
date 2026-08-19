@@ -7,26 +7,31 @@ import * as yup from "yup";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import Ripples from "react-ripples";
+import { useTranslation } from "react-i18next";
 
 import CustomText from "@/component/Text/CustomText";
 import { sendEmailToGetInTouch } from "@/Contants/APIEndpoint";
 import { isGadSourcePresent } from "@/Utils/urlHelpers";
 import { getDemoPhone } from "@/Utils/demoDefaults";
 
-function GetInTouch({ onClose,title }) {
+function GetInTouch({ onClose, title }) {
   const router = useRouter();
+  const { t } = useTranslation();
 
   const [isLoading, setIsLoading] = useState(false);
   const [isJobMentioned, setIsJobMentioned] = useState(false);
 
   /* ───────── VALIDATION ───────── */
   const schema = yup.object().shape({
-    name: yup.string().required("Name is required"),
+    name: yup.string().required(t("getInTouch.errors.nameRequired")),
     contactNo: yup
       .string()
-      .required("Contact number is required")
-      .matches(/^[0-9]{10}$/, "Invalid contact number"),
-    email: yup.string().email("Invalid email").required("Email is required"),
+      .required(t("getInTouch.errors.contactRequired"))
+      .matches(/^[0-9]{10}$/, t("getInTouch.errors.contactInvalid")),
+    email: yup
+      .string()
+      .email(t("getInTouch.errors.emailInvalid"))
+      .required(t("getInTouch.errors.emailRequired")),
     address: yup.string(),
     message: yup.string(),
   });
@@ -66,17 +71,24 @@ function GetInTouch({ onClose,title }) {
       if (!response.ok) throw new Error("Network error");
 
       reset();
-      toast.success("Mail sent successfully");
+      toast.success(t("getInTouch.toast.success"));
 
       onClose(); // ✅ modal close
       router.push("/thank-you");
 
     } catch (error) {
       console.error(error);
-      toast.error("Failed to send message");
+      toast.error(t("getInTouch.toast.failure"));
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const placeholders = {
+    name: t("getInTouch.placeholders.name"),
+    contactNo: t("getInTouch.placeholders.contactNo"),
+    email: t("getInTouch.placeholders.email"),
+    address: t("getInTouch.placeholders.address"),
   };
 
   /* ───────── UI ───────── */
@@ -101,7 +113,7 @@ function GetInTouch({ onClose,title }) {
           {/* Heading */}
           <div className="mb-4">
             <CustomText
-              text={title? title:"Get Best Quote in 24 Hours 🚀"}
+              text={title ? title : t("getInTouch.defaultHeading")}
               className="text-lg text-white"
             />
           </div>
@@ -111,11 +123,7 @@ function GetInTouch({ onClose,title }) {
             <div key={field} className="my-3">
               <input
                 {...register(field)}
-                placeholder={`${
-                  field === "contactNo"
-                    ? "Contact No"
-                    : field.charAt(0).toUpperCase() + field.slice(1)
-                }${field !== "address" ? "*" : ""}`}
+                placeholder={`${placeholders[field]}${field !== "address" ? "*" : ""}`}
                 className="bg-transparent text-white placeholder:text-white w-full border-b mb-1 outline-none"
                 maxLength={field === "contactNo" ? 10 : undefined}
                 onInput={
@@ -137,12 +145,12 @@ function GetInTouch({ onClose,title }) {
           {/* Message */}
           <div className="my-3">
             <label htmlFor="message" className="sr-only">
-              Message
+              {t("getInTouch.placeholders.message")}
             </label>
             <textarea
               {...register("message")}
               id="message"
-              placeholder="Message"
+              placeholder={t("getInTouch.placeholders.message")}
               className="bg-transparent text-white placeholder:text-white w-full border rounded-lg p-2 outline-none"
               rows={3}
             ></textarea>
@@ -151,13 +159,13 @@ function GetInTouch({ onClose,title }) {
           {/* Job Warning */}
           {isJobMentioned && (
             <p className="text-white text-sm mt-1">
-              Job-related queries not allowed.{" "}
+              {t("getInTouch.jobWarning")}{" "}
               <a
                 className="underline"
                 href="/careers"
                 target="_blank"
               >
-                Careers page
+                {t("getInTouch.careersLink")}
               </a>
             </p>
           )}
@@ -170,7 +178,7 @@ function GetInTouch({ onClose,title }) {
                 disabled={isLoading || isJobMentioned}
                 className="text-[#4A3772] py-2 px-8 font-medium text-lg"
               >
-                {isLoading ? "Sending..." : "Send"}
+                {isLoading ? t("getInTouch.sending") : t("getInTouch.send")}
               </button>
             </Ripples>
           </div>

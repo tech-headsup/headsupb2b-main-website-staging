@@ -2,6 +2,7 @@
 
 import Head from "next/head";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 /* ─── Reusable Section wrapper ─── */
 function Section({ id, title, children }) {
@@ -129,18 +130,38 @@ const h3Style = {
   margin: "36px 0 12px",
 };
 
+const HTML = (html) => ({ dangerouslySetInnerHTML: { __html: html } });
+
 export default function SolarCertificationsGuidePage() {
+  const { t } = useTranslation();
+
+  const HERO_PILLS = t("bisIecAlmm.heroPills", { returnObjects: true }) || [];
+  const TOC = t("bisIecAlmm.toc", { returnObjects: true }) || [];
+  const PILLARS = t("bisIecAlmm.pillars", { returnObjects: true }) || [];
+  const BIS_ALERT = t("bisIecAlmm.bisAlertItems", { returnObjects: true }) || [];
+  const IEC_REASONS = t("bisIecAlmm.iecReasons", { returnObjects: true }) || [];
+  const IEC_TABLE = t("bisIecAlmm.iecTable", { returnObjects: true }) || [];
+  const IEC_TABLE_HEAD = t("bisIecAlmm.iecTableHead", { returnObjects: true }) || [];
+  const ALMM_RISK = t("bisIecAlmm.almmRiskItems", { returnObjects: true }) || [];
+  const ALMM_STEPS = t("bisIecAlmm.almmSteps", { returnObjects: true }) || [];
+  const INTERACT_HEAD = t("bisIecAlmm.interactHead", { returnObjects: true }) || [];
+  const INTERACT_ROWS = t("bisIecAlmm.interactRows", { returnObjects: true }) || [];
+  const RISKS = t("bisIecAlmm.risks", { returnObjects: true }) || [];
+  const CHECKLIST = t("bisIecAlmm.checklist", { returnObjects: true }) || [];
+  const TAKEAWAYS = t("bisIecAlmm.takeaways", { returnObjects: true }) || [];
+  const FOOTER_TAGS = t("bisIecAlmm.footerTags", { returnObjects: true }) || [];
+
   return (
     <>
       <Head>
-        <title>Understanding BIS, IEC, and ALMM Certifications for Solar Equipment in India</title>
+        <title>{t("bisIecAlmm.meta.title")}</title>
         <meta
           name="description"
-          content="A compliance primer for procurement managers, EPC firms, and contractors sourcing solar panels, inverters, and BoS components under India's evolving regulatory framework."
+          content={t("bisIecAlmm.meta.description")}
         />
         <meta
           name="keywords"
-          content="BIS Certification, ALMM, IEC Standards, Solar Compliance, EPC Procurement, MNRE, Solar India, Solar PV Modules"
+          content={t("bisIecAlmm.meta.keywords")}
         />
         <link
           rel="canonical"
@@ -149,11 +170,11 @@ export default function SolarCertificationsGuidePage() {
         <meta property="og:type" content="article" />
         <meta
           property="og:title"
-          content="Understanding BIS, IEC, and ALMM Certifications for Solar Equipment in India"
+          content={t("bisIecAlmm.meta.ogTitle")}
         />
         <meta
           property="og:description"
-          content="A compliance primer for procurement managers, EPC firms, and contractors sourcing solar panels, inverters, and BoS components under India's evolving regulatory framework."
+          content={t("bisIecAlmm.meta.ogDescription")}
         />
         <meta
           property="og:url"
@@ -168,11 +189,11 @@ export default function SolarCertificationsGuidePage() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Understanding BIS, IEC, and ALMM Certifications for Solar Equipment in India"
+          content={t("bisIecAlmm.meta.twitterTitle")}
         />
         <meta
           name="twitter:description"
-          content="A compliance primer for procurement managers, EPC firms, and contractors sourcing solar panels, inverters, and BoS components in India."
+          content={t("bisIecAlmm.meta.twitterDescription")}
         />
         <meta
           name="twitter:image"
@@ -227,7 +248,7 @@ export default function SolarCertificationsGuidePage() {
             <span className="inline-block bg-blue-500 text-white text-[11px] font-semibold tracking-[0.12em] uppercase px-[14px] py-[5px] rounded-[2px] mb-7"
               style={{ background: "#00d4f5", fontFamily: "'DM Sans', sans-serif", boxShadow: "0 4px 15px rgba(0,212,245,0.35)" }}
             >
-              TECHNICAL GUIDE · MAY 2025 · 9 MIN READ
+              {t("bisIecAlmm.hero.badge")}
             </span>
 
             <h1
@@ -241,7 +262,7 @@ export default function SolarCertificationsGuidePage() {
                 fontWeight: 700,
               }}
             >
-              Understanding BIS, IEC, and ALMM Certifications for Solar Equipment in India
+              {t("bisIecAlmm.hero.title")}
             </h1>
 
             <p
@@ -253,20 +274,12 @@ export default function SolarCertificationsGuidePage() {
                 marginBottom: 40,
               }}
             >
-              A compliance primer for procurement managers, EPC firms, and
-              contractors sourcing solar panels, inverters, and BoS components
-              under India&apos;s evolving regulatory framework.
+              {t("bisIecAlmm.hero.subtitle")}
             </p>
 
             {/* pills */}
             <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-              {[
-                "BIS Certification",
-                "ALMM",
-                "IEC Standards",
-                "Solar Compliance",
-                "EPC Procurement",
-              ].map((label) => (
+              {HERO_PILLS.map((label) => (
                 <span
                   key={label}
                   style={{
@@ -320,30 +333,18 @@ export default function SolarCertificationsGuidePage() {
             }}
           >
             <span style={{ fontSize: 18, flexShrink: 0, marginTop: 2 }}>📋</span>
-            <p style={{ fontSize: 15, color: "#1E3A5F", lineHeight: 1.65, margin: 0 }}>
-              <strong style={{ fontWeight: 700 }}>Who this is for:</strong>{" "}
-              Procurement managers, EPC project leads, and contractors sourcing
-              solar equipment for government-funded or utility-scale projects in
-              India.
-            </p>
+            <p
+              style={{ fontSize: 15, color: "#1E3A5F", lineHeight: 1.65, margin: 0 }}
+              {...HTML(t("bisIecAlmm.whoThisIsFor"))}
+            />
           </div>
 
           {/* ── INTRO ── */}
           <p style={{ ...p, fontSize: 20, fontWeight: 300, marginBottom: 22 }}>
-            If you&apos;ve ever received a shipment of solar panels only to
-            discover they aren&apos;t on the ALMM list — or worse, failed a
-            project audit because your inverters lacked BIS certification — you
-            already know the cost of getting compliance wrong. For contractors
-            and EPC firms operating in India&apos;s rapidly expanding solar
-            sector, certifications are no longer paperwork formalities. They are
-            hard procurement gates that determine whether your project gets
-            approved, funded, and commissioned.
+            {t("bisIecAlmm.intro1")}
           </p>
           <p style={p}>
-            Yet the certification landscape remains poorly understood. Most
-            procurement teams know the acronyms — BIS, IEC, ALMM — but few have
-            a clear picture of what each requires, which products they apply to,
-            and how they interact with each other. This guide changes that.
+            {t("bisIecAlmm.intro2")}
           </p>
 
           {/* ── TOC ── */}
@@ -367,7 +368,7 @@ export default function SolarCertificationsGuidePage() {
                 marginBottom: 18,
               }}
             >
-              What&apos;s in this guide
+              {t("bisIecAlmm.tocLabel")}
             </div>
             <ol
               style={{
@@ -380,18 +381,7 @@ export default function SolarCertificationsGuidePage() {
                 counterReset: "toc",
               }}
             >
-              {[
-                ["#three-pillars", "The three certification pillars"],
-                ["#bis", "BIS Certification explained"],
-                ["#iec", "IEC Standards: the international benchmark"],
-                ["#almm", "ALMM: the procurement gate"],
-                ["#almm-verify", "ALMM verification steps"],
-                ["#interact", "How BIS, IEC & ALMM interact"],
-                ["#risks", "Common procurement risks"],
-                ["#checklist", "Pre-order compliance checklist"],
-                ["#procurement-partner", "What this means for procurement"],
-                ["#takeaways", "Key takeaways"],
-              ].map(([href, label], i) => (
+              {TOC.map(({ href, label }, i) => (
                 <li key={href} style={{ counterIncrement: "toc" }}>
                   <a
                     href={href}
@@ -424,13 +414,9 @@ export default function SolarCertificationsGuidePage() {
           </nav>
 
           {/* ── S1: Three Pillars ── */}
-          <Section id="three-pillars" title="The Three Certification Pillars of Solar Procurement in India">
+          <Section id="three-pillars" title={t("bisIecAlmm.s1.title")}>
             <p style={p}>
-              India&apos;s solar compliance framework rests on three distinct
-              but interconnected pillars. Each operates at a different level —
-              national standards, international benchmarks, and project
-              eligibility — and procurement teams must understand all three to
-              avoid costly mistakes.
+              {t("bisIecAlmm.s1.p1")}
             </p>
 
             {/* Three pillar cards */}
@@ -442,29 +428,7 @@ export default function SolarCertificationsGuidePage() {
                 margin: "32px 0",
               }}
             >
-              {[
-                {
-                  tag: "BIS",
-                  tagBg: "#1A7A4A",
-                  title: "Bureau of Indian Standards",
-                  desc: "India's mandatory quality mark for solar photovoltaic modules sold domestically. Governed by IS 14286 and IS 16077 standards. Required for all panels sold in India.",
-                  icon: "🏛",
-                },
-                {
-                  tag: "IEC",
-                  tagBg: "#1E3A5F",
-                  title: "International Electrotechnical Commission",
-                  desc: "International performance and safety standards for solar modules (IEC 61215, 61730) and inverters (IEC 62109). Widely accepted globally and required for export-linked projects.",
-                  icon: "🌐",
-                },
-                {
-                  tag: "ALMM",
-                  tagBg: "#D97706",
-                  title: "Approved List of Models and Manufacturers",
-                  desc: "MNRE's approved sourcing list mandatory for government-funded projects. Covers solar PV modules (List I) and cells (List II). Renewed periodically — always verify current status.",
-                  icon: "📋",
-                },
-              ].map(({ tag, tagBg, title, desc, icon }) => (
+              {PILLARS.map(({ tag, tagBg, title, desc, icon }) => (
                 <div
                   key={tag}
                   style={{
@@ -519,64 +483,31 @@ export default function SolarCertificationsGuidePage() {
             </div>
 
             <p style={p}>
-              These three frameworks operate at different levels — national
-              standards, international benchmarks, and project eligibility — but
-              they are deeply interconnected. A panel that carries IEC
-              certification does not automatically qualify for ALMM listing. A
-              BIS-marked product may still be ineligible for a government
-              project if it&apos;s not on the ALMM list. Understanding the
-              overlap — and the gaps — is where procurement decisions get made
-              or broken.
+              {t("bisIecAlmm.s1.p2")}
             </p>
           </Section>
 
           <Rule />
 
           {/* ── S2: BIS ── */}
-          <Section id="bis" title="BIS Certification: India's Quality Baseline">
+          <Section id="bis" title={t("bisIecAlmm.s2.title")}>
             <p style={p}>
-              The Bureau of Indian Standards is India&apos;s national standards
-              body, operating under the Ministry of Consumer Affairs. For solar
-              photovoltaic modules, BIS certification under the Quality Control
-              Order (QCO) has been mandatory since April 2022. This means any
-              solar PV module — whether domestically manufactured or imported —
-              must carry the BIS Standard Mark (ISI mark) to be legally sold in
-              India.
+              {t("bisIecAlmm.s2.p1")}
             </p>
 
-            <h3 style={h3Style}>Which standards apply?</h3>
+            <h3 style={h3Style}>{t("bisIecAlmm.s2.h3a")}</h3>
+            <p style={p} {...HTML(t("bisIecAlmm.s2.p2"))} />
+
+            <h3 style={h3Style}>{t("bisIecAlmm.s2.h3b")}</h3>
             <p style={p}>
-              Solar PV modules fall under two key Indian Standards:{" "}
-              <strong style={{ color: "#181C18", fontWeight: 600 }}>
-                IS 14286
-              </strong>{" "}
-              (for crystalline silicon terrestrial PV modules) and{" "}
-              <strong style={{ color: "#181C18", fontWeight: 600 }}>
-                IS 16077
-              </strong>{" "}
-              (for thin film modules). These standards are technically aligned
-              with IEC 61215 and IEC 61730, meaning a module certified to the
-              international standard has a pathway to BIS — but must still
-              complete the Indian certification process separately.
+              {t("bisIecAlmm.s2.p3")}
             </p>
 
-            <h3 style={h3Style}>What does BIS certification involve?</h3>
-            <p style={p}>
-              Manufacturers — domestic or foreign — must apply to BIS, submit
-              product samples for testing at a BIS-recognised lab, and undergo a
-              factory audit. Foreign manufacturers also need a local Authorised
-              Indian Representative (AIR). Once certified, the manufacturer can
-              affix the ISI mark on products, but is subject to ongoing BIS
-              surveillance audits.
-            </p>
-
-            <Callout variant="amber" icon="⚠" title="PROCUREMENT ALERT — BIS QCO: What Changed in 2022–24">
+            <Callout variant="amber" icon="⚠" title={t("bisIecAlmm.s2.calloutTitle")}>
               <ul style={{ margin: "8px 0 0", paddingLeft: 20, lineHeight: 1.7 }}>
-                <li>Since April 2022, all solar PV modules sold in India must carry BIS certification — no exceptions</li>
-                <li>Imports without BIS certification are subject to seizure at customs</li>
-                <li>The QCO now covers a broader list of electrical equipment including certain inverter components</li>
-                <li>BIS licence must be valid and active — check the BIS Care portal before placing orders</li>
-                <li>Non-certified products: contractor liability in case of project audit failure</li>
+                {BIS_ALERT.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
               </ul>
             </Callout>
           </Section>
@@ -584,34 +515,13 @@ export default function SolarCertificationsGuidePage() {
           <Rule />
 
           {/* ── S3: IEC ── */}
-          <Section id="iec" title="IEC Standards: The International Benchmark">
+          <Section id="iec" title={t("bisIecAlmm.s3.title")}>
+            <p style={p} {...HTML(t("bisIecAlmm.s3.p1"))} />
             <p style={p}>
-              The International Electrotechnical Commission (IEC) sets the
-              global baseline for solar equipment performance and safety. For
-              procurement teams, two standards are most directly relevant:{" "}
-              <strong style={{ color: "#181C18", fontWeight: 600 }}>
-                IEC 61215
-              </strong>{" "}
-              (design qualification and type approval for crystalline silicon
-              modules) and{" "}
-              <strong style={{ color: "#181C18", fontWeight: 600 }}>
-                IEC 61730
-              </strong>{" "}
-              (module safety qualification). For solar inverters,{" "}
-              <strong style={{ color: "#181C18", fontWeight: 600 }}>
-                IEC 62109
-              </strong>{" "}
-              governs safety.
+              {t("bisIecAlmm.s3.p2")}
             </p>
             <p style={p}>
-              IEC certifications are issued by accredited testing laboratories
-              worldwide — CPRI, NABL-accredited labs in India, as well as
-              international bodies like TÜV Rheinland, UL, and Bureau Veritas.
-            </p>
-            <p style={p}>
-              Unlike BIS, IEC certification is not a legal mandate for domestic
-              sale in India — but it is practically mandatory for any serious
-              procurement, because:
+              {t("bisIecAlmm.s3.p3")}
             </p>
 
             <ul
@@ -624,12 +534,7 @@ export default function SolarCertificationsGuidePage() {
                 gap: 10,
               }}
             >
-              {[
-                "BIS's IS 14286 and IS 16077 are technically harmonised with IEC standards — IEC test reports significantly expedite BIS certification",
-                "Most EPC contracts and project financing covenants specify IEC-certified equipment as a minimum requirement",
-                "ALMM listing implicitly requires IEC certification as part of the technical qualification process",
-                "Insurance and warranty claims on non-IEC-certified equipment are routinely denied",
-              ].map((item) => (
+              {IEC_REASONS.map((item) => (
                 <li
                   key={item}
                   style={{
@@ -668,10 +573,7 @@ export default function SolarCertificationsGuidePage() {
                   margin: 0,
                 }}
               >
-                &ldquo;IEC certification is not just a quality signal —
-                it&apos;s the technical foundation on which BIS compliance and
-                ALMM eligibility are built. Treat it as the starting point, not
-                an optional add-on.&rdquo;
+                {t("bisIecAlmm.s3.quote")}
               </p>
               <cite
                 style={{
@@ -685,11 +587,11 @@ export default function SolarCertificationsGuidePage() {
                   marginTop: 12,
                 }}
               >
-                — Headsup B2B Technical Advisory
+                {t("bisIecAlmm.s3.quoteCite")}
               </cite>
             </blockquote>
 
-            <h3 style={h3Style}>Key IEC Standards — Quick Reference</h3>
+            <h3 style={h3Style}>{t("bisIecAlmm.s3.tableHeading")}</h3>
 
             <div style={{ overflowX: "auto", margin: "20px 0 28px" }}>
               <table
@@ -701,7 +603,7 @@ export default function SolarCertificationsGuidePage() {
               >
                 <thead>
                   <tr className="bg-headupb2b">
-                    {["Standard", "Covers", "Applies To", "Mandatory?"].map(
+                    {IEC_TABLE_HEAD.map(
                       (th) => (
                         <th
                           key={th}
@@ -721,13 +623,7 @@ export default function SolarCertificationsGuidePage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {[
-                    ["IEC 61215", "Design qualification & type approval", "Crystalline silicon modules", "De facto", "green"],
-                    ["IEC 61730", "Module safety qualification", "All PV modules", "De facto", "green"],
-                    ["IEC 62109", "Safety for power converters", "Solar inverters", "De facto", "green"],
-                    ["IEC 61724", "System monitoring & performance", "Solar PV systems", "Optional", "amber"],
-                    ["IEC 62548", "PV array design requirements", "System design", "Optional", "amber"],
-                  ].map(([std, covers, applies, mand, badgeVar], i) => (
+                  {IEC_TABLE.map(({ std, covers, applies, mand, badgeVar }, i) => (
                     <tr key={std} style={{ background: i % 2 === 1 ? "#F4F1FA" : "#FFFFFF" }}>
                       <td style={{ padding: "12px 16px", color: "#181C18", fontWeight: 600, borderBottom: "1px solid #DDE8DB", verticalAlign: "top", lineHeight: 1.55 }}>{std}</td>
                       <td style={{ padding: "12px 16px", color: "#3A4238", borderBottom: "1px solid #DDE8DB", verticalAlign: "top", lineHeight: 1.55 }}>{covers}</td>
@@ -745,44 +641,22 @@ export default function SolarCertificationsGuidePage() {
           <Rule />
 
           {/* ── S4: ALMM ── */}
-          <Section id="almm" title="ALMM: The Procurement Gate for Government Projects">
+          <Section id="almm" title={t("bisIecAlmm.s4.title")}>
+            <p style={p} {...HTML(t("bisIecAlmm.s4.p1"))} />
             <p style={p}>
-              The{" "}
-              <strong style={{ color: "#181C18", fontWeight: 600 }}>
-                Approved List of Models and Manufacturers (ALMM)
-              </strong>{" "}
-              is MNRE&apos;s instrument for ensuring that solar panels used in
-              government-funded projects meet quality standards and traceability
-              requirements. Introduced in 2021 and made mandatory for all
-              projects funded by SECI, NTPC, state DISCOMs, and other government
-              agencies, ALMM is arguably the most operationally significant
-              certification for EPC contractors in India today.
-            </p>
-            <p style={p}>
-              ALMM is maintained in two parts: List I covers solar PV modules,
-              and List II covers solar cells. Manufacturers — domestic or
-              foreign — must apply to MNRE with technical documentation, quality
-              certifications, and manufacturing capacity evidence. Listings are
-              reviewed and updated periodically, and manufacturers can be
-              suspended or delisted if quality standards slip.
+              {t("bisIecAlmm.s4.p2")}
             </p>
 
-            <h3 style={h3Style}>What ALMM means for your procurement</h3>
+            <h3 style={h3Style}>{t("bisIecAlmm.s4.h3")}</h3>
             <p style={p}>
-              If your project receives any central government funding — whether
-              directly through SECI/NTPC tenders or through schemes like
-              PM-KUSUM, RESCO, or state government solar programmes tied to
-              central budgets — you must source panels exclusively from
-              ALMM-listed manufacturers. There are no exceptions and no waivers.
+              {t("bisIecAlmm.s4.p3")}
             </p>
 
-            <Callout variant="red" icon="🚨" title="HIGH RISK — Using non-ALMM panels in a government project can result in:">
+            <Callout variant="red" icon="🚨" title={t("bisIecAlmm.s4.calloutTitle")}>
               <ul style={{ margin: "8px 0 0", paddingLeft: 20, lineHeight: 1.7 }}>
-                <li>Project disqualification or tender cancellation</li>
-                <li>Forfeiture of performance bank guarantee</li>
-                <li>Full material replacement at contractor cost before commissioning</li>
-                <li>Blacklisting from future SECI/NTPC tenders</li>
-                <li>Loan disbursement hold by project financing banks</li>
+                {ALMM_RISK.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
               </ul>
             </Callout>
           </Section>
@@ -790,12 +664,9 @@ export default function SolarCertificationsGuidePage() {
           <Rule />
 
           {/* ── S5: ALMM Verify ── */}
-          <Section id="almm-verify" title="ALMM — Key Things Procurement Teams Must Verify">
+          <Section id="almm-verify" title={t("bisIecAlmm.s5.title")}>
             <p style={p}>
-              ALMM compliance is not a one-time check at bid stage. The list
-              changes, listings expire, and model-level details matter. Here are
-              the five non-negotiable verification steps every procurement team
-              must build into their workflow.
+              {t("bisIecAlmm.s5.p1")}
             </p>
 
             {/* Steps */}
@@ -811,33 +682,7 @@ export default function SolarCertificationsGuidePage() {
                   background: "#DDE8DB",
                 }}
               />
-              {[
-                {
-                  num: 1,
-                  title: "Verify ALMM listing status at time of order — not just at bid",
-                  desc: "MNRE updates the ALMM list periodically. A manufacturer listed at bid stage may be suspended or removed by the time you place the order. Always check the live MNRE portal before issuing a PO.",
-                },
-                {
-                  num: 2,
-                  title: "Confirm the specific model, not just the manufacturer",
-                  desc: "ALMM listing is model-specific. A manufacturer may be listed for a 400W panel but not a 545W variant. Your PO must reference the exact model number on the ALMM list.",
-                },
-                {
-                  num: 3,
-                  title: "Check domestic manufacturing capacity vs. your project volume",
-                  desc: "India's ALMM-listed domestic capacity is growing but not unlimited. During peak project cycles, lead times for ALMM panels from top manufacturers can stretch 10–14 weeks. Plan procurement timelines accordingly.",
-                },
-                {
-                  num: 4,
-                  title: "Get a written ALMM compliance declaration from your supplier",
-                  desc: "A verbal assurance is not sufficient. Require a written confirmation with the ALMM model listing reference and an undertaking of compliance as part of your supply agreement.",
-                },
-                {
-                  num: 5,
-                  title: "Understand ALMM exemptions — they are narrow",
-                  desc: "Privately funded projects (no government equity, grant, or subsidy) are currently exempt from ALMM. However, if project financing involves any government bank or scheme with a government nexus, ALMM typically applies. When in doubt, apply it.",
-                },
-              ].map(({ num, title, desc }) => (
+              {ALMM_STEPS.map(({ num, title, desc }) => (
                 <div
                   key={num}
                   style={{ position: "relative", marginBottom: 32 }}
@@ -892,18 +737,16 @@ export default function SolarCertificationsGuidePage() {
           <Rule />
 
           {/* ── S6: How they interact ── */}
-          <Section id="interact" title="How BIS, IEC, and ALMM Interact: A Practical Map">
+          <Section id="interact" title={t("bisIecAlmm.s6.title")}>
             <p style={p}>
-              Understanding how the three frameworks relate to each other is
-              essential for building a compliant procurement checklist.
-              Here&apos;s how they stack:
+              {t("bisIecAlmm.s6.p1")}
             </p>
 
             <div style={{ overflowX: "auto", margin: "28px 0" }}>
               <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 14 }}>
                 <thead>
                   <tr className="bg-headupb2b">
-                    {["Product", "BIS Required?", "IEC Expected?", "ALMM Required?", "Notes"].map(
+                    {INTERACT_HEAD.map(
                       (th) => (
                         <th
                           key={th}
@@ -923,14 +766,7 @@ export default function SolarCertificationsGuidePage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {[
-                    ["Solar PV Modules", "Yes", "Yes", "Govt projects", "All three required for government projects"],
-                    ["Solar Cells", "Partial", "Yes", "ALMM List II", "ALMM List II for cells used in govt projects"],
-                    ["Solar Inverters", "Check QCO", "IEC 62109", "No", "BIS QCO scope expanding — verify current status"],
-                    ["DC Cables", "Yes", "Recommended", "No", "BIS IS 694 / IS 1554 applicable"],
-                    ["Mounting Structures", "No", "No", "No", "Structural design specs per project requirements"],
-                    ["Batteries / BESS", "Evolving", "IEC 62619", "No", "Regulations tightening rapidly — check latest MoP guidelines"],
-                  ].map(([prod, bis, iec, almm, notes], i) => (
+                  {INTERACT_ROWS.map(({ prod, bis, iec, almm, notes }, i) => (
                     <tr key={prod} style={{ background: i % 2 === 1 ? "#F4F1FA" : "#FFFFFF" }}>
                       <td style={{ padding: "12px 14px", color: "#181C18", fontWeight: 600, borderBottom: "1px solid #DDE8DB", verticalAlign: "top", lineHeight: 1.55 }}>{prod}</td>
                       <td style={{ padding: "12px 14px", color: "#3A4238", borderBottom: "1px solid #DDE8DB", verticalAlign: "top", lineHeight: 1.55 }}>{bis}</td>
@@ -947,11 +783,9 @@ export default function SolarCertificationsGuidePage() {
           <Rule />
 
           {/* ── S7: Common Risks ── */}
-          <Section id="risks" title="Common Procurement Risks Around Certifications">
+          <Section id="risks" title={t("bisIecAlmm.s7.title")}>
             <p style={p}>
-              Even well-prepared procurement teams trip up on certification
-              details. The risks below are the most common — and the most
-              costly — failure modes seen across solar EPC projects in India.
+              {t("bisIecAlmm.s7.p1")}
             </p>
 
             <div
@@ -962,44 +796,7 @@ export default function SolarCertificationsGuidePage() {
                 margin: "28px 0",
               }}
             >
-              {[
-                {
-                  level: "HIGH RISK",
-                  levelVar: "red",
-                  title: "Ordering panels not on the current ALMM list",
-                  desc: "The ALMM list changes. A manufacturer listed 3 months ago may have been delisted. Always verify before PO issuance.",
-                },
-                {
-                  level: "HIGH RISK",
-                  levelVar: "red",
-                  title: "Accepting IEC certificates without checking expiry",
-                  desc: "IEC certifications have validity periods. An expired certificate does not guarantee current product compliance. Demand valid, in-scope certificates.",
-                },
-                {
-                  level: "MEDIUM RISK",
-                  levelVar: "amber",
-                  title: "Confusing model-level vs. manufacturer-level ALMM listing",
-                  desc: "Your specific panel wattage/model must be listed, not just the brand. A 540W panel is not covered by a 400W listing.",
-                },
-                {
-                  level: "MEDIUM RISK",
-                  levelVar: "amber",
-                  title: "Assuming BIS-marked products are automatically ALMM listed",
-                  desc: "BIS and ALMM are separate processes. A BIS mark does not confer ALMM status. Both must be independently verified.",
-                },
-                {
-                  level: "MEDIUM RISK",
-                  levelVar: "amber",
-                  title: "Not updating BOQs when ALMM panel specs change mid-project",
-                  desc: "If your preferred ALMM model is delisted mid-procurement, you may need to re-engineer mounting structures and inverter sizing.",
-                },
-                {
-                  level: "HIGH RISK",
-                  levelVar: "red",
-                  title: "Relying on supplier verbal assurance for compliance",
-                  desc: "Always get written compliance declarations with certificate numbers, model references, and validity dates as part of the supply contract.",
-                },
-              ].map(({ level, levelVar, title, desc }) => (
+              {RISKS.map(({ level, levelVar, title, desc }) => (
                 <div
                   key={title}
                   style={{
@@ -1035,25 +832,14 @@ export default function SolarCertificationsGuidePage() {
           <Rule />
 
           {/* ── S8: Checklist ── */}
-          <Section id="checklist" title="A Procurement Compliance Checklist for Solar Equipment">
+          <Section id="checklist" title={t("bisIecAlmm.s8.title")}>
             <p style={p}>
-              Before any solar equipment purchase order leaves your desk, the
-              seven items below must be verified, documented, and contractually
-              guaranteed. This is the minimum standard for risk-free
-              procurement.
+              {t("bisIecAlmm.s8.p1")}
             </p>
 
-            <Callout variant="green" icon="✅" title="PRE-ORDER COMPLIANCE CHECKLIST — Before issuing any solar equipment purchase order, verify:">
+            <Callout variant="green" icon="✅" title={t("bisIecAlmm.s8.calloutTitle")}>
               <ul style={{ margin: "10px 0 0", paddingLeft: 0, listStyle: "none", lineHeight: 1.7 }}>
-                {[
-                  ["BIS", "Manufacturer holds a valid, current BIS licence for the specific product category (check BIS Care portal)"],
-                  ["IEC Modules", "Valid IEC 61215 and IEC 61730 certificates with scope covering the exact panel model and wattage"],
-                  ["IEC Inverters", "Valid IEC 62109-1 and IEC 62109-2 certificates from accredited lab"],
-                  ["ALMM", "Panel manufacturer and specific model listed on current MNRE ALMM List I (check mnre.gov.in)"],
-                  ["Certificate Validity", "All certificates are current — not expired, not suspended"],
-                  ["Written Declaration", "Supplier has provided a signed compliance declaration referencing certificate numbers"],
-                  ["Contract Clause", "Supply agreement includes a warranty of compliance and remedy clause for non-compliant supply"],
-                ].map(([label, text]) => (
+                {CHECKLIST.map(({ label, text }) => (
                   <li
                     key={label}
                     style={{
@@ -1078,29 +864,15 @@ export default function SolarCertificationsGuidePage() {
           <Rule />
 
           {/* ── S9: Procurement Partner ── */}
-          <Section id="procurement-partner" title="What This Means for Your Procurement Partner">
+          <Section id="procurement-partner" title={t("bisIecAlmm.s9.title")}>
             <p style={p}>
-              Managing certification compliance manually — checking multiple
-              portals, cross-referencing model numbers, validating certificate
-              expiry dates across dozens of SKUs — is time-consuming and
-              error-prone. For a project with 5,000+ panels, the compliance
-              verification task alone can take a procurement team days.
+              {t("bisIecAlmm.s9.p1")}
             </p>
             <p style={p}>
-              The structural advantage of sourcing through a verified B2B
-              procurement platform is that certification compliance is built
-              into the sourcing layer. Suppliers are pre-qualified against BIS,
-              IEC, and ALMM requirements before they appear in your sourcing
-              results. Model-level ALMM verification is done as part of the
-              product listing process. Your team focuses on project execution —
-              not portal-checking.
+              {t("bisIecAlmm.s9.p2")}
             </p>
             <p style={p}>
-              As India&apos;s solar pipeline accelerates toward 500 GW, the
-              volume of projects — and the regulatory scrutiny on each — will
-              only increase. Building certification compliance into your
-              procurement process is not a compliance burden. It is the
-              foundation of risk-free project delivery.
+              {t("bisIecAlmm.s9.p3")}
             </p>
 
             {/* Blockquote */}
@@ -1123,9 +895,7 @@ export default function SolarCertificationsGuidePage() {
                   margin: 0,
                 }}
               >
-                &ldquo;The contractors who consistently deliver on time are the
-                ones who solved compliance upstream — in procurement — rather
-                than discovering problems at commissioning.&rdquo;
+                {t("bisIecAlmm.s9.quote")}
               </p>
               <cite
                 style={{
@@ -1139,7 +909,7 @@ export default function SolarCertificationsGuidePage() {
                   marginTop: 12,
                 }}
               >
-                — Headsup B2B Procurement Research, 2025
+                {t("bisIecAlmm.s9.quoteCite")}
               </cite>
             </blockquote>
           </Section>
@@ -1147,11 +917,9 @@ export default function SolarCertificationsGuidePage() {
           <Rule />
 
           {/* ── S10: Key Takeaways ── */}
-          <Section id="takeaways" title="Key Takeaways">
+          <Section id="takeaways" title={t("bisIecAlmm.s10.title")}>
             <p style={p}>
-              The five points below summarise the core compliance posture every
-              EPC contractor and procurement team must operate from in India in
-              2025–26.
+              {t("bisIecAlmm.s10.p1")}
             </p>
 
             <div
@@ -1162,33 +930,7 @@ export default function SolarCertificationsGuidePage() {
                 margin: "28px 0",
               }}
             >
-              {[
-                {
-                  num: "1",
-                  title: "BIS is mandatory for all solar PV modules sold in India.",
-                  desc: "No ISI mark means the product cannot legally be sold or installed. Check the BIS Care portal before every order.",
-                },
-                {
-                  num: "2",
-                  title: "IEC certification is the technical backbone.",
-                  desc: "While not a standalone legal mandate, it is practically required by every serious project, financier, and insurer. Demand it as a minimum.",
-                },
-                {
-                  num: "3",
-                  title: "ALMM is non-negotiable for government-funded projects.",
-                  desc: "Always verify the specific model on the live MNRE ALMM list — not just the manufacturer name — before issuing a PO.",
-                },
-                {
-                  num: "4",
-                  title: "The three frameworks are complementary, not interchangeable.",
-                  desc: "A BIS mark does not mean ALMM-listed. An IEC certificate does not confer BIS compliance. Each must be independently verified.",
-                },
-                {
-                  num: "5",
-                  title: "Build compliance verification into your procurement workflow.",
-                  desc: "Manual verification at scale is a risk. Pre-qualified supplier networks with built-in certification checks are the procurement standard for competitive EPC firms in 2025–26.",
-                },
-              ].map(({ num, title, desc }) => (
+              {TAKEAWAYS.map(({ num, title, desc }) => (
                 <div
                   key={num}
                   style={{
@@ -1257,7 +999,7 @@ export default function SolarCertificationsGuidePage() {
                 fontWeight: 700,
               }}
             >
-              Source Certified Solar Equipment with Confidence
+              {t("bisIecAlmm.cta.heading")}
             </h2>
             <p
               style={{
@@ -1267,9 +1009,7 @@ export default function SolarCertificationsGuidePage() {
                 fontSize: 16,
               }}
             >
-              Headsup B2B lists only BIS-compliant, IEC-certified, and
-              ALMM-verified solar equipment — so your team can procure fast and
-              audit-ready.
+              {t("bisIecAlmm.cta.subtitle")}
             </p>
             <Link
               href="/renewable-energy-solutions/solar-charge-controllers"
@@ -1285,7 +1025,7 @@ export default function SolarCertificationsGuidePage() {
                 letterSpacing: "0.03em",
               }}
             >
-              Explore Solar Products →
+              {t("bisIecAlmm.cta.button")}
             </Link>
           </div>
 
@@ -1322,15 +1062,15 @@ export default function SolarCertificationsGuidePage() {
               </div>
               <div>
                 <div style={{ fontSize: 13.5, color: "#181C18", fontWeight: 600 }}>
-                  Headsup B2B Editorial Team
+                  {t("bisIecAlmm.footer.authorName")}
                 </div>
                 <div style={{ fontSize: 12, color: "#6B7468" }}>
-                  Procurement Intelligence · headsupb2b.com
+                  {t("bisIecAlmm.footer.authorTagline")}
                 </div>
               </div>
             </div>
             <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-              {["BIS Certification", "ALMM", "IEC Standards", "Solar Compliance", "EPC Procurement", "MNRE", "Solar India"].map(
+              {FOOTER_TAGS.map(
                 (tag) => (
                   <span
                     key={tag}

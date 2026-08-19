@@ -2,8 +2,10 @@ import FloatingCard from "./FloatingCard";
 import GenericForm from "./GenericForm";
 import ModalPopUp from "./ModalPopUp";
 import { useState } from "react";
+import { useTranslation, Trans } from "react-i18next";
 
 const HeroSection = ({ productOptions }) => {
+  const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -22,7 +24,7 @@ const HeroSection = ({ productOptions }) => {
                       text-sm mm:text-base l:text-lg ll:text-xl
                       mb-2 mm:mb-3 l:mb-4"
         >
-          High‑Performance Advertising
+          {t("ads.hero.eyebrow")}
         </div>
 
         <h1
@@ -34,8 +36,11 @@ const HeroSection = ({ productOptions }) => {
             letterSpacing: "-1.5px",
           }}
         >
-          Reach <span className="text-headupb2b">50,000+</span> Infra{" "}
-          <span className="text-headupb2b">Decision Makers</span> Monthly
+          {t("ads.hero.titlePart1")}
+          <span className="text-headupb2b">{t("ads.hero.titleNumber")}</span>
+          {t("ads.hero.titlePart2")}
+          <span className="text-headupb2b">{t("ads.hero.titleHighlight")}</span>
+          {t("ads.hero.titlePart3")}
         </h1>
 
         <p
@@ -43,9 +48,7 @@ const HeroSection = ({ productOptions }) => {
                     text-base
                     mb-3 mm:mb-4 l:mb-4"
         >
-          <strong>
-            Let's put your brand in front of the right businesses.
-          </strong>
+          <strong>{t("ads.hero.tagline")}</strong>
         </p>
 
         <p
@@ -53,10 +56,7 @@ const HeroSection = ({ productOptions }) => {
                     text-base
                     mb-6 mm:mb-7 l:mb-8 max-w-[580px] mx-auto l:mx-0"
         >
-          With Headsup B2B's <strong>targeted advertising,</strong> get connected to a focused,
-          <strong> pan-India </strong>audience of{" "}
-          <strong>purchase-ready</strong> industrial and construction
-          professionals, driving real results for your campaigns.
+          <Trans i18nKey="ads.hero.description" components={{ strong: <strong /> }} />
         </p>
         <div className="flex flex-col ms:flex-row flex-wrap gap-3 ms:gap-4 justify-center l:justify-start">
           <button
@@ -64,7 +64,7 @@ const HeroSection = ({ productOptions }) => {
             style={{ background: "#00d4f5" }}
             onClick={() => setIsModalOpen(true)}
           >
-            Show Interest
+            {t("ads.hero.showInterest")}
           </button>
 
           <a
@@ -75,7 +75,7 @@ const HeroSection = ({ productOptions }) => {
               className="w-full ms:w-auto text-white py-3 px-6 rounded-2xl text-base l:text-lg font-medium border-none cursor-pointer transition-all duration-200 hover:bg-[#00b8d9] hover:-translate-y-px"
               style={{ background: "#00d4f5" }}
             >
-              Talk to our Expert
+              {t("ads.hero.talkExpert")}
             </button>
           </a>
         </div>

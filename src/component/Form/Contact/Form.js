@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -7,6 +7,7 @@ import CustomText from "@/component/Text/CustomText";
 import Image from "next/image";
 import ContactUsImage from "@/assets/images/contact.png";
 import Ripples from "react-ripples";
+import { useTranslation } from "react-i18next";
 import { sendEmailToGetInTouch } from "@/Contants/APIEndpoint";
 import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/router";
@@ -16,18 +17,34 @@ import { getDemoPhone } from "@/Utils/demoDefaults";
 
 const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
 
-const schema = yup.object().shape({
-  name: yup.string().required("Name is required"),
-  contactNo: yup
-    .string()
-    .required("Contact number is required")
-    .matches(/^[0-9]{10}$/, "Invalid contact number"),
-  email: yup.string().email("Invalid email").required("Email is required"),
-  address: yup.string(),
-  message: yup.string(),
-});
+const FIELDS = [
+  { key: "name", labelKey: "contact.form.name" },
+  { key: "contactNo", labelKey: "contact.form.contactNo" },
+  { key: "email", labelKey: "contact.form.email" },
+  { key: "address", labelKey: "contact.form.address" },
+];
 
 export default function ContactForm() {
+  const { t } = useTranslation();
+
+  const schema = useMemo(
+    () =>
+      yup.object().shape({
+        name: yup.string().required(t("contact.form.errors.nameRequired")),
+        contactNo: yup
+          .string()
+          .required(t("contact.form.errors.contactRequired"))
+          .matches(/^[0-9]{10}$/, t("contact.form.errors.contactInvalid")),
+        email: yup
+          .string()
+          .email(t("contact.form.errors.emailInvalid"))
+          .required(t("contact.form.errors.emailRequired")),
+        address: yup.string(),
+        message: yup.string(),
+      }),
+    [t]
+  );
+
   const {
     register,
     handleSubmit,
@@ -70,11 +87,11 @@ export default function ContactForm() {
       const data = await response.json();
 
       reset();
-      toast.success("Mail sent successfully");
+      toast.success(t("contact.form.toast.success"));
       router.push("/thank-you");
     } catch (error) {
       console.error("Error:", error);
-      toast.error(error.message || "Failed to send message. Please try again.");
+      toast.error(error.message || t("contact.form.toast.failure"));
     } finally {
       setIsLoading(false);
     }
@@ -86,7 +103,7 @@ export default function ContactForm() {
         <div className="lg:col-span-2 relative">
           <div className="flex flex-col text-white">
             <CustomText
-              text="Our Location"
+              text={t("contact.form.ourLocation")}
               className="font-bold text-2xl 4k:text-6xl"
             />
             <Map />
@@ -94,7 +111,7 @@ export default function ContactForm() {
         </div>
         <div className="lg:col-span-3">
           <CustomText
-            text="Get in touch"
+            text={t("contact.form.getInTouch")}
             className="font-bold text-2xl 4k:text-6xl text-white"
           />
 
@@ -102,48 +119,47 @@ export default function ContactForm() {
             <form onSubmit={handleSubmit(onSubmit)} noValidate>
               <div className="mb-6">
                 <CustomText
-                  text="Send us a message"
+                  text={t("contact.form.sendMessage")}
                   className="text-lg text-white"
                 />
               </div>
-              {["name", "contactNo", "email", "address"].map((field) => (
-                <div key={field} className="my-3">
-                  <label htmlFor={field} className="sr-only">
-                    {field.charAt(0).toUpperCase() + field.slice(1)}
-                  </label>
-                  <input
-                    {...register(field)}
-                    id={field}
-                    placeholder={`${
-                      field === "contactNo"
-                        ? "Contact No"
-                        : field.charAt(0).toUpperCase() + field.slice(1)
-                    }${field !== "address" ? "*" : ""}`}
-                    className="bg-transparent text-white placeholder:text-white w-full border-b mb-2 outline-none"
-                    aria-invalid={errors[field] ? "true" : "false"}
-                    maxLength={field === 'contactNo' ? 10 : undefined}
-                    onInput={
-                      field === "contactNo"
-                        ? (e) => {
-                            e.target.value = e.target.value.replace(
-                              /[^0-9]/g,
-                              ""
-                            );
-                          }
-                        : undefined
-                    }
-                   
-                  />
-                  {errors[field] && (
-                    <span className="text-red-500">
-                      {errors[field].message}
-                    </span>
-                  )}
-                </div>
-              ))}
+              {FIELDS.map(({ key, labelKey }) => {
+                const label = t(labelKey);
+                const isOptional = key === "address";
+                return (
+                  <div key={key} className="my-3">
+                    <label htmlFor={key} className="sr-only">
+                      {label}
+                    </label>
+                    <input
+                      {...register(key)}
+                      id={key}
+                      placeholder={`${label}${isOptional ? "" : "*"}`}
+                      className="bg-transparent text-white placeholder:text-white w-full border-b mb-2 outline-none"
+                      aria-invalid={errors[key] ? "true" : "false"}
+                      maxLength={key === "contactNo" ? 10 : undefined}
+                      onInput={
+                        key === "contactNo"
+                          ? (e) => {
+                              e.target.value = e.target.value.replace(
+                                /[^0-9]/g,
+                                ""
+                              );
+                            }
+                          : undefined
+                      }
+                    />
+                    {errors[key] && (
+                      <span className="text-red-500">
+                        {errors[key].message}
+                      </span>
+                    )}
+                  </div>
+                );
+              })}
               <div className="my-3">
                 <label htmlFor="message" className="text-lg text-white">
-                  Message
+                  {t("contact.form.message")}
                 </label>
                 <textarea
                   {...register("message")}
@@ -153,15 +169,15 @@ export default function ContactForm() {
                 ></textarea>
                 {isJobMentioned && (
                   <p className="text-white text-sm mt-1">
-                    Sorry, job-related queries are not allowed.{" "}
+                    {t("contact.form.jobNotAllowed")}{" "}
                     <a
                       className="decoration underline hover:cursor-pointer"
                       href="https://www.headsupb2b.com/careers"
                       target="_blank"
                     >
-                      Click Here
+                      {t("contact.form.clickHere")}
                     </a>{" "}
-                    for career page
+                    {t("contact.form.forCareer")}
                   </p>
                 )}
               </div>
@@ -176,10 +192,10 @@ export default function ContactForm() {
                     {isLoading ? (
                       <>
                         <span className="spinner mr-2"></span>
-                        Sending...
+                        {t("contact.form.sending")}
                       </>
                     ) : (
-                      "Send"
+                      t("contact.form.send")
                     )}
                   </button>
                 </Ripples>

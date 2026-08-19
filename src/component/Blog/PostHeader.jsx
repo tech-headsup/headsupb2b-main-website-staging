@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 import { resizeImage } from "@/Utils/resizeImage";
 import { CoverImage } from "@/component/Blog/CoverImage";
 import { ReadTimeInMinutes } from "@/component/Blog/ReadTimeInMinutes";
@@ -18,6 +19,7 @@ export const PostHeader = ({
   url,
   post, // Passing entire post for coAuthors if needed
 }) => {
+  const { t } = useTranslation();
   // Shared content components
   const titleComponent = <PostTitle>{title}</PostTitle>;
 
@@ -58,7 +60,7 @@ export const PostHeader = ({
           >
             <Image
               src={blogAd}
-              alt="Emerge Solution Advertisement"
+              alt={t("blogPage.adAlt")}
               className="h-auto w-full rounded-lg border-2 border-white shadow-lg"
               sizes="160px"
               quality={65}
@@ -81,7 +83,7 @@ export const PostHeader = ({
           >
             <Image
               src={blogAd}
-              alt="Emerge Solution Advertisement"
+              alt={t("blogPage.adAlt")}
               className="h-auto w-full rounded-lg border-2 border-white shadow-lg"
               sizes="160px"
               quality={65}

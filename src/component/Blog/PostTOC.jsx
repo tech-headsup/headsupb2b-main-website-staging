@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const mapTableOfContentItems = (toc) => {
   try {
@@ -20,37 +21,47 @@ const mapTableOfContentItems = (toc) => {
   }
 };
 
-const Toc = ({ data, parentId }) => {
+const Toc = ({ data, parentId, tocTitles }) => {
   const children = data.filter((item) => item.parentId === parentId);
   if (children.length === 0) return null;
 
   return (
     <ul className="mt-2 flex flex-col ll:gap-2 l:gap-1 gap-2 font-medium text-slate-800 dark:text-neutral-200 max-w-md list-inside">
-      {children.map((item) => (
-        <li key={item.id}>
-          <a
-            href={`#heading-${item.slug}`}
-            className="hover:text-headupb2b l:text-[14px] ll:text-[16px] hover:underline"
-          >
-            {item.title}
-          </a>
-        </li>
-      ))}
+      {children.map((item) => {
+        const normalizedSlug = item.slug.replace(/-+$/, "");
+        const headingKey = normalizedSlug.replace(/^heading-/, "");
+        const localizedTitle = tocTitles?.[headingKey] || item.title;
+        return (
+          <li key={item.id}>
+            <a
+              href={`#${normalizedSlug}`}
+              className="hover:text-headupb2b l:text-[14px] ll:text-[16px] hover:underline"
+            >
+              {localizedTitle}
+            </a>
+          </li>
+        );
+      })}
     </ul>
   );
 };
 
 export const PostTOC = ({ post }) => {
+  const { t, i18n } = useTranslation();
   if (!post || !post.features?.tableOfContents?.isEnabled) return null;
+
+  const tocTitlesBundle = i18n.getResourceBundle(i18n.language, "translation")?.blogTOCTitles || {};
+  const tocTitles = tocTitlesBundle[post.slug] || null;
 
   return (
     <div className="w-full md:px-2 ms:px-1">
       <div className="mx-auto w-full max-w-screen-md bg-purple rounded-lg border border-b-4 border-r-4 border-headupb2b text-base leading-none dark:border-headupb2b dark:text-neutral-50 ms:p-6 t:p-3 ll:p-6 md:text-lg">
-        <h2 className="mb-1 text-lg font-bold ll:text-lg">Table of contents</h2>
+        <h2 className="mb-1 text-lg font-bold ll:text-lg">{t("blogPage.tableOfContents")}</h2>
         <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
         <Toc
           parentId={null}
           data={mapTableOfContentItems(post.features.tableOfContents.items)}
+          tocTitles={tocTitles}
         />
       </div>
     </div>

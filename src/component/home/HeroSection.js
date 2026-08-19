@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 import CustomSearch from "@/component/Form/Search/CustomSearch";
 import PosterImage from "@/assets/images/Home-Banner-image-8.webp";
 
 export default function HeroSection({ onGetQuote, onUploadQuote }) {
+  const { t } = useTranslation();
   const videoRef = useRef(null);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
@@ -87,7 +89,7 @@ export default function HeroSection({ onGetQuote, onUploadQuote }) {
             maxWidth: "min(92vw, 880px)",
           }}
         >
-          Sourcing, Fulfilment, Financing
+          {t("home.hero.headline")}
         </h1>
 
         {/* Sub-headline */}
@@ -101,8 +103,7 @@ export default function HeroSection({ onGetQuote, onUploadQuote }) {
             lineHeight: 1.65,
           }}
         >
-          We are your one stop business partner for all your sourcing and
-          financing needs, supporting you every step of the way!
+          {t("home.hero.subheadline")}
         </p>
 
         {/* Trust badge */}
@@ -114,7 +115,7 @@ export default function HeroSection({ onGetQuote, onUploadQuote }) {
             fontSize: "clamp(0.7rem, 1.5vw, 0.92rem)",
           }}
         >
-          Trusted by Contractors, EPCs, Developers &amp; Industrial Buyers
+          {t("home.hero.trustBadge")}
         </p>
 
         {/* CTAs */}
@@ -129,7 +130,7 @@ export default function HeroSection({ onGetQuote, onUploadQuote }) {
               padding: "clamp(10px, 1.8vw, 14px) clamp(22px, 3.5vw, 38px)",
             }}
           >
-            Get a Quote
+            {t("home.hero.getQuote")}
           </button>
           <button
             onClick={onUploadQuote}
@@ -140,7 +141,7 @@ export default function HeroSection({ onGetQuote, onUploadQuote }) {
               padding: "clamp(10px, 1.8vw, 14px) clamp(22px, 3.5vw, 38px)",
             }}
           >
-            Upload Quote
+            {t("home.hero.uploadQuote")}
           </button>
         </div>
       </div>

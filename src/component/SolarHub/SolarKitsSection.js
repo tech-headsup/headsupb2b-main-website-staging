@@ -3,9 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { SOLAR_KITS } from "./data";
 
 export default function SolarKitsSection() {
+  const { t, i18n } = useTranslation();
+  const bundle = i18n.getResourceBundle(i18n.language, "translation");
+  const translateFullTitle = (v) => bundle?.solar?.kit?.fullTitles?.[v] || v;
   const [kitIndex, setKitIndex] = useState(0);
   const [kitsPerView, setKitsPerView] = useState(3);
   const [kitPaused, setKitPaused] = useState(false);
@@ -41,8 +45,8 @@ export default function SolarKitsSection() {
     <section className="section section-tight-top" style={{ paddingBottom: 60 }}>
       <div className="kits-container">
         <div className="sec-header">
-          <h2>Solar Kits</h2>
-          <p>Ready-to-install Project Kits</p>
+          <h2>{t("solar.kits.heading")}</h2>
+          <p>{t("solar.kits.subtitle")}</p>
         </div>
         <div
           className="kits-carousel"
@@ -85,8 +89,8 @@ export default function SolarKitsSection() {
                     </div>
                     <div className="kit-body">
                       <div className="kit-power">{kit.power}</div>
-                      <h4 className="kit-title">{kit.fullTitle || kit.title}</h4>
-                      <span className="kit-view">View Kit</span>
+                      <h4 className="kit-title">{translateFullTitle(kit.fullTitle || kit.title)}</h4>
+                      <span className="kit-view">{t("solar.kits.viewKit")}</span>
                     </div>
                   </Link>
                 </div>

@@ -7,32 +7,34 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import toast, { Toaster } from "react-hot-toast";
 import Ripples from "react-ripples";
+import { useTranslation } from "react-i18next";
 import { isGadSourcePresent } from "@/Utils/urlHelpers";
 import { getDemoPhone } from "@/Utils/demoDefaults";
 import { addWebsiteLead } from "@/Contants/APIEndpoint";
+import { useDynamicTranslate } from "@/lib/useDynamicTranslate";
 import FormField from "./FormField";
 
-// Validation Schema
-const buildValidationSchema = (gstRequired) =>
+// Validation Schema (translated via t)
+const buildValidationSchema = (gstRequired, t) =>
   Yup.object().shape({
-    name: Yup.string().required("Name is required"),
+    name: Yup.string().required(t("getQuote.errors.nameRequired")),
     contactNo: Yup.string()
-      .required("Contact number is required")
-      .matches(/^[0-9]{10}$/, "Invalid contact number"),
-    email: Yup.string().email("Invalid email"),
-    category: Yup.object().required("Please select a category"),
-    product: Yup.array().of(Yup.object()).required("Please select a product"),
+      .required(t("getQuote.errors.contactRequired"))
+      .matches(/^[0-9]{10}$/, t("getQuote.errors.contactInvalid")),
+    email: Yup.string().email(t("getQuote.errors.emailInvalid")),
+    category: Yup.object().required(t("getQuote.errors.categoryRequired")),
+    product: Yup.array().of(Yup.object()).required(t("getQuote.errors.productRequired")),
     gstNumber: gstRequired
       ? Yup.string()
-          .required("GST number is required")
-          .matches(/^\d{15}$/, "Invalid GST number")
+          .required(t("getQuote.errors.gstRequired"))
+          .matches(/^\d{15}$/, t("getQuote.errors.gstInvalid"))
       : Yup.string().when("hasGst", {
           is: true,
-          then: Yup.string().matches(/^\d{15}$/, "Invalid GST number"),
+          then: Yup.string().matches(/^\d{15}$/, t("getQuote.errors.gstInvalid")),
         }),
     pincode: Yup.string()
-      .required("Pincode is required")
-      .matches(/^[1-9][0-9]{5}$/, "Invalid pincode"),
+      .required(t("getQuote.errors.pincodeRequired"))
+      .matches(/^[1-9][0-9]{5}$/, t("getQuote.errors.pincodeInvalid")),
   });
 
 // Select Styles
@@ -128,6 +130,9 @@ export default function CommonForm({
   const router = useRouter();
   const selectRef = useRef(null);
 
+  const { t } = useTranslation();
+  const dt = useDynamicTranslate();
+
   // State Management
   const [loading, setLoading] = useState(false);
   const [hasGst, setHasGst] = useState(null);
@@ -142,7 +147,7 @@ export default function CommonForm({
     setValue,
     watch,
   } = useForm({
-    resolver: yupResolver(useMemo(() => buildValidationSchema(gstRequired), [gstRequired])),
+    resolver: yupResolver(useMemo(() => buildValidationSchema(gstRequired, t), [gstRequired, t])),
     defaultValues: {
       name: "",
       contactNo: getDemoPhone(),
@@ -166,19 +171,29 @@ export default function CommonForm({
     [categoryName, categoryProductOptions]
   );
 
-  // Memoized category options with "Other"
+  // Memoized category options with "Other" (translated labels)
   const categoryOptionsWithOther = useMemo(
-    () => [...(categoryProductOptions || []), { value: "other", label: "Other" }],
-    [categoryProductOptions]
+    () => [
+      ...(categoryProductOptions || []).map((opt) => ({
+        ...opt,
+        label: dt(opt.label, "categoryNames"),
+      })),
+      { value: "other", label: t("getQuote.labels.other") },
+    ],
+    [categoryProductOptions, dt, t]
   );
 
-  // Get product options for current category
+  // Get product options for current category (translated labels)
   const currentProductOptions = useMemo(() => {
     if (!selectedCategory) return [];
-    return selectedCategory.value === "other"
-      ? [{ value: "other", label: "Other" }]
-      : selectedCategory.products || [];
-  }, [selectedCategory]);
+    if (selectedCategory.value === "other") {
+      return [{ value: "other", label: t("getQuote.labels.other") }];
+    }
+    return (selectedCategory.products || []).map((opt) => ({
+      ...opt,
+      label: dt(opt.label, ["productNames", "categoryNames"]),
+    }));
+  }, [selectedCategory, dt, t]);
 
   // Set initial category
   useEffect(() => {
@@ -226,11 +241,11 @@ export default function CommonForm({
       setValue(
         "product",
         selected?.value === "other"
-          ? [{ value: "other", label: "Other" }]
+          ? [{ value: "other", label: t("getQuote.labels.other") }]
           : []
       );
     },
-    [setValue]
+    [setValue, t]
   );
 
   // Centralized API call
@@ -275,7 +290,7 @@ export default function CommonForm({
         });
 
         reset();
-        toast.success("Lead saved and mail sent successfully");
+        toast.success(t("getQuote.toast.success"));
         if (typeof setShow === "function") setShow("");
         selectRef.current?.clearValue();
         if (typeof setShowAnimationBuy === "function") setShowAnimationBuy(true);
@@ -283,7 +298,7 @@ export default function CommonForm({
         router.push("/thank-you");
       } catch (error) {
         console.error("API Error:", error);
-        toast.error(`Something went wrong: ${error.message}`);
+        toast.error(t("getQuote.toast.error", { message: error.message }));
       } finally {
         setLoading(false);
       }
@@ -303,28 +318,28 @@ export default function CommonForm({
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 sm:space-y-4">
         {/* Name Field */}
         <FormField
-          label="Name"
+          label={t("getQuote.labels.name")}
           required
           error={errors.name?.message}
         >
           <input
             {...register("name")}
             type="text"
-            placeholder="Enter your name"
+            placeholder={t("getQuote.placeholders.name")}
             className="w-full px-2.5 py-1 border-2 border-gray-300 mt-2 rounded-lg md:rounded-xl bg-gray-50 hover:bg-gray-100 flex items-center gap-1.5 sm:gap-2 cursor-pointer transition-colors outline-none placeholder:text-sm"
           />
         </FormField>
 
         {/* Contact Number Field */}
         <FormField
-          label="Contact Number"
+          label={t("getQuote.labels.contactNumber")}
           required
           error={errors.contactNo?.message}
         >
           <input
             {...register("contactNo")}
             type="text"
-            placeholder="10-digit number"
+            placeholder={t("getQuote.placeholders.contact")}
             inputMode="numeric"
             maxLength={10}
             className="w-full px-2.5 py-1 border-2 border-gray-300 mt-2 rounded-lg md:rounded-xl bg-gray-50 hover:bg-gray-100 flex items-center gap-1.5 sm:gap-2 cursor-pointer transition-colors outline-none placeholder:text-sm"
@@ -339,7 +354,7 @@ export default function CommonForm({
           {/* Category Dropdown */}
           <FormField
             required
-            label="Select Category"
+            label={t("getQuote.labels.category")}
             error={errors.category?.message}
           >
             <Controller
@@ -351,7 +366,7 @@ export default function CommonForm({
                   ref={selectRef}
                   options={categoryOptionsWithOther}
                   onChange={handleCategoryChange}
-                  placeholder="Select category"
+                  placeholder={t("getQuote.placeholders.category")}
                   styles={selectStyles}
                   classNamePrefix="react-select"
                 />
@@ -362,7 +377,7 @@ export default function CommonForm({
           {/* Product Dropdown */}
           <FormField
             required
-            label="Select Product"
+            label={t("getQuote.labels.product")}
             error={errors.product?.message}
           >
             <Controller
@@ -376,7 +391,7 @@ export default function CommonForm({
                   isMulti={selectedProducts?.[0]?.value !== "other"}
                   components={animatedComponents}
                   onChange={(selected) => field.onChange(selected)}
-                  placeholder="Select products"
+                  placeholder={t("getQuote.placeholders.products")}
                   isDisabled={!selectedCategory || currentProductOptions.length === 0}
                   styles={selectStyles}
                   classNamePrefix="react-select"
@@ -388,7 +403,7 @@ export default function CommonForm({
 
         {gstRequired ? (
           <FormField
-            label="GST Number"
+            label={t("getQuote.labels.gstNumber")}
             required
             error={errors.gstNumber?.message}
           >
@@ -399,7 +414,7 @@ export default function CommonForm({
                 <input
                   {...field}
                   type="text"
-                  placeholder="Enter 15-digit GST number"
+                  placeholder={t("getQuote.placeholders.gst")}
                   inputMode="numeric"
                   maxLength={15}
                   className="w-full px-2.5 py-1 border-2 border-gray-300 mt-2 rounded-lg md:rounded-xl bg-gray-50 hover:bg-gray-100 flex items-center gap-1.5 sm:gap-2 cursor-pointer transition-colors outline-none placeholder:text-sm"
@@ -412,7 +427,7 @@ export default function CommonForm({
             {/* GST Question */}
             <div className="w-full pt-1">
               <label className="text-sm font-semibold block mb-2">
-                Do you have a GST number?
+                {t("getQuote.labels.gstQuestion")}
               </label>
               <div className="flex gap-2 sm:gap-3">
                 {[true, false].map((value) => (
@@ -426,7 +441,7 @@ export default function CommonForm({
                     }`}
                     onClick={() => setHasGst(value)}
                   >
-                    {value ? "Yes" : "No"}
+                    {value ? t("getQuote.labels.yes") : t("getQuote.labels.no")}
                   </button>
                 ))}
               </div>
@@ -435,7 +450,7 @@ export default function CommonForm({
             {/* GST Number Input */}
             {hasGst === true && (
               <FormField
-                label="GST Number"
+                label={t("getQuote.labels.gstNumber")}
                 error={errors.gstNumber?.message}
                 animated
               >
@@ -446,7 +461,7 @@ export default function CommonForm({
                     <input
                       {...field}
                       type="text"
-                      placeholder="Enter 15-digit GST number"
+                      placeholder={t("getQuote.placeholders.gst")}
                       inputMode="numeric"
                       className="w-full px-2.5 py-1 text-xs sm:text-sm border border-gray-300 rounded focus:border-[#4A3772] focus:ring-1 focus:ring-[#4A3772]"
                     />
@@ -459,10 +474,10 @@ export default function CommonForm({
             {hasGst === false && (
               <div className="w-full p-2.5 sm:p-3 bg-blue-50 rounded animate-fadeIn">
                 <label className="text-xs sm:text-sm font-semibold block mb-1">
-                  GST Status
+                  {t("getQuote.labels.gstStatus")}
                 </label>
                 <p className="text-gray-700 text-xs sm:text-sm">
-                  You have indicated that you don't have a GST number.
+                  {t("getQuote.labels.noGstNote")}
                 </p>
               </div>
             )}
@@ -471,14 +486,14 @@ export default function CommonForm({
 
         {/* Pincode Field */}
         <FormField
-          label="Pincode"
+          label={t("getQuote.labels.pincode")}
           required
           error={errors.pincode?.message}
         >
           <input
             {...register("pincode")}
             type="text"
-            placeholder="6-digit pincode"
+            placeholder={t("getQuote.placeholders.pincode")}
             inputMode="numeric"
             maxLength={6}
             className="w-full px-2.5 py-1 border-2 border-gray-300 mt-2 rounded-lg md:rounded-xl bg-gray-50 hover:bg-gray-100 flex items-center gap-1.5 sm:gap-2 cursor-pointer transition-colors outline-none placeholder:text-sm"
@@ -496,7 +511,7 @@ export default function CommonForm({
               disabled={loading}
               className="w-full bg-gradient-to-b from-[#402A6F] to-[#4A3772] text-white px-3 sm:px-4 py-2.5 sm:py-3 font-semibold text-xs sm:text-sm tracking-wider rounded-md hover:shadow-lg transition-all disabled:opacity-70 disabled:cursor-not-allowed"
             >
-              {loading ? "Sending..." : "Submit"}
+              {loading ? t("getQuote.buttons.sending") : t("getQuote.buttons.submit")}
             </button>
           </Ripples>
         </div>

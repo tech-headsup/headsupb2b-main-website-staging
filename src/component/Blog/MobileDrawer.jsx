@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import GetInTouch from "@/component/Blog/GetInTouch";
+import { useTranslation } from "react-i18next";
 
 const MobileDrawer = () => {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -52,7 +54,7 @@ const MobileDrawer = () => {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="fixed right-0 top-1/2 -translate-y-1/2 bg-[#654EA3] hover:bg-[#33195b] text-white p-2 rounded-l-md shadow-lg z-50 focus:outline-none focus:ring-2 focus:ring-purple-400"
-        aria-label={isOpen ? "Close contact form" : "Open contact form"}
+        aria-label={isOpen ? t("blogPage.closeContactForm") : t("blogPage.openContactForm")}
       >
         {isOpen ? <ChevronRight size={24} /> : <ChevronLeft size={24} />}
       </button>
@@ -65,11 +67,11 @@ const MobileDrawer = () => {
       >
         <div className="p-4">
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-xl font-bold">Get In Touch</h2>
+            <h2 className="text-xl font-bold">{t("blogPage.getInTouch")}</h2>
             <button
               onClick={() => setIsOpen(false)}
               className="p-1 rounded-full hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300"
-              aria-label="Close drawer"
+              aria-label={t("blogPage.closeDrawer")}
             >
               <X size={20} />
             </button>

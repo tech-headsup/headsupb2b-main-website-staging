@@ -2,10 +2,12 @@ import Image from "next/image";
 import React from "react";
 import LogoWhite from "@/assets/images/logo-light.png";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 import { CiLocationOn, CiPhone } from "react-icons/ci";
 import { MdOutlineMarkEmailRead } from "react-icons/md";
 
 export default function OfficeAddress({ hideLogo = false }) {
+  const { t } = useTranslation();
   return (
     <div>
       {/* <div className="ms:hidden l:block">
@@ -21,7 +23,7 @@ export default function OfficeAddress({ hideLogo = false }) {
         <div className="">
           <label className="text-xl font-semibold tracking-wide 4k:text-4xl">
             {" "}
-            Contact Us{" "}
+            {t('footer.contactUsTitle')}{" "}
           </label>
         </div>
         <div className="flex flex-row my-1 mt-2 ">
@@ -29,7 +31,7 @@ export default function OfficeAddress({ hideLogo = false }) {
             <CiLocationOn />
           </div>
           <label className="text-xs tracking-wide 4k:text-2xl">
-            2nd floor A4, Aurobindo Marg, Sarvodaya Enclave, New Delhi 110017
+            {t('footer.address')}
           </label>
         </div>
         <div>
@@ -40,7 +42,7 @@ export default function OfficeAddress({ hideLogo = false }) {
             <div className="mt-1 mr-2">
               <CiPhone />
             </div>
-            Rizwan - +91 72101 99772
+            {t('footer.rizwan')} - +91 72101 99772
             <span class="absolute inset-x-0 bottom-0 h-[0.2px] bg-white transform scale-x-0  group-hover:scale-x-100 transition-transform duration-300"></span>
           </Link>
         </div>
@@ -53,20 +55,20 @@ export default function OfficeAddress({ hideLogo = false }) {
             <div className="mt-1 mr-2">
               <CiPhone />
             </div>
-            Rishabh - +91 93133 06060
+            {t('footer.rishabh')} - +91 93133 06060
             <span class="absolute inset-x-0 bottom-0 h-[0.2px] bg-white transform scale-x-0  group-hover:scale-x-100 transition-transform duration-300"></span>
           </Link>
         </div>
 
         <div>
           <Link
-            href={`tel:+91 8595736388`}
+            href={`tel:+919911902943`}
             class="flex flex-row w-fit font-normal text-xs leading-5 cursor-pointer relative group 4k:text-2xl"
           >
             <div className="mt-1 mr-2">
               <CiPhone />
             </div>
-            Office - +91 85957 36388
+            {t('footer.office')} - +91 99119 02943
             <span class="absolute inset-x-0 bottom-0 h-[0.2px] bg-white transform scale-x-0  group-hover:scale-x-100 transition-transform duration-300"></span>
           </Link>
         </div>

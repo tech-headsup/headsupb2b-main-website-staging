@@ -1,12 +1,18 @@
 import React from 'react'
 import Image from 'next/image'
+import { useTranslation } from 'react-i18next'
 import CustomRipple from '../Form/Button/CustomRipple'
 import Link from 'next/link'
-import { categoryTagline } from '@/Contants/tagLine'
+import { categoryTagline, categoryTaglineKey } from '@/Contants/tagLine'
+import { useDynamicTranslate } from '@/lib/useDynamicTranslate'
 
 export default function ProductCard({ ele, index = 0 }) {
+  const { t } = useTranslation();
+  const dt = useDynamicTranslate();
   const GetSubJHead = () => {
-    return <span>{categoryTagline?.[ele?.name]}</span>
+    const slug = categoryTaglineKey?.[ele?.name];
+    const fallback = categoryTagline?.[ele?.name];
+    return <span>{slug ? t(`home.categories.taglines.${slug}`, { defaultValue: fallback }) : fallback}</span>
   }
 
   const isAboveTheFold = index < 4;
@@ -50,7 +56,7 @@ export default function ProductCard({ ele, index = 0 }) {
               className="font-bold text-[17px] text-[#111] leading-snug ms:text-center l:text-left"
               style={{ fontFamily: "'Manrope', sans-serif" }}
             >
-              {ele?.name}
+              {dt(ele?.name)}
             </p>
             <p
               className="text-sm text-[#666] leading-relaxed mt-1 ms:text-center l:text-left"
@@ -61,7 +67,7 @@ export default function ProductCard({ ele, index = 0 }) {
           </div>
           <div className="ms:flex ms:justify-center l:justify-start l:flex">
             <CustomRipple
-              text="View All"
+              text={t('common.viewAll')}
               className="ripple cursor-pointer text-[14px] px-5 py-2.5"
             />
           </div>

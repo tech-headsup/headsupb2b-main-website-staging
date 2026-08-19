@@ -1,11 +1,13 @@
 import React from "react";
 import CustomText from "../Text/CustomText";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 import { Gradient, GradientText } from "@/Contants/constant";
 import CallSVG from "@/assets/images/svg/CallSVG";
 import ChatSVG from "@/assets/images/svg/ChatSVG";
 
 export default function CallAndChat() {
+  const { t } = useTranslation();
 
   return (
     <div className="-mx-4 sm:-mx-6 md:-mx-12 lg:-mx-20 xl:-mx-28">
@@ -21,7 +23,7 @@ export default function CallAndChat() {
                 <CallSVG color={"#4A3772"} />{" "}
               </span>
               <CustomText
-                text={"Call  us"}
+                text={t("home.callChat.call")}
                 className={
                   "ms:text-sm mm:text-md md:text-xl ll:text-4xl cursor-pointer font-bold"
                 }
@@ -40,7 +42,7 @@ export default function CallAndChat() {
                 <ChatSVG color={"#4A3772"} />
               </span>
               <CustomText
-                text={"Chat with  us"}
+                text={t("home.callChat.chat")}
                 className={
                   "ms:text-sm mm:text-md md:text-xl ll:text-4xl cursor-pointer font-bold"
                 }

@@ -3,58 +3,41 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import { useTranslation } from "react-i18next";
 import { SOLAR_KITS } from "@/component/SolarHub/data";
 import CommonModal from "@/component/Modal/CommonModal";
 import CommonForm from "@/component/Form/CommonForm";
 import { sendEmailToBuy } from "@/Contants/APIEndpoint";
 
-const TABS = [
-  { id: "specs", label: "Product Specifications" },
-  { id: "details", label: "Product Details" },
-  { id: "how", label: "How To Order" },
+const TAB_IDS = ["specs", "details", "how"];
+
+const HOW_STEPS = [
+  { step: "01", key: "step1" },
+  { step: "02", key: "step2" },
+  { step: "03", key: "step3" },
+  { step: "04", key: "step4" },
 ];
 
-const HOW_TO_ORDER_STEPS = [
-  {
-    step: "01",
-    title: "Tell us what you need",
-    desc: "Pick a kit, browse products, or upload your BOM.",
-  },
-  {
-    step: "02",
-    title: "Get a quote",
-    desc: "Expert-checked pricing, back to you fast.",
-  },
-  {
-    step: "03",
-    title: "Confirm",
-    desc: "Approve the quote and lock your material.",
-  },
-  {
-    step: "04",
-    title: "Delivered",
-    desc: "Pan-India delivery, scheduled to your site.",
-  },
-];
-
-const HOW_TO_ORDER_PILLS = [
-  "Verified suppliers",
-  "Competitive pricing",
-  "Credit up to 61 days*",
-  "Pan-India delivery",
-];
+const HOW_PILL_KEYS = ["verified", "pricing", "credit", "delivery"];
 
 export default function KitDetailPage({ kit }) {
   const router = useRouter();
+  const { t, i18n } = useTranslation();
   const [activeImage, setActiveImage] = useState(null);
   const [activeTab, setActiveTab] = useState("specs");
   const [showQuoteModal, setShowQuoteModal] = useState(false);
+
+  const bundle = i18n.getResourceBundle(i18n.language, "translation");
+  const translateFrom = (bucket, value) => {
+    if (!value) return value;
+    return bundle?.solar?.kit?.[bucket]?.[value] || value;
+  };
 
   if (router.isFallback || !kit) {
     return (
       <div className="kit-page">
         <div className="kit-container">
-          <p>Loading kit…</p>
+          <p>{t("solar.kit.loading")}</p>
         </div>
         <KitDetailStyles />
       </div>
@@ -72,6 +55,7 @@ export default function KitDetailPage({ kit }) {
       <Head>
         <title>{`${kit.fullTitle} | Headsup B2B Solar Hub`}</title>
         <meta name="description" content={kit.longDescription} />
+        <link rel="canonical" href={`https://www.headsupb2b.com/solar-hub/kit/${kit.slug}`} />
       </Head>
 
       <div className="kit-page">
@@ -124,9 +108,9 @@ export default function KitDetailPage({ kit }) {
             <div className="kit-info">
               <div className="kit-badge">
                 <span className="kit-badge-dot" />
-                Authorised Seller &amp; Pan India Shipping
+                {t("solar.kit.badge")}
               </div>
-              <h1 className="kit-heading">{kit.fullTitle}</h1>
+              <h1 className="kit-heading">{translateFrom("fullTitles", kit.fullTitle)}</h1>
               <div className="kit-brand-logos">
                 <img src="/polycab.webp" alt="Polycab" />
                 <img src="/almm-logo.png" alt="ALMM" />
@@ -136,7 +120,7 @@ export default function KitDetailPage({ kit }) {
               <div className="kit-highlights">
                 {kit.highlights?.map((h) => (
                   <div key={h.label} className="kit-highlight">
-                    <div className="kit-highlight-lbl">{h.label}</div>
+                    <div className="kit-highlight-lbl">{translateFrom("highlightLabels", h.label)}</div>
                     <div className="kit-highlight-val">{h.value}</div>
                   </div>
                 ))}
@@ -148,35 +132,35 @@ export default function KitDetailPage({ kit }) {
                   className="kit-cta kit-cta-primary"
                   onClick={() => setShowQuoteModal(true)}
                 >
-                  Get a Quote
+                  {t("solar.kit.getQuote")}
                 </button>
                 <a href="tel:+917210199772" className="kit-cta kit-cta-outline">
-                  Call Us
+                  {t("solar.kit.callUs")}
                 </a>
               </div>
 
               {kit.features && kit.features.length > 0 && (
                 <ul className="kit-features">
                   {kit.features.map((f) => (
-                    <li key={f}>{f}</li>
+                    <li key={f}>{translateFrom("featureLabels", f)}</li>
                   ))}
                 </ul>
               )}
               <p className="kit-min-order">
-                Available for bulk orders of 25+ kits
+                {t("solar.kit.minOrder")}
               </p>
             </div>
           </div>
 
           <div className="kit-tabs">
-            {TABS.map((t) => (
+            {TAB_IDS.map((id) => (
               <button
-                key={t.id}
+                key={id}
                 type="button"
-                className={`kit-tab ${activeTab === t.id ? "is-active" : ""}`}
-                onClick={() => setActiveTab(t.id)}
+                className={`kit-tab ${activeTab === id ? "is-active" : ""}`}
+                onClick={() => setActiveTab(id)}
               >
-                {t.label}
+                {t(`solar.kit.tabs.${id}`)}
               </button>
             ))}
           </div>
@@ -184,28 +168,28 @@ export default function KitDetailPage({ kit }) {
           <div className="kit-tab-panel">
             {activeTab === "specs" && (
               <div>
-                <h3 className="kit-specs-title">{kit.fullTitle}</h3>
+                <h3 className="kit-specs-title">{translateFrom("fullTitles", kit.fullTitle)}</h3>
                 <div className="kit-table-wrap">
                 <table className="kit-table">
                   <thead>
                     <tr>
-                      <th>S.No</th>
-                      <th>Component</th>
-                      <th>Specifications</th>
-                      <th>Brand</th>
-                      <th>Qty</th>
-                      <th>Units</th>
+                      <th>{t("solar.kit.table.sno")}</th>
+                      <th>{t("solar.kit.table.component")}</th>
+                      <th>{t("solar.kit.table.specifications")}</th>
+                      <th>{t("solar.kit.table.brand")}</th>
+                      <th>{t("solar.kit.table.qty")}</th>
+                      <th>{t("solar.kit.table.units")}</th>
                     </tr>
                   </thead>
                   <tbody>
                     {(kit.specsTable || []).map((row, i) => (
                       <tr key={i}>
                         <td>{i + 1}</td>
-                        <td>{row.component}</td>
+                        <td>{translateFrom("components", row.component)}</td>
                         <td>{row.specifications}</td>
-                        <td>{row.brand}</td>
+                        <td>{translateFrom("brands", row.brand)}</td>
                         <td>{row.qty}</td>
-                        <td>{row.units}</td>
+                        <td>{translateFrom("units", row.units)}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -218,8 +202,8 @@ export default function KitDetailPage({ kit }) {
               <div className="kit-details-card">
                 {(kit.details || []).map((row) => (
                   <div key={row.label} className="kit-details-row">
-                    <div className="kit-details-label">{row.label}</div>
-                    <div className="kit-details-value">{row.value}</div>
+                    <div className="kit-details-label">{translateFrom("detailLabels", row.label)}</div>
+                    <div className="kit-details-value">{translateFrom("detailValues", row.value)}</div>
                   </div>
                 ))}
               </div>
@@ -227,21 +211,21 @@ export default function KitDetailPage({ kit }) {
 
             {activeTab === "how" && (
               <div>
-                <p className="kit-how-subtitle">From enquiry to delivery</p>
+                <p className="kit-how-subtitle">{t("solar.kit.howSubtitle")}</p>
                 <div className="kit-how-grid kit-how-grid-4">
-                  {HOW_TO_ORDER_STEPS.map((s) => (
+                  {HOW_STEPS.map((s) => (
                     <div key={s.step} className="kit-how-card">
                       <div className="kit-how-step">{s.step}</div>
-                      <h4 className="kit-how-title">{s.title}</h4>
-                      <p className="kit-how-desc">{s.desc}</p>
+                      <h4 className="kit-how-title">{t(`solar.how.${s.key}.title`)}</h4>
+                      <p className="kit-how-desc">{t(`solar.how.${s.key}.desc`)}</p>
                     </div>
                   ))}
                 </div>
                 <div className="kit-how-pills">
-                  {HOW_TO_ORDER_PILLS.map((label) => (
-                    <span key={label} className="kit-how-pill">
+                  {HOW_PILL_KEYS.map((k) => (
+                    <span key={k} className="kit-how-pill">
                       <span className="kit-how-pill-dot" />
-                      {label}
+                      {t(`solar.how.pills.${k}`)}
                     </span>
                   ))}
                 </div>
@@ -255,7 +239,7 @@ export default function KitDetailPage({ kit }) {
             if (related.length === 0) return null;
             return (
               <section className="kit-related">
-                <h2 className="kit-related-title">Related Products</h2>
+                <h2 className="kit-related-title">{t("solar.kit.related")}</h2>
                 <div className="kit-related-grid">
                   {related.map((k) => (
                     <Link key={k.slug} href={`/solar-hub/kit/${k.slug}`} className="kit-related-card">
@@ -276,9 +260,8 @@ export default function KitDetailPage({ kit }) {
                       </div>
                       <div className="kit-related-body">
                         <div className="kit-related-power">{k.power}</div>
-                        <h4 className="kit-related-name">{k.fullTitle || k.title}</h4>
-                        <p className="kit-related-desc">{k.desc}</p>
-                        <span className="kit-related-view">View Kit</span>
+                        <h4 className="kit-related-name">{translateFrom("fullTitles", k.fullTitle || k.title)}</h4>
+                        <span className="kit-related-view">{t("solar.kit.viewKit")}</span>
                       </div>
                     </Link>
                   ))}
@@ -293,7 +276,7 @@ export default function KitDetailPage({ kit }) {
         <CommonModal
           isOpen={showQuoteModal}
           onClose={() => setShowQuoteModal(false)}
-          title={`Get a Quote — ${kit.title}`}
+          title={t("solar.kit.modalTitle", { kit: kit.title })}
           closeOnBackdropClick={true}
           size="xl"
         >
@@ -933,8 +916,9 @@ function KitDetailStyles() {
         font-size: 15px;
         font-weight: 700;
         color: #111;
-        margin: 0;
+        margin: 0 0 14px;
         line-height: 1.3;
+        flex: 1;
       }
       .kit-related-desc {
         font-family: "Montserrat", sans-serif;

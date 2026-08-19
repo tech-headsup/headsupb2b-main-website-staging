@@ -1,24 +1,22 @@
 "use client";
-import { useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef, useCallback, useMemo } from "react";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 import B2BImage from "@/assets/images/B2B image.png";
-
-const HEADING =
-  "One-Stop Pan India Supplier for Complete Industrial & Infrastructure Solutions";
-
-const PARA1 =
-  "Headsup B2B is a trusted one-stop platform for sourcing a wide range of industrial, construction, infrastructure, and renewable energy products. We supply high-quality metal solutions, electrical cables and equipment, road safety systems, building materials, industrial automation, petro-chemical products, renewable energy solutions, industrial safety equipment, biomass fuels, and agro-commodities. Our portfolio covers everything from TMT bars, AAC blocks, pipes, cables, crash barriers, and waterproofing to solar panels, lithium-ion batteries, docking solutions, access control systems, and cleanroom equipment.";
-
-const PARA2 =
-  "Backed by a strong network of verified manufacturers and suppliers, Headsup B2B ensures consistent quality, competitive pricing, and reliable delivery along with customised financing solutions for all round business support. Whether for small developments or large-scale industrial and infrastructure projects, we simplify procurement by delivering complete B2B supply solutions under one roof!";
-
-const H_WORDS  = HEADING.split(" ");
-const P1_WORDS = PARA1.split(" ");
-const P2_WORDS = PARA2.split(" ");
 
 const TRIGGER_RATIO = 0.72;
 
 export default function PanIndiaText() {
+  const { t } = useTranslation();
+
+  const heading = t("home.panIndia.heading");
+  const para1 = t("home.panIndia.para1");
+  const para2 = t("home.panIndia.para2");
+
+  const hWords = useMemo(() => heading.split(" "), [heading]);
+  const p1Words = useMemo(() => para1.split(" "), [para1]);
+  const p2Words = useMemo(() => para2.split(" "), [para2]);
+
   const hRefs  = useRef([]);
   const p1Refs = useRef([]);
   const p2Refs = useRef([]);
@@ -47,7 +45,7 @@ export default function PanIndiaText() {
     window.addEventListener("scroll", applyColors, { passive: true });
     applyColors();
     return () => window.removeEventListener("scroll", applyColors);
-  }, [applyColors]);
+  }, [applyColors, hWords, p1Words, p2Words]);
 
   const wordSpan = (word, refs, i, total) => (
     <span
@@ -83,7 +81,7 @@ export default function PanIndiaText() {
         className="flex flex-col items-center text-center px-5 sm:px-10 md:px-20 pb-6 sm:pb-8 pt-4 md:pt-6"
         style={{ background: "#4A3772" }}
       >
-        {/* Heading — increased from clamp(1.3rem, 2.8vw, 2rem) */}
+        {/* Heading */}
         <h2
           className="font-bold leading-snug mb-5 max-w-5xl"
           style={{
@@ -91,10 +89,10 @@ export default function PanIndiaText() {
             fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
           }}
         >
-          {H_WORDS.map((w, i) => wordSpan(w, hRefs, i, H_WORDS.length))}
+          {hWords.map((w, i) => wordSpan(w, hRefs, i, hWords.length))}
         </h2>
 
-        {/* Paragraph 1 — increased from clamp(0.9rem, 1.5vw, 1.1rem) */}
+        {/* Paragraph 1 */}
         <p
           className="leading-relaxed max-w-5xl mb-5"
           style={{
@@ -102,10 +100,10 @@ export default function PanIndiaText() {
             fontSize: "clamp(1.05rem, 1.8vw, 1.35rem)",
           }}
         >
-          {P1_WORDS.map((w, i) => wordSpan(w, p1Refs, i, P1_WORDS.length))}
+          {p1Words.map((w, i) => wordSpan(w, p1Refs, i, p1Words.length))}
         </p>
 
-        {/* Paragraph 2 — same size as para 1 */}
+        {/* Paragraph 2 */}
         <p
           className="leading-relaxed max-w-5xl"
           style={{
@@ -113,7 +111,7 @@ export default function PanIndiaText() {
             fontSize: "clamp(1.05rem, 1.8vw, 1.35rem)",
           }}
         >
-          {P2_WORDS.map((w, i) => wordSpan(w, p2Refs, i, P2_WORDS.length))}
+          {p2Words.map((w, i) => wordSpan(w, p2Refs, i, p2Words.length))}
         </p>
       </div>
     </div>

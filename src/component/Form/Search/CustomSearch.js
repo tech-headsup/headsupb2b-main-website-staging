@@ -2,9 +2,11 @@ import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useTranslation } from "react-i18next";
 import { regexBasedProductSearch } from "@/Contants/APIEndpoint";
 
 export default function CustomSearch({ variant = "default" }) {
+  const { t } = useTranslation();
   const [search, setSearch] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
@@ -282,7 +284,7 @@ export default function CustomSearch({ variant = "default" }) {
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search your requirement here"
+            placeholder={t("search.placeholder")}
             className="w-full bg-transparent border-none outline-none text-white text-[15px] font-medium placeholder-white/40"
             style={{ fontFamily: "'DM Sans', sans-serif" }}
           />

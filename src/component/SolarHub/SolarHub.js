@@ -2,6 +2,7 @@
 
 import Head from "next/head";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { sendEmailToSell, sendEmailToBuy } from "@/Contants/APIEndpoint";
 import CommonModal from "@/component/Modal/CommonModal";
 import SellWithUsForm from "@/component/Form/Sell/SellWithUsForm";
@@ -25,6 +26,7 @@ export default function SolarHub({
   solarCategoryData = null,
   categoryProductOptions = [],
 }) {
+  const { t } = useTranslation();
   const [showSellModal, setShowSellModal] = useState(false);
   const [showQuoteModal, setShowQuoteModal] = useState(false);
   const [showUploadQuoteModal, setShowUploadQuoteModal] = useState(false);
@@ -32,11 +34,9 @@ export default function SolarHub({
   return (
     <>
       <Head>
-        <title>Headsup B2B Services | Infrastructure Execution, MEP, Solar, BESS & AMC</title>
-        <meta
-          name="description"
-          content="Headsup B2B delivers procurement-backed execution services for infrastructure projects, including painting, MEP, HVAC, fire fighting, solar, BESS. Pure B2B."
-        />
+        <title>{t("solar.meta.title")}</title>
+        <meta name="description" content={t("solar.meta.description")} />
+        <link rel="canonical" href="https://www.headsupb2b.com/solar-hub" />
       </Head>
 
       <div className="services-page">
@@ -52,7 +52,7 @@ export default function SolarHub({
         />
          <HowItWorksSection />
         <SupportingBuildSection bundles={solarCategoryData?.bundles?.bundles} />
-        <WhyHeadsupB2B onContactUs={() => setShowSellModal(true)} heading="Why Choose Us?" showCreditNote />
+        <WhyHeadsupB2B onContactUs={() => setShowSellModal(true)} heading={t("solar.whyHeading")} showCreditNote />
         <TrustedPartnersSection />
         <KnowledgeCenterSection knowledgeArticles={knowledgeArticles} />
         <FaqSection />
@@ -68,7 +68,7 @@ export default function SolarHub({
         <CommonModal
           isOpen={showSellModal}
           onClose={() => setShowSellModal(false)}
-          title="Sell With Us"
+          title={t("solar.modals.sell")}
           closeOnBackdropClick={true}
           size="xl"
         >
@@ -84,7 +84,7 @@ export default function SolarHub({
         <CommonModal
           isOpen={showQuoteModal}
           onClose={() => setShowQuoteModal(false)}
-          title="Get a Quote"
+          title={t("solar.modals.quote")}
           closeOnBackdropClick={true}
           size="xl"
         >
@@ -101,8 +101,8 @@ export default function SolarHub({
         <CommonModal
           isOpen={showUploadQuoteModal}
           onClose={() => setShowUploadQuoteModal(false)}
-          title="Have an Existing Product Quote?"
-          subTitle="Upload Below and Unlock Better Pricing!"
+          title={t("solar.modals.uploadTitle")}
+          subTitle={t("solar.modals.uploadSubtitle")}
           closeOnBackdropClick={true}
           size="md"
         >

@@ -2,6 +2,7 @@
 
 import Head from "next/head";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import GetInTouch from "@/component/Form/Contact/GetInTouch";
 
 function Section({ id, number, title, children }) {
@@ -100,6 +101,8 @@ function CompanyCard({
     considerations,
     quote,
     quoteAuthor,
+    strengthsLabel,
+    considerationsLabel,
 }) {
     return (
         <div className="bg-white border border-[#E8E0D4] rounded-[8px] mb-7 overflow-hidden">
@@ -144,7 +147,7 @@ function CompanyCard({
             <div className="grid grid-cols-1 md:grid-cols-2 gap-[1px] bg-[#E8E0D4]">
                 <div className="bg-white p-6">
                     <div className="text-[11px] font-semibold tracking-[0.1em] uppercase text-[#0A6E5C] mb-3">
-                        Strengths
+                        {strengthsLabel}
                     </div>
                     <ul className="list-none space-y-2">
                         {strengths.map((s, i) => (
@@ -157,7 +160,7 @@ function CompanyCard({
                 </div>
                 <div className="bg-white p-6">
                     <div className="text-[11px] font-semibold tracking-[0.1em] uppercase text-[#7A4A0A] mb-3">
-                        Considerations
+                        {considerationsLabel}
                     </div>
                     <ul className="list-none space-y-2">
                         {considerations.map((c, i) => (
@@ -183,257 +186,50 @@ function CompanyCard({
     );
 }
 
+const HTML = (html) => ({ dangerouslySetInnerHTML: { __html: html } });
+
 export default function TopSolarEPCCompaniesPage() {
+    const { t } = useTranslation();
     const [showQuoteForm, setShowQuoteForm] = useState(false);
 
-    const companies = [
-        {
-            rank: "01",
-            name: "Tata Power Solar",
-            tagline: "India's most trusted integrated solar EPC & manufacturer",
-            rating: "4.8",
-            tags: ["3+ GW Installed", "Pan-India EPC", "In-house Mfg", "O&M Available"],
-            description:
-                "Tata Power Solar is the undisputed leader for large industrial and rooftop solar projects in India. With a fully integrated model — from cell manufacturing to EPC to O&M — they offer end-to-end accountability most pure-play contractors cannot match. Their portfolio spans auto plants, pharma facilities, textiles, and warehousing complexes across Maharashtra, Gujarat, Tamil Nadu, and Rajasthan.",
-            stats: [
-                { label: "Capacity", value: "3.2+ GW" },
-                { label: "Min. Size", value: "500 kW" },
-                { label: "RESCO/PPA", value: "Yes" },
-                { label: "O&M", value: "25-yr" },
-                { label: "HQ", value: "Mumbai" },
-            ],
-            strengths: [
-                "In-house panels = better QC",
-                "Strong post-commissioning support",
-                "Easier CFO approval (Tata brand)",
-            ],
-            considerations: [
-                "Premium pricing vs. local EPCs",
-                "Longer lead times for smaller projects",
-            ],
-            quote:
-                "We commissioned a 4.2 MW rooftop across two facilities. Zero major defects in 3 years. The O&M team responds within 24 hours.",
-            quoteAuthor: "Head of Procurement, Tier-1 Auto Ancillary, Pune",
-        },
-        {
-            rank: "02",
-            name: "Waaree Energies",
-            tagline: "Largest solar panel manufacturer turned aggressive EPC player",
-            rating: "4.6",
-            tags: ["12 GW Mfg", "EPC + Supply", "Competitive Price", "West India"],
-            description:
-                "Waaree has rapidly grown from India's largest panel manufacturer into a full-fledged EPC contractor — meaning a direct supply chain advantage and no middleman markup on panels. Their EPC division has executed projects for food processing plants, cement factories, and large industrial parks. Particularly strong in Gujarat and Maharashtra.",
-            stats: [
-                { label: "EPC Executed", value: "1.8+ GW" },
-                { label: "Min. Size", value: "100 kW" },
-                { label: "RESCO/PPA", value: "Selective" },
-                { label: "HQ", value: "Surat/Mumbai" },
-            ],
-            strengths: [
-                "Best panel pricing via integration",
-                "Strong West India presence",
-                "Listed — financially stable",
-            ],
-            considerations: [
-                "EPC arm less mature than peers",
-                "O&M network still expanding",
-            ],
-        },
-        {
-            rank: "03",
-            name: "Vikram Solar",
-            tagline: "Premium quality-focused EPC with strong East & South India network",
-            rating: "4.5",
-            tags: ["2 GW+ Executed", "Bifacial Experts", "Export Quality", "TOPCon"],
-            description:
-                "A premium choice for buyers who prioritise long-term yield over lowest capex. One of few Indian manufacturers exporting to Europe and the US — a proxy for manufacturing discipline. Their EPC arm focuses on yield optimisation, shadow analysis, and string-level monitoring. Recommended for Odisha, Bengal, AP, and Tamil Nadu projects.",
-            stats: [
-                { label: "EPC Executed", value: "2+ GW" },
-                { label: "Min. Size", value: "300 kW" },
-                { label: "RESCO", value: "Yes" },
-                { label: "HQ", value: "Kolkata" },
-            ],
-            strengths: [
-                "Higher module efficiency (TOPCon)",
-                "Excellent yield guarantees",
-                "Strong East & South India",
-            ],
-            considerations: [
-                "Higher Rs/Wp vs. market average",
-                "Thinner North India presence",
-            ],
-        },
-        {
-            rank: "04",
-            name: "Adani Solar (AIEL)",
-            tagline: "Scale-first EPC powerhouse for large industrial campuses",
-            rating: "4.4",
-            tags: ["5+ GW Installed", "Large Projects", "In-house Mfg", "Pan-India"],
-            description:
-                "Unparalleled scale and deep pockets for industrial solar. If you're deploying 5+ MW across a large campus, few vendors match their execution speed and supply chain depth. Commissioned solar for India's largest ports, airports, and FMCG manufacturing parks. Best for anchor projects — smaller EPCs are more responsive below 2 MW.",
-            stats: [
-                { label: "Portfolio", value: "5+ GW" },
-                { label: "Sweet Spot", value: "5 MW+" },
-                { label: "RESCO", value: "Yes" },
-                { label: "HQ", value: "Ahmedabad" },
-            ],
-            strengths: [
-                "Fastest execution at scale",
-                "Deep balance sheet",
-                "Integrated supply chain",
-            ],
-            considerations: [
-                "Less flexible for SME/mid-scale",
-                "Post-commissioning support variable",
-            ],
-        },
-        {
-            rank: "05",
-            name: "Cleanmax Solar",
-            tagline: "Leading RESCO/PPA model EPC for zero-capex industrial solar",
-            rating: "4.4",
-            tags: ["RESCO Pioneer", "Zero Capex", "C&I Specialists", "Macquarie Backed"],
-            description:
-                "The go-to RESCO/PPA partner for plant heads who want to eliminate upfront capex. You pay only for units consumed at a lower-than-grid tariff — Cleanmax owns, operates, and maintains the plant. With a 1.5+ GW operational portfolio and Macquarie backing, they have serious institutional credibility.",
-            stats: [
-                { label: "RESCO Portfolio", value: "1.5+ GW" },
-                { label: "Model", value: "RESCO/PPA" },
-                { label: "Min. Load", value: "500 kW" },
-                { label: "Backer", value: "Macquarie" },
-            ],
-            strengths: [
-                "Zero capex for the buyer",
-                "Institutional-grade O&M",
-                "Proven in pharma, auto, FMCG",
-            ],
-            considerations: [
-                "Long-term PPA lock-in (15-25 yr)",
-                "Less flexible on panel specs",
-            ],
-        },
-        {
-            rank: "06",
-            name: "Amplus Solar (ENGIE)",
-            tagline: "MNC-backed C&I solar EPC with Europe-standard quality processes",
-            rating: "4.3",
-            tags: ["ENGIE Group", "Multi-state", "1.3 GW Executed", "ESG Ready"],
-            description:
-                "Part of the global ENGIE group, Amplus brings European EPC standards to Indian industrial projects. Particularly strong in hybrid solar+storage and ESG reporting for MNC subsidiaries with Scope 2 targets or RE100 commitments. Best for companies with global parent reporting obligations.",
-            stats: [
-                { label: "Portfolio", value: "1.3+ GW" },
-                { label: "Storage", value: "Yes (BESS)" },
-                { label: "ESG Report", value: "Available" },
-                { label: "HQ", value: "Gurugram" },
-            ],
-            strengths: [
-                "MNC parent — strong governance",
-                "Best for RE100/ESG mandates",
-                "Hybrid solar + BESS capability",
-            ],
-            considerations: [
-                "Pricing above Indian-only peers",
-                "Slower contracting process",
-            ],
-        },
-        {
-            rank: "07",
-            name: "Orb Energy",
-            tagline: "SME-focused solar EPC with in-house financing for mid-size plants",
-            rating: "4.2",
-            tags: ["SME Specialists", "In-house Finance", "South India", "4000+ Clients"],
-            description:
-                "Fills a critical gap — high-quality EPC with integrated financing for industrial SMEs (200 kW–2 MW). If your plant is in Bengaluru, Chennai, Hyderabad, or Pune and you need a vendor who also arranges the loan, Orb has a differentiated one-stop model. They've served 4,000+ businesses across South India.",
-            stats: [
-                { label: "Customers", value: "4,000+" },
-                { label: "Sweet Spot", value: "200kW-2MW" },
-                { label: "Financing", value: "In-house NBFC" },
-                { label: "HQ", value: "Bengaluru" },
-            ],
-            strengths: [
-                "Best for SME buyers with financing needs",
-                "Dense South India coverage",
-            ],
-            considerations: [
-                "Limited pan-India presence",
-                "Not ideal for projects above 5 MW",
-            ],
-        },
-        {
-            rank: "08",
-            name: "Rays Power Infra",
-            tagline: "Fast-growing mid-market EPC with competitive Rs/Wp pricing",
-            rating: "4.1",
-            tags: ["Value Pricing", "North India", "600+ Projects", "DISCOM Expert"],
-            description:
-                "Executed 600+ industrial rooftop projects across Rajasthan, UP, Haryana, and MP. For price-sensitive procurement teams in North India, they often offer the best Rs/Wp without compromising on MNRE-approved components. They handle net metering, billing, and DISCOM liaison processes in-house.",
-            stats: [
-                { label: "Projects", value: "600+" },
-                { label: "Min. Size", value: "50 kW" },
-                { label: "DISCOM Liaison", value: "In-house" },
-                { label: "HQ", value: "Jaipur" },
-            ],
-            strengths: [
-                "Most competitive Rs/Wp in North India",
-                "Strong regulatory liaison capability",
-            ],
-            considerations: [
-                "Limited for large campuses 10 MW+",
-                "O&M team still scaling up",
-            ],
-        },
-    ];
-
-    const comparisonData = [
-        ["Tata Power Solar", "4.8", "500 kW+", "Yes", "Yes", "Yes", "Premium"],
-        ["Waaree Energies", "4.6", "100 kW+", "Part.", "Yes", "Part.", "Competitive"],
-        ["Vikram Solar", "4.5", "300 kW+", "Yes", "Yes", "Part.", "Premium"],
-        ["Adani Solar", "4.4", "5 MW+", "Yes", "Yes", "Yes", "Mid-High"],
-        ["Cleanmax Solar", "4.4", "500 kW+", "Yes", "Yes", "Yes", "PPA tariff"],
-        ["Amplus (ENGIE)", "4.3", "500 kW+", "Yes", "Yes", "Part.", "Premium"],
-        ["Orb Energy", "4.2", "200 kW+", "No", "Yes", "Yes", "Mid"],
-        ["Rays Power", "4.1", "50 kW+", "No", "Part.", "Part.", "Budget"],
-    ];
-
-    const checklist = [
-        "Verify the vendor's MNRE empanelment and BIS certification for all components",
-        "Request 3 reference site visits — not just calls — for projects of similar scale",
-        "Insist on a PVSyst P50/P90 yield report, not just a simple Excel projection",
-        "Confirm Bloomberg NEF Tier-1 rated modules are part of the Bill of Materials",
-        "Clarify if O&M is in-house or subcontracted — subcontracted O&M is a red flag",
-        "Check inverter brand — ABB, SMA, Huawei, Sungrow acceptable; unknown Chinese brands are not",
-        "Demand a single-line diagram (SLD) and layout plan at RFQ stage, not post-award",
-        "Confirm DISCOM net-metering/net-billing liaison responsibility is in-scope",
-        "Get a 10-year P90 performance guarantee in writing, not just 1-year defect liability",
-    ];
+    const companies = t("topSolarEpc.companies", { returnObjects: true }) || [];
+    const comparisonData = t("topSolarEpc.comparisonData", { returnObjects: true }) || [];
+    const checklist = t("topSolarEpc.checklist", { returnObjects: true }) || [];
+    const tocItems = t("topSolarEpc.toc", { returnObjects: true }) || [];
+    const comparisonHeaders = t("topSolarEpc.comparisonHeaders", { returnObjects: true }) || [];
+    const contextStats = t("topSolarEpc.contextStats", { returnObjects: true }) || [];
+    const faqs = t("topSolarEpc.faqs", { returnObjects: true }) || [];
+    const finalCtaBadges = t("topSolarEpc.finalCta.badges", { returnObjects: true }) || [];
+    const footerTags = t("topSolarEpc.footerTags", { returnObjects: true }) || [];
 
     return (
         <>
             <Head>
-                <title>Top Solar EPC Companies in India for Industrial Projects — 2026</title>
+                <title>{t("topSolarEpc.meta.title")}</title>
                 <meta
                     name="description"
-                    content="Ranked guide to the top solar EPC companies in India for industrial projects in 2026. Evaluated on capacity, track record, O&M, panel quality, and financing options."
+                    content={t("topSolarEpc.meta.description")}
                 />
                 <meta
                     name="keywords"
-                    content="top solar EPC companies India, industrial solar EPC, Tata Power Solar, Waaree, Vikram Solar, Adani Solar, Cleanmax, Amplus, Orb Energy, Rays Power, RESCO PPA, C&I solar"
+                    content={t("topSolarEpc.meta.keywords")}
                 />
                 <link rel="canonical" href="https://www.headsupb2b.com/research/top-solar-epc-companies-india-industrial-projects" />
                 <meta property="og:type" content="article" />
-                <meta property="og:title" content="Top Solar EPC Companies in India for Industrial Projects — 2026" />
+                <meta property="og:title" content={t("topSolarEpc.meta.title")} />
                 <meta
                     property="og:description"
-                    content="Ranked guide to the top solar EPC companies in India for industrial projects in 2026. Evaluated on capacity, track record, O&M, panel quality, and financing options."
+                    content={t("topSolarEpc.meta.description")}
                 />
                 <meta property="og:url" content="https://www.headsupb2b.com/research/top-solar-epc-companies-india-industrial-projects" />
                 <meta property="og:site_name" content="Headsup B2B" />
                 <meta property="og:image" content="https://www.headsupb2b.com/Top-Solar-EPC-Companies.webp" />
                 <meta property="og:locale" content="en_IN" />
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Top Solar EPC Companies in India for Industrial Projects — 2026" />
+                <meta name="twitter:title" content={t("topSolarEpc.meta.title")} />
                 <meta
                     name="twitter:description"
-                    content="Ranked guide to the top solar EPC companies in India for industrial projects in 2026. Evaluated on capacity, track record, O&M, panel quality, and financing options."
+                    content={t("topSolarEpc.meta.description")}
                 />
                 <meta name="twitter:image" content="https://www.headsupb2b.com/Top-Solar-EPC-Companies.webp" />
             </Head>
@@ -450,37 +246,37 @@ export default function TopSolarEPCCompaniesPage() {
                             boxShadow: "0 4px 15px rgba(0,212,245,0.35)",
                         }}
                     >
-                        2026 Updated Guide
+                        {t("topSolarEpc.hero.badge")}
                     </span>
                     <h1 className="font-serif text-[32px] sm:text-[40px] md:text-[54px] leading-[1.15] text-white mb-6 max-w-[760px]">
-                        Top Solar EPC Companies in India for Industrial Projects — 2026
+                        {t("topSolarEpc.hero.title")}
                     </h1>
                     <p className="text-[18px] text-[rgba(255,255,255,0.65)] max-w-[640px] leading-[1.65] mb-4">
-                        Ranked guide for plant owners &amp; procurement heads shortlisting EPC vendors.
+                        {t("topSolarEpc.hero.subtitle1")}
                     </p>
                     <p className="text-[15px] text-[rgba(255,255,255,0.55)] max-w-[640px] leading-[1.65] mb-9">
-                        Evaluated on: capacity, track record, O&amp;M, panel quality, and financing options.
+                        {t("topSolarEpc.hero.subtitle2")}
                     </p>
                     <div className="flex flex-wrap items-center gap-7 text-[13px]">
                         <span className="flex items-center gap-1.5 text-[rgba(255,255,255,0.45)]">
                             <span className="inline-block w-1 h-1 rounded-full bg-[#C8900A]" />
-                            Updated{" "}
-                            <strong className="text-[rgba(255,255,255,0.75)] font-medium">May 2026</strong>
+                            {t("topSolarEpc.hero.updatedLabel")}{" "}
+                            <strong className="text-[rgba(255,255,255,0.75)] font-medium">{t("topSolarEpc.hero.updatedValue")}</strong>
                         </span>
                         <span className="flex items-center gap-1.5 text-[rgba(255,255,255,0.45)]">
                             <span className="inline-block w-1 h-1 rounded-full bg-[#C8900A]" />
-                            <strong className="text-[rgba(255,255,255,0.75)] font-medium">9 min read</strong>
+                            <strong className="text-[rgba(255,255,255,0.75)] font-medium">{t("topSolarEpc.hero.readTime")}</strong>
                         </span>
                         <span className="flex items-center gap-1.5 text-[rgba(255,255,255,0.45)]">
                             <span className="inline-block w-1 h-1 rounded-full bg-[#C8900A]" />
                             <strong className="text-[rgba(255,255,255,0.75)] font-medium">
-                                C&amp;I / Industrial focus
+                                {t("topSolarEpc.hero.focus")}
                             </strong>
                         </span>
                         <span className="flex items-center gap-1.5 text-[rgba(255,255,255,0.45)]">
                             <span className="inline-block w-1 h-1 rounded-full bg-[#C8900A]" />
                             <strong className="text-[rgba(255,255,255,0.75)] font-medium">
-                                18,400 readers/mo
+                                {t("topSolarEpc.hero.readers")}
                             </strong>
                         </span>
                     </div>
@@ -492,13 +288,13 @@ export default function TopSolarEPCCompaniesPage() {
                 {/* TOP CTA */}
                 <div className="border border-[#E8E0D4] border-l-[4px] border-l-[#C8900A] bg-white px-7 py-6 mt-[52px] mb-[40px] rounded-[2px]">
                     <div className="text-[11px] font-semibold tracking-[0.1em] uppercase text-[#C8900A] mb-2">
-                        Free Service
+                        {t("topSolarEpc.topCta.label")}
                     </div>
                     <h3 className="font-serif text-[22px] text-[#1A1410] mb-2 leading-tight">
-                        Get Free Quotes from Verified Solar EPC Vendors
+                        {t("topSolarEpc.topCta.title")}
                     </h3>
                     <p className="text-[14.5px] text-[#7A6E62] leading-[1.6] mb-4">
-                        Share your requirement once — receive 3-5 competitive quotes within 48 hours. No spam.
+                        {t("topSolarEpc.topCta.subtitle")}
                     </p>
                     <button
                         type="button"
@@ -510,148 +306,75 @@ export default function TopSolarEPCCompaniesPage() {
                         }}
                         className="inline-block text-white text-[13.5px] font-semibold px-6 py-2.5 rounded-[4px] tracking-[0.03em] cursor-pointer"
                     >
-                        Get Free Quotes Now →
+                        {t("topSolarEpc.topCta.button")}
                     </button>
                 </div>
 
                 {/* TOC */}
                 <nav className="border border-[#E8E0D4] border-l-[4px] border-l-[#C8900A] bg-white px-8 py-7 mb-[56px] rounded-[2px]">
                     <div className="text-[11px] font-semibold tracking-[0.1em] uppercase text-[#7A6E62] mb-4">
-                        In this guide
+                        {t("topSolarEpc.tocLabel")}
                     </div>
                     <ol className="list-none grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-8 text-[14px]">
-                        <li>
-                            <a
-                                href="#context"
-                                className="flex items-baseline gap-2 text-[#3D3328] hover:text-[#C8900A]"
-                            >
-                                <span className="text-[11px] font-semibold text-[#C8900A] min-w-[22px]">
-                                    01
-                                </span>
-                                Why choosing the right partner matters
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#ranked-list"
-                                className="flex items-baseline gap-2 text-[#3D3328] hover:text-[#C8900A]"
-                            >
-                                <span className="text-[11px] font-semibold text-[#C8900A] min-w-[22px]">
-                                    02
-                                </span>
-                                The 8 best solar EPC companies
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#comparison"
-                                className="flex items-baseline gap-2 text-[#3D3328] hover:text-[#C8900A]"
-                            >
-                                <span className="text-[11px] font-semibold text-[#C8900A] min-w-[22px]">
-                                    03
-                                </span>
-                                Quick comparison table
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#checklist"
-                                className="flex items-baseline gap-2 text-[#3D3328] hover:text-[#C8900A]"
-                            >
-                                <span className="text-[11px] font-semibold text-[#C8900A] min-w-[22px]">
-                                    04
-                                </span>
-                                9-point pre-signing checklist
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#faq"
-                                className="flex items-baseline gap-2 text-[#3D3328] hover:text-[#C8900A]"
-                            >
-                                <span className="text-[11px] font-semibold text-[#C8900A] min-w-[22px]">
-                                    05
-                                </span>
-                                FAQ — common buyer questions
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#get-quotes"
-                                className="flex items-baseline gap-2 text-[#3D3328] hover:text-[#C8900A]"
-                            >
-                                <span className="text-[11px] font-semibold text-[#C8900A] min-w-[22px]">
-                                    06
-                                </span>
-                                Get free vendor quotes
-                            </a>
-                        </li>
+                        {tocItems.map((item, i) => (
+                            <li key={i}>
+                                <a
+                                    href={`#${item.id}`}
+                                    className="flex items-baseline gap-2 text-[#3D3328] hover:text-[#C8900A]"
+                                >
+                                    <span className="text-[11px] font-semibold text-[#C8900A] min-w-[22px]">
+                                        {String(i + 1).padStart(2, "0")}
+                                    </span>
+                                    {item.label}
+                                </a>
+                            </li>
+                        ))}
                     </ol>
                 </nav>
 
                 {/* SECTION 1 — CONTEXT */}
                 <Section
                     id="context"
-                    number="Context"
-                    title="Why Choosing the Right Solar EPC Partner Matters in 2026"
+                    number={t("topSolarEpc.section1.number")}
+                    title={t("topSolarEpc.section1.title")}
                 >
-                    <p>
-                        Selecting a solar EPC contractor is one of the highest-stakes procurement decisions a
-                        plant owner makes. The wrong vendor can mean delayed commissioning, substandard panel
-                        quality, and years of underperformance — costing crores in lost savings.
-                    </p>
-                    <p>
-                        With India's C&amp;I solar market projected to cross Rs 1.2 lakh crore by 2027, the
-                        number of vendors has exploded. We evaluated companies on six criteria:{" "}
-                        <strong>Installed Capacity</strong>, <strong>Industrial Track Record</strong>,{" "}
-                        <strong>O&amp;M Capabilities</strong>, <strong>Tier-1 Panel Access</strong>,{" "}
-                        <strong>Pan-India Presence</strong>, and <strong>Financing/RESCO options</strong>.
-                    </p>
+                    <p>{t("topSolarEpc.section1.p1")}</p>
+                    <p {...HTML(t("topSolarEpc.section1.p2"))} />
 
                     <div className="grid grid-cols-3 gap-4 mt-8 mb-2 max-[580px]:grid-cols-2">
-                        <div className="bg-white border border-[#E8E0D4] rounded-[6px] px-5 pt-5 pb-4">
-                            <div className="font-serif text-[32px] leading-[1.1] text-[#1A1410] mb-1">
-                                <span className="text-[#C8900A]">Rs 1.2</span> L Cr
+                        {contextStats.map((stat, i) => (
+                            <div
+                                key={i}
+                                className={`bg-white border border-[#E8E0D4] rounded-[6px] px-5 pt-5 pb-4${i === 2 ? " max-[580px]:col-span-2 max-[580px]:max-w-[260px]" : ""}`}
+                            >
+                                <div className="font-serif text-[32px] leading-[1.1] text-[#1A1410] mb-1">
+                                    <span className="text-[#C8900A]">{stat.value}</span>
+                                    {stat.suffix ? ` ${stat.suffix}` : ""}
+                                </div>
+                                <div className="text-[13px] text-[#7A6E62] leading-[1.4]">
+                                    {stat.label}
+                                </div>
                             </div>
-                            <div className="text-[13px] text-[#7A6E62] leading-[1.4]">
-                                Projected size of India's C&amp;I solar market by 2027
-                            </div>
-                        </div>
-                        <div className="bg-white border border-[#E8E0D4] rounded-[6px] px-5 pt-5 pb-4">
-                            <div className="font-serif text-[32px] leading-[1.1] text-[#1A1410] mb-1">
-                                <span className="text-[#C8900A]">6</span>
-                            </div>
-                            <div className="text-[13px] text-[#7A6E62] leading-[1.4]">
-                                Evaluation criteria used to rank EPC vendors
-                            </div>
-                        </div>
-                        <div className="bg-white border border-[#E8E0D4] rounded-[6px] px-5 pt-5 pb-4 max-[580px]:col-span-2 max-[580px]:max-w-[260px]">
-                            <div className="font-serif text-[32px] leading-[1.1] text-[#1A1410] mb-1">
-                                <span className="text-[#C8900A]">8</span>
-                            </div>
-                            <div className="text-[13px] text-[#7A6E62] leading-[1.4]">
-                                Top EPC companies shortlisted for industrial projects
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </Section>
 
                 {/* SECTION 2 — RANKED LIST */}
                 <Section
                     id="ranked-list"
-                    number="Ranked List"
-                    title="The 8 Best Solar EPC Companies for Industrial Projects"
+                    number={t("topSolarEpc.section2.number")}
+                    title={t("topSolarEpc.section2.title")}
                 >
-                    <p>
-                        The companies below are ranked on a composite score across capacity, industrial track
-                        record, O&amp;M, panel quality, geographic coverage, and financing flexibility. Use the
-                        ratings, statistics, strengths, and considerations under each card to shortlist the
-                        vendors that best fit your plant size, location, and capex preference.
-                    </p>
+                    <p>{t("topSolarEpc.section2.intro")}</p>
 
                     <div className="mt-10">
                         {companies.map((c) => (
-                            <CompanyCard key={c.rank} {...c} />
+                            <CompanyCard
+                                key={c.rank}
+                                {...c}
+                                strengthsLabel={t("topSolarEpc.strengthsLabel")}
+                                considerationsLabel={t("topSolarEpc.considerationsLabel")}
+                            />
                         ))}
                     </div>
                 </Section>
@@ -659,27 +382,16 @@ export default function TopSolarEPCCompaniesPage() {
                 {/* SECTION 3 — COMPARISON TABLE */}
                 <Section
                     id="comparison"
-                    number="Side-by-Side"
-                    title="Quick Comparison Table"
+                    number={t("topSolarEpc.section3.number")}
+                    title={t("topSolarEpc.section3.title")}
                 >
-                    <p>
-                        Use this side-by-side view to filter your shortlist quickly by minimum project size,
-                        RESCO availability, in-house O&amp;M, financing support, and pricing band.
-                    </p>
+                    <p>{t("topSolarEpc.section3.intro")}</p>
 
                     <div className="overflow-x-auto mt-6 mb-3">
                         <table className="w-full border-collapse text-[14.5px]">
                             <thead>
                                 <tr>
-                                    {[
-                                        "Company",
-                                        "Rating",
-                                        "Scale",
-                                        "RESCO",
-                                        "O&M",
-                                        "Financing",
-                                        "Pricing",
-                                    ].map((h) => (
+                                    {comparisonHeaders.map((h) => (
                                         <th
                                             key={h}
                                             className="bg-headupb2b text-white text-left font-medium text-[13px] tracking-[0.04em] px-4 py-3 first:rounded-tl-[4px] last:rounded-tr-[4px]"
@@ -722,24 +434,18 @@ export default function TopSolarEPCCompaniesPage() {
                         </table>
                     </div>
 
-                    <Callout variant="tip" title="Tip: Always request PVSyst yield simulations">
-                        Always shortlist 3 vendors and request PVSyst yield simulations (not just Excel models)
-                        as part of the technical bid. This single step eliminates ~60% of low-quality vendors who
-                        cannot produce bankable yield assessments.
+                    <Callout variant="tip" title={t("topSolarEpc.tipCallout.title")}>
+                        {t("topSolarEpc.tipCallout.body")}
                     </Callout>
                 </Section>
 
                 {/* SECTION 4 — CHECKLIST */}
                 <Section
                     id="checklist"
-                    number="Buyer's Guide"
-                    title="9-Point Checklist Before You Sign an EPC Contract"
+                    number={t("topSolarEpc.section4.number")}
+                    title={t("topSolarEpc.section4.title")}
                 >
-                    <p>
-                        Run every shortlisted vendor through these nine items before you sign the contract.
-                        Skipping any one of them is the most common source of post-commissioning disputes and
-                        underperformance claims.
-                    </p>
+                    <p>{t("topSolarEpc.section4.intro")}</p>
 
                     <ul className="list-none mt-7 mb-7">
                         {checklist.map((item, i) => (
@@ -759,11 +465,10 @@ export default function TopSolarEPCCompaniesPage() {
 
                     <div className="bg-headupb2b rounded-[8px] px-8 py-7 mt-10 text-center relative overflow-hidden">
                         <h3 className="font-serif text-[22px] text-white mb-2">
-                            Not sure which vendor fits your plant?
+                            {t("topSolarEpc.midCta.title")}
                         </h3>
                         <p className="text-[14.5px] text-[rgba(255,255,255,0.65)] max-w-[480px] mx-auto mb-5">
-                            Describe your requirement — our team matches you with 3 pre-vetted EPCs within 24
-                            hours.
+                            {t("topSolarEpc.midCta.subtitle")}
                         </p>
                         <button
                             type="button"
@@ -775,68 +480,30 @@ export default function TopSolarEPCCompaniesPage() {
                             }}
                             className="inline-block text-white text-[13.5px] font-semibold px-7 py-3 rounded-[4px] tracking-[0.03em] cursor-pointer"
                         >
-                            Match Me to a Vendor →
+                            {t("topSolarEpc.midCta.button")}
                         </button>
                     </div>
                 </Section>
 
                 {/* SECTION 5 — FAQ */}
-                <Section id="faq" number="FAQ" title="Common Questions from Industrial Buyers">
-                    <p>
-                        The questions below come up in nearly every industrial solar procurement we've observed.
-                        Use these answers to align your internal stakeholders — finance, plant operations, and
-                        procurement — before you go to RFQ.
-                    </p>
+                <Section
+                    id="faq"
+                    number={t("topSolarEpc.section5.number")}
+                    title={t("topSolarEpc.section5.title")}
+                >
+                    <p>{t("topSolarEpc.section5.intro")}</p>
 
                     <div className="mt-8 space-y-5">
-                        <div className="bg-white border border-[#E8E0D4] rounded-[6px] p-6">
-                            <h4 className="text-[16px] font-semibold text-[#1A1410] mb-3 leading-tight">
-                                What is a fair Rs/Wp benchmark for industrial rooftop solar in 2026?
-                            </h4>
-                            <p className="text-[15px] text-[#3D3328] leading-[1.7] m-0">
-                                For a quality EPC using Tier-1 panels and string inverters, expect Rs 32-42 per
-                                Wp for projects between 500 kW and 5 MW. Ground-mounted projects above 5 MW
-                                typically come in at Rs 28-36/Wp. Bids below Rs 28/Wp should be scrutinised
-                                carefully for component quality.
-                            </p>
-                        </div>
-
-                        <div className="bg-white border border-[#E8E0D4] rounded-[6px] p-6">
-                            <h4 className="text-[16px] font-semibold text-[#1A1410] mb-3 leading-tight">
-                                Should we go CAPEX or RESCO/PPA model?
-                            </h4>
-                            <p className="text-[15px] text-[#3D3328] leading-[1.7] m-0">
-                                CAPEX ownership gives you the full financial benefit (typically 18-22% IRR) and
-                                is better if you have internal capital or solar financing access. RESCO/PPA is
-                                ideal if your CFO prefers OpEx treatment, or if you're uncertain about occupying
-                                the facility for 15+ years. Many large industrials now do hybrid — CAPEX for
-                                owned, RESCO for leased facilities.
-                            </p>
-                        </div>
-
-                        <div className="bg-white border border-[#E8E0D4] rounded-[6px] p-6">
-                            <h4 className="text-[16px] font-semibold text-[#1A1410] mb-3 leading-tight">
-                                How long does a 1 MW industrial solar plant take to commission?
-                            </h4>
-                            <p className="text-[15px] text-[#3D3328] leading-[1.7] m-0">
-                                Typically 60-90 days from purchase order to commissioning for a rooftop project,
-                                and 90-150 days for ground-mounted. Delays most commonly arise from DISCOM
-                                net-metering approvals and structural audit clearances — experienced EPCs who
-                                handle these in-house are meaningfully faster.
-                            </p>
-                        </div>
-
-                        <div className="bg-white border border-[#E8E0D4] rounded-[6px] p-6">
-                            <h4 className="text-[16px] font-semibold text-[#1A1410] mb-3 leading-tight">
-                                Which states have the best net metering policies for industry in 2026?
-                            </h4>
-                            <p className="text-[15px] text-[#3D3328] leading-[1.7] m-0">
-                                Gujarat, Rajasthan, Karnataka, and Tamil Nadu have the most industry-friendly
-                                net metering frameworks. Maharashtra and Andhra Pradesh have improved
-                                significantly. UP and Bihar have the most complex approval processes and are
-                                best handled with an experienced local EPC.
-                            </p>
-                        </div>
+                        {faqs.map((faq, i) => (
+                            <div key={i} className="bg-white border border-[#E8E0D4] rounded-[6px] p-6">
+                                <h4 className="text-[16px] font-semibold text-[#1A1410] mb-3 leading-tight">
+                                    {faq.q}
+                                </h4>
+                                <p className="text-[15px] text-[#3D3328] leading-[1.7] m-0">
+                                    {faq.a}
+                                </p>
+                            </div>
+                        ))}
                     </div>
                 </Section>
 
@@ -847,13 +514,13 @@ export default function TopSolarEPCCompaniesPage() {
                 >
                     <div className="absolute top-0 left-0 right-0 h-[3px] bg-headupb2b" />
                     <h2 className="font-serif text-[28px] text-white mb-3">
-                        Get Free Quotes from Verified Solar EPC Vendors
+                        {t("topSolarEpc.finalCta.title")}
                     </h2>
                     <p className="text-[16px] text-[rgba(255,255,255,0.7)] max-w-[520px] mx-auto mb-2">
-                        Tell us your plant location, load (kW), and CAPEX/RESCO preference.
+                        {t("topSolarEpc.finalCta.subtitle1")}
                     </p>
                     <p className="text-[16px] text-[rgba(255,255,255,0.6)] max-w-[520px] mx-auto mb-7">
-                        We'll send 3-5 pre-screened vendor proposals at no cost, no obligation.
+                        {t("topSolarEpc.finalCta.subtitle2")}
                     </p>
                     <button
                         type="button"
@@ -865,36 +532,29 @@ export default function TopSolarEPCCompaniesPage() {
                         }}
                         className="inline-block text-white text-[14px] font-semibold px-8 py-3.5 rounded-[4px] tracking-[0.03em] cursor-pointer"
                     >
-                        Get Free Quotes Now →
+                        {t("topSolarEpc.finalCta.button")}
                     </button>
                     <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 mt-6 text-[12px] text-[rgba(255,255,255,0.55)]">
-                        <span className="flex items-center gap-1.5">
-                            <span className="text-[#00d4f5]">✓</span> Verified vendors
-                        </span>
-                        <span className="flex items-center gap-1.5">
-                            <span className="text-[#00d4f5]">✓</span> Quotes in 48 hrs
-                        </span>
-                        <span className="flex items-center gap-1.5">
-                            <span className="text-[#00d4f5]">✓</span> No spam
-                        </span>
-                        <span className="flex items-center gap-1.5">
-                            <span className="text-[#00d4f5]">✓</span> 100% free
-                        </span>
+                        {finalCtaBadges.map((badge, i) => (
+                            <span key={i} className="flex items-center gap-1.5">
+                                <span className="text-[#00d4f5]">✓</span> {badge}
+                            </span>
+                        ))}
                     </div>
                 </div>
 
                 {/* FOOTER */}
                 <div className="mt-16 pt-7 border-t border-[#E8E0D4] flex flex-wrap items-center justify-between gap-3">
                     <span className="text-[13px] text-[#7A6E62]">
-                        © 2026 Headsup Corporation Pvt. Ltd.
+                        {t("topSolarEpc.copyright")}
                     </span>
                     <div className="flex flex-wrap gap-2">
-                        {["EPC", "Solar", "Industrial", "C&I", "India", "RESCO"].map((t) => (
+                        {footerTags.map((tag) => (
                             <span
-                                key={t}
+                                key={tag}
                                 className="text-[11px] font-semibold uppercase tracking-[0.07em] px-2.5 py-1 border border-[#E8E0D4] rounded-[3px] text-[#7A6E62]"
                             >
-                                {t}
+                                {tag}
                             </span>
                         ))}
                     </div>
@@ -904,7 +564,7 @@ export default function TopSolarEPCCompaniesPage() {
             {showQuoteForm && (
                 <GetInTouch
                     onClose={() => setShowQuoteForm(false)}
-                    title="Get Free Quotes from Verified Solar EPC Vendors 🚀"
+                    title={t("topSolarEpc.formTitle")}
                 />
             )}
         </>

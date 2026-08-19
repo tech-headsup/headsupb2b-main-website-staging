@@ -1,19 +1,20 @@
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 import BOQSvg from "@/assets/images/svg/who we are svg/BOQ and Requirement Mapped Delivery.svg";
 import CompetitivePriceSvg from "@/assets/images/svg/who we are svg/Get the Most Competitive Prices.svg";
 import CollateralSvg from "@/assets/images/svg/who we are svg/Up to 60 days* Collateral Free Credit.svg";
 import VerifiedSvg from "@/assets/images/svg/who we are svg/Verified Suppliers & OEM Network.svg";
 
 const WHY_ITEMS = [
-  { title: "Get the Most Competitive Prices", icon: CompetitivePriceSvg },
-  { title: "Verified Suppliers & OEM Network", icon: VerifiedSvg },
-  { title: "BOQ and Requirement Mapped Delivery", icon: BOQSvg },
-  { title: "Up to 61 days* Collateral Free Credit", icon: CollateralSvg, note: "*T&C apply" },
+  { titleKey: "home.why.items.competitivePrices", icon: CompetitivePriceSvg },
+  { titleKey: "home.why.items.verifiedSuppliers", icon: VerifiedSvg },
+  { titleKey: "home.why.items.boq", icon: BOQSvg },
+  { titleKey: "home.why.items.credit", icon: CollateralSvg, isCredit: true },
 ];
 
-const CREDIT_TITLE = "Up to 61 days* Collateral Free Credit";
-
-export default function WhyHeadsupB2B({ onContactUs, heading = "Why Headsup B2B?", showCreditNote = false }) {
+export default function WhyHeadsupB2B({ onContactUs, heading, showCreditNote = false }) {
+  const { t } = useTranslation();
+  const resolvedHeading = heading ?? t("home.why.heading");
   return (
     <div className="bg-[#f4f4f4] py-12 sm:py-16 md:py-20">
       <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8">
@@ -21,40 +22,43 @@ export default function WhyHeadsupB2B({ onContactUs, heading = "Why Headsup B2B?
         className="text-2xl sm:text-3xl md:text-[40px] font-bold text-center text-[#111] mb-8 sm:mb-10"
         style={{ fontFamily: "'Montserrat', sans-serif" }}
       >
-        {heading}
+        {resolvedHeading}
       </h2>
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5 mb-8 sm:mb-10">
-        {WHY_ITEMS.map((item) => (
-          <div
-            key={item.title}
-            className="bg-white rounded-2xl p-4 sm:p-5 md:p-6 flex flex-col items-center text-center gap-3 sm:gap-4 border border-[#e5e5e5] transition-all duration-200 hover:shadow-[0_8px_30px_rgba(74,55,114,0.1)] hover:border-[#c5b8e8] cursor-default"
-          >
-            <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center mx-auto flex-shrink-0">
-              <Image
-                src={item.icon}
-                alt={item.title}
-                width={64}
-                height={64}
-                style={{ objectFit: "contain", display: "block", margin: "0 auto" }}
-              />
-            </div>
-            <span
-              className="text-sm sm:text-base md:text-[17px] font-bold text-[#111] leading-snug w-full text-center"
-              style={{ fontFamily: "'Manrope', sans-serif" }}
+        {WHY_ITEMS.map((item) => {
+          const title = t(item.titleKey);
+          return (
+            <div
+              key={item.titleKey}
+              className="bg-white rounded-2xl p-4 sm:p-5 md:p-6 flex flex-col items-center text-center gap-3 sm:gap-4 border border-[#e5e5e5] transition-all duration-200 hover:shadow-[0_8px_30px_rgba(74,55,114,0.1)] hover:border-[#c5b8e8] cursor-default"
             >
-              {item.title}
-              {showCreditNote && item.title === CREDIT_TITLE && (
-                <span
-                  className="ml-2 text-[#111] text-sm sm:text-base md:text-[17px] font-bold"
-                  style={{ fontFamily: "'Manrope', sans-serif" }}
-                >
-                  {item.note}
-                </span>
-              )}
-            </span>
-          </div>
-        ))}
+              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center mx-auto flex-shrink-0">
+                <Image
+                  src={item.icon}
+                  alt={title}
+                  width={64}
+                  height={64}
+                  style={{ objectFit: "contain", display: "block", margin: "0 auto" }}
+                />
+              </div>
+              <span
+                className="text-sm sm:text-base md:text-[17px] font-bold text-[#111] leading-snug w-full text-center"
+                style={{ fontFamily: "'Manrope', sans-serif" }}
+              >
+                {title}
+                {showCreditNote && item.isCredit && (
+                  <span
+                    className="ml-2 text-[#111] text-sm sm:text-base md:text-[17px] font-bold"
+                    style={{ fontFamily: "'Manrope', sans-serif" }}
+                  >
+                    {t("home.why.note")}
+                  </span>
+                )}
+              </span>
+            </div>
+          );
+        })}
       </div>
 
       <div className="flex justify-center">
@@ -63,7 +67,7 @@ export default function WhyHeadsupB2B({ onContactUs, heading = "Why Headsup B2B?
           style={{ background: "#4A3772", fontFamily: "'DM Sans', sans-serif" }}
           onClick={onContactUs}
         >
-          Contact Us Today
+          {t("home.why.contactCta")}
         </button>
       </div>
       </div>

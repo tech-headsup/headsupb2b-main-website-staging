@@ -1,11 +1,14 @@
+import { useTranslation } from "react-i18next";
+
 const HIW_STEPS = [
-  { n: 1, title: "Explore", desc: "Browse SKUs on our digital catalogue or website", desktopClass: "md:top-2" },
-  { n: 2, title: "Customise", desc: "Get best prices, finance options & delivery timelines", desktopClass: "md:top-16" },
-  { n: 3, title: "Enquire", desc: "Raise your requirement via RFQ or get on a sales call with our expert", desktopClass: "md:top-2" },
-  { n: 4, title: "Procure", desc: "Confirm order, track live & receive assured delivery", desktopClass: "md:top-[4.5rem]" },
+  { n: 1, key: "explore", desktopClass: "md:top-2" },
+  { n: 2, key: "customise", desktopClass: "md:top-16" },
+  { n: 3, key: "enquire", desktopClass: "md:top-2" },
+  { n: 4, key: "procure", desktopClass: "md:top-[4.5rem]" },
 ];
 
 export default function HowItWorks({ onSubmit }) {
+  const { t } = useTranslation();
   return (
     <div className="bg-white w-full pt-12 md:pt-20 pb-12 md:pb-0 px-6 md:px-0">
     {/* <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8"> */}
@@ -13,7 +16,7 @@ export default function HowItWorks({ onSubmit }) {
         className="text-2xl sm:text-3xl md:text-[40px] font-bold text-center text-[#111] mb-2"
         style={{ fontFamily: "'Montserrat', sans-serif" }}
       >
-        How It Works
+        {t("home.how.heading")}
       </h2>
 
       <div className="relative w-full mt-10 mb-10 md:my-8">
@@ -47,13 +50,13 @@ export default function HowItWorks({ onSubmit }) {
                     className="text-xl font-extrabold text-[#111] mb-1.5 leading-tight"
                     style={{ fontFamily: "'Manrope', sans-serif" }}
                   >
-                    {step.title}
+                    {t(`home.how.steps.${step.key}.title`)}
                   </p>
                   <p
                     className="text-sm text-[#555] leading-relaxed"
                     style={{ fontFamily: "'DM Sans', sans-serif" }}
                   >
-                    {step.desc}
+                    {t(`home.how.steps.${step.key}.desc`)}
                   </p>
                 </div>
               </div>
@@ -97,13 +100,13 @@ export default function HowItWorks({ onSubmit }) {
                   className="text-lg sm:text-[22px] font-extrabold text-[#111] mb-1.5 sm:mb-2 leading-tight"
                   style={{ fontFamily: "'Manrope', sans-serif" }}
                 >
-                  {step.title}
+                  {t(`home.how.steps.${step.key}.title`)}
                 </p>
                 <p
                   className="text-sm text-[#555] leading-relaxed max-w-[200px] sm:max-w-[180px]"
                   style={{ fontFamily: "'DM Sans', sans-serif" }}
                 >
-                  {step.desc}
+                  {t(`home.how.steps.${step.key}.desc`)}
                 </p>
               </div>
             ))}
@@ -121,7 +124,7 @@ export default function HowItWorks({ onSubmit }) {
           }}
           onClick={onSubmit}
         >
-          Submit Your Requirement Today
+          {t("home.how.submitCta")}
         </button>
       </div>
     </div>
