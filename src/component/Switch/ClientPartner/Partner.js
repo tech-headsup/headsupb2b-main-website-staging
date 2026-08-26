@@ -32,11 +32,11 @@ const PartnerImage = ({ ele, index, withMargin = false }) => {
           height: "auto",
           objectFit: "contain",
           display: "block",
-          filter: "grayscale(100%)",
+          filter: "grayscale(0%)",
           transition: "filter 0.3s ease",
         }}
-        onMouseEnter={(e) => (e.currentTarget.style.filter = "grayscale(0%)")}
-        onMouseLeave={(e) => (e.currentTarget.style.filter = "grayscale(100%)")}
+        onMouseEnter={(e) => (e.currentTarget.style.filter = "grayscale(100%)")}
+        onMouseLeave={(e) => (e.currentTarget.style.filter = "grayscale(0%)")}
         unoptimized={ele?.imageUrl?.src?.endsWith(".svg")}
         priority={index < 4}
       />

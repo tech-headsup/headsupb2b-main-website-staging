@@ -32,6 +32,7 @@ const NewsPressRelease = dynamic(() => import("@/component/home/Newspressrelease
 const WhoWeServe = dynamic(() => import("@/component/home/WhoWeServe"));
 const WhyHeadsupB2B = dynamic(() => import("@/component/home/WhyHeadsupB2B"));
 const HowItWorks = dynamic(() => import("@/component/home/HowItWorks"));
+const RequirementToExecution = dynamic(() => import("@/component/home/RequirementToExecution"));
 const TestimonialsCarousel = dynamic(() => import("@/component/home/TestimonialsCarousel"));
 const CTABanner = dynamic(() => import("@/component/home/CTABanner"));
 const PanIndiaText = dynamic(() => import("@/component/home/PanIndiaText"));
@@ -151,10 +152,13 @@ export default function index({ data, initialDataa, categoryProductOptions }) {
       <WhoWeServe />
 
       {/* 5. WHY HEADSUP B2B */}
-      <WhyHeadsupB2B onContactUs={() => setShowGetQuoteModal(t("home.modals.contactToday"))} />
+      <WhyHeadsupB2B onContactUs={() => setShowGetQuoteModal(t("home.modals.contactToday"))} showCreditNote />
 
       {/* 6. HOW IT WORKS */}
-      <HowItWorks onSubmit={() => setShowGetQuoteModal(t("home.modals.submitToday"))} />
+      {/* <HowItWorks onSubmit={() => setShowGetQuoteModal(t("home.modals.submitToday"))} /> */}
+
+      {/* 6. REQUIREMENT TO EXECUTION (from services page) */}
+      <RequirementToExecution />
 
       {/* 7. TESTIMONIALS */}
       <TestimonialsCarousel />

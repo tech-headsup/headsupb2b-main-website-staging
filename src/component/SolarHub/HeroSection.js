@@ -1,5 +1,72 @@
+"use client";
+
+import { useEffect } from "react";
 import Image from "next/image";
+import { motion, useAnimation } from "framer-motion";
 import { useTranslation } from "react-i18next";
+
+const FloatingHeroImage = () => {
+  const controls = useAnimation();
+
+  useEffect(() => {
+    controls.start({
+      y: [-10, 10],
+      transition: {
+        y: {
+          repeat: Infinity,
+          repeatType: "reverse",
+          duration: 2,
+          ease: "easeInOut",
+        },
+      },
+    });
+  }, [controls]);
+
+  const handleMouseEnter = () => {
+    controls.start({
+      rotate: 2,
+      scale: 1.05,
+      transition: { type: "spring", stiffness: 200 },
+    });
+  };
+
+  const handleMouseLeave = () => {
+    controls.start({
+      rotate: 0,
+      scale: 1,
+      y: [-10, 10],
+      transition: {
+        y: {
+          repeat: Infinity,
+          repeatType: "reverse",
+          duration: 2,
+          ease: "easeInOut",
+        },
+      },
+    });
+  };
+
+  return (
+    <motion.div
+      animate={controls}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className="relative w-full max-w-full mx-auto"
+    >
+      {/* Image container — same framed card as the services / advertise hero */}
+      <div className="hero-image-card rounded-2xl shadow-xl relative overflow-hidden p-3 t:p-5 l:p-6 ll:p-8 w-full">
+        <Image
+          src="/solar-hub-banner.png"
+          alt="Headsup B2B Solar Hub"
+          width={1100}
+          height={1100}
+          priority
+          className="w-full h-auto object-contain rounded-lg block"
+        />
+      </div>
+    </motion.div>
+  );
+};
 
 export default function HeroSection({ onOpenSellModal, onOpenQuoteModal }) {
   const { t } = useTranslation();
@@ -37,14 +104,7 @@ export default function HeroSection({ onOpenSellModal, onOpenQuoteModal }) {
             </div>
           </div>
           <div className="hero-image">
-            <Image
-              src="/solar-hub-banner.png"
-              alt="Headsup B2B Solar Hub"
-              width={1100}
-              height={1100}
-              priority
-              style={{ height: "auto", objectFit: "contain" }}
-            />
+            <FloatingHeroImage />
           </div>
         </div>
       </div>

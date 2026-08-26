@@ -33,12 +33,13 @@ export default function WhyHeadsupB2B({ onContactUs, heading, showCreditNote = f
               key={item.titleKey}
               className="bg-white rounded-2xl p-4 sm:p-5 md:p-6 flex flex-col items-center text-center gap-3 sm:gap-4 border border-[#e5e5e5] transition-all duration-200 hover:shadow-[0_8px_30px_rgba(74,55,114,0.1)] hover:border-[#c5b8e8] cursor-default"
             >
-              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center mx-auto flex-shrink-0">
+              <div className="bg-[#80EBF7] rounded-2xl w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 flex items-center justify-center mx-auto flex-shrink-0">
                 <Image
                   src={item.icon}
                   alt={title}
                   width={64}
                   height={64}
+                  className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12"
                   style={{ objectFit: "contain", display: "block", margin: "0 auto" }}
                 />
               </div>

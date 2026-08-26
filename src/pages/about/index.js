@@ -26,7 +26,10 @@ export default function index() {
       </div>
       <div className='ms:mx-6 ms:pb-10 t:mx-20 t:pb-10 l:mx-20 l:pb-10 ll:mx-28 imac:px-44 4k:px-56'>
         <label className="flex justify-center mt-8">
-          <h1 className={`${GradientText} inline-block text-transparent bg-clip-text font-bold text-3xl 4k:text-6xl`}>{t('about.heading')}</h1>
+          <h1
+            className={`${GradientText} inline-block text-transparent bg-clip-text font-bold leading-tight text-2xl ms:text-2xl mm:text-3xl ml:text-[32px] t:text-[36px] l:text-[42px]`}
+            style={{ fontFamily: "'Montserrat', sans-serif" }}
+          >{t('about.heading')}</h1>
         </label>
         <div className='py-6 ms:text-justify t:text-center 4k:text-3xl'>
           {t('about.body')}

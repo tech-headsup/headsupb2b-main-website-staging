@@ -204,7 +204,7 @@ export default function NewsPressRelease() {
       {/* HEADING */}
       <div className="text-center mb-10">
         <h2
-          className="text-2xl sm:text-3xl md:text-[36px] font-bold text-[#111]"
+          className="text-2xl sm:text-3xl md:text-[40px] font-bold text-[#111] text-center"
           style={{ fontFamily: "'Montserrat', sans-serif" }}
         >
           {t("newsroom.latestReleases")}

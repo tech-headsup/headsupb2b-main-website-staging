@@ -21,6 +21,9 @@ import topSolarPumpManufacturers from "../../public/top-solar-pump-manufacturers
 import solarPumpBatteryVsWithoutBattery from "../../public/solar-pump-with-battery-vs-without-battery-2026.webp"
 import solarPumpSubsidyIndia from "../../public/solar-pump-subsidy-india-2026.jpeg"
 import indiaCoalSectorReport from "../../public/india-coal-sector-report.webp"
+import solarBoqGuide from "../../public/how-to-build-a-winning-solar-boq.webp"
+import floatingSolarProcurement from "../../public/floating-solar-procurement-india.webp"
+import solarModulePrices from "../../public/solar-module-prices-india.webp"
 
 const researchData = [
   {
@@ -176,6 +179,27 @@ const researchData = [
     date: "2026-07-28",
     image: indiaCoalSectorReport,
     description: "Ministry of Coal FY 2025-26 performance review — captive and commercial mines crossed 200 MT for the first time at 210.46 MT (+10.22% YoY), 12 blocks opened, 53.64 MT construction pipeline, and the material package (TMT, HDPE, crash barriers, solar, CHP) for every new coal block.",
+  },
+  {
+    title: "How to Build a Winning Solar BOQ: A Procurement Checklist for EPC Contractors",
+    slug: "solar-boq-procurement-checklist",
+    date: "2026-08-03",
+    image: solarBoqGuide,
+    description: "The full BOQ framework — all 8 mandatory sections, the line items most contractors miss, the ALMM List-I/II position after MNRE's July and August 2026 orders, and a 14-point pre-submission checklist.",
+  },
+  {
+    title: "Floating Solar Procurement in India: Costs, Challenges & Supplier Selection",
+    slug: "floating-solar-procurement-india",
+    date: "2026-08-05",
+    image: floatingSolarProcurement,
+    description: "A complete FPV procurement guide for Indian EPC contractors — the PM-SSY ₹5,070 crore scheme, the floating component stack, where the 40–65% cost premium sits, six procurement challenges, supplier evaluation criteria and the correct procurement sequence.",
+  },
+  {
+    title: "Solar Module Prices in India 2026: How EPC Contractors Can Protect Project Margins",
+    slug: "solar-module-prices-india",
+    date: "2026-08-07",
+    image: solarModulePrices,
+    description: "Solar module prices rising sharply in 2026 due to ALMM-II cell constraints. Complete guide for EPC contractors on price trends, procurement risks, and 6 margin protection strategies.",
   },
 ];
 

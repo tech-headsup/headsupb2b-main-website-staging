@@ -6,11 +6,17 @@ import FeaturesGrid from "./FeaturesGrid";
 import StatsBanner from "./StatsBanner";
 import MediaKitCTA from "./MediaKitCTA";
 import NewCTASection from "./NewCTASection";
+import WhyHeadsupB2B from "@/component/home/WhyHeadsupB2B";
 import { NextSeo } from "next-seo";
 import { getAllProducts } from "@/Contants/APIEndpoint";
 
 function index({productData}) {
   const { t } = useTranslation();
+  const handleContactUs = () => {
+    if (typeof document !== "undefined") {
+      document.getElementById("ads-cta")?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <div>
       <NextSeo
@@ -18,11 +24,12 @@ function index({productData}) {
         description={t("ads.meta.description")}
         canonical={"https://www.headsupb2b.com/ads-with-us"}
       />
-      <main className="bg-gray-50 p-10 ll:mt-24">
+      <main className="bg-gray-50 p-10">
         <HeroSection productOptions={productData} />
         <MetricsCards />
         <StatsBanner productOptions={productData} />
-        <FeaturesGrid />
+        {/* <FeaturesGrid /> */}
+        <WhyHeadsupB2B onContactUs={handleContactUs} showCreditNote />
         <MediaKitCTA productOptions={productData} />
         <NewCTASection productOptions={productData} />
       </main>
@@ -50,7 +57,7 @@ export async function getStaticProps(context) {
       .sort((a, b) => {
         const labelA = a.label.toUpperCase(); // Ignore case
         const labelB = b.label.toUpperCase(); // Ignore case
-  
+
         if (labelA < labelB) {
           return -1; // 'a' comes before 'b'
         }

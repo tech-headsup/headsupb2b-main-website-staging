@@ -11302,8 +11302,11 @@
     ],
     "consultationTitle": "Request Consultation"
   },
-  "researchDescriptions": {},
-  "researchCategories": {},
+  "researchDescriptions": {
+    "The full BOQ framework — all 8 mandatory sections, the line items most contractors miss, the ALMM List-I/II position after MNRE's July and August 2026 orders, and a 14-point pre-submission checklist.": "The full BOQ framework — all 8 mandatory sections, the line items most contractors miss, the ALMM List-I/II position after MNRE's July and August 2026 orders, and a 14-point pre-submission checklist.",
+    "A complete FPV procurement guide for Indian EPC contractors — the PM-SSY ₹5,070 crore scheme, the floating component stack, where the 40–65% cost premium sits, six procurement challenges, supplier evaluation criteria and the correct procurement sequence.": "A complete FPV procurement guide for Indian EPC contractors — the PM-SSY ₹5,070 crore scheme, the floating component stack, where the 40–65% cost premium sits, six procurement challenges, supplier evaluation criteria and the correct procurement sequence.",
+    "Solar module prices rising sharply in 2026 due to ALMM-II cell constraints. Complete guide for EPC contractors on price trends, procurement risks, and 6 margin protection strategies.": "Solar module prices rising sharply in 2026 due to ALMM-II cell constraints. Complete guide for EPC contractors on price trends, procurement risks, and 6 margin protection strategies."
+  },
   "privacyTerms": {
     "terms": {
       "title": "Terms of Use",
@@ -12300,9 +12303,9 @@
       "description": "Headsup B2B delivers procurement-backed execution services for infrastructure projects, including painting, MEP, HVAC, fire fighting, solar, BESS. Pure B2B."
     },
     "hero": {
-      "headline1": "Everything you need to",
-      "headline2": "source solar",
-      "headline3": "for your project in one place.",
+      "headline1": "Everything You Need To",
+      "headline2": "Source Solar",
+      "headline3": "For Your Project In One Place.",
       "subtitle": "Products, project kits, expertise and credit — from India's infrastructure sourcing partner.",
       "getQuote": "Get a Quote",
       "uploadBom": "Upload Your BOM"
@@ -12841,11 +12844,11 @@
         "desc": "Share your scope, location, BOQ or requirement note, and timeline with Headsup B2B."
       },
       "step2": {
-        "title": "Vendor Matching",
+        "title": "Customise",
         "desc": "We match the requirement with verified vendors based on capability, location, and capacity."
       },
       "step3": {
-        "title": "Commercial Alignment",
+        "title": "Enquire",
         "desc": "Receive BOQ-aligned commercial quotes with defined scope, timelines, and execution clarity."
       },
       "step4": {
@@ -12999,9 +13002,11 @@
   },
   "home": {
     "hero": {
-      "headline": "Sourcing, Fulfilment, Financing",
-      "subheadline": "We are your one stop business partner for all your sourcing and financing needs, supporting you every step of the way!",
-      "trustBadge": "Trusted by Contractors, EPCs, Developers & Industrial Buyers",
+      "headline": "Sourcing. Fulfilment. Financing. Execution.",
+      "headlinePart1": "Sourcing. Fulfilment.",
+      "headlinePart2": "Financing. Execution.",
+      "subheadline": "India's all-in-one B2B platform for procurement, fulfilment, and financing across infrastructure, industry, and energy segments.",
+      "trustBadge": "The sourcing power, credit, and speed of the biggest players - now within your reach.",
       "getQuote": "Get a Quote",
       "uploadQuote": "Upload Quote"
     },
@@ -13114,7 +13119,7 @@
       "heading": "Why Headsup B2B?",
       "items": {
         "competitivePrices": "Get the Most Competitive Prices",
-        "verifiedSuppliers": "Verified Suppliers & OEM Network",
+        "verifiedSuppliers": "Premium Quality Products From Verified Suppliers",
         "boq": "BOQ and Requirement Mapped Delivery",
         "credit": "Up to 61 days* Collateral Free Credit"
       },
@@ -13476,11 +13481,19 @@
     }
   },
   "raisedFundsPage": {
+    "pageHeading": "We've Raised Funds",
+    "pageSubtitle": "Milestone announcements from our funding journey.",
+    "amount1": "Rs. 16.65 Cr",
+    "amount1Label": "Debt Capital",
     "heading1": "Headsup B2B Secures Rs. 16.65 Crore Debt Capital to Accelerate Growth and Innovation.",
     "para1": "Headsup B2B, a fast-growing, AI-powered B2B procurement and financing platform for the infrastructure and green energy sectors, announced the closure of Rs. 16.65 crore in debt capital from its banking partners. This funding is crucial for supporting the company's ambitious growth trajectory, which targets a Rs. 250 crore revenue milestone in FY25-26 while bolstering profitability, with Rs. 5 crore specifically earmarked to reinforce its market leadership in infrastructure and green energy. Founded in 2022 and having already achieved Rs. 200 crore in lifetime revenue, the company is now preparing to expand its portfolio into the Rapid Commerce segment for home improvement, starting in Delhi NCR, and is in advanced discussions to raise an additional Rs. 14 crore in Q3 FY25-26.",
+    "amount2": "Rs. 18.89 Cr",
+    "amount2Label": "Family Office Round",
     "heading2": "Digital marketplace Headsup B2B has raised INR 18.89 CR in investments led by Harendra Singh Family Office.",
     "para2": "Headsup B2B, a bootstrapped venture with over INR 100 crores in lifetime revenue, has raised this funding to fuel its growth. Raised funds will be deployed in team development with a focus on 100+ senior and mid level hirings across India, improving the tech-enabled full stack platform in B2B space which will cater from discovery to fulfillment and financing in the near future, exploring new vertical commerce avenues, and expanding cross-border business.",
-    "founderImageAlt": "Sumit Founder Headsup"
+    "readPressRelease": "View Funding Details",
+    "founderImageAlt": "Sumit Founder Headsup",
+    "teamImageAlt": "Headsup B2B Team"
   },
   "blogPage": {
     "seoTitle": "Blog - Headsup B2B",
@@ -13523,5 +13536,1934 @@
   },
   "blogTitles": {},
   "blogExcerpts": {},
-  "blogBodies": {}
+  "blogBodies": {},
+  "solarBoq": {
+    "meta": {
+      "seoTitle": "How to Build a Winning Solar BOQ: Complete Procurement Checklist",
+      "seoDescription": "Complete solar BOQ guide for EPC contractors — 7 mandatory sections, line-item checklist, ALMM compliance, common mistakes and cost impact. Free procurement checklist included.",
+      "ogTitle": "How to Build a Winning Solar BOQ: Complete Procurement Checklist",
+      "ogDescription": "Complete solar BOQ guide for EPC contractors — 7 mandatory sections, line-item checklist, ALMM compliance, common mistakes and cost impact. Free procurement checklist included."
+    },
+    "hero": {
+      "badge": "Procurement Guide",
+      "readTime": "15 min read",
+      "published": "Updated 3 August 2026",
+      "title1": "How to Build a Winning Solar BOQ:",
+      "title2": "A Procurement Checklist for EPC Contractors",
+      "subtitle": "A mis-specified BOQ is the most common cause of procurement overruns in solar EPC. This line-by-line guide gives you the full framework — modules to earthing to statutory charges — plus the ALMM position as it actually stands after MNRE's July and August 2026 orders.",
+      "sourceLine": "All rates, standards and compliance dates in this guide verified as on 3 August 2026. Sources listed at the end."
+    },
+    "heroStats": [
+      {
+        "num": "5–9%",
+        "label": "Typical EPC margin in India — every BOQ error lands directly on this"
+      },
+      {
+        "num": "₹3.0–4.0 Cr",
+        "label": "All-in CAPEX per MW for non-DCR ground-mount in 2026 (≈₹30–40/Wp)"
+      },
+      {
+        "num": "8",
+        "label": "BOQ sections that must be priced — most contractors miss 2–3 entirely"
+      },
+      {
+        "num": "217 GW",
+        "label": "Capacity on ALMM List-I as of the 3 Aug 2026 revision — but eligibility is per model, not per maker"
+      }
+    ],
+    "heroTags": [
+      "Solar BOQ",
+      "EPC Contractors",
+      "Procurement Checklist",
+      "Bill of Quantities",
+      "ALMM List-I / II / III"
+    ],
+    "tocLabel": "In this guide",
+    "toc": [
+      "What a Solar BOQ Actually Controls",
+      "The 8 Mandatory Sections of a Solar BOQ",
+      "The 6 BOQ Mistakes That Cost EPC Firms the Most",
+      "The BOQ-to-Procurement Workflow",
+      "What a BOQ Pricing Error Actually Costs",
+      "Pre-Submission BOQ Checklist",
+      "Key Takeaways",
+      "Sources and References"
+    ],
+    "sections": {
+      "s1": {
+        "kicker": "Fundamentals",
+        "title": "What a Solar BOQ Actually Controls"
+      },
+      "s2": {
+        "kicker": "The Framework",
+        "title": "The 8 Mandatory Sections of a Solar Project BOQ"
+      },
+      "s3": {
+        "kicker": "What Goes Wrong",
+        "title": "The 6 BOQ Mistakes That Cost EPC Firms the Most"
+      },
+      "s4": {
+        "kicker": "Process",
+        "title": "The BOQ-to-Procurement Workflow"
+      },
+      "s5": {
+        "kicker": "Cost Impact",
+        "title": "What a BOQ Pricing Error Actually Costs"
+      },
+      "s6": {
+        "kicker": "Checklist",
+        "title": "Pre-Submission BOQ Checklist"
+      },
+      "s7": {
+        "kicker": "Summary",
+        "title": "Key Takeaways"
+      },
+      "faq": {
+        "kicker": "Questions",
+        "title": "Frequently Asked Questions"
+      }
+    },
+    "whoFor": {
+      "label": "Who this is for:",
+      "body": "EPC project managers, procurement heads and bid teams at solar contracting firms preparing BOQs for SECI, NTPC, state DISCOM, PM-KUSUM or PM Surya Ghar tenders, and for private C&I projects in India."
+    },
+    "intro": {
+      "p1": "A solar project's BOQ — Bill of Quantities — is the document that decides whether your bid wins or bleeds. It converts your engineering design into a measurable price schedule: every panel, cable, structure and earthing rod listed with quantity, unit and specification. Get it right and you win at a margin that survives procurement. Get it wrong and you absorb overruns that can erase months of project profit in a single purchase order.",
+      "p2": "Yet most EPC firms — especially those scaling from rooftop to ground-mount, or from 1 MW to 10 MW — still prepare BOQs using rough estimates, copied templates, or last project's numbers updated by feel. With EPC margins in India running at 5–9% of contract value, a 3% error across the total BOQ takes roughly 40% of a 7% margin with it. That is not a rounding difference. That is the year.",
+      "p3": "This guide gives you the complete framework: what every section of a solar BOQ must contain, the line items contractors routinely leave out, the compliance requirements that can invalidate a BOQ in government tenders, and a pre-submission checklist to run before every bid."
+    },
+    "scenario": {
+      "label": "Real-world scenario",
+      "quote": "We won a 5 MW DISCOM tender in MP. The BOQ had DC cable calculated by straight-line distance — not actual cable run with routing, elevation and termination allowance. By the time we ordered we were 18% short on cable volume. Emergency procurement at spot prices cost us ₹14 lakh over budget. The margin on that project went from 7% to under 5%.",
+      "attribution": "— Project Manager, mid-size EPC firm, Central India (2025)"
+    },
+    "s1p1": "A Bill of Quantities is a structured document listing every material, component and work item needed to complete an installation, with unit of measurement, quantity and specification. In Indian solar tenders — SECI, NTPC, state DISCOM, PM-KUSUM, PM Surya Ghar — the BOQ is the foundation of competitive bidding. Every contractor prices the same BOQ, which is what makes bids comparable.",
+    "s1p2": "But the BOQ does far more than win tenders. It drives your entire procurement cycle. Purchase orders are raised against BOQ line items. Site deliveries are tracked against BOQ quantities. Progress billing is certified against BOQ milestones. Retention and final settlement are computed from it. A weak BOQ does not just lose tenders — it creates procurement chaos across the whole project lifecycle and hands the client the stronger position in every variation discussion.",
+    "s1quote": "A well-built solar BOQ is not a spreadsheet. It is an engineering document that determines whether the project makes money or loses it — before a single panel is ordered.",
+    "s1quoteAttribution": "— Headsup B2B Procurement Research, 2026",
+    "s2p1": "A complete solar BOQ covers eight distinct categories. Missing any one creates a procurement gap that shows up later as a cost overrun, a delay, or a failed inspection. Section 8 — statutory, insurance and commercial items — is the one most often absent altogether, because it does not look like \"material\".",
+    "tableHeaders": [
+      "Line item",
+      "Unit",
+      "Key specification",
+      "Compliance flag"
+    ],
+    "tableHeaders8": [
+      "Line item",
+      "Unit",
+      "What it covers",
+      "Why it matters"
+    ],
+    "boqSections": [
+      {
+        "n": "1",
+        "title": "Solar PV Modules",
+        "sub": "The most compliance-sensitive section in the entire BOQ",
+        "rows": [
+          {
+            "item": "Solar PV module — state technology (TOPCon / Mono PERC / bifacial) and exact model code",
+            "unit": "Nos",
+            "spec": "Wp, V<sub>oc</sub>, I<sub>sc</sub>, temperature coefficient, efficiency, bifaciality factor",
+            "flag": "ALMM List-I, model-level",
+            "tone": "green"
+          },
+          {
+            "item": "Module type &amp; safety certification",
+            "unit": "Doc",
+            "spec": "IEC 61215 design qualification; IEC 61730-1/-2 safety",
+            "flag": "BIS registration under CRS",
+            "tone": "green"
+          },
+          {
+            "item": "PID resistance declaration",
+            "unit": "Doc",
+            "spec": "IEC TS 62804-1 test report",
+            "badge": "Corrected",
+            "flag": "Verify on datasheet, not brochure",
+            "tone": "green"
+          },
+          {
+            "item": "Salt-mist / ammonia resistance (coastal or agri sites)",
+            "unit": "Doc",
+            "spec": "IEC 61701 / IEC 62716",
+            "badge": "Added",
+            "flag": "Site-dependent",
+            "tone": "green"
+          },
+          {
+            "item": "Performance warranty documentation",
+            "unit": "Set",
+            "spec": "Linear output warranty, ≥80% at year 25; product warranty separately stated",
+            "flag": "Confirm at order, not at bid",
+            "tone": "green"
+          },
+          {
+            "item": "ALMM List-II cell-origin declaration + cell traceability",
+            "unit": "Doc",
+            "spec": "Cell manufacturer, List-II reference, batch traceability",
+            "flag": "New requirement post-1 Jun 2026",
+            "tone": "red"
+          },
+          {
+            "item": "DCR certificate (where the scheme requires it)",
+            "unit": "Doc",
+            "spec": "NISE DCR portal reference",
+            "badge": "Added",
+            "flag": "PM Surya Ghar, KUSUM B &amp; C, CPSU-II",
+            "tone": "green"
+          }
+        ]
+      },
+      {
+        "n": "2",
+        "title": "Inverters and Power Conversion",
+        "sub": "String, central or micro — and BIS, not just IEC",
+        "rows": [
+          {
+            "item": "String / central inverter — state kW rating, phase, DC:AC ratio",
+            "unit": "Nos",
+            "spec": "Euro or CEC weighted efficiency, MPPT count and voltage window, THD limit",
+            "flag": "IEC 62109-1 &amp; -2",
+            "tone": "green"
+          },
+          {
+            "item": "BIS registration for the inverter model",
+            "unit": "Doc",
+            "spec": "IS 16221 Parts 1 &amp; 2, IS 16169",
+            "badge": "Added",
+            "flag": "Compulsory Registration Scheme",
+            "tone": "red"
+          },
+          {
+            "item": "Grid-interface protection settings &amp; compliance report",
+            "unit": "Doc",
+            "spec": "Anti-islanding, LVRT/HVRT, frequency ride-through",
+            "badge": "Added",
+            "flag": "CEA Connectivity Standards",
+            "tone": "green"
+          },
+          {
+            "item": "Inverter mounting structure / room / platform",
+            "unit": "Nos",
+            "spec": "Weather-rated enclosure, IP65 minimum, ventilation or forced cooling",
+            "flag": "Check ambient derating",
+            "tone": "green"
+          },
+          {
+            "item": "Remote monitoring / SCADA integration",
+            "unit": "Set",
+            "spec": "Modbus TCP / SunSpec, data logging interval, remote access provision",
+            "flag": "Routinely missed in BOQ",
+            "tone": "red"
+          },
+          {
+            "item": "AC output cable — inverter to ACDB",
+            "unit": "m",
+            "spec": "Sized from load and voltage-drop calculation",
+            "flag": "Measure, do not estimate",
+            "tone": "red"
+          },
+          {
+            "item": "Auxiliary supply / UPS for SCADA and control",
+            "unit": "Set",
+            "spec": "Backup duration as per O&amp;M spec",
+            "badge": "Added",
+            "flag": "Frequently omitted",
+            "tone": "green"
+          }
+        ]
+      },
+      {
+        "n": "3",
+        "title": "Module Mounting Structures",
+        "sub": "Fixed tilt or tracker — the design must be site-specific",
+        "rows": [
+          {
+            "item": "GI / aluminium mounting structure — state tilt angle and row pitch",
+            "unit": "MT",
+            "spec": "Hot-dip galvanised, coating thickness stated in microns (typically 80 µm)",
+            "flag": "IS 2062 steel, IS 4759 galvanising",
+            "tone": "green"
+          },
+          {
+            "item": "Foundation bolts / pull bolts / chemical anchors",
+            "unit": "Set",
+            "spec": "SS 304/316 or HDG grade, pull-out capacity stated",
+            "flag": "Commonly understated",
+            "tone": "red"
+          },
+          {
+            "item": "Mid clamps / end clamps",
+            "unit": "Nos",
+            "spec": "Anodised aluminium, matched to the module frame thickness",
+            "flag": "Must match the specific module",
+            "tone": "green"
+          },
+          {
+            "item": "Wind load design certificate",
+            "unit": "Doc",
+            "spec": "Site wind zone, basic wind speed, terrain category",
+            "flag": "IS 875 Part 3",
+            "tone": "green"
+          },
+          {
+            "item": "Tracker drive, controller and backtracking system (if applicable)",
+            "unit": "Set",
+            "spec": "Motor, gearbox, controller, stow strategy",
+            "badge": "Added",
+            "flag": "Price O&amp;M of trackers separately",
+            "tone": "green"
+          },
+          {
+            "item": "Structure earthing bonding jumpers",
+            "unit": "Nos",
+            "spec": "Tinned copper braid or GI, table-to-table continuity",
+            "badge": "Added",
+            "flag": "Often merged into earthing and lost",
+            "tone": "green"
+          }
+        ]
+      },
+      {
+        "n": "4",
+        "title": "DC-Side Balance of System",
+        "sub": "The most error-prone section — measure, never estimate",
+        "rows": [
+          {
+            "item": "DC solar cable — string wiring",
+            "unit": "m",
+            "spec": "4 / 6 mm² as calculated, 1.5 kV DC rated, UV and ozone resistant, TÜV certified",
+            "flag": "EN 50618 / IEC 62930",
+            "badge": "Corrected",
+            "tone": "green"
+          },
+          {
+            "item": "DC main / array cable to combiner and inverter",
+            "unit": "m",
+            "spec": "Cross-section from current and voltage-drop calculation, not from precedent",
+            "flag": "Take from cable schedule",
+            "tone": "red"
+          },
+          {
+            "item": "MC4 / T4 connectors",
+            "unit": "Pairs",
+            "spec": "IP68, 1.5 kV DC, single-brand mating only",
+            "flag": "IEC 62852",
+            "tone": "green"
+          },
+          {
+            "item": "DC combiner box / string monitoring unit",
+            "unit": "Nos",
+            "spec": "Fuse per string, DC isolator, SPD, IP65 minimum",
+            "flag": "Check fuse sizing per string",
+            "tone": "green"
+          },
+          {
+            "item": "DC cable tray, conduit or underground duct",
+            "unit": "m",
+            "spec": "HDPE or perforated GI tray as per layout",
+            "flag": "Often missing entirely",
+            "tone": "red"
+          },
+          {
+            "item": "Surge protection device, DC side (Type II)",
+            "unit": "Nos",
+            "spec": "Rated for maximum string V<sub>oc</sub> at lowest site temperature",
+            "flag": "IEC 61643-31",
+            "tone": "green"
+          },
+          {
+            "item": "Cable ties, glands, labels, ferrules and marking",
+            "unit": "Lot",
+            "spec": "UV-stabilised ties; permanent cable identification",
+            "badge": "Added",
+            "flag": "Small line, real cost at scale",
+            "tone": "green"
+          }
+        ]
+      },
+      {
+        "n": "5",
+        "title": "AC-Side Electrical and Evacuation",
+        "sub": "Grid connectivity, metering and the HT items small BOQs forget",
+        "rows": [
+          {
+            "item": "AC distribution board (ACDB)",
+            "unit": "Nos",
+            "spec": "MCCB rated, IP54 minimum, busbar rating stated",
+            "flag": "IS 8623 / IEC 61439",
+            "tone": "green"
+          },
+          {
+            "item": "AC power cable — inverter to transformer / grid",
+            "unit": "m",
+            "spec": "Armoured XLPE, cross-section from load and derating factors",
+            "flag": "IS 7098 (XLPE) / IS 1554 (PVC)",
+            "tone": "green"
+          },
+          {
+            "item": "Step-up transformer",
+            "unit": "Nos",
+            "spec": "kVA rating, vector group, CRGO core, losses guaranteed",
+            "flag": "Often missing in small BOQs",
+            "tone": "red"
+          },
+          {
+            "item": "HT panel / RMU / VCB with protection relays",
+            "unit": "Nos",
+            "spec": "Rated voltage and breaking capacity; numerical relay",
+            "badge": "Added",
+            "flag": "CEA safety regulations",
+            "tone": "green"
+          },
+          {
+            "item": "HT cable, terminations and jointing kits",
+            "unit": "m / Set",
+            "spec": "Heat-shrink or cold-shrink kits, quantity per termination",
+            "badge": "Added",
+            "flag": "Kits routinely under-counted",
+            "tone": "red"
+          },
+          {
+            "item": "CT/PT metering cubicle and ABT / special energy meter",
+            "unit": "Nos",
+            "spec": "Accuracy class, DISCOM-approved make",
+            "badge": "Added",
+            "flag": "State DISCOM specification",
+            "tone": "green"
+          },
+          {
+            "item": "Net meter / bi-directional energy meter",
+            "unit": "Nos",
+            "spec": "DISCOM-approved make, ToD capable where required",
+            "flag": "State metering regulations",
+            "tone": "green"
+          },
+          {
+            "item": "AC surge protection device (Type I / II)",
+            "unit": "Nos",
+            "spec": "Rated for AC bus voltage and expected surge exposure",
+            "flag": "IEC 61643-11",
+            "tone": "green"
+          },
+          {
+            "item": "Evacuation line — poles, conductor, insulators, right of way",
+            "unit": "km",
+            "spec": "As per DISCOM sanction letter",
+            "badge": "Added",
+            "flag": "A whole scope, not a line",
+            "tone": "red"
+          }
+        ]
+      },
+      {
+        "n": "6",
+        "title": "Earthing, Lightning Protection and Safety",
+        "sub": "The most under-specified section in contractor BOQs",
+        "rows": [
+          {
+            "item": "Earth electrodes / pits — equipment and structure earthing",
+            "unit": "Nos",
+            "spec": "Copper-bonded rod or GI plate; count and depth derived from the earthing design and measured soil resistivity",
+            "flag": "IS 3043",
+            "badge": "Corrected",
+            "tone": "green"
+          },
+          {
+            "item": "Earth ring conductor",
+            "unit": "m",
+            "spec": "25×4 mm GI flat or equivalent copper; measure the full ring from the earthing layout",
+            "flag": "Measure, do not assume",
+            "tone": "red"
+          },
+          {
+            "item": "Soil resistivity test and earth resistance test report",
+            "unit": "LS",
+            "spec": "Four-probe test before design",
+            "badge": "Added",
+            "flag": "Determines electrode count",
+            "tone": "green"
+          },
+          {
+            "item": "Lightning protection system",
+            "unit": "Nos",
+            "spec": "Conventional air terminals, down conductors and dedicated earth per IS/IEC 62305; if an ESE terminal is proposed it is governed by NF C 17-102, not IEC 62305",
+            "badge": "Corrected",
+            "flag": "Need established by IEC 62305-2 risk assessment, not by plant size",
+            "tone": "green"
+          },
+          {
+            "item": "Safety kit — rubber mats, danger boards, shock-treatment chart, first-aid box, sand buckets, CO₂ / DCP extinguishers",
+            "unit": "Set",
+            "spec": "As per CEA safety regulations",
+            "flag": "Often billed as lumpsum and under-costed",
+            "tone": "red"
+          },
+          {
+            "item": "Perimeter fencing and gates",
+            "unit": "Rm",
+            "spec": "GI chain link, barbed wire or wall as per site",
+            "flag": "Frequently excluded in error",
+            "tone": "red"
+          },
+          {
+            "item": "CCTV, anti-theft fasteners, security cabin",
+            "unit": "Set",
+            "spec": "Camera count and recording retention",
+            "badge": "Added",
+            "flag": "Insurer may require it",
+            "tone": "green"
+          }
+        ]
+      },
+      {
+        "n": "7",
+        "title": "Civil Works, Monitoring and O&amp;M Infrastructure",
+        "sub": "Chronically underbid — include everything",
+        "rows": [
+          {
+            "item": "Foundations / plinths — module rows, inverter room, control panel",
+            "unit": "m³",
+            "spec": "Concrete grade per structural drawing, PCC and reinforcement separately",
+            "flag": "Take from structural engineer",
+            "tone": "green"
+          },
+          {
+            "item": "Cable trench excavation, sand bedding, brick protection and backfill",
+            "unit": "Rm",
+            "spec": "Depth and profile per cable layout drawing",
+            "flag": "Measure from cable layout",
+            "tone": "green"
+          },
+          {
+            "item": "Site grading, approach road, drainage and culverts",
+            "unit": "m² / Rm",
+            "spec": "As per topographic survey",
+            "badge": "Added",
+            "flag": "Whole line often absent",
+            "tone": "red"
+          },
+          {
+            "item": "Weather monitoring station",
+            "unit": "Set",
+            "spec": "Pyranometer (POA + GHI), module and ambient temperature sensors, anemometer",
+            "badge": "Added",
+            "flag": "Mandatory in SECI / NTPC scopes",
+            "tone": "red"
+          },
+          {
+            "item": "SCADA / remote monitoring infrastructure",
+            "unit": "Set",
+            "spec": "Web-based, logging interval stated, data retention period",
+            "flag": "Mandatory in SECI / NTPC contracts",
+            "tone": "green"
+          },
+          {
+            "item": "Module cleaning system and water source",
+            "unit": "Set",
+            "spec": "Manual, semi-automatic or robotic; plus borewell or tank, pump and piping",
+            "badge": "Expanded",
+            "flag": "Water source is a real cost, not an assumption",
+            "tone": "red"
+          },
+          {
+            "item": "Mandatory spares for the O&amp;M period",
+            "unit": "Set",
+            "spec": "Spares list as specified in the tender",
+            "badge": "Added",
+            "flag": "Contractually required",
+            "tone": "green"
+          },
+          {
+            "item": "Commissioning, testing and documentation",
+            "unit": "LS",
+            "spec": "Pre-commissioning tests, PAC/SAC, O&amp;M manuals, as-built drawings, training",
+            "flag": "Required for handover and release of retention",
+            "tone": "green"
+          }
+        ]
+      },
+      {
+        "n": "8",
+        "title": "Statutory, Commercial and Risk Items",
+        "sub": "The section most BOQs do not have at all",
+        "rows": [
+          {
+            "item": "Electrical Inspector / CEIG approval and drawing charges",
+            "unit": "LS",
+            "spec": "Statutory fees, drawing submission, inspection",
+            "flag": "Non-negotiable and unrecoverable if unpriced",
+            "tone": "red"
+          },
+          {
+            "item": "DISCOM connectivity, supervision and net-metering charges",
+            "unit": "LS",
+            "spec": "Application, feasibility, supervision and testing fees",
+            "flag": "Varies by state, sometimes materially",
+            "tone": "green"
+          },
+          {
+            "item": "Insurance — erection all-risk, transit, third-party",
+            "unit": "LS",
+            "spec": "Cover from despatch to PAC, plus the O&amp;M period",
+            "flag": "Typically 0.15–0.4% of contract value",
+            "tone": "green"
+          },
+          {
+            "item": "Freight, unloading, internal shifting and storage",
+            "unit": "LS",
+            "spec": "Including module handling and site warehousing",
+            "flag": "Modules are bulky and fragile",
+            "tone": "red"
+          },
+          {
+            "item": "Third-party inspection and factory acceptance testing",
+            "unit": "LS",
+            "spec": "Inspection agency charges, travel, witness testing",
+            "flag": "Client-mandated in most PSU tenders",
+            "tone": "green"
+          },
+          {
+            "item": "Bank guarantees — EMD, performance, advance",
+            "unit": "LS",
+            "spec": "Commission plus margin money blocked for the tenor",
+            "flag": "A financing cost, price it as one",
+            "tone": "green"
+          },
+          {
+            "item": "GST treatment",
+            "unit": "%",
+            "spec": "Concessional rate on the goods portion, standard rate on services; state the split you have assumed",
+            "flag": "Wrong split silently eats margin",
+            "tone": "red"
+          },
+          {
+            "item": "Price variation / escalation clause",
+            "unit": "—",
+            "spec": "Whether module, copper and steel movement is passed through",
+            "flag": "If absent, you carry the commodity risk",
+            "tone": "red"
+          },
+          {
+            "item": "Energy storage (where mandated)",
+            "unit": "kWh",
+            "spec": "Battery racks, PCS, EMS/BMS, HVAC, fire suppression, containerisation",
+            "flag": "Increasingly bundled into RE tenders",
+            "tone": "red"
+          }
+        ]
+      }
+    ],
+    "moduleNote": "Do not price modules as one line. Split DCR and non-DCR, because the gap is enormous: JMK Research put domestic non-DCR TOPCon at ₹14.2/Wp in April 2026 against DCR TOPCon at ₹22.3/Wp — and DCR TOPCon then rose 9.4% month-on-month in May.",
+    "cableNote": "<strong>Rule of thumb for cable:</strong> routed length typically runs 1.15–1.25× the straight-line SLD distance once you add elevation, obstacle routing and termination loops. Use the cable schedule as the source document — the ratio above is a sanity check, not a substitute for it.",
+    "almm": {
+      "label": "⚠ ALMM position as on 3 August 2026 — read before finalising modules",
+      "items": [
+        "<strong>ALMM List-II (cells) came into force 1 June 2026.</strong> MNRE's O.M. dated 18 July 2026 gave net-metering and open-access projects a limited window: commission on or before <strong>31 December 2026</strong> and List-II does not apply. This is a transition window, not a rollback — there is no blanket extension.",
+        "<strong>The 4 August 2026 clarification is the one most BOQs still ignore.</strong> Competitively bid projects with bid submission on or before <strong>31 August 2025</strong> stay exempt from List-II; anything bid after that date must comply. For rooftop on government buildings, the exempt bid windows are on/before 9 Dec 2024, or 28 Jul 2025 to 31 Aug 2025.",
+        "<strong>PM Surya Ghar residential net metering</strong> is exempt from List-II until <strong>31 March 2027</strong>, provided the application went through the national portal. List-I still applies.",
+        "<strong>Behind-the-meter captive:</strong> private consumers are outside both lists. Government and PSU captive projects must use List-I modules now, with List-II cells applying after 31 Dec 2026.",
+        "<strong>ALMM List-I remains mandatory</strong> for all government, government-assisted, scheme-linked, open-access and net-metering projects — and it is enforced at <em>model</em> level. \"Waaree 540 W\" is not a specification; the exact model code is.",
+        "<strong>Plan for List-III.</strong> ALMM for ingots and wafers takes effect <strong>1 June 2028</strong>, with the first list published once at least three independent manufacturers with a combined 15 GW are operational. Long-tenor EPC and RESCO contracts signed today will cross that date.",
+        "<strong>DCR is a separate test from ALMM.</strong> MNRE has confirmed the List-II orders do not change DCR provisions. A module can be List-I listed and still fail DCR."
+      ]
+    },
+    "midCta": {
+      "title": "Source BOQ-ready solar equipment from verified suppliers",
+      "desc": "Headsup B2B maps your BOQ line items to ALMM-compliant, BIS-certified products from 1,000+ verified suppliers — with pan-India delivery and 60-day procurement credit.",
+      "btnText": "Get solar procurement help →"
+    },
+    "mistakes": [
+      {
+        "n": "Mistake 01",
+        "title": "Estimating DC cable by SLD distance, not actual run",
+        "body": "Single-line diagrams show electrical connectivity, not physical routing. Actual run includes elevation, routing around structures and loop allowance at every termination.",
+        "impact": "Typical overrun: 15–25% more cable than the BOQ carries"
+      },
+      {
+        "n": "Mistake 02",
+        "title": "Naming the manufacturer instead of the ALMM model code",
+        "body": "ALMM is enforced model by model. \"Waaree 540 W\" is not sufficient — the BOQ must carry the exact List-I model code, and a model quoted at bid stage may be delisted by the time you procure.",
+        "impact": "Consequence: disqualification in government tenders"
+      },
+      {
+        "n": "Mistake 03",
+        "title": "Missing the earthing conductor ring measurement",
+        "body": "Most BOQs list earth pits correctly but understate the GI flat ring that connects them. For a 1 MW array the ring alone can run 500–700 m, plus the electrodes it serves.",
+        "impact": "Typical overrun: ₹0.7–1.5L on a 1 MW project"
+      },
+      {
+        "n": "Mistake 04",
+        "title": "Leaving SCADA and monitoring out of the BOQ",
+        "body": "Remote monitoring, SCADA and the weather station are mandatory in SECI, NTPC and most DISCOM contracts. Added later as a variation, they become a negotiation you will lose.",
+        "impact": "Typical addition: ₹4–12L depending on project size"
+      },
+      {
+        "n": "Mistake 05",
+        "title": "Reusing last project's cable specification",
+        "body": "Cable cross-section follows current and permissible voltage drop, not project size. A longer string run or higher ambient on a new site can push you from 4 mm² to 6 mm².",
+        "impact": "Consequence: overheating, inverter trips, warranty exposure"
+      },
+      {
+        "n": "Mistake 06",
+        "title": "Omitting civil and statutory quantities from the electrical BOQ",
+        "body": "Trench excavation, foundation concrete, cleaning water source, CEIG fees and DISCOM charges get split into a \"separate\" BOQ — and then forgotten in the cost estimate entirely.",
+        "impact": "Typical overrun: ₹8–20L on a 5 MW project"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Lock the engineering design before starting the BOQ",
+        "body": "A BOQ built on a preliminary design is a liability. The single-line diagram, layout plan, string sizing, earthing layout and cable schedule must all be finalised and signed off first. Design changes after BOQ submission become variation disputes."
+      },
+      {
+        "title": "Use the cable schedule — never the SLD — for cable quantities",
+        "body": "The cable schedule lists every run with routed length, cross-section and termination allowance. It is the source document for the DC and AC cable BOQ. If the cable schedule does not exist yet, the BOQ is not ready."
+      },
+      {
+        "title": "Verify ALMM status for every model on the day you submit",
+        "body": "Check the live MNRE portal, not a cached list, for every module model in the BOQ, and record the revision date against the line item. Keep a pre-approved alternative for each model in case of delisting between bid and procurement."
+      },
+      {
+        "title": "Price against current market rates, not last quarter's POs",
+        "body": "Domestic DCR TOPCon module prices moved from roughly ₹27/Wp in January 2026 to ₹22/Wp in April, then rose again in May. Copper tracks LME; structure steel tracks domestic HRC and zinc. Reprice, every bid."
+      },
+      {
+        "title": "Add a 3–5% procurement contingency on BoS — and hold it",
+        "body": "Module and inverter quantities are exact. Cables, connectors, clamps and fasteners are not: allow 3–5% for wastage, measurement variance and site conditions. This protects margin without moving your bid price materially."
+      },
+      {
+        "title": "Cross-check line-by-line against the tender BOQ before submission",
+        "body": "Most government tenders issue their own BOQ format. Any item in the tender BOQ that is absent from your internal BOQ is a gap that converts into a cost overrun the day you win."
+      },
+      {
+        "title": "Map every BOQ line to a PO line before mobilisation",
+        "body": "If a BOQ item has no owner, no vendor and no lead time attached to it, it will be procured late and at spot price. The BOQ-to-PO map is what turns the document into a procurement plan."
+      }
+    ],
+    "costCard": {
+      "label": "BOQ error cost analysis — 5 MW ground-mount solar project",
+      "rows": [
+        {
+          "label": "Total project value",
+          "value": "₹18.50 Cr",
+          "tone": "neutral"
+        },
+        {
+          "label": "Target EPC margin (7%)",
+          "value": "₹1.30 Cr",
+          "tone": "neutral"
+        },
+        {
+          "label": "DC cable underestimated 18%, made up at spot prices",
+          "value": "−₹14L",
+          "tone": "negative"
+        },
+        {
+          "label": "Earthing ring conductor and electrodes missed",
+          "value": "−₹6L",
+          "tone": "negative"
+        },
+        {
+          "label": "SCADA and weather station added as a variation, negotiated down",
+          "value": "−₹8L",
+          "tone": "negative"
+        },
+        {
+          "label": "Civil works — trench, foundations, cleaning water — understated",
+          "value": "−₹11L",
+          "tone": "negative"
+        }
+      ],
+      "totalLabel": "Revised margin after BOQ errors",
+      "totalValue": "₹91L (4.9%)"
+    },
+    "s5p1": "Four ordinary BOQ errors — none of them exotic — take margin from 7% to under 5% on a single project. Run four or five similar projects a year with the same gaps and that is ₹1.5–2 crore of avoidable margin erosion annually. That is the real cost of a weak BOQ process, and it compounds quietly because no single line item ever looks large enough to escalate.",
+    "s6p1": "Run every bid through this before it goes out. It takes about 30 minutes.",
+    "checklist": [
+      {
+        "label": "Modules:",
+        "body": "exact ALMM List-I model code included, BIS registration confirmed, DCR status stated, performance and product warranties separated."
+      },
+      {
+        "label": "ALMM List-II:",
+        "body": "project category identified (bid date, commissioning date, net metering / open access / captive), exemption position documented in writing."
+      },
+      {
+        "label": "Inverters:",
+        "body": "IEC 62109 certification and IS 16221 / IS 16169 BIS registration confirmed, grid-protection settings referenced, SCADA compatibility noted."
+      },
+      {
+        "label": "DC cable:",
+        "body": "quantities taken from the cable schedule, cross-section calculated from current and voltage drop, wastage allowance added."
+      },
+      {
+        "label": "Mounting structures:",
+        "body": "wind-zone-matched structural design, IS 2062 grade and galvanising thickness specified, foundation bolt material confirmed."
+      },
+      {
+        "label": "Earthing:",
+        "body": "electrode count derived from soil resistivity test, ring conductor measured from the earthing layout drawing, IS 3043 compliance stated."
+      },
+      {
+        "label": "Lightning protection:",
+        "body": "need established by an IEC 62305-2 risk assessment; if an ESE terminal is offered, the governing standard is stated correctly."
+      },
+      {
+        "label": "AC and HT side:",
+        "body": "transformer, RMU/HT panel, termination kits, CT/PT cubicle and DISCOM-approved meter all included; evacuation line scoped."
+      },
+      {
+        "label": "Monitoring:",
+        "body": "SCADA and weather station in the BOQ, logging interval and data retention specified, remote access provision confirmed."
+      },
+      {
+        "label": "Civil works:",
+        "body": "trench quantities from the layout drawing, foundation concrete from the structural design, grading and approach road included, cleaning water source priced."
+      },
+      {
+        "label": "Statutory and commercial:",
+        "body": "CEIG and DISCOM charges, insurance, freight, third-party inspection, bank guarantee cost and GST split all carried as line items."
+      },
+      {
+        "label": "Commissioning:",
+        "body": "testing, PAC/SAC documentation, O&M manuals, as-built drawings and mandatory spares included as priced items."
+      },
+      {
+        "label": "Pricing:",
+        "body": "every rate verified against current market prices — not last quarter's POs or last project's invoices — and a price-variation position taken."
+      },
+      {
+        "label": "Tender alignment:",
+        "body": "your BOQ cross-checked line-by-line against the issued tender BOQ, with no missing items and no unpriced provisional sums."
+      }
+    ],
+    "takeaways": [
+      {
+        "title": "A solar BOQ has eight sections, not six.",
+        "body": "Modules and inverters get specified carefully. Earthing conductors, monitoring, civil works, commissioning documentation and the entire statutory-and-commercial block are routinely thin or absent."
+      },
+      {
+        "title": "Measure cables — never estimate them.",
+        "body": "The single largest source of BOQ overruns is DC cable quantities taken from SLD distance instead of the cable schedule. Routed length typically runs 15–25% above the straight line."
+      },
+      {
+        "title": "ALMM compliance is model-level, and the rules changed twice this year.",
+        "body": "Your BOQ must reference the exact List-I model code, and your List-II position depends on bid date, commissioning date and project category after MNRE's 18 July and 4 August 2026 orders."
+      },
+      {
+        "title": "BOQ errors compound across a portfolio.",
+        "body": "A 2% error on an ₹18 crore project is ₹36 lakh. Four projects a year with the same gaps is ₹1.4 crore given away — invisibly, one line item at a time."
+      },
+      {
+        "title": "Price against current rates, and say so in the bid.",
+        "body": "DCR module prices moved by double digits inside a single quarter in 2026. A BOQ priced on last year's rates is a margin risk before procurement even begins; a price-variation clause is how you stop carrying that risk alone."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How many sections must a solar BOQ have?",
+        "a": "Eight — modules, inverters and power conversion, module mounting structures, DC-side balance of system, AC-side electrical and evacuation, earthing and lightning protection, civil works and O&M infrastructure, and statutory/commercial/risk items. The last one is the section most BOQs omit entirely, because it does not look like material."
+      },
+      {
+        "q": "Can I calculate DC cable quantity from the single-line diagram?",
+        "a": "No. The SLD shows electrical connectivity, not physical routing. Use the cable schedule, which carries routed length, cross-section and termination allowance. Routed length typically runs 1.15–1.25× the straight-line SLD distance once elevation, obstacle routing and termination loops are added."
+      },
+      {
+        "q": "Is naming the module manufacturer enough for ALMM compliance?",
+        "a": "No. ALMM is enforced at model level. The BOQ must carry the exact List-I model code — \"Waaree 540 W\" is not a specification. Verify the model on the live MNRE portal on the day you submit, and keep a pre-approved alternative in case of delisting between bid and procurement."
+      },
+      {
+        "q": "Does ALMM List-II apply to my project?",
+        "a": "It depends on bid date, commissioning date and project category. Competitively bid projects with bid submission on or before 31 August 2025 remain exempt. Net-metering and open-access projects commissioned on or before 31 December 2026 are outside List-II. PM Surya Ghar residential net metering is exempt until 31 March 2027. Behind-the-meter private captive sits outside both lists."
+      },
+      {
+        "q": "Is DCR the same as ALMM?",
+        "a": "No. MNRE has confirmed the List-II orders do not change DCR provisions. A module can be listed on ALMM List-I and still fail DCR. Price DCR and non-DCR modules as separate line items — the price gap is large and it moves."
+      },
+      {
+        "q": "How much contingency should a solar BOQ carry?",
+        "a": "Module and inverter quantities are exact, so they need none. On balance of system — cables, connectors, clamps and fasteners — allow 3–5% for wastage, measurement variance and site conditions. That protects margin without materially moving your bid price."
+      }
+    ],
+    "sources": {
+      "title": "Sources and references",
+      "items": [
+        "MNRE Office Memorandum, 18 July 2026 — ALMM List-II for solar PV cells: limited window to 31 December 2026 for net-metering and open-access projects.",
+        "MNRE Office Memorandum, 4 August 2026 — category-wise clarification on ALMM List-II applicability (bid dates, PM Surya Ghar to 31 March 2027, behind-the-meter captive, government building rooftop).",
+        "MNRE ALMM List-I revision dated 3 August 2026 — cumulative enlisted module capacity 217,107 MW; 9th revision of ALMM List-II dated 21 August 2026.",
+        "MNRE, March 2026 — ALMM List-III for solar ingots and wafers, effective 1 June 2028.",
+        "JMK Research Monthly RE Update, January–May 2026 — domestic module price trends (Mono PERC, TOPCon, DCR TOPCon).",
+        "Indian standards referenced: IS 2062, IS 4759, IS 875 Part 3, IS 3043, IS 7098, IS 1554, IS 16221, IS 16169. International: IEC 61215, IEC 61730, IEC TS 62804, IEC 61701, IEC 62716, IEC 62109, IEC 62852, IEC 61643, IEC 62305, EN 50618 / IEC 62930."
+      ]
+    },
+    "cta": {
+      "kicker": "Solar Procurement Platform",
+      "heading": "Source Every BOQ Line Item from One Platform",
+      "subtitle": "Headsup B2B maps your solar BOQ to verified, ALMM-compliant suppliers across India — modules, inverters, cables, mounting structures and BoS, with BOQ-mapped delivery and 60-day collateral-free credit.",
+      "features": [
+        "1,000+ verified suppliers",
+        "ALMM-compliant products",
+        "BOQ-mapped delivery",
+        "60-day procurement credit",
+        "Pan-India fulfilment",
+        "Model-level compliance checks"
+      ],
+      "button": "Start sourcing for your solar project →",
+      "footer": "500+ solar projects delivered · 20+ states served · No collateral required"
+    },
+    "consultationTitle": "Talk to a solar procurement specialist",
+    "keywords": [
+      "Solar BOQ format",
+      "Bill of quantities solar project",
+      "ALMM List-I model code",
+      "ALMM List-II exemption",
+      "Solar EPC procurement",
+      "DC cable schedule",
+      "Solar tender BOQ India",
+      "BOQ checklist for EPC",
+      "Solar BoS line items",
+      "CEIG and DISCOM charges"
+    ],
+    "footer": {
+      "publishedLine": "Published 3 August 2026 · Headsup B2B Editorial Team · Procurement Intelligence",
+      "tags": [
+        "Solar BOQ",
+        "EPC",
+        "Procurement",
+        "ALMM",
+        "Bill of Quantities"
+      ]
+    }
+  },
+  "knowledgeArticleTitles": {
+    "How to Build a Winning Solar BOQ: A Procurement Checklist for EPC Contractors": "How to Build a Winning Solar BOQ: A Procurement Checklist for EPC Contractors",
+    "Floating Solar Procurement in India: Costs, Challenges & Supplier Selection": "Floating Solar Procurement in India: Costs, Challenges & Supplier Selection",
+    "Solar Module Prices in India 2026: How EPC Contractors Can Protect Project Margins": "Solar Module Prices in India 2026: How EPC Contractors Can Protect Project Margins"
+  },
+  "floatingSolar": {
+    "meta": {
+      "seoTitle": "Floating Solar Procurement in India: Costs, Challenges & Supplier Selection",
+      "seoDescription": "Complete floating solar procurement guide for EPC contractors — FPV component stack, HDPE pontoon selection, PM-SSY opportunity, cost breakdown, and supplier evaluation framework for India 2026.",
+      "ogTitle": "Floating Solar Procurement in India: Costs, Challenges & Supplier Selection",
+      "ogDescription": "Complete floating solar procurement guide for EPC contractors — FPV component stack, HDPE pontoon selection, PM-SSY opportunity, cost breakdown, and supplier evaluation framework for India 2026."
+    },
+    "hero": {
+      "badge": "Procurement Guide",
+      "readTime": "14 min read",
+      "published": "Updated 5 August 2026",
+      "title1": "Floating Solar Procurement in India:",
+      "title2": "Costs, Challenges & Supplier Selection",
+      "subtitle": "India has approved a ₹5,070 crore floating solar scheme with mandatory co-located storage — and it pays for the bathymetric survey your BOQ depends on. For EPC contractors entering this space, FPV procurement is a different discipline. This is the complete guide.",
+      "sourceLine": "Scheme terms, project data and price benchmarks verified as on 5 August 2026. Sources listed at the end."
+    },
+    "heroStats": [
+      {
+        "num": "5,000 MW",
+        "label": "PM-SSY target, with 10,000 MWh of co-located storage — India's floating base today is ~700 MW"
+      },
+      {
+        "num": "₹1 Cr / MW",
+        "label": "Central Financial Assistance after successful commissioning, plus up to ₹50 lakh per project for feasibility studies"
+      },
+      {
+        "num": "102.18 GWp",
+        "label": "India's floating solar technical potential assessed by NISE across reservoirs and inland water bodies"
+      },
+      {
+        "num": "₹43–65/Wp",
+        "label": "Turnkey FPV system cost in India, 2026, against ₹30–40/Wp for ground-mount"
+      }
+    ],
+    "heroTags": [
+      "Floating Solar",
+      "FPV Procurement",
+      "HDPE Floats",
+      "EPC Contractors",
+      "PM-SSY 2026"
+    ],
+    "tocLabel": "In this guide",
+    "toc": [
+      "Why Floating Solar Is Different",
+      "The Floating Solar Component Stack",
+      "Where the Cost Premium Actually Sits",
+      "The 6 Procurement Challenges Unique to FPV",
+      "How to Evaluate and Select FPV Suppliers",
+      "The FPV Procurement Sequence",
+      "Ramagundam 100 MW — A Real Benchmark",
+      "Key Takeaways"
+    ],
+    "sections": {
+      "s1": {
+        "kicker": "Fundamentals",
+        "title": "Why Floating Solar Is Different — And Why Procurement Must Reflect That"
+      },
+      "s2": {
+        "kicker": "The Component Stack",
+        "title": "The Floating Solar Component Stack: What You Must Procure"
+      },
+      "s3": {
+        "kicker": "Cost Structure",
+        "title": "Where the Cost Premium Actually Sits"
+      },
+      "s4": {
+        "kicker": "What Goes Wrong",
+        "title": "The 6 Procurement Challenges Unique to Floating Solar"
+      },
+      "s5": {
+        "kicker": "Supplier Selection",
+        "title": "How to Evaluate and Select FPV Suppliers"
+      },
+      "s6": {
+        "kicker": "Process",
+        "title": "The FPV Procurement Sequence: What to Do When"
+      },
+      "s7": {
+        "kicker": "Case Study",
+        "title": "Ramagundam 100 MW — What Procurement Actually Looked Like"
+      },
+      "s8": {
+        "kicker": "Summary",
+        "title": "Key Takeaways for EPC Contractors Entering Floating Solar"
+      },
+      "faq": {
+        "kicker": "Questions",
+        "title": "Frequently Asked Questions"
+      }
+    },
+    "whoFor": {
+      "label": "Who this is for:",
+      "body": "EPC project teams, procurement managers and solar developers evaluating floating solar (FPV) projects in India — on industrial ponds, irrigation reservoirs or utility-scale water bodies under PM-SSY."
+    },
+    "intro": {
+      "p1": "On 31 July 2026 the Union Cabinet approved the Pradhan Mantri Surya Sarovar Yojana (PM-SSY) — a ₹5,070 crore central sector scheme to build 5,000 MW of floating solar with co-located energy storage of at least two hours, or 10,000 MWh. Projects will be sanctioned between FY 2026-27 and FY 2030-31, with financial support disbursed up to FY 2032-33.",
+      "p2": "The scale is the story. India's installed floating solar base today is around 700 MW. PM-SSY targets seven times that in five years, against a NISE-assessed technical potential of roughly 102.18 GWp across reservoirs and inland water bodies. Expected investment across the programme is around ₹28,500 crore. Global floating solar deployed to date is variously estimated between 6 GW and 13 GW depending on the source — so a single national programme of 5 GW is broadly the scale of the entire world's floating fleet built so far.",
+      "p3": "The opportunity is large. So is the procurement complexity. Floating solar — FPV — is not ground-mount solar installed on water. The components are different, the supplier universe is far narrower, the approvals touch water resource authorities and environmental regulators alongside the CEA, and the cost premium over ground-mount is real. This guide closes the gap between ground-mount procurement experience and FPV procurement reality."
+    },
+    "pmssyCallout": {
+      "label": "⚠ The PM-SSY clause most EPC teams have missed",
+      "p1": "The scheme provides <strong>up to ₹50 lakh per project</strong> as Central Financial Assistance for feasibility studies — explicitly including <strong>bathymetry and hydrography assessments</strong> and environmental studies, for the purpose of de-risking project development.",
+      "p2": "Bathymetric survey data is the single input your anchoring design and pontoon BOQ cannot be finalised without. Under PM-SSY, that survey is grant-funded. Structure the work sequence to use it before you price the floating structure, not after."
+    },
+    "s1p1": "Ground-mount EPC experience gives contractors a strong foundation: engineering discipline, ALMM awareness, BOQ rigour. But FPV introduces an entirely new category of components, a different structural engineering paradigm, and procurement dependencies that most Indian solar supply chains are not yet equipped to serve at scale.",
+    "compare": {
+      "groundTitle": "Ground-Mount Solar",
+      "groundItems": [
+        "Standard GI / aluminium mounting structures",
+        "Established domestic supplier base",
+        "Civil work: concrete foundations",
+        "Standard DC/AC cable routing on ground",
+        "Single regulatory pathway (CEA + MNRE + DISCOM)",
+        "O&M: standard cleaning and inspection",
+        "₹30–40/Wp turnkey system cost"
+      ],
+      "fpvTitle": "Floating Solar (FPV)",
+      "fpvItems": [
+        "HDPE pontoons, anchoring systems, mooring lines",
+        "Narrow, specialist supplier ecosystem",
+        "Civil work: anchoring, shore connection, cable landing",
+        "Immersion-rated DC cable and submarine AC cable",
+        "Reservoir owner + irrigation / WRD + environment + CEA + MNRE",
+        "O&M: boat access, pontoon inspection, mooring tension checks",
+        "₹43–65/Wp turnkey system cost"
+      ]
+    },
+    "s1p2": "The additional cost reflects genuine engineering complexity, not supplier margin. Pontoons must withstand UV exposure, wave action, wind loads and water-level variation across a 25-year life. Cables must be rated for continuous immersion. Anchoring must hold platforms stable through monsoon conditions and a seasonal level swing that can reach 10–20 metres. These are baseline requirements, not upgrades — they determine whether the plant survives its first monsoon.",
+    "s1p3": "There is an upside on the generation side that FPV bid models should capture properly: the water below the array moderates module operating temperature, which typically lifts specific yield by a low single-digit percentage against an identical ground-mount system. It is a real effect, and it is frequently overstated in vendor material — build it in at a defensible number, not at the 10–15% figure that circulates in marketing decks.",
+    "s2p1": "An FPV project has two procurement categories: the standard solar components where your ground-mount experience applies, and the floating-specific components where it does not. Getting the second category right is what separates successful FPV procurement from mid-project surprises.",
+    "componentHeaders": [
+      "Component",
+      "Category",
+      "Key specification",
+      "Procurement complexity"
+    ],
+    "components": [
+      {
+        "item": "HDPE floating pontoons / platforms",
+        "cat": "FPV only",
+        "catTone": "blue",
+        "spec": "Virgin HDPE, UV-stabilised, density ≥940 kg/m³, buoyancy rated for module and maintenance load",
+        "flag": "High — narrow supplier base",
+        "tone": "red"
+      },
+      {
+        "item": "Anchoring system (concrete dead weights / helix anchors / shore anchors)",
+        "cat": "FPV only",
+        "catTone": "blue",
+        "spec": "Site-specific: water depth, bed composition, seasonal level variation, wind fetch",
+        "flag": "High — requires site survey",
+        "tone": "red"
+      },
+      {
+        "item": "Mooring lines / HMPE ropes",
+        "cat": "FPV only",
+        "catTone": "blue",
+        "spec": "High Modulus Polyethylene, UV rated, break load and creep specified, tension monitoring provision",
+        "flag": "Medium — often imported",
+        "tone": "amber"
+      },
+      {
+        "item": "Solar PV modules, FPV specification",
+        "cat": "Modified",
+        "catTone": "grey",
+        "spec": "IP68 junction box, PID resistance (IEC TS 62804), high humidity and salt-mist resistance where applicable (IEC 61701)",
+        "flag": "Medium — ALMM plus FPV spec",
+        "tone": "amber"
+      },
+      {
+        "item": "Floating / immersion-rated DC cable",
+        "cat": "FPV only",
+        "catTone": "blue",
+        "spec": "Tinned copper, XLPO insulation, 1.5 kV DC, rated for continuous immersion (AD8 duty) — <strong>EN 50618 / IEC 62930</strong>, not IEC 60227",
+        "badge": "Corrected",
+        "flag": "High — limited Indian supply",
+        "tone": "red"
+      },
+      {
+        "item": "Submarine / underwater AC cable",
+        "cat": "FPV only",
+        "catTone": "blue",
+        "spec": "Armoured submarine cable to IEC 63026 or IEC 60502-2, suitable for reservoir bed routing, with cable-landing transition joints",
+        "flag": "High — long import lead times",
+        "tone": "red"
+      },
+      {
+        "item": "Inverters, elevated IP rating",
+        "cat": "Modified",
+        "catTone": "grey",
+        "spec": "IP65/IP66, corrosion-resistant enclosure, humidity-rated; floating platform or shore-mounted, decided at design stage",
+        "flag": "Medium",
+        "tone": "amber"
+      },
+      {
+        "item": "Waterproof junction and combiner boxes",
+        "cat": "Modified",
+        "catTone": "grey",
+        "spec": "IP67 minimum, marine-grade stainless hardware, drip loops at every entry",
+        "flag": "Medium",
+        "tone": "amber"
+      },
+      {
+        "item": "Energy storage system",
+        "cat": "PM-SSY mandatory",
+        "catTone": "amber",
+        "spec": "Minimum 2-hour duration; LFP racks, PCS, EMS/BMS, HVAC, fire detection and suppression, shore-side civil and containerisation",
+        "badge": "Added",
+        "flag": "High — a separate procurement track",
+        "tone": "red"
+      },
+      {
+        "item": "Floating walkway / access platform",
+        "cat": "FPV only",
+        "catTone": "blue",
+        "spec": "Anti-slip, load-rated for maintenance crew and tools, gangway to shore, handrails",
+        "flag": "Medium — often custom fabricated",
+        "tone": "amber"
+      },
+      {
+        "item": "Shore-side switchyard and evacuation",
+        "cat": "Modified",
+        "catTone": "grey",
+        "spec": "Transformer, HT panel, metering cubicle, cable landing structure, earthing mat on shore",
+        "badge": "Added",
+        "flag": "Medium",
+        "tone": "amber"
+      },
+      {
+        "item": "O&M boat and marine access equipment",
+        "cat": "FPV only",
+        "catTone": "blue",
+        "spec": "Motorised dinghy or inflatable, life jackets, and a documented water-safety protocol",
+        "flag": "Low — standard marine procurement",
+        "tone": "green"
+      }
+    ],
+    "essNote": "Note the ESS row. PM-SSY makes co-located storage mandatory at a minimum of two hours. Any FPV BOQ prepared for a PM-SSY project that treats storage as a later decision is incomplete from day one.",
+    "hdpeCallout": {
+      "label": "⚠ Key procurement warning",
+      "title": "Virgin vs recycled HDPE — the difference that determines project life",
+      "items": [
+        "Virgin HDPE, UV-stabilised, density ≥940 kg/m³, lasts 25+ years on water without degrading, cracking or losing buoyancy under continuous UV and temperature cycling.",
+        "Recycled-content pontoons — often 15–25% cheaper — can show surface degradation within 5–7 years on water. Mid-project replacement costs a large multiple of the initial saving, and it happens while the plant is generating.",
+        "<strong>Verify with a test package, not a single certificate.</strong> Melt flow rate to ISO 1133 and density to ISO 1183 tell you about the resin grade; they do not by themselves prove virgin material. Ask additionally for resin supplier batch certificates, carbon black / UV stabiliser content (ISO 6964 or ASTM D1603), oxidative induction time (ISO 11357-6), and an accelerated weathering report (ISO 4892 or ASTM G154).",
+        "<strong>Rule of thumb:</strong> if a pontoon supplier cannot produce virgin HDPE traceability to resin batch level, do not proceed — regardless of price."
+      ]
+    },
+    "s3p1": "The premium of floating over ground-mount is real, and knowing where it lives tells procurement where to optimise and where to accept it. The table below is built bottom-up: the component rows sum to the totals.",
+    "costHeaders": [
+      "Cost component",
+      "Ground-mount (₹/Wp)",
+      "Floating (₹/Wp)",
+      "Premium driver"
+    ],
+    "costRows": [
+      {
+        "item": "Solar PV modules (non-DCR)",
+        "ground": "14–18",
+        "floating": "15–20",
+        "driver": "IP68 junction box, anti-corrosion and humidity specification"
+      },
+      {
+        "item": "Inverters + electrical BoS",
+        "ground": "5–7",
+        "floating": "6–9",
+        "driver": "Higher IP rating, marine-grade enclosures, platform mounting"
+      },
+      {
+        "item": "Mounting structure / pontoon system",
+        "ground": "4–5",
+        "floating": "10–16",
+        "driver": "HDPE floats, anchoring and mooring — no standardised domestic supply chain"
+      },
+      {
+        "item": "DC / AC cabling",
+        "ground": "2–3",
+        "floating": "4–7",
+        "driver": "Immersion-rated DC and submarine AC grades, largely imported"
+      },
+      {
+        "item": "Civil works",
+        "ground": "2–3",
+        "floating": "3–5",
+        "driver": "Underwater anchoring, cable landing, shore connection infrastructure"
+      },
+      {
+        "item": "EPC execution, logistics, commissioning",
+        "ground": "3–4",
+        "floating": "5–8",
+        "driver": "Marine logistics, specialist installation crew, boat access, narrower window"
+      }
+    ],
+    "costTotal": {
+      "item": "Total turnkey system cost",
+      "ground": "₹30–40",
+      "floating": "₹43–65",
+      "driver": "≈40–65% premium, concentrated in structure, cable and execution"
+    },
+    "s3p2": "<strong>Read this table with three caveats.</strong> (1) Module rates are non-DCR. Where DCR applies, add roughly ₹6–9/Wp — JMK Research put domestic non-DCR TOPCon at ₹14.2/Wp against DCR TOPCon at ₹22.3/Wp in April 2026, with DCR then rising 9.4% month-on-month in May. (2) Energy storage sits outside this ₹/Wp and is priced separately on a ₹/kWh basis; under PM-SSY the ₹1 crore per MW CFA offsets 15–25% of the combined cost. (3) As a real benchmark: NTPC's 100 MW Ramagundam plant was built for ₹423 crore — about ₹42/Wp on AC capacity, or roughly ₹29/Wp on its 145 MW DC, at 2019–2022 prices.",
+    "s3p3": "Roughly 60% of the total differential sits in the floating structure and cable categories — which is also where Indian domestic supply is weakest. The strategic decision for most EPC contractors is whether to source pontoons and submarine cable from the small Indian manufacturing base or import them. Imports can run 15–25% cheaper ex-works but carry 8–12 week lead times, container freight in the region of USD 800–1,200 per container to port, and customs clearance on top.",
+    "midCta": {
+      "title": "Procuring solar equipment for a floating project?",
+      "desc": "Headsup B2B connects EPC teams to verified suppliers of ALMM-compliant modules, marine-grade cables and FPV-spec electrical equipment — with pan-India delivery and 60-day procurement credit.",
+      "btnText": "Get procurement support →"
+    },
+    "pullQuote": {
+      "text": "The pontoon and mooring system is where floating solar projects succeed or fail — not the panels. A ₹2/Wp saving on modules means nothing if your platform needs replacing in year seven because someone substituted recycled HDPE to win the bid.",
+      "attribution": "— Headsup B2B Technical Advisory, 2026"
+    },
+    "challenges": [
+      {
+        "n": "Challenge 01",
+        "title": "A narrow domestic supplier base for FPV components",
+        "body": "India has only a handful of domestic HDPE pontoon manufacturers with a commissioned FPV track record. For projects above 10 MW, supply capacity becomes a lead-time risk — and PM-SSY will pull that capacity in several directions at once.",
+        "action": "Pre-qualify suppliers before tender award, not after"
+      },
+      {
+        "n": "Challenge 02",
+        "title": "Multi-agency clearances with overlapping timelines",
+        "body": "Permission comes from the reservoir owner first — a state water resources or irrigation department, or a PSU for its own reservoir — then the pollution control board or MoEFCC where the water body triggers it, and the CEA and DISCOM for connectivity. The Central Water Commission's role is technical and advisory on dam safety rather than a project clearance.",
+        "action": "Map the clearance chain before finalising the BOQ and procurement schedule"
+      },
+      {
+        "n": "Challenge 03",
+        "title": "The installation window is narrow",
+        "body": "On-water work on a live reservoir is weather-dependent, and the monsoon (June–September) generally halts it entirely. Missing the pre-monsoon window costs four to five months, with the financing and penalty consequences that follow.",
+        "action": "Complete procurement by March–April for pre-monsoon commissioning"
+      },
+      {
+        "n": "Challenge 04",
+        "title": "Submarine cable import lead times",
+        "body": "Submarine AC cable and immersion-rated floating DC cable of FPV specification are largely imported. Lead times of 10–14 weeks are standard and customs clearance adds two to three more. Late cable procurement kills the installation window.",
+        "action": "Order submarine cable at project sanction — not at EPC mobilisation"
+      },
+      {
+        "n": "Challenge 05",
+        "title": "ALMM and FPV specification are two separate tests",
+        "body": "Modules for government FPV projects must be on ALMM List-I and meet FPV requirements — IP68 junction box, PID resistance, humidity performance — and, depending on bid and commissioning dates, ALMM List-II cell sourcing as well. Not every List-I model qualifies for water deployment.",
+        "action": "Verify FPV suitability and ALMM status as two independent checks"
+      },
+      {
+        "n": "Challenge 06",
+        "title": "Water level variation drives anchoring design",
+        "body": "Reservoir levels can vary 10–20 metres seasonally, and anchoring — dead weights, helix anchors or shoreline points — depends entirely on site-specific bathymetric and bed-composition data. Pontoon and mooring quantities cannot be finalised without it.",
+        "action": "Commission the bathymetric survey first — PM-SSY funds it up to ₹50 lakh"
+      }
+    ],
+    "omkareshwarCallout": {
+      "label": "⚠ Learn from Omkareshwar",
+      "body": "India's largest floating solar park at Omkareshwar in Madhya Pradesh suffered storm damage in April 2024, reportedly attributed to inadequate anchoring. It is the clearest available demonstration of the point this guide keeps returning to: on water, the mooring and anchoring package — not the module — is the component that decides whether the asset survives. Price it, engineer it site-specifically, and do not accept a generic anchoring design carried over from another reservoir."
+    },
+    "s5p1": "Supplier selection for FPV is fundamentally different from ground-mount procurement. Three quotes and lowest compliant bid is not a sufficient method when what you are buying is a floating structure that must survive 25 years on a water body you do not control.",
+    "criteriaHeaders": [
+      "Criterion",
+      "Weight",
+      "What to verify"
+    ],
+    "criteria": [
+      {
+        "item": "Installed FPV track record in India",
+        "weight": "25%",
+        "verify": "Minimum three commissioned projects above 1 MW; demand a site visit or commissioning documents. <strong>Must have.</strong>"
+      },
+      {
+        "item": "Virgin HDPE traceability",
+        "weight": "20%",
+        "verify": "MFR (ISO 1133), density (ISO 1183), UV stabiliser content, OIT and accelerated weathering report, plus resin batch certificates. <strong>Must have.</strong>"
+      },
+      {
+        "item": "Production capacity vs your peak demand",
+        "weight": "15%",
+        "verify": "Monthly output against your delivery schedule. Ask specifically how they intend to serve PM-SSY volumes without displacing you."
+      },
+      {
+        "item": "Anchoring and mooring design capability",
+        "weight": "15%",
+        "verify": "In-house structural or marine engineering for site-specific design, or a demonstrated third-party partnership. Ask to see a completed anchoring calculation."
+      },
+      {
+        "item": "O&M and post-installation support",
+        "weight": "15%",
+        "verify": "Service presence within reasonable reach of site; pontoon repair and replacement track record; spares availability commitment."
+      },
+      {
+        "item": "Total landed cost and payment terms",
+        "weight": "10%",
+        "verify": "Landed at site, not ex-works — include freight, insurance and duties. Import duty on Chinese floats typically adds 8–15%."
+      }
+    ],
+    "suppliers": {
+      "label": "Indian FPV technology and float suppliers to consider",
+      "items": [
+        "<strong>Ciel &amp; Terre India</strong> — French FPV technology company with an Indian subsidiary; proprietary Hydrelio floating system; a long international track record across 30+ countries.",
+        "<strong>Prabhdayal and Adtech</strong> — supplied the floaters and anchoring system for NTPC's 100 MW Ramagundam plant, India's largest completed FPV project.",
+        "<strong>Floatex Solar</strong> — India-based float and FPV systems supplier with ferrocement and HDPE float technologies and a domestic manufacturing footprint.",
+        "<strong>Domestic HDPE float and mooring hardware manufacturers</strong> — a small group of Indian fabricators now competing with imports on landed cost, several of them ISO 9001 certified and offering customisation for 400–630 Wp module formats.",
+        "<strong>Large integrated EPC firms</strong> — BHEL, Tata Power Solar, L&amp;T and Sterling &amp; Wilson have executed utility-scale FPV in India and bring integrated float sourcing to projects at that scale."
+      ],
+      "note": "Supplier capabilities and capacity claims change quickly in this segment. Treat this as a starting shortlist and verify track record, certification and current production capacity directly before pre-qualification."
+    },
+    "steps": [
+      {
+        "title": "Commission the bathymetric and geotechnical survey before any procurement",
+        "body": "Water depth, seasonal level variation, bed composition (rock, silt, clay) and wind and wave data are all needed before you can design anchoring and finalise the pontoon platform specification. Under PM-SSY this survey attracts CFA of up to ₹50 lakh per project — use it. Procuring without this data means a BOQ that will be revised after mobilisation, when revisions are expensive."
+      },
+      {
+        "title": "Start clearances at sanction, not after engineering",
+        "body": "Reservoir-owner permission, state irrigation or water resources approval and environmental clearance can each take two to six months and they do not run neatly in parallel. Pontoons delivered to a site without clearance mean storage cost, damage risk and idle capital."
+      },
+      {
+        "title": "Order submarine and floating cable first",
+        "body": "These are the longest lead-time items in the project. Place the order within about two weeks of financial close. Every week lost here compresses the installation window and pushes you closer to monsoon."
+      },
+      {
+        "title": "Run the ALMM and FPV-suitability checks together, at order stage",
+        "body": "Cross-reference shortlisted modules against ALMM List-I, your List-II obligation for the project category, and the FPV technical requirements. IP68 junction box, PID certification and humidity specification must be confirmed on the product datasheet and test report — not on the marketing sheet."
+      },
+      {
+        "title": "Schedule pontoon delivery to the installation window, not to project start",
+        "body": "HDPE pontoons are bulky and need covered, dry storage. Deliver three to four weeks before on-water installation begins, and coordinate with your marine logistics contractor on site access and unloading infrastructure at the water's edge."
+      },
+      {
+        "title": "Procure the storage system on its own track",
+        "body": "Under PM-SSY the ESS is not optional. Battery racks, PCS, EMS, HVAC and fire safety carry their own lead times, their own certification requirements and their own shore-side civil scope. Running it as an afterthought to the PV package is how commissioning dates slip."
+      },
+      {
+        "title": "Build a dedicated FPV O&M plan into the project BOQ",
+        "body": "FPV O&M is not ground-mount O&M. Annual cost includes boat charter or ownership, pontoon inspection, underwater cable inspection, mooring tension checks, bird fouling and algal growth management, and cleaning with restricted access. Price these into the BOQ rather than discovering them after commissioning."
+      }
+    ],
+    "caseStudy": {
+      "label": "Ramagundam 100 MW — what procurement actually looked like",
+      "p1": "NTPC's Ramagundam floating solar project in Telangana remains India's largest completed FPV plant. It was executed by BHEL under an EPC contract awarded in June 2019, and the final 20 MW was declared under commercial operation on 1 July 2022 — roughly three years from award to full commissioning, not the compressed timeline often quoted.",
+      "facts": [
+        {
+          "k": "Capacity:",
+          "v": "100 MW AC (145 MW DC)"
+        },
+        {
+          "k": "Cost:",
+          "v": "₹423 crore (≈₹42/Wp AC)"
+        },
+        {
+          "k": "Area:",
+          "v": "~500 acres of balancing reservoir"
+        },
+        {
+          "k": "Configuration:",
+          "v": "40 blocks of 2.5 MW"
+        },
+        {
+          "k": "Modules:",
+          "v": "11,200 per block, ~4.5 lakh total"
+        },
+        {
+          "k": "Anchoring:",
+          "v": "HMPE rope to 9-tonne pre-cast dead weights"
+        },
+        {
+          "k": "Evacuation:",
+          "v": "33 kV via the Ramagundam switchyard"
+        },
+        {
+          "k": "Floats and anchoring:",
+          "v": "Prabhdayal and Adtech"
+        }
+      ],
+      "p2": "Each block carries its own floating platform with inverter, transformer and HT breaker — an all-floating electrical configuration that is worth studying before you decide whether to put your own power conversion on water or on shore. The three-year timeline reflects exactly what this guide warns about: multi-agency clearances, monsoon-constrained installation windows, and the absence of an established domestic FPV supply chain at 100 MW scale.",
+      "attribution": "— NTPC and Ministry of Power public disclosures, 2019–2022"
+    },
+    "takeaways": [
+      {
+        "title": "FPV is not ground-mount on water — it is a different procurement discipline.",
+        "body": "Pontoons, anchoring, mooring and submarine cable require supplier relationships and technical verification that ground-mount experience does not prepare you for."
+      },
+      {
+        "title": "The 40–65% cost premium is concentrated in structure, cable and execution.",
+        "body": "Modules and inverters are only modestly more expensive. About 60% of the differential sits in the float and cable categories, which is precisely where Indian supply is thinnest."
+      },
+      {
+        "title": "Virgin HDPE traceability is non-negotiable.",
+        "body": "The difference between a 25-year pontoon and a seven-year pontoon is raw material quality. Get the MFR and density tests, the UV stabiliser content, the OIT result and the resin batch certificates before you sign a supply agreement."
+      },
+      {
+        "title": "Submarine cable and clearances have the longest lead times.",
+        "body": "Start both on the day of financial close. Every week of delay compresses a monsoon-constrained installation window that will not stretch to accommodate you."
+      },
+      {
+        "title": "Use the PM-SSY structure deliberately.",
+        "body": "₹1 crore per MW after commissioning, up to ₹50 lakh for feasibility including bathymetry, and a mandatory two-hour storage obligation are all design inputs, not footnotes. Build the survey grant into your sequence and the ESS into your BOQ from the first draft."
+      },
+      {
+        "title": "PM-SSY creates an opportunity and a bottleneck simultaneously.",
+        "body": "As 5,000 MW of FPV procurement enters the pipeline against a domestic base of roughly 700 MW, pontoon and cable suppliers will face capacity pressure. Early pre-qualification and framework agreements will be a genuine competitive advantage through 2026–27."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How much more does floating solar cost than ground-mount in India?",
+        "a": "Turnkey FPV runs ₹43–65/Wp against ₹30–40/Wp for ground-mount — a premium of roughly 40–65%. About 60% of that differential sits in the pontoon and cable categories. Energy storage is priced separately on a ₹/kWh basis, and under PM-SSY the ₹1 crore per MW CFA offsets 15–25% of the combined cost."
+      },
+      {
+        "q": "What does PM-SSY actually fund?",
+        "a": "₹5,070 crore for 5,000 MW of floating solar with 10,000 MWh of co-located storage. Central Financial Assistance is ₹1 crore per MW after successful commissioning, plus up to ₹50 lakh per project for feasibility studies — explicitly including bathymetry, hydrography and environmental assessments. Sanctions run FY 2026-27 to FY 2030-31, with disbursement to FY 2032-33."
+      },
+      {
+        "q": "Why does the bathymetric survey have to come first?",
+        "a": "Water depth, seasonal level variation, bed composition and wind and wave data determine the anchoring design, and the anchoring design determines pontoon and mooring quantities. Without the survey your BOQ is an estimate that will be revised after mobilisation — when revisions are expensive. Under PM-SSY the survey is grant-funded, so there is no cost argument for skipping it."
+      },
+      {
+        "q": "How do I verify that pontoons are virgin HDPE?",
+        "a": "Ask for a test package, not a single certificate. Melt flow rate (ISO 1133) and density (ISO 1183) describe the resin grade but do not prove virgin material on their own. Add resin supplier batch certificates, carbon black / UV stabiliser content (ISO 6964 or ASTM D1603), oxidative induction time (ISO 11357-6) and an accelerated weathering report (ISO 4892 or ASTM G154). If a supplier cannot trace to resin batch level, do not proceed regardless of price."
+      },
+      {
+        "q": "Does an ALMM List-I module automatically work for floating solar?",
+        "a": "No. ALMM listing and FPV suitability are two independent checks. An FPV module additionally needs an IP68 junction box, PID resistance to IEC TS 62804, and high-humidity and salt-mist performance where the site requires it. Confirm all of it on the product datasheet and test report, not the marketing sheet."
+      },
+      {
+        "q": "When should procurement be completed for a monsoon-constrained site?",
+        "a": "Complete procurement by March–April so on-water installation finishes before the June–September monsoon. Submarine cable carries 10–14 week lead times plus two to three weeks of customs, so it should be ordered within about two weeks of financial close. Missing the pre-monsoon window costs four to five months."
+      },
+      {
+        "q": "Does floating solar actually generate more than ground-mount?",
+        "a": "Yes, but modestly. The water below the array moderates module operating temperature, typically lifting specific yield by a low single-digit percentage against an identical ground-mount system. The 10–15% figures that circulate in vendor decks are not defensible — model the gain at a conservative number."
+      }
+    ],
+    "sources": {
+      "title": "Sources and references",
+      "items": [
+        "Cabinet approval of Pradhan Mantri Surya Sarovar Yojana (PM-SSY), 31 July 2026 — ₹5,070 crore outlay, 5,000 MW FSPV with 10,000 MWh co-located storage, CFA of ₹1 crore/MW post-commissioning and up to ₹50 lakh per project for feasibility studies including bathymetry and hydrography; sanction window FY 2026-27 to FY 2030-31, disbursement to FY 2032-33.",
+        "NISE assessment of India's floating solar potential — approximately 102.18 GWp across reservoirs and inland water bodies.",
+        "Ministry of Power / PIB and NTPC disclosures on the 100 MW Ramagundam floating solar project, 2019–2022; NTPC Renewable Energy project page for float and anchoring supply.",
+        "MNRE ALMM orders — List-I revision dated 3 August 2026; List-II implementation from 1 June 2026 with the 18 July and 4 August 2026 clarifications; List-III for ingots and wafers from 1 June 2028.",
+        "JMK Research Monthly RE Update, January–May 2026 — domestic module price trends including DCR and non-DCR TOPCon.",
+        "Standards referenced: EN 50618 / IEC 62930 (PV DC cable), IEC 63026 and IEC 60502-2 (submarine and MV cable), IEC 60529 (IP ratings), IEC TS 62804 (PID), IEC 61701 (salt mist), ISO 1133 and ISO 1183 (MFR and density), ISO 6964 / ASTM D1603 (carbon black content), ISO 11357-6 (OIT), ISO 4892 / ASTM G154 (accelerated weathering), IS 875 Part 3 (wind loads)."
+      ]
+    },
+    "cta": {
+      "kicker": "Solar Procurement Platform",
+      "heading": "Source ALMM-Compliant Solar Equipment for Your FPV Project",
+      "subtitle": "Headsup B2B connects EPC contractors to verified suppliers of FPV-specification solar modules, marine-grade cables and electrical BoS — with BOQ-mapped delivery across India and 60-day procurement credit.",
+      "features": [
+        "FPV-spec ALMM modules",
+        "Marine-grade electrical BoS",
+        "1,000+ verified suppliers",
+        "60-day procurement credit",
+        "Pan-India delivery",
+        "Model-level compliance checks"
+      ],
+      "button": "Start sourcing for your solar project →",
+      "footer": "500+ solar projects delivered · 20+ states served · No collateral required"
+    },
+    "consultationTitle": "Talk to a floating solar procurement specialist",
+    "keywords": [
+      "Floating solar India",
+      "FPV procurement",
+      "PM-SSY 2026",
+      "HDPE pontoon suppliers",
+      "Floating solar cost per Wp",
+      "Submarine cable solar",
+      "Bathymetric survey solar",
+      "Ramagundam floating solar",
+      "FPV supplier selection",
+      "Virgin HDPE floats"
+    ],
+    "footer": {
+      "publishedLine": "Published 5 August 2026 · Headsup B2B Editorial Team · Procurement Intelligence"
+    }
+  },
+  "solarModulePrices": {
+    "meta": {
+      "seoTitle": "Solar Module Prices India 2026: Protect Your EPC Project Margins",
+      "seoDescription": "Solar module prices rising sharply in 2026 due to ALMM-II cell constraints. Complete guide for EPC contractors on price trends, procurement risks, and 6 margin protection strategies.",
+      "ogTitle": "Solar Module Prices India 2026: Protect Your EPC Project Margins",
+      "ogDescription": "Solar module prices rising sharply in 2026 due to ALMM-II cell constraints. Complete guide for EPC contractors on price trends, procurement risks, and 6 margin protection strategies."
+    },
+    "hero": {
+      "badge": "Market Intelligence",
+      "readTime": "10 min read",
+      "published": "7 August 2026",
+      "title1": "Solar Module Prices in India 2026:",
+      "title2": "How EPC Contractors Can Protect Project Margins",
+      "subtitle": "ALMM-II is live. Cell capacity is constrained. Wood Mackenzie is forecasting a 20% system cost rise by Q4 2026. For EPC contractors who bid months ago at pre-ALMM-II rates, the margin squeeze is already here. Here's what you can do about it.",
+      "sourceLine": "Price positioning, policy dates and forecasts verified as on 7 August 2026. Sources listed at the end."
+    },
+    "heroStats": [
+      {
+        "num": "20%",
+        "label": "Forecast system cost rise by Q4 2026 — Wood Mackenzie, August 2026"
+      },
+      {
+        "num": "Squeezed",
+        "label": "EPC margins under pressure — competitive bidding plus rising procurement cost"
+      },
+      {
+        "num": "₹8–10/Wp",
+        "label": "ALMM-II compliance premium over non-DCR modules"
+      },
+      {
+        "num": "2029",
+        "label": "When prices stabilise — as cell capacity expansion completes, per Wood Mackenzie"
+      }
+    ],
+    "heroTags": [
+      "Solar Module Prices",
+      "ALMM-II 2026",
+      "EPC Margins",
+      "Procurement Strategy",
+      "India Solar Market"
+    ],
+    "tocLabel": "In this guide",
+    "toc": [
+      "Current Solar Module Prices in India",
+      "What Is Driving Prices Up — and Down",
+      "The Cost Impact on a Typical EPC Project",
+      "6 Margin Protection Strategies",
+      "Price Outlook Through 2027",
+      "ALMM-II Compliant Manufacturers",
+      "What to Avoid in This Market",
+      "Key Takeaways"
+    ],
+    "sections": {
+      "s1": {
+        "kicker": "Market Snapshot",
+        "title": "Current Solar Module Prices in India — August 2026"
+      },
+      "s2": {
+        "kicker": "Price Drivers",
+        "title": "What Is Driving Module Prices Up — and What Is Holding Them Down"
+      },
+      "s3": {
+        "kicker": "Cost Impact",
+        "title": "What This Means for a Typical EPC Project"
+      },
+      "s4": {
+        "kicker": "Playbook",
+        "title": "6 Margin Protection Strategies for EPC Contractors in H2 2026"
+      },
+      "s5": {
+        "kicker": "Outlook",
+        "title": "Solar Module Price Outlook: What to Expect Through 2027"
+      },
+      "s6": {
+        "kicker": "Supply Base",
+        "title": "ALMM-II Compliant Module Manufacturers"
+      },
+      "s7": {
+        "kicker": "Risk",
+        "title": "What to Avoid in the Current Market"
+      },
+      "s8": {
+        "kicker": "Summary",
+        "title": "Key Takeaways"
+      },
+      "faq": {
+        "kicker": "Questions",
+        "title": "Frequently Asked Questions"
+      }
+    },
+    "marketAlert": {
+      "label": "⚠ Market alert — August 2026",
+      "body": "Wood Mackenzie forecasts utility-scale solar system costs will rise 20% by Q4 2026 as ALMM-II cell capacity constraints tighten. EPC contractors who bid on H2 2026 projects at pre-June pricing face direct margin exposure. This article gives you the data and the playbook."
+    },
+    "whoFor": {
+      "label": "Who this is for:",
+      "body": "EPC project managers, procurement heads, and bid teams at solar contracting firms managing active projects or preparing bids for H2 2026 and FY 2026-27 tenders."
+    },
+    "intro": {
+      "p1": "India's solar market in 2026 is a study in contradictions. Installation volumes are at an all-time high — 34 GWdc added in H1 2026 alone, 38% above H1 2025 levels. The pipeline is enormous. And yet, for EPC contractors on the ground, margin pressure has never been more acute.",
+      "p2": "The reason is ALMM-II — the MNRE mandate that came into force in June 2026, requiring solar modules used in government-supported projects to be manufactured from domestically produced cells. The policy is strategically sound. The near-term supply chain reality is brutal. India's domestic cell capacity stood at roughly 88 GW in 2026 against annual module demand trending toward 50 GW — but utilisation rates remain insufficient, and Wood Mackenzie forecasts system prices rising 20% by Q4 2026 as cell availability tightens.",
+      "p3": "For contractors who won tenders in Q4 2025 or Q1 2026 at pre-ALMM-II module prices, this is not a future risk. It is a present reality that is already compressing margins on active projects. This guide gives you the complete picture — what is driving prices, what the numbers actually look like today, and the margin protection strategies that experienced procurement teams are using right now."
+    },
+    "s1p1": "Module pricing in India has two distinct tracks in 2026: ALMM-I compliant modules (the broader list, covering finished modules), and the narrower universe of ALMM-II compliant modules (modules made with domestically manufactured cells, mandatory for government projects from June 2026). The price gap between these two categories is now a hard procurement reality.",
+    "priceNote": "<strong>Note:</strong> Module prices vary significantly by project size, supplier, location, and payment terms. The relative price positioning below reflects broad industry trends as of August 2026 — always get current quotes from verified suppliers before finalising your BOQ.",
+    "priceHeaders": [
+      "Module type",
+      "ALMM status",
+      "Relative price level",
+      "Price trend (vs. early 2026)",
+      "Availability"
+    ],
+    "priceRows": [
+      {
+        "type": "Mono PERC (non-DCR, imported cells)",
+        "almm": "ALMM-I only",
+        "almmTone": "amber",
+        "level": "Lower end of market",
+        "trend": "↓ Broadly stable",
+        "trendTone": "green",
+        "avail": "Good",
+        "availTone": "green"
+      },
+      {
+        "type": "Mono PERC (DCR, domestic cells)",
+        "almm": "ALMM-I + II",
+        "almmTone": "green",
+        "level": "Moderate premium over non-DCR",
+        "trend": "↑ Increased significantly",
+        "trendTone": "red",
+        "avail": "Tight",
+        "availTone": "amber"
+      },
+      {
+        "type": "N-Type TOPCon (non-DCR)",
+        "almm": "ALMM-I only",
+        "almmTone": "amber",
+        "level": "Slightly above PERC non-DCR",
+        "trend": "↓ Marginal softening",
+        "trendTone": "green",
+        "avail": "Good",
+        "availTone": "green"
+      },
+      {
+        "type": "N-Type TOPCon (DCR, domestic cells)",
+        "almm": "ALMM-I + II",
+        "almmTone": "green",
+        "level": "Higher — meaningful ALMM-II premium",
+        "trend": "↑ Increased sharply",
+        "trendTone": "red",
+        "avail": "Very tight",
+        "availTone": "red"
+      },
+      {
+        "type": "Bifacial TOPCon (DCR, domestic cells)",
+        "almm": "ALMM-I + II",
+        "almmTone": "green",
+        "level": "Highest — premium technology + DCR",
+        "trend": "↑ Increased sharply",
+        "trendTone": "red",
+        "avail": "Scarce",
+        "availTone": "red"
+      },
+      {
+        "type": "Imported modules (non-ALMM, private projects only)",
+        "almm": "Not ALMM",
+        "almmTone": "red",
+        "level": "Lowest — global oversupply benefit",
+        "trend": "↓ Softening (private use only)",
+        "trendTone": "green",
+        "avail": "Good (private only)",
+        "availTone": "green"
+      }
+    ],
+    "almmCallout": {
+      "label": "⚠ Critical pricing context — August 2026",
+      "title": "The ALMM-II price gap is now the defining procurement variable",
+      "items": [
+        "<strong>ALMM-II mandatory from June 1, 2026</strong> for all government-funded projects — SECI, NTPC, state DISCOM, PM-KUSUM, PM Surya Ghar",
+        "ALMM-II exemption extended to <strong>December 31, 2026</strong> for net metering and open access projects only",
+        "MNRE waived ALMM-II for projects nearing completion that submitted applications by <strong>July 23, 2026</strong> — if you missed this window, full compliance applies",
+        "India's certified domestic cell capacity is a fraction of total module production capacity — meaning the compliant supply pool is structurally small relative to demand, creating upward price pressure on ALMM-II modules",
+        "Anti-dumping duties of up to 30% on Chinese-origin solar products were recommended by DGTR in September 2025 — final notification still pending but adds further cost uncertainty"
+      ]
+    },
+    "s2p1": "The price picture for solar modules in India in 2026 is the result of two opposing forces — upward pressure from domestic policy and compliance requirements, and downward pressure from a globally oversupplied module market. Understanding both helps procurement teams identify where they have room to manoeuvre.",
+    "drivers": [
+      {
+        "dir": "up",
+        "label": "↑ Pushing prices up",
+        "title": "ALMM-II domestic cell mandate",
+        "body": "Modules for government projects must now use domestically manufactured cells. India's cell capacity is far below module capacity — this supply-demand mismatch drives a ₹8–10/Wp compliance premium.",
+        "impactLabel": "Impact:",
+        "impact": "Meaningful price premium on ALMM-II compliant modules vs. non-DCR"
+      },
+      {
+        "dir": "up",
+        "label": "↑ Pushing prices up",
+        "title": "20% Basic Customs Duty on imported cells",
+        "body": "Chinese solar cells at USD 0.042/Wp rise to USD 0.053/Wp after 20% BCD and 7.5% AIDC — adding ₹0.93/Wp landed cost even before module assembly margins.",
+        "impactLabel": "Impact:",
+        "impact": "Significant landed cost addition on imported cell-based modules"
+      },
+      {
+        "dir": "up",
+        "label": "↑ Pushing prices up",
+        "title": "Rush demand in H1 2026 depleted inventory",
+        "body": "34 GW installed in H1 2026 as developers raced to commission before ALMM-II — depleting compliant module inventory across all major manufacturers. Lead times stretched to 10–14 weeks for DCR product.",
+        "impactLabel": "Impact:",
+        "impact": "Supply squeeze persisting into Q3–Q4 2026"
+      },
+      {
+        "dir": "up",
+        "label": "↑ Pushing prices up",
+        "title": "ISTS charge waivers reducing — adding project cost",
+        "body": "Inter-state transmission charge waivers fell from 75% to 50% for projects commissioned from July 2026. Full phase-out by July 2028. This adds to total project cost, squeezing overall EPC economics even where module prices hold.",
+        "impactLabel": "Impact:",
+        "impact": "Additional project cost burden — varies by project location and capacity"
+      },
+      {
+        "dir": "down",
+        "label": "↓ Holding prices down",
+        "title": "Global module manufacturing oversupply",
+        "body": "Global module manufacturing capacity exceeds 1,100 GW against ~650 GW of installation demand in 2026. China's massive overcapacity keeps ex-factory module prices near historic lows at USD 0.085–0.15/Wp.",
+        "impactLabel": "Benefit:",
+        "impact": "Private project module costs remain suppressed"
+      },
+      {
+        "dir": "down",
+        "label": "↓ Holding prices down",
+        "title": "Competitive EPC bidding keeps contractor pressure high",
+        "body": "India's EPC market remains intensely competitive. Developers routinely push for lower tariffs, squeezing EPC margins even as procurement costs rise. This limits how much cost increase contractors can pass through in negotiations.",
+        "impactLabel": "Challenge:",
+        "impact": "Absorption pressure remains on EPC firms"
+      }
+    ],
+    "costCard": {
+      "label": "Illustrative cost impact — how module price rise affects a project",
+      "title": "Understanding the procurement cost gap: bid stage vs. current market",
+      "rows": [
+        {
+          "label": "Module cost share in a typical utility-scale project",
+          "value": "~48–52% of EPC cost",
+          "tone": "neutral"
+        },
+        {
+          "label": "ALMM-II compliance premium over non-DCR modules",
+          "value": "Significantly higher — get current quotes",
+          "tone": "neutral"
+        },
+        {
+          "label": "Price movement since early 2026 for DCR modules",
+          "value": "↑ Substantial increase (industry reports)",
+          "tone": "negative"
+        },
+        {
+          "label": "ISTS waiver reduction (75% → 50% from July 2026)",
+          "value": "Additional project cost burden",
+          "tone": "negative"
+        },
+        {
+          "label": "Combined impact on a project bid at early 2026 rates",
+          "value": "Direct hit on procurement budget",
+          "tone": "negative"
+        }
+      ],
+      "totalLabel": "Key risk for contractors",
+      "totalValue": "Gap between bid-stage rates and current procurement prices"
+    },
+    "s3p1": "Since modules typically account for nearly half of total EPC project cost, even a moderate increase in procurement price creates a significant gap between what was priced at bid stage and what must be paid today. Every contractor's situation is different — project size, contract terms, payment schedules, and supplier agreements all affect the actual impact. But the direction is clear: procurement costs are higher now than they were at the time most H1 2026 bids were submitted, and that gap needs active management.",
+    "pullQuote": {
+      "text": "The near-term cost impact is unavoidable, and developers will need to navigate a difficult transition period before prices stabilise.",
+      "attribution": "— Sureet Singh, Research Analyst, Wood Mackenzie, August 2026"
+    },
+    "midCta": {
+      "title": "Lock in module prices before they rise further",
+      "desc": "Headsup B2B connects EPC contractors to ALMM-II compliant modules from Waaree, Tata Power Solar, Vikram, and Adani Solar — with competitive pricing, verified stock, and 60-day procurement credit.",
+      "btnText": "Check current pricing →"
+    },
+    "strategies": [
+      {
+        "n": "Strategy 01",
+        "title": "Lock in ALMM-II module pricing now — before Q4 tightening",
+        "body": "Wood Mackenzie forecasts the steepest price increases in Q3–Q4 2026 as cell capacity constraints peak. Contractors with active or upcoming projects should place forward purchase orders for ALMM-II compliant modules now — even for projects commissioning in Q1 2027. Price lock-ins with confirmed delivery schedules protect against Q4 spot market premiums.",
+        "impact": "↗ Forward orders typically offer better pricing than spot Q4 procurement"
+      },
+      {
+        "n": "Strategy 02",
+        "title": "Separate module procurement from EPC bid pricing — use escalation clauses",
+        "body": "For new tenders, negotiate procurement price escalation clauses tied to MNRE-notified indices or published spot module prices. A 3–5% escalation provision for module costs protects you from the kind of 15–25% price movement seen in H1 2026 without requiring you to overbid on base rates and lose tenders.",
+        "impact": "↗ Shifts a meaningful portion of price risk to the developer contractually"
+      },
+      {
+        "n": "Strategy 03",
+        "title": "Evaluate non-DCR modules for open access and private C&I projects",
+        "body": "ALMM-II is mandatory only for government-funded projects. For open access, captive, and C&I solar — where developers are private — non-DCR modules remain fully eligible and carry a materially lower price than DCR-compliant equivalents. Deliberately segmenting your project portfolio between DCR-mandatory and DCR-optional projects optimises your blended procurement cost.",
+        "impact": "↗ Non-DCR modules are materially cheaper — significant saving on qualifying projects"
+      },
+      {
+        "n": "Strategy 04",
+        "title": "Build a 3-supplier shortlist for ALMM-II compliant modules",
+        "body": "Single-supplier dependency for DCR modules is a critical risk when supply is constrained. Qualify at least 3 ALMM-II listed manufacturers (Waaree, Vikram Solar, Adani Solar, Premier Energies, Tata Power Solar are current major List-II certified manufacturers) and maintain framework agreements with at least 2. Backup qualification takes 2–3 weeks; do it now, not mid-project.",
+        "impact": "↗ Eliminate single-source supply disruption risk"
+      },
+      {
+        "n": "Strategy 05",
+        "title": "Use procurement credit to time purchases at price dips",
+        "body": "Module prices are not uniformly high — they dip when developer rush periods end and supply catches up temporarily. A pre-approved procurement credit facility allows you to act immediately when a price dip window opens, rather than waiting for internal financial approvals or working capital availability. The cost of 45-day credit is invariably less than a 3% price premium avoided.",
+        "impact": "↗ Buy at dips, not at peaks — credit as timing tool"
+      },
+      {
+        "n": "Strategy 06",
+        "title": "Re-examine BOQ line items for BoS cost offsets",
+        "body": "When module costs rise, review the full BOQ for BoS components where market prices have fallen. DC cables, mounting structures, and inverters are all subject to different price dynamics. A structured BOQ review often finds ₹10–20L of cost offset that partially compensates for module price increases without quality compromise.",
+        "impact": "↗ Recover ₹10–20L per project from BoS optimisation"
+      }
+    ],
+    "outlook": [
+      {
+        "period": "Aug–Sep 2026",
+        "title": "Peak price pressure — tightest ALMM-II supply window",
+        "body": "Post-H1 rush depletion + ALMM-II compliance in full effect + no new cell capacity commissioned yet. Worst pricing environment for DCR module procurement. Avoid spot buying if possible."
+      },
+      {
+        "period": "Oct–Dec 2026",
+        "title": "Partial stabilisation — new cell capacity begins coming online",
+        "body": "Waaree, Premier Energies and Adani Solar cell expansion capacity enters production. ALMM-II exemption for open access expires December 31. Some price relief on DCR modules expected but limited."
+      },
+      {
+        "period": "Q1–Q2 2027",
+        "title": "Meaningful price stabilisation begins",
+        "body": "Additional cell capacity from PLI-backed manufacturers reduces supply squeeze. DCR module premiums expected to moderate from current peaks. Better procurement environment for projects tendering now."
+      },
+      {
+        "period": "2028–2029",
+        "title": "Full price stabilisation — per Wood Mackenzie forecast",
+        "body": "Wood Mackenzie predicts prices stabilise by 2029 as more cell capacity becomes operational — contingent on consistent policy and timely manufacturer execution. 130 GW of additional cell capacity is slated to come online by 2029."
+      }
+    ],
+    "manufacturers": {
+      "label": "ALMM-II compliant module manufacturers — August 2026",
+      "title": "Verified domestic cell manufacturers with ALMM List-II certification",
+      "items": [
+        "<strong>Waaree Energies</strong> — India's largest module manufacturer; integrated cell capacity; ALMM-II certified across multiple wattage ranges",
+        "<strong>Adani Solar</strong> — Integrated cell and module manufacturing; strong ALMM-II supply for SECI/NTPC projects",
+        "<strong>Vikram Solar</strong> — ALMM-II certified; strong presence in utility-scale government tenders",
+        "<strong>Tata Power Solar</strong> — Integrated EPC + manufacturing; ALMM-II certified modules",
+        "<strong>Premier Energies</strong> — Listed on NSE/BSE; ramping ALMM-II cell capacity through PLI scheme"
+      ]
+    },
+    "avoid": {
+      "label": "What to avoid in the current market",
+      "title": "High-risk procurement behaviours in an ALMM-II constrained market",
+      "items": [
+        "<strong>Spot procurement for large volumes</strong> — spot prices in Aug–Sep 2026 carry the highest premiums; forward orders with framework suppliers are significantly cheaper",
+        "<strong>Accepting ALMM-I certificates as ALMM-II compliance</strong> — these are separate lists; ALMM-I (module) is not sufficient for government projects post-June 2026",
+        "<strong>Sourcing from Southeast Asian cell manufacturers without verifying ALMM-II eligibility</strong> — Indonesian cell imports nearly tripled in early 2026 as India pivoted away from China, but not all such imports qualify for ALMM-II compliance",
+        "<strong>Assuming the waiver still applies to your project</strong> — the July 23, 2026 application deadline for the MNRE completion waiver has passed for most contractors"
+      ]
+    },
+    "takeaways": [
+      {
+        "title": "Solar module prices for ALMM-II compliant product are up 15–25% since January 2026.",
+        "body": "Wood Mackenzie forecasts further 20% system cost increases by Q4 2026. This is not a temporary blip; it reflects a structural supply constraint that persists until 2028–29."
+      },
+      {
+        "title": "The ALMM-II compliance premium is now ₹8–10/Wp.",
+        "body": "On a 10 MW project, that is ₹80–100 lakh of additional cost versus non-DCR modules. For contractors who bid at pre-June rates, this directly hits active project margins."
+      },
+      {
+        "title": "Private C&I and open access projects have an important cost advantage through December 2026.",
+        "body": "ALMM-II exemption for these segments means non-DCR modules are still eligible — at ₹22–26/Wp vs ₹32–40/Wp for DCR product. Portfolio segmentation is a real cost optimisation lever."
+      },
+      {
+        "title": "Forward purchasing and price-lock agreements are the most effective near-term protection.",
+        "body": "Spot procurement at Q3–Q4 2026 ALMM-II module prices is the highest-cost scenario. Framework supplier agreements and forward orders are the procurement standard for any EPC firm bidding on H2 2026 or FY27 projects."
+      },
+      {
+        "title": "Prices will stabilise — but not until 2028–29.",
+        "body": "Any contractor building a multi-year project pipeline should factor elevated DCR module pricing into bid models for at least the next 6–8 quarters."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How much have solar module prices risen in India in 2026?",
+        "a": "ALMM-II compliant (DCR) module prices are up roughly 15–25% since January 2026, and Wood Mackenzie forecasts a further 20% rise in utility-scale system costs by Q4 2026. Non-DCR modules have been broadly stable or softening, because global manufacturing capacity (1,100+ GW) far exceeds 2026 installation demand (~650 GW)."
+      },
+      {
+        "q": "What exactly is the ALMM-II premium?",
+        "a": "Roughly ₹8–10/Wp over comparable non-DCR modules — about ₹80–100 lakh on a 10 MW project. It exists because ALMM-II requires domestically manufactured cells, and India's certified cell capacity is small relative to module demand."
+      },
+      {
+        "q": "Does ALMM-II apply to my project?",
+        "a": "It is mandatory from 1 June 2026 for all government-funded projects — SECI, NTPC, state DISCOM, PM-KUSUM and PM Surya Ghar. Net metering and open access projects are exempt until 31 December 2026. Private C&I, captive and open access projects can still use non-DCR modules, which are materially cheaper."
+      },
+      {
+        "q": "I bid this project before June 2026. What are my options now?",
+        "a": "Four levers, in order of impact: place forward orders to avoid Q3–Q4 spot premiums; check whether any part of your portfolio qualifies as non-DCR; review the BOQ for BoS cost offsets (₹10–20L is commonly recoverable); and use procurement credit to buy into price dips rather than at peaks. For anything not yet contracted, add an escalation clause."
+      },
+      {
+        "q": "Is an ALMM-I certificate enough for a government project?",
+        "a": "No. ALMM-I and ALMM-II are separate lists. ALMM-I covers finished modules; ALMM-II additionally requires domestically manufactured cells. For government projects after June 2026, ALMM-I alone is not sufficient — verify List-II certification specifically."
+      },
+      {
+        "q": "When will module prices come back down?",
+        "a": "Partial relief is expected from Q4 2026 as Waaree, Premier Energies and Adani Solar cell expansions enter production, with meaningful stabilisation in Q1–Q2 2027. Wood Mackenzie expects full stabilisation only by 2029, when around 130 GW of additional cell capacity is slated to be operational."
+      },
+      {
+        "q": "Should I buy modules on the spot market right now?",
+        "a": "Aug–Sep 2026 is the worst window — post-rush inventory depletion, full ALMM-II enforcement, and no new cell capacity yet. Spot prices carry the highest premiums. Forward orders with framework suppliers are significantly cheaper for anything above small volumes."
+      }
+    ],
+    "sources": {
+      "title": "Sources and references",
+      "items": [
+        "Wood Mackenzie, August 2026 — forecast of 20% rise in utility-scale solar system costs by Q4 2026 and price stabilisation by 2029; commentary from Sureet Singh, Research Analyst.",
+        "MNRE ALMM List-II — mandatory from 1 June 2026 for government-supported projects; exemption to 31 December 2026 for net metering and open access; completion-waiver application deadline of 23 July 2026.",
+        "India solar installation data — 34 GWdc added in H1 2026, approximately 38% above H1 2025.",
+        "Customs duty structure on imported solar cells — 20% Basic Customs Duty plus 7.5% AIDC.",
+        "DGTR recommendation, September 2025 — anti-dumping duties of up to 30% on Chinese-origin solar products; final notification pending.",
+        "ISTS transmission charge waiver schedule — reduced from 75% to 50% for projects commissioned from July 2026, full phase-out by July 2028.",
+        "Global module manufacturing capacity (1,100+ GW) versus 2026 installation demand (~650 GW); ex-factory module prices of USD 0.085–0.15/Wp."
+      ]
+    },
+    "cta": {
+      "kicker": "Solar Procurement Platform",
+      "heading": "Source ALMM-II Compliant Modules at Competitive Prices",
+      "subtitle": "Headsup B2B gives EPC contractors access to verified, ALMM-II compliant solar modules from Waaree, Tata Power Solar, Vikram Solar, and Adani Solar — with real-time pricing, forward order options, and 60-day collateral-free procurement credit.",
+      "features": [
+        "ALMM-II verified modules",
+        "Competitive bulk pricing",
+        "Forward order options",
+        "60-day credit",
+        "Pan-India delivery"
+      ],
+      "button": "Get solar module pricing →",
+      "footer": "1,000+ verified suppliers · 500+ projects delivered · No collateral required"
+    },
+    "consultationTitle": "Talk to a solar module procurement specialist",
+    "keywords": [
+      "Solar module prices India",
+      "ALMM-II compliance",
+      "DCR module premium",
+      "EPC margin protection",
+      "Solar procurement 2026",
+      "Waaree ALMM-II",
+      "Non-DCR modules",
+      "Module price escalation clause",
+      "Solar cell capacity India",
+      "Forward module purchase"
+    ],
+    "footer": {
+      "publishedLine": "Published 7 August 2026 · Headsup B2B Editorial Team · Procurement Intelligence"
+    }
+  }
 }

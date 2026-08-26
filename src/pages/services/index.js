@@ -2,11 +2,92 @@
 
 import Head from "next/head";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
+import { motion, useAnimation } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { sendVendorOnboarding } from "@/Contants/APIEndpoint";
 import { getDemoPhone } from "@/Utils/demoDefaults";
+
+const FloatingHeroImage = () => {
+  const controls = useAnimation();
+
+  useEffect(() => {
+    controls.start({
+      y: [-10, 10],
+      transition: {
+        y: {
+          repeat: Infinity,
+          repeatType: "reverse",
+          duration: 2,
+          ease: "easeInOut",
+        },
+      },
+    });
+  }, [controls]);
+
+  const handleMouseEnter = () => {
+    controls.start({
+      rotate: 2,
+      scale: 1.05,
+      transition: { type: "spring", stiffness: 200 },
+    });
+  };
+
+  const handleMouseLeave = () => {
+    controls.start({
+      rotate: 0,
+      scale: 1,
+      y: [-10, 10],
+      transition: {
+        y: {
+          repeat: Infinity,
+          repeatType: "reverse",
+          duration: 2,
+          ease: "easeInOut",
+        },
+      },
+    });
+  };
+
+  return (
+    <motion.div
+      animate={controls}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className="relative w-full max-w-full mx-auto"
+    >
+      {/* ── Previous banner image ──
+      <Image
+        src="/servicepagebanner.png"
+        alt="Headsup B2B Services"
+        width={1100}
+        height={1100}
+        priority
+        style={{ height: "auto", objectFit: "contain" }}
+      />
+      */}
+      {/* Image container — same framed card as the advertise page hero */}
+      <div className="bg-gradient-to-br from-purple-500/35 to-purple-600 rounded-2xl shadow-xl relative overflow-hidden
+                    p-3 t:p-5 l:p-6 ll:p-8">
+        <Image
+          src="/services-banner-new.png"
+          alt="Headsup B2B Services"
+          width={1536}
+          height={1024}
+          priority
+          className="w-full h-auto object-contain rounded-lg block"
+        />
+
+        {/* Decorative elements — hidden on smaller screens */}
+        <div className="absolute top-0 right-0 bg-white/10 rounded-full -translate-y-12 translate-x-12
+                      w-24 h-24 hidden t:block"></div>
+        <div className="absolute bottom-0 left-0 bg-white/5 rounded-full translate-y-8 -translate-x-8
+                      w-16 h-16 hidden t:block"></div>
+      </div>
+    </motion.div>
+  );
+};
 
 const SERVICE_ITEMS = [
   { key: "painting", icon: "/Ondemand/Painting.png" },
@@ -162,14 +243,7 @@ export default function ServicesPage() {
                 </div>
               </div>
               <div className="hero-image">
-                <Image
-                  src="/servicepagebanner.png"
-                  alt="Headsup B2B Services"
-                  width={1100}
-                  height={1100}
-                  priority
-                  style={{ height: "auto", objectFit: "contain" }}
-                />
+                <FloatingHeroImage />
               </div>
             </div>
           </div>
@@ -220,7 +294,7 @@ export default function ServicesPage() {
         <section className="section section-tight-top section-tight-bottom">
           <div className="container">
             <div className="sec-header">
-              <h2>{t("services.builtFor.heading")}</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-[40px] font-bold text-center text-[#111]" style={{ fontFamily: "'Montserrat', sans-serif" }}>{t("services.builtFor.heading")}</h2>
               <p>
                 {t("services.builtFor.subtitle")}
               </p>
@@ -251,7 +325,7 @@ export default function ServicesPage() {
         <section className="section section-no-top section-tight-bottom" id="services">
           <div className="container">
             <div className="sec-header">
-              <h2>{t("services.onDemand.heading")}</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-[40px] font-bold text-center text-[#111]" style={{ fontFamily: "'Montserrat', sans-serif" }}>{t("services.onDemand.heading")}</h2>
               <p>
                 {t("services.onDemand.subtitle")}
               </p>
@@ -290,7 +364,7 @@ export default function ServicesPage() {
                       onClick={() => {
                         window.location.href = "tel:+919911902943";
                       }}
-                      className="w-fit rounded-lg px-5 py-2.5 font-bold text-[14px] text-black border-none cursor-pointer transition-all duration-200 hover:bg-[#00b8d9] hover:-translate-y-px"
+                      className="w-fit rounded-lg px-5 py-2.5 font-bold text-[14px] text-black border-none cursor-pointer transition-all duration-200 hover:-translate-y-px"
                       style={{ background: "#80EBF7", fontFamily: "'DM Sans', sans-serif" }}
                     >
                       {t("services.onDemand.talkToUs")}
@@ -307,7 +381,7 @@ export default function ServicesPage() {
           <div className="container">
             <div className="how-wrap">
               <div className="sec-header">
-                <h2>{t("services.how.heading")}</h2>
+                <h2 className="text-2xl sm:text-3xl md:text-[40px] font-bold text-center text-[#111]" style={{ fontFamily: "'Montserrat', sans-serif" }}>{t("services.how.heading")}</h2>
                 <p>
                   {t("services.how.subtitle")}
                 </p>
@@ -645,7 +719,7 @@ export default function ServicesPage() {
           display: grid;
           grid-template-columns: 1fr 1.25fr;
           align-items: center;
-          gap: 40px;
+          gap: 80px;
           width: 100%;
         }
         .services-page .hero-content {
@@ -663,10 +737,10 @@ export default function ServicesPage() {
           background: transparent;
         }
         .services-page .hero-image img {
-          width: 115% !important;
-          max-width: 115%;
+          width: 95% !important;
+          max-width: 95%;
           height: auto;
-          transform: translateX(2%);
+          transform: none;
           border: none;
           outline: none;
           box-shadow: none;
@@ -681,8 +755,8 @@ export default function ServicesPage() {
         }
         @media (max-width: 1280px) {
           .services-page .hero-image img {
-            width: 105% !important;
-            max-width: 105%;
+            width: 95% !important;
+            max-width: 95%;
             transform: translateX(0);
           }
         }
@@ -700,8 +774,8 @@ export default function ServicesPage() {
             order: 2;
           }
           .services-page .hero-image img {
-            width: 100% !important;
-            max-width: 560px;
+            width: 95% !important;
+            max-width: 520px;
             transform: none;
             margin: 0 auto;
           }
@@ -745,11 +819,11 @@ export default function ServicesPage() {
         }
         .services-page .hero h1 {
           font-family: "Montserrat", sans-serif;
-          font-size: 60px;
+          font-size: 48px;
           font-weight: 900;
-          line-height: 1;
+          line-height: 1.05;
           color: var(--white);
-          letter-spacing: -1.5px;
+          letter-spacing: -1.2px;
           margin-bottom: 22px;
           animation: services-slideUp 0.7s ease-out 0.1s both;
         }
@@ -798,29 +872,25 @@ export default function ServicesPage() {
           cursor: pointer;
         }
         .services-page .btn-glow {
-          background: #00d4f5;
-          color: #ffffff;
+          background: #80EBF7;
+          color: #1a1a2e;
           font-weight: 700;
           border: none;
-          box-shadow: 0 4px 15px rgba(0, 212, 245, 0.35);
+          box-shadow: 0 4px 15px rgba(128, 235, 247, 0.35);
           letter-spacing: 0.3px;
         }
         .services-page .btn-glow:hover {
-          background: #00bcd9;
-          box-shadow: 0 8px 28px rgba(0, 212, 245, 0.45), 0 4px 12px rgba(0, 0, 0, 0.08);
           transform: translateY(-2px);
         }
         .services-page .btn-outline {
-          background: #00d4f5;
+          background: #80EBF7;
           border: none;
-          color: #ffffff;
+          color: #1a1a2e;
           font-weight: 700;
-          box-shadow: 0 4px 15px rgba(0, 212, 245, 0.35);
+          box-shadow: 0 4px 15px rgba(128, 235, 247, 0.35);
           letter-spacing: 0.3px;
         }
         .services-page .btn-outline:hover {
-          background: #00bcd9;
-          box-shadow: 0 8px 28px rgba(0, 212, 245, 0.45), 0 4px 12px rgba(0, 0, 0, 0.08);
           transform: translateY(-2px);
         }
 
@@ -970,13 +1040,14 @@ export default function ServicesPage() {
           margin-bottom: 16px;
         }
         .services-page .sec-header h2 {
-          font-family: "Montserrat", sans-serif;
-          font-size: 48px;
-          font-weight: 800;
-          color: var(--white);
-          letter-spacing: -1.5px;
-          margin: 0 0 16px;
-          line-height: 1.1;
+          font-family: "Montserrat", sans-serif !important;
+          font-size: 40px !important;
+          font-weight: 700 !important;
+          color: #111 !important;
+          text-align: center !important;
+          margin: 0 0 16px !important;
+          line-height: 1.2 !important;
+          letter-spacing: normal !important;
         }
         .services-page .sec-header p {
           font-size: 17px;
@@ -1241,8 +1312,8 @@ export default function ServicesPage() {
           width: 40px;
           height: 40px;
           border-radius: 10px;
-          background: #00d4f5;
-          box-shadow: 0 4px 15px rgba(0, 212, 245, 0.35);
+          background: #80EBF7;
+          box-shadow: 0 4px 15px rgba(128, 235, 247, 0.35);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -1348,8 +1419,8 @@ export default function ServicesPage() {
         }
         .services-page .btn-submit-glow {
           width: 100%;
-          background: #00d4f5;
-          color: #ffffff;
+          background: #80EBF7;
+          color: #1a1a2e;
           padding: 15px 32px;
           border: none;
           border-radius: 10px;
@@ -1360,11 +1431,9 @@ export default function ServicesPage() {
           transition: all 0.3s;
           margin-top: 6px;
           letter-spacing: 0.3px;
-          box-shadow: 0 4px 15px rgba(0, 212, 245, 0.35);
+          box-shadow: 0 4px 15px rgba(128, 235, 247, 0.35);
         }
         .services-page .btn-submit-glow:hover {
-          background: #00bcd9;
-          box-shadow: 0 8px 28px rgba(0, 212, 245, 0.5);
           transform: translateY(-2px);
         }
         .services-page .btn-submit-glow:disabled {
@@ -1426,7 +1495,7 @@ export default function ServicesPage() {
 
         @media (max-width: 1100px) {
           .services-page .hero h1 {
-            font-size: 52px;
+            font-size: 42px;
           }
           .services-page .vendor-section {
             grid-template-columns: 1fr;
@@ -1473,7 +1542,7 @@ export default function ServicesPage() {
             margin-bottom: 24px;
           }
           .services-page .sec-header h2 {
-            font-size: 32px;
+            font-size: 30px !important;
           }
           .services-page .section {
             padding: 80px 0;
@@ -1546,7 +1615,7 @@ export default function ServicesPage() {
             font-size: 32px;
           }
           .services-page .sec-header h2 {
-            font-size: 26px;
+            font-size: 24px !important;
           }
           .services-page .sec-header p {
             font-size: 15px;

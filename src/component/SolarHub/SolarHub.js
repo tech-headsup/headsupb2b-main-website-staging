@@ -19,6 +19,7 @@ import CtaCardsSection from "./CtaCardsSection";
 import FaqSection from "./FaqSection";
 import SolarHubStyles from "./SolarHubStyles";
 import WhyHeadsupB2B from "@/component/home/WhyHeadsupB2B";
+import RequirementToExecution from "@/component/home/RequirementToExecution";
 import UploadQuote from "@/component/UploadQuote";
 
 export default function SolarHub({
@@ -50,9 +51,10 @@ export default function SolarHub({
           categoryData={solarCategoryData}
           categoryProductOptions={categoryProductOptions}
         />
-         <HowItWorksSection />
+         {/* <HowItWorksSection /> */}
+        <RequirementToExecution />
         <SupportingBuildSection bundles={solarCategoryData?.bundles?.bundles} />
-        <WhyHeadsupB2B onContactUs={() => setShowSellModal(true)} heading={t("solar.whyHeading")} showCreditNote />
+        <WhyHeadsupB2B onContactUs={() => setShowSellModal(true)} showCreditNote />
         <TrustedPartnersSection />
         <KnowledgeCenterSection knowledgeArticles={knowledgeArticles} />
         <FaqSection />

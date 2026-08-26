@@ -34,7 +34,7 @@ const FeaturesGrid = () => {
   return (
      <section className="py-4 md:py-6 lg:py-8 ll:py-10 mt-2 -mx-12 md:-mx-10">
       <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8">
-      <h2 className="text-2xl md:text-3xl lg:text-3xl ll:text-4xl font-bold text-center mb-8 md:mb-10 lg:mb-12 ll:mb-16" >{t("ads.features.heading")}</h2>
+      <h2 className="text-2xl sm:text-3xl md:text-[40px] font-bold text-center text-[#111] mb-8 sm:mb-10 md:mb-12" style={{ fontFamily: "'Montserrat', sans-serif" }}>{t("ads.features.heading")}</h2>
 
       {/* Desktop Grid - Hidden on mobile */}
       <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-6 ll:gap-8">

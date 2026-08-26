@@ -30,7 +30,7 @@ export default function TestimonialsCarousel() {
   const swiperRef = React.useRef(null);
   return (
     // <div className="bg-white pt-12 md:pt-16 pb-6 md:pb-8">
-     <div className="bg-white pt-20 pb-12 md:pb-16">
+     <div className="bg-white pt-8 md:pt-10 pb-12 md:pb-16">
     <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8">
       <h2 className="text-2xl sm:text-3xl md:text-[40px] font-bold text-center text-[#111] mb-10" style={{ fontFamily: "'Montserrat', sans-serif" }}>
         {t("home.testimonials.heading")}
@@ -45,11 +45,11 @@ export default function TestimonialsCarousel() {
         >
           {TESTIMONIALS.map((item, i) => (
             <SwiperSlide key={i}>
-              <div className="flex flex-col md:flex-row h-[520px] md:h-[420px] rounded-2xl overflow-hidden">
-                <div className="w-full md:w-[35%] flex-shrink-0 overflow-hidden h-[220px] md:h-full">
+              <div className="flex flex-col md:flex-row h-auto lg:min-h-[420px] rounded-2xl overflow-hidden">
+                <div className="w-full md:w-[35%] flex-shrink-0 overflow-hidden h-[220px] md:h-auto">
                   <img src={item.image} alt="testimonial" className="w-full h-full object-cover" style={{ filter: "saturate(1.1)" }} />
                 </div>
-                <div className="flex-1 flex flex-col justify-center gap-3 px-6 py-6 md:px-14 md:py-10 overflow-hidden" style={{ background: "#4A3772" }}>
+                <div className="flex-1 flex flex-col justify-center gap-3 px-6 py-6 md:px-14 md:py-10" style={{ background: "#4A3772" }}>
                   <span className="text-6xl leading-none mb-[-8px]" style={{ color: "rgba(255,255,255,0.35)", fontFamily: "Georgia, serif" }}>
                     <img src={doubleQuoteSVG?.src} alt="quote" />
                   </span>

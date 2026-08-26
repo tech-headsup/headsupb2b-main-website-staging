@@ -10,7 +10,7 @@ const MediaKitCTA = ({ productOptions }) => {
       <div className="flex flex-col lg:flex-row items-start lg:items-stretch gap-6 md:gap-8 lg:gap-12 ll:gap-16">
         {/* Left side content */}
         <div className="w-full lg:w-1/2 flex flex-col lg:justify-center">
-          <h2 className="text-xl md:text-3xl lg:text-4xl xl:text-5xl ll:text-[52px] font-bold mb-3 md:mb-5 lg:mb-6 ll:mb-8 leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-[40px] font-bold mb-3 md:mb-5 lg:mb-6 ll:mb-8 leading-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>
             {t("ads.mediaKit.heading")}
           </h2>
 

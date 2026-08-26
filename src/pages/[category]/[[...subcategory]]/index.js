@@ -27,6 +27,7 @@ import CallAndChat from "@/component/CTA/CallAndChat";
 import CreditForm from "@/component/Form/CreditForm";
 import CommonForm from "@/component/Form/CommonForm";
 import ReliableSupplyPartnerCarousel from "@/component/Carousel/ReliableSupplyPartnerCarousel";
+import WhyHeadsupB2B from "@/component/home/WhyHeadsupB2B";
 import GetInstantQuoteSVG from "@/assets/images/svg/GetInstantQuoteSVG";
 import BannerButtons from "@/components/ui/bannerbuttons";
 import CommonModal from "@/component/Modal/CommonModal";
@@ -62,6 +63,9 @@ export default function CategoryPage({
   const descriptionParagraphs = translatedDescription || categoryData?.serviceDescriptor;
   const translatedFaqs = bundle?.categoryFaqs?.[categoryData?.slug];
   const faqData = translatedFaqs?.length ? translatedFaqs : categoryData?.faqs?.faqs;
+  // some categories ship no FAQs at all — skip the whole section rather than
+  // rendering an empty heading (e.g. drainage-irrigation--utility-solutions)
+  const hasFaqs = Array.isArray(faqData) && faqData.length > 0;
   const [show, setShow] = useState(false);
   const [selected, setSelected] = useState("");
   const [showUploadQuoteForm, setshowUploadQuoteForm] = useState(false);
@@ -393,21 +397,23 @@ export default function CategoryPage({
       </section>
 
       {/* Reliable Supply Partners */}
-      <section className="secion_V_padding bg-white">
-        <div className="max-w-[1280px] mx-auto w-full px-6 md:px-12 lg:px-8">
-          <ReliableSupplyPartnerCarousel
-            tabText1={t("category.reliablePartners")}
-            twoRows={false}
-            partnerCompanyList={categoryData?.rsp}
-            visionText={visionText}
-          />
-        </div>
-      </section>
+      {categoryData?.slug !== "biomass-energy-solutions" && (
+        <section className="secion_V_padding pb-0 bg-white">
+          <div className="max-w-[1280px] mx-auto w-full px-6 md:px-12 lg:px-8">
+            <ReliableSupplyPartnerCarousel
+              tabText1={t("category.reliablePartners")}
+              twoRows={false}
+              partnerCompanyList={categoryData?.rsp}
+              visionText={visionText}
+            />
+          </div>
+        </section>
+      )}
 
       {/* Bundles */}
       <div className="max-w-[1280px] mx-auto w-full px-6 md:px-12 lg:px-8">
         <div className="flex flex-col w-full">
-          <h2 className="section_heading mt-20 pl-0">{t("category.supportingBuild")}</h2>
+          <h2 className="section_heading mt-10 pl-0">{t("category.supportingBuild")}</h2>
           <p className="section_sub_text w-full mt-5">
             {t("category.bundlesSubtitle")}
           </p>
@@ -423,8 +429,8 @@ export default function CategoryPage({
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="secion_V_padding bg-[#D9D9D96B]">
+      {/* Why Choose Us — commented out, replaced by WhyHeadsupB2B below */}
+      {/* <section className="secion_V_padding bg-[#D9D9D96B]">
         <div className="max-w-[1280px] mx-auto w-full px-6 md:px-12 lg:px-8 flex flex-col items-center">
           <h6 className="section_heading">{t("category.whyChoose.heading")}</h6>
           <p className="section_sub_text w-full mt-5">
@@ -452,7 +458,10 @@ export default function CategoryPage({
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+
+      {/* Why Headsup B2B */}
+      <WhyHeadsupB2B onContactUs={() => setShow(true)} showCreditNote />
 
       {/* What are you looking for */}
       <section className="secion_V_padding bg-white">
@@ -467,18 +476,20 @@ export default function CategoryPage({
       </section>
 
       {/* FAQ */}
-      <section className="secion_V_padding pt-0 bg-white px-4 sm:px-6 md:px-12 lg:px-20 xl:px-28">
-        {categoryData?.faqs?.schemaMarkup && (
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: categoryData?.faqs?.schemaMarkup,
-            }}
-            key="FAQ"
-          />
-        )}
-        <FAQs FAQData={faqData} />
-      </section>
+      {hasFaqs && (
+        <section className="secion_V_padding pt-0 bg-white px-4 sm:px-6 md:px-12 lg:px-20 xl:px-28">
+          {categoryData?.faqs?.schemaMarkup && (
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: categoryData?.faqs?.schemaMarkup,
+              }}
+              key="FAQ"
+            />
+          )}
+          <FAQs FAQData={faqData} />
+        </section>
+      )}
 
       {/* Modals */}
       {formVisible && (

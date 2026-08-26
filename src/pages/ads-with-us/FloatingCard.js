@@ -55,7 +55,7 @@ const FloatingImage = () => {
     >
       {/* Image Container */}
       <div className="bg-gradient-to-br from-purple-500/35 to-purple-600 rounded-2xl shadow-xl relative overflow-hidden
-                    p-3 t:p-5 l:p-6 ll:p-8">
+                    p-3 t:p-4 l:p-4 ll:p-5">
         <img
           src="/B2B-advertising-page-banner.jpeg"
           alt="B2B Advertising Banner"

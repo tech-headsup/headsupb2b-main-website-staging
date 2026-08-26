@@ -521,7 +521,6 @@ function KitDetailStyles() {
         color: #4A3772;
       }
       .kit-cta-primary:hover {
-        background: #6dd9e5;
         transform: translateY(-1px);
       }
       .kit-cta-outline {
@@ -530,7 +529,7 @@ function KitDetailStyles() {
         border-color: #5e3f99;
       }
       .kit-cta-outline:hover {
-        background: #f4f1fa;
+        transform: translateY(-1px);
       }
 
       .kit-features {

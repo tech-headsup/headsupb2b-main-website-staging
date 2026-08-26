@@ -145,10 +145,10 @@ export default function SolarHubStyles() {
         background: transparent;
       }
       .services-page .hero-image img {
-        width: 115% !important;
-        max-width: 115%;
+        width: 100% !important;
+        max-width: 100%;
         height: auto;
-        transform: translateX(2%);
+        transform: none;
         border: none;
         outline: none;
         box-shadow: none;
@@ -160,6 +160,11 @@ export default function SolarHubStyles() {
         outline: none !important;
         box-shadow: none !important;
         background: transparent !important;
+      }
+      /* the framed card must keep its shadow — the blanket rule above strips it */
+      .services-page .hero-image .hero-image-card {
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                    0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
       }
       @media (max-width: 1280px) {
         .services-page .hero-image img {
@@ -227,11 +232,11 @@ export default function SolarHubStyles() {
       }
       .services-page .hero h1 {
         font-family: "Montserrat", sans-serif;
-        font-size: 60px;
+        font-size: 48px;
         font-weight: 900;
-        line-height: 1;
+        line-height: 1.05;
         color: var(--white);
-        letter-spacing: -1.5px;
+        letter-spacing: -1.2px;
         margin-bottom: 22px;
         animation: services-slideUp 0.7s ease-out 0.1s both;
       }
@@ -241,7 +246,9 @@ export default function SolarHubStyles() {
       }
       :lang(hi) .services-page .hero h1 .yellow-highlight,
       :lang(hi) .services-page .hero h1 > span {
-        display: inline-block;
+        /* inline-block made each span an unbreakable box, so the text after the
+           highlight was pushed onto its own line — inline lets it flow alongside */
+        display: inline;
         margin: 0 4px;
       }
       .services-page .hero h1 .gradient-text {
@@ -293,27 +300,25 @@ export default function SolarHubStyles() {
         cursor: pointer;
       }
       .services-page .btn-glow {
-        background: #00d4f5;
-        color: #ffffff;
+        background: #80EBF7;
+        color: #1a1a2e;
         font-weight: 700;
         border: none;
-        box-shadow: 0 4px 15px rgba(0, 212, 245, 0.35);
+        box-shadow: 0 4px 15px rgba(128, 235, 247, 0.35);
         letter-spacing: 0.3px;
       }
       .services-page .btn-glow:hover {
-        box-shadow: 0 8px 28px rgba(0, 212, 245, 0.45), 0 4px 12px rgba(0, 0, 0, 0.08);
         transform: translateY(-2px);
       }
       .services-page .btn-outline {
-        background: #00d4f5;
+        background: #80EBF7;
         border: none;
-        color: #ffffff;
+        color: #1a1a2e;
         font-weight: 700;
-        box-shadow: 0 4px 15px rgba(0, 212, 245, 0.35);
+        box-shadow: 0 4px 15px rgba(128, 235, 247, 0.35);
         letter-spacing: 0.3px;
       }
       .services-page .btn-outline:hover {
-        box-shadow: 0 8px 28px rgba(0, 212, 245, 0.45), 0 4px 12px rgba(0, 0, 0, 0.08);
         transform: translateY(-2px);
       }
 
@@ -988,20 +993,20 @@ export default function SolarHubStyles() {
         width: 130px;
         height: 50px;
         margin: 0 12px;
-        filter: grayscale(100%);
+        filter: grayscale(0%);
         transition: filter 0.3s ease;
       }
       .services-page .tp-logo-slot:hover {
-        filter: grayscale(0%);
+        filter: grayscale(100%);
       }
       .services-page .tp-heading {
         font-family: "Montserrat", sans-serif;
         font-size: 40px;
-        font-weight: 800;
+        font-weight: 700;
         color: #111;
-        letter-spacing: -0.8px;
+        text-align: center;
         margin: 0 0 8px;
-        line-height: 1.15;
+        line-height: 1.2;
       }
       .services-page .tp-sub {
         font-family: "Montserrat", sans-serif;
@@ -1012,7 +1017,7 @@ export default function SolarHubStyles() {
       }
       @media (max-width: 640px) {
         .services-page .tp-heading {
-          font-size: 26px;
+          font-size: 24px;
         }
         .services-page .tp-sub {
           font-size: 14px;
@@ -1335,7 +1340,6 @@ export default function SolarHubStyles() {
         font-weight: 700;
       }
       .services-page .cta-btn-mint:hover {
-        background: #6ee2f0;
         transform: translateY(-1px);
       }
       .services-page .cta-btn-outline {
@@ -1348,8 +1352,6 @@ export default function SolarHubStyles() {
         cursor: pointer;
       }
       .services-page .cta-btn-outline:hover {
-        background: rgba(255, 255, 255, 0.1);
-        border-color: #ffffff;
         transform: translateY(-1px);
       }
       @media (max-width: 767px) {
@@ -1496,8 +1498,8 @@ export default function SolarHubStyles() {
         width: 40px;
         height: 40px;
         border-radius: 10px;
-        background: #00d4f5;
-        box-shadow: 0 4px 15px rgba(0, 212, 245, 0.35);
+        background: #80EBF7;
+        box-shadow: 0 4px 15px rgba(128, 235, 247, 0.35);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1596,8 +1598,8 @@ export default function SolarHubStyles() {
       }
       .services-page .btn-submit-glow {
         width: 100%;
-        background: #00d4f5;
-        color: #ffffff;
+        background: #80EBF7;
+        color: #1a1a2e;
         padding: 15px 32px;
         border: none;
         border-radius: 10px;
@@ -1608,11 +1610,9 @@ export default function SolarHubStyles() {
         transition: all 0.3s;
         margin-top: 6px;
         letter-spacing: 0.3px;
-        box-shadow: 0 4px 15px rgba(0, 212, 245, 0.35);
+        box-shadow: 0 4px 15px rgba(128, 235, 247, 0.35);
       }
       .services-page .btn-submit-glow:hover {
-        background: #00bcd9;
-        box-shadow: 0 8px 28px rgba(0, 212, 245, 0.5);
         transform: translateY(-2px);
       }
       .services-page .btn-submit-glow:disabled {
@@ -1674,7 +1674,7 @@ export default function SolarHubStyles() {
 
       @media (max-width: 1100px) {
         .services-page .hero h1 {
-          font-size: 52px;
+          font-size: 42px;
         }
         .services-page .vendor-section {
           grid-template-columns: 1fr;

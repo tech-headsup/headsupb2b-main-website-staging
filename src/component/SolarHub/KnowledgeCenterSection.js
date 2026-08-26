@@ -2,11 +2,11 @@ import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import { useDynamicTranslate } from "@/lib/useDynamicTranslate";
 
-function formatDate(value) {
+function formatDate(value, locale) {
   if (!value) return null;
   const d = new Date(value);
   if (isNaN(d.getTime())) return null;
-  return d.toLocaleDateString("en-IN", {
+  return d.toLocaleDateString(locale, {
     day: "numeric",
     month: "short",
     year: "numeric",
@@ -14,8 +14,9 @@ function formatDate(value) {
 }
 
 export default function KnowledgeCenterSection({ knowledgeArticles = [] }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const dt = useDynamicTranslate();
+  const dateLocale = i18n.language === "hi" ? "hi-IN" : "en-IN";
   return (
     <section className="section section-no-top kc-section">
       <div className="max-w-[1280px] mx-auto w-full px-6 md:px-12 lg:px-8">
@@ -30,7 +31,7 @@ export default function KnowledgeCenterSection({ knowledgeArticles = [] }) {
           </div>
           <div className="kc-grid">
             {knowledgeArticles.map((a) => {
-              const dateLabel = formatDate(a.date);
+              const dateLabel = formatDate(a.date, dateLocale);
               return (
                 <a key={`${a.tag}-${a.href}`} href={a.href} className="kc-card">
                   <div className={`kc-img ${a.image ? "has-image" : ""}`}>

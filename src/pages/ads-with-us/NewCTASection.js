@@ -8,11 +8,11 @@ const NewCTASection = ( { productOptions} ) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <section className="bg-[#f9fbfc] -mx-10 mt-6 md:mt-8">
+    <section id="ads-cta" className="bg-[#f9fbfc] -mx-10 mt-6 md:mt-8">
       <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8 py-8 md:py-10 lg:py-12">
         <div className="bg-white rounded-2xl md:rounded-3xl shadow-xl px-4 md:px-8 lg:px-12 xl:px-16 py-6 md:py-8 lg:py-14 text-center">
           {/* Heading */}
-          <h2 className="text-xl md:text-2xl lg:text-4xl font-extrabold text-gray-900 mb-2 md:mb-3 lg:mb-4 leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-[40px] font-bold text-center text-[#111] mb-2 md:mb-3 lg:mb-4 leading-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>
             {t("ads.howItWorks.heading")}
           </h2>
 
@@ -24,7 +24,7 @@ const NewCTASection = ( { productOptions} ) => {
           {/* Button */}
           <button
             onClick={() => setIsModalOpen(true)}
-            className="bg-headupb2b hover:bg-white hover:text-headupb2b hover:border border-headupb2b transition text-white font-semibold text-sm md:text-base lg:text-lg px-5 md:px-8 py-2.5 md:py-3.5 lg:py-4 rounded-full shadow-md w-full sm:w-auto"
+            className="bg-[#80EBF7] transition text-[#1a1a2e] font-semibold text-sm md:text-base lg:text-lg px-5 md:px-8 py-2.5 md:py-3.5 lg:py-4 rounded-full shadow-md w-full sm:w-auto"
           >
             {t("ads.howItWorks.cta")}
           </button>

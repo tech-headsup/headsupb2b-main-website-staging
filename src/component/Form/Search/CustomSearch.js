@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
 import { regexBasedProductSearch } from "@/Contants/APIEndpoint";
 
-export default function CustomSearch({ variant = "default" }) {
+export default function CustomSearch({ variant = "default", onLight = false }) {
   const { t } = useTranslation();
   const [search, setSearch] = useState("");
   const [isOpen, setIsOpen] = useState(false);
@@ -19,9 +19,10 @@ export default function CustomSearch({ variant = "default" }) {
   const isHero = variant === "hero";
 
   // ── Highlight matching text ──────────────────────────────────────────────
+  const escapeRegExp = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   const highlightText = (text, query) => {
     if (!query.trim() || !text) return text;
-    const parts = text.split(new RegExp(`(${query})`, "gi"));
+    const parts = text.split(new RegExp(`(${escapeRegExp(query)})`, "gi"));
     return (
       <>
         {parts.map((part, index) =>
@@ -175,7 +176,7 @@ export default function CustomSearch({ variant = "default" }) {
   // ── Dropdown — inlined JSX variable (NOT a component) to preserve scroll ──
   const dropdownJSX = isOpen ? (
     <div
-      className={`absolute top-full z-30 mt-3 rounded-2xl py-4 shadow-2xl max-h-96 overflow-y-auto ${
+      className={`absolute top-full z-30 mt-3 rounded-2xl py-4 shadow-2xl max-h-96 overflow-y-auto text-left ${
         isHero ? "left-4 right-4" : "left-0 right-0"
       }`}
       style={{
@@ -257,19 +258,27 @@ export default function CustomSearch({ variant = "default" }) {
       <div ref={wrapperRef} className="relative w-full max-w-[640px] mx-auto px-4">
         <div
           className="relative flex items-center gap-3 rounded-full px-5 py-3.5 transition-all duration-200"
-          style={{
-            background: "rgba(255,255,255,0.08)",
-            border: "1.5px solid rgba(255,255,255,0.18)",
-            backdropFilter: "blur(12px)",
-            boxShadow: "0 4px 24px rgba(0,0,0,0.18)",
-          }}
+          style={
+            onLight
+              ? {
+                  background: "#ffffff",
+                  border: "1.5px solid rgba(94,63,153,0.14)",
+                  boxShadow: "0 4px 24px rgba(94,63,153,0.10)",
+                }
+              : {
+                  background: "rgba(255,255,255,0.08)",
+                  border: "1.5px solid rgba(255,255,255,0.18)",
+                  backdropFilter: "blur(12px)",
+                  boxShadow: "0 4px 24px rgba(0,0,0,0.18)",
+                }
+          }
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={2}
-            stroke="rgba(255,255,255,0.55)"
+            stroke={onLight ? "rgba(26,26,26,0.45)" : "rgba(255,255,255,0.55)"}
             className="w-5 h-5 flex-shrink-0"
           >
             <path
@@ -285,14 +294,18 @@ export default function CustomSearch({ variant = "default" }) {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder={t("search.placeholder")}
-            className="w-full bg-transparent border-none outline-none text-white text-[15px] font-medium placeholder-white/40"
+            className={`w-full bg-transparent border-none outline-none text-[15px] font-medium ${
+              onLight ? "text-[#1a1a1a] placeholder-[#6b6b6b]" : "text-white placeholder-white/40"
+            }`}
             style={{ fontFamily: "'DM Sans', sans-serif" }}
           />
 
           {search && (
             <button
               onClick={() => { setSearch(""); setIsOpen(false); }}
-              className="flex-shrink-0 text-white/40 hover:text-white/80 transition-colors"
+              className={`flex-shrink-0 transition-colors ${
+                onLight ? "text-[#6b6b6b] hover:text-[#1a1a1a]" : "text-white/40 hover:text-white/80"
+              }`}
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />

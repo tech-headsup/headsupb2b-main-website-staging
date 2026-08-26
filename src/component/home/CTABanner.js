@@ -17,8 +17,8 @@ export default function CTABanner({ onGetQuote }) {
       </h2>
       <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
         <button
-          className="w-full sm:w-auto rounded-full px-8 py-3 font-bold text-sm sm:text-base text-white border-none cursor-pointer transition-all duration-200 hover:-translate-y-0.5"
-          style={{ background: "#00d4f5", fontFamily: "'DM Sans', sans-serif", boxShadow: "0 4px 15px rgba(0,212,245,0.35)" }}
+          className="w-full sm:w-auto rounded-full px-8 py-3 font-bold text-sm sm:text-base text-[#1a1a2e] border-none cursor-pointer transition-all duration-200 hover:-translate-y-0.5"
+          style={{ background: "#80EBF7", fontFamily: "'DM Sans', sans-serif", boxShadow: "0 4px 15px rgba(128,235,247,0.35)" }}
           onClick={onGetQuote}
         >
           {t("home.cta.getQuote")}
