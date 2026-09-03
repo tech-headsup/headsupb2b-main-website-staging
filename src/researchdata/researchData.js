@@ -24,6 +24,8 @@ import indiaCoalSectorReport from "../../public/india-coal-sector-report.webp"
 import solarBoqGuide from "../../public/how-to-build-a-winning-solar-boq.webp"
 import floatingSolarProcurement from "../../public/floating-solar-procurement-india.webp"
 import solarModulePrices from "../../public/solar-module-prices-india.webp"
+import solarFinancing from "../../public/solar-project-financing-contractors.webp"
+import greenHydrogen from "../../public/green-hydrogen-solar-india.webp"
 
 const researchData = [
   {
@@ -200,6 +202,20 @@ const researchData = [
     date: "2026-08-07",
     image: solarModulePrices,
     description: "Solar module prices rising sharply in 2026 due to ALMM-II cell constraints. Complete guide for EPC contractors on price trends, procurement risks, and 6 margin protection strategies.",
+  },
+  {
+    title: "Solar Project Financing for Contractors: How Credit Can Help You Win More Bids",
+    slug: "solar-project-financing-contractors",
+    date: "2026-08-10",
+    image: solarFinancing,
+    description: "Complete financing guide for solar EPC contractors — working capital gap explained, financing options compared, 60-day credit model, and how procurement credit helps you bid more competitively.",
+  },
+  {
+    title: "Green Hydrogen & Solar in India: What EPC Contractors Need to Know",
+    slug: "green-hydrogen-solar-india",
+    date: "2026-08-12",
+    image: greenHydrogen,
+    description: "India's National Green Hydrogen Mission is moving from paper to projects. Complete guide for solar EPC contractors — NGHM status, the solar opportunity, project scale, cost sensitivity, and how to position for upcoming tenders.",
   },
 ];
 
