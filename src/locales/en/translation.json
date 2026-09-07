@@ -11307,7 +11307,8 @@
     "A complete FPV procurement guide for Indian EPC contractors — the PM-SSY ₹5,070 crore scheme, the floating component stack, where the 40–65% cost premium sits, six procurement challenges, supplier evaluation criteria and the correct procurement sequence.": "A complete FPV procurement guide for Indian EPC contractors — the PM-SSY ₹5,070 crore scheme, the floating component stack, where the 40–65% cost premium sits, six procurement challenges, supplier evaluation criteria and the correct procurement sequence.",
     "Solar module prices rising sharply in 2026 due to ALMM-II cell constraints. Complete guide for EPC contractors on price trends, procurement risks, and 6 margin protection strategies.": "Solar module prices rising sharply in 2026 due to ALMM-II cell constraints. Complete guide for EPC contractors on price trends, procurement risks, and 6 margin protection strategies.",
     "Complete financing guide for solar EPC contractors — working capital gap explained, financing options compared, 60-day credit model, and how procurement credit helps you bid more competitively.": "Complete financing guide for solar EPC contractors — working capital gap explained, financing options compared, 60-day credit model, and how procurement credit helps you bid more competitively.",
-    "India's National Green Hydrogen Mission is moving from paper to projects. Complete guide for solar EPC contractors — NGHM status, the solar opportunity, project scale, cost sensitivity, and how to position for upcoming tenders.": "India's National Green Hydrogen Mission is moving from paper to projects. Complete guide for solar EPC contractors — NGHM status, the solar opportunity, project scale, cost sensitivity, and how to position for upcoming tenders."
+    "India's National Green Hydrogen Mission is moving from paper to projects. Complete guide for solar EPC contractors — NGHM status, the solar opportunity, project scale, cost sensitivity, and how to position for upcoming tenders.": "India's National Green Hydrogen Mission is moving from paper to projects. Complete guide for solar EPC contractors — NGHM status, the solar opportunity, project scale, cost sensitivity, and how to position for upcoming tenders.",
+    "Complete inverter procurement guide for Indian EPC contractors — string vs central vs hybrid comparison, project scale selection, CEA compliance, top brands (Sungrow, Growatt, SMA), and worked cost model.": "Complete inverter procurement guide for Indian EPC contractors — string vs central vs hybrid comparison, project scale selection, CEA compliance, top brands (Sungrow, Growatt, SMA), and worked cost model."
   },
   "privacyTerms": {
     "terms": {
@@ -14443,7 +14444,8 @@
     "Floating Solar Procurement in India: Costs, Challenges & Supplier Selection": "Floating Solar Procurement in India: Costs, Challenges & Supplier Selection",
     "Solar Module Prices in India 2026: How EPC Contractors Can Protect Project Margins": "Solar Module Prices in India 2026: How EPC Contractors Can Protect Project Margins",
     "Solar Project Financing for Contractors: How Credit Can Help You Win More Bids": "Solar Project Financing for Contractors: How Credit Can Help You Win More Bids",
-    "Green Hydrogen & Solar in India: What EPC Contractors Need to Know": "Green Hydrogen & Solar in India: What EPC Contractors Need to Know"
+    "Green Hydrogen & Solar in India: What EPC Contractors Need to Know": "Green Hydrogen & Solar in India: What EPC Contractors Need to Know",
+    "Solar Inverter Selection Guide: String vs Central vs Hybrid India 2026": "Solar Inverter Selection Guide: String vs Central vs Hybrid India 2026"
   },
   "floatingSolar": {
     "meta": {
@@ -16303,6 +16305,608 @@
     ],
     "footer": {
       "publishedLine": "Published 12 August 2026 · Headsup B2B Editorial Team · Procurement Intelligence"
+    }
+  },
+  "solarInverter": {
+    "meta": {
+      "seoTitle": "Solar Inverter Selection Guide: String vs Central vs Hybrid India 2026",
+      "seoDescription": "Complete inverter procurement guide for Indian EPC contractors — string vs central vs hybrid comparison, project scale selection, CEA compliance, top brands (Sungrow, Growatt, SMA), and worked cost model.",
+      "ogTitle": "Solar Inverter Selection Guide: String vs Central vs Hybrid India 2026",
+      "ogDescription": "Complete inverter procurement guide for Indian EPC contractors — string vs central vs hybrid comparison, project scale selection, CEA compliance, top brands (Sungrow, Growatt, SMA), and worked cost model."
+    },
+    "hero": {
+      "badge": "Technical Procurement Guide",
+      "readTime": "9 min read",
+      "published": "Updated 28 August 2026",
+      "title1": "Solar Inverter Selection Guide:",
+      "title2": "String vs Central vs Hybrid India 2026",
+      "subtitle": "The inverter decision shapes your project's performance for 25 years. Get it wrong and you are locked into a mismatch between your site, your storage ambitions, and your grid connection. Here is the B2B procurement framework.",
+      "sourceLine": "Specifications, brand data and market information compiled from published IEC 62109:2021 documentation, CEA Grid Code 2023, manufacturer datasheets and Headsup B2B procurement data as of 28 August 2026. Sources listed at the end."
+    },
+    "heroStats": [
+      {
+        "num": "98.8%",
+        "label": "Peak efficiency of top string inverters in 2026 — gap with central has narrowed significantly"
+      },
+      {
+        "num": "5 MW+",
+        "label": "Project scale where central inverters typically become cost-competitive with string"
+      },
+      {
+        "num": "Solar+BESS",
+        "label": "8–12% of India's new C&I solar in 2026 — hybrid inverter demand growing fast"
+      },
+      {
+        "num": "IEC 62109",
+        "label": "Mandatory safety certification for all inverters — Part 1 and Part 2 both required"
+      }
+    ],
+    "heroTags": [
+      "Solar Inverters",
+      "String vs Central",
+      "Hybrid Inverters",
+      "CEA Compliance",
+      "EPC Procurement"
+    ],
+    "tocLabel": "What this guide covers",
+    "toc": [
+      "Three inverter types — what each actually does",
+      "String vs central vs hybrid — full comparison",
+      "Which type for which project scale",
+      "Worked model — 1 MW string vs central cost",
+      "Hybrid inverter economics — when it pays",
+      "CEA and grid compliance in India",
+      "Top brands in India — by project type",
+      "Procurement checklist and FAQs"
+    ],
+    "sections": {
+      "s1": {
+        "kicker": "Fundamentals",
+        "title": "Three Inverter Types — What Each Actually Does"
+      },
+      "s2": {
+        "kicker": "Comparison",
+        "title": "String vs Central vs Hybrid — Full Comparison"
+      },
+      "s3": {
+        "kicker": "Selection",
+        "title": "Which Type for Which Project Scale"
+      },
+      "s4": {
+        "kicker": "The Numbers",
+        "title": "Worked Model — 1 MW String vs Central Cost"
+      },
+      "s5": {
+        "kicker": "Economics",
+        "title": "Hybrid Inverter Economics — When It Actually Pays"
+      },
+      "s6": {
+        "kicker": "Compliance",
+        "title": "CEA and Grid Compliance in India"
+      },
+      "s7": {
+        "kicker": "Suppliers",
+        "title": "Top Inverter Brands in India — By Project Type"
+      },
+      "s8": {
+        "kicker": "Summary",
+        "title": "Key Takeaways"
+      },
+      "faq": {
+        "kicker": "Questions",
+        "title": "Frequently Asked Questions"
+      }
+    },
+    "whoFor": {
+      "label": "Who this is for:",
+      "body": "EPC contractors, C&I solar buyers, and procurement teams selecting inverters for rooftop, ground-mount, and solar-plus-storage projects in India."
+    },
+    "intro": {
+      "p1": "India's solar inverter market spans utility-scale central inverters, high-power string inverters for C&I rooftop, and hybrid inverters for storage-linked projects — and the stakes of getting the selection wrong are high. An undersized central inverter on a 10 MW project forces field modifications that cost multiples of the original price difference. A string inverter specified on a 50 MW uniform ground-mount plant adds unnecessary complexity. A standard string inverter where a hybrid was needed locks out battery storage for the next decade.",
+      "p2": "The inverter decision is not primarily a technical question. It is a procurement question — one that intersects project scale, site topology, storage ambitions, grid requirements, and O&M capability. This guide gives EPC contractors and procurement teams the framework to make it correctly."
+    },
+    "types": [
+      {
+        "label": "String inverter",
+        "tone": "blue",
+        "title": "String Inverter",
+        "range": "3 kW – 350 kW per unit",
+        "points": [
+          "Converts DC from a string of panels to AC grid power",
+          "2–12 MPPT inputs — each string independently optimised",
+          "Standard for rooftop up to 2–3 MW and ground-mount up to 5 MW",
+          "No built-in battery port — requires separate hybrid inverter for storage",
+          "Easiest to maintain and replace — distributor network pan-India"
+        ]
+      },
+      {
+        "label": "Central inverter",
+        "tone": "amber",
+        "title": "Central Inverter",
+        "range": "500 kW – 6.25 MW per unit",
+        "points": [
+          "Single large unit converts DC from multiple combiner boxes to AC",
+          "Lower cost per kW at utility scale — fewer units, simpler AC wiring",
+          "Best suited for uniform, unshaded ground-mount above 5 MW",
+          "Single point of failure — redundancy requires spare unit on site",
+          "Requires specialised technician — not field-serviceable by general electrician"
+        ]
+      },
+      {
+        "label": "Hybrid inverter",
+        "tone": "green",
+        "title": "Hybrid Inverter",
+        "range": "3 kW – 250 kW per unit",
+        "points": [
+          "Combines solar MPPT, battery charge controller, and grid inverter in one unit",
+          "Built-in DC battery port — no separate battery inverter required",
+          "Seamless backup transfer in under 20ms — critical for sensitive loads",
+          "Higher capex than string — 40–60% premium per kW",
+          "Standard for solar-plus-storage, C&I backup, and BESS-linked rooftop"
+        ]
+      }
+    ],
+    "cmpHeaders": [
+      "Parameter",
+      "String inverter",
+      "Central inverter"
+    ],
+    "cmpRows": [
+      {
+        "p": "Typical project scale",
+        "s": "50 kW – 5 MW",
+        "sTone": "",
+        "c": "5 MW – 500 MW+",
+        "cTone": ""
+      },
+      {
+        "p": "Peak efficiency",
+        "s": "98.4–98.8%",
+        "sTone": "",
+        "c": "98.5–98.9%",
+        "cTone": ""
+      },
+      {
+        "p": "Capex per kW (indicative)",
+        "s": "Lower — base reference",
+        "sTone": "",
+        "c": "Lower at scale — 10–20% below string above 10 MW",
+        "cTone": ""
+      },
+      {
+        "p": "Battery integration",
+        "s": "Not possible — separate unit needed",
+        "sTone": "red",
+        "c": "Not possible",
+        "cTone": "red"
+      },
+      {
+        "p": "Shading tolerance",
+        "s": "Good — per-string MPPT",
+        "sTone": "green",
+        "c": "Poor — one MPPT per combiner",
+        "cTone": "red"
+      },
+      {
+        "p": "Partial failure risk",
+        "s": "Low — other strings unaffected",
+        "sTone": "green",
+        "c": "High — full plant loss if central fails",
+        "cTone": "red"
+      },
+      {
+        "p": "Backup power",
+        "s": "None — anti-islanding cuts power on outage",
+        "sTone": "red",
+        "c": "None",
+        "cTone": "red"
+      },
+      {
+        "p": "Monitoring granularity",
+        "s": "String-level",
+        "sTone": "",
+        "c": "Combiner-level",
+        "cTone": ""
+      },
+      {
+        "p": "O&M complexity",
+        "s": "Low — replace per unit, pan-India service",
+        "sTone": "green",
+        "c": "High — specialist required, spare unit on site",
+        "cTone": "red"
+      },
+      {
+        "p": "CEA compliance",
+        "s": "IEC 62109-1 + -2",
+        "sTone": "",
+        "c": "IEC 62109-1 + -2",
+        "cTone": ""
+      }
+    ],
+    "hybridPanel": {
+      "label": "Hybrid inverter — where it sits",
+      "title": "The third option, and what it changes",
+      "items": [
+        "<strong>Scale:</strong> 3 kW – 250 kW per unit — rooftop and C&I, not utility ground-mount",
+        "<strong>Battery integration:</strong> built-in DC battery port — the only one of the three that needs no separate battery inverter",
+        "<strong>Backup power:</strong> seamless transfer in under 20ms, where string and central both cut power on grid loss",
+        "<strong>Capex:</strong> 40–60% premium per kW over a standard string inverter",
+        "<strong>CEA compliance:</strong> IEC 62109-1 + -2, same mandatory certification as string and central",
+        "<strong>Best fit:</strong> solar-plus-storage, C&I backup, and BESS-linked rooftop"
+      ]
+    },
+    "cmpNote": "Figures compiled from Sungrow, SMA, and Growatt published specifications; SurePV technical database; and Headsup B2B procurement data, August 2026. Capex figures are indicative — get current quotes before finalising BOQ.",
+    "s3p1": "Scale is the primary driver of inverter type selection. The economics of central inverters do not work at small scale — the cost of the power block infrastructure they require (containerised switchgear, transformer integration, SCADA) eliminates their cost advantage below 5 MW. Above 10 MW on a uniform site, string inverters add unnecessary complexity. The decision matrix is more disciplined than most EPC teams assume.",
+    "scaleHeaders": [
+      "Project type",
+      "Scale",
+      "Recommended type",
+      "Key reason"
+    ],
+    "scaleRows": [
+      {
+        "type": "Commercial rooftop — single building",
+        "scale": "50 kW – 500 kW",
+        "rec": "String",
+        "tone": "blue",
+        "reason": "Complex roof geometry, multiple orientations — per-string MPPT essential"
+      },
+      {
+        "type": "Industrial rooftop — large flat roof",
+        "scale": "500 kW – 3 MW",
+        "rec": "String",
+        "tone": "blue",
+        "reason": "Easier maintenance without specialised technician, pan-India spare availability"
+      },
+      {
+        "type": "Ground-mount — standard",
+        "scale": "1 MW – 10 MW",
+        "rec": "String",
+        "tone": "blue",
+        "reason": "Modular, no single point of failure, competitive at this scale with central"
+      },
+      {
+        "type": "Ground-mount — utility scale",
+        "scale": "10 MW – 500 MW+",
+        "rec": "Central or string",
+        "tone": "amber",
+        "reason": "Central wins on cost per kW above 10 MW on uniform sites; string wins on complex terrain"
+      },
+      {
+        "type": "Solar-plus-storage — C&I",
+        "scale": "50 kW – 2 MW",
+        "rec": "Hybrid",
+        "tone": "green",
+        "reason": "DC-coupled battery integration, backup capability, single O&M contract"
+      },
+      {
+        "type": "Solar-plus-storage — utility BESS",
+        "scale": "2 MW+",
+        "rec": "String + separate PCS",
+        "tone": "blue",
+        "reason": "At utility scale, dedicated Battery Power Conversion System (PCS) is more efficient than hybrid"
+      },
+      {
+        "type": "Rooftop with grid instability",
+        "scale": "Any",
+        "rec": "Hybrid",
+        "tone": "green",
+        "reason": "20ms backup transfer protects sensitive manufacturing and cold chain equipment"
+      }
+    ],
+    "scaleNote": "Based on Headsup B2B procurement data and Sunwave Technology comparative analysis, August 2026. Scale boundaries are indicative — overlap zones require site-specific financial modelling.",
+    "costCard": {
+      "label": "Illustrative cost comparison — 1 MW ground-mount solar",
+      "title": "String inverters (250 kW × 4 units) vs. central inverter (1 MW × 1 unit)",
+      "rows": [
+        {
+          "label": "String inverter option — indicative equipment cost",
+          "value": "Base cost",
+          "tone": "neutral"
+        },
+        {
+          "label": "Central inverter option — equipment cost (lower per kW at 1 MW)",
+          "value": "Broadly similar at 1 MW",
+          "tone": "neutral"
+        },
+        {
+          "label": "Central inverter: additional infrastructure required (power block, containerised switchgear, transformer integration)",
+          "value": "Adds significantly to total cost",
+          "tone": "negative"
+        },
+        {
+          "label": "Central inverter: spare unit required on site for redundancy (full plant loss on failure)",
+          "value": "Add 20–25% of unit cost",
+          "tone": "negative"
+        },
+        {
+          "label": "Central inverter: specialist O&M contract — general electrician cannot service",
+          "value": "Higher annual O&M cost",
+          "tone": "negative"
+        },
+        {
+          "label": "String inverter: AC wiring is more complex (more inverter units, more AC connections)",
+          "value": "Moderate additional cost",
+          "tone": "neutral"
+        }
+      ],
+      "totalLabel": "Verdict at 1 MW: string inverter total project cost is lower — central infrastructure costs eliminate per-kW equipment saving",
+      "totalValue": "String wins below 5–10 MW",
+      "note": "Illustrative comparison based on indicative market data, August 2026. Actual cost differential depends on specific site layout, grid connection, and O&M contract structure. Not financial advice — model with actual quotes before deciding."
+    },
+    "pullQuote": {
+      "text": "The central inverter's cost advantage only materialises at scale — typically above 5–10 MW on uniform sites. Below that, the power block infrastructure, spare unit requirement, and specialist O&M reverse the economics. At 1–5 MW, string inverters win on total project cost almost every time.",
+      "attribution": "— Headsup B2B Procurement Research, August 2026"
+    },
+    "midCta": {
+      "title": "Source IEC-certified inverters from verified suppliers",
+      "desc": "Headsup B2B supplies Sungrow, Growatt, Solis, and SMA inverters — verified stock, IEC 62109 certified, BOQ-mapped delivery, 60-day procurement credit.",
+      "btnText": "Get inverter pricing →"
+    },
+    "s5p1": "The hybrid inverter costs 40–60% more per kW than a standard string inverter. That premium pays back only if you use the battery capability. Specifying a hybrid inverter without a storage roadmap is an expensive mistake. Specifying a string inverter when storage is planned within 5 years is also expensive — the retrofit cost of adding AC-coupled storage later exceeds the upfront hybrid premium by a wide margin.",
+    "hybridHeaders": [
+      "Scenario",
+      "Grid reliability",
+      "Storage planned?",
+      "Recommended inverter",
+      "Reason"
+    ],
+    "hybridRows": [
+      {
+        "scenario": "C&I rooftop — stable grid, no storage",
+        "grid": "Reliable (<4 hrs/day outage)",
+        "storage": "No — 7+ years",
+        "rec": "String",
+        "tone": "blue",
+        "reason": "No justification for hybrid premium — pure grid-tied economics",
+        "highlight": false
+      },
+      {
+        "scenario": "C&I rooftop — storage within 5 years ✓",
+        "grid": "Any",
+        "storage": "Yes — within 5 years",
+        "rec": "Hybrid",
+        "tone": "green",
+        "reason": "DC-coupled battery avoids costly AC-coupled retrofit later",
+        "highlight": true
+      },
+      {
+        "scenario": "Manufacturing plant — grid instability ✓",
+        "grid": "Unreliable (4+ hrs/day)",
+        "storage": "Yes or likely",
+        "rec": "Hybrid",
+        "tone": "green",
+        "reason": "20ms backup transfer protects production lines — downtime cost exceeds hybrid premium",
+        "highlight": true
+      },
+      {
+        "scenario": "Warehouse — solar only, good grid",
+        "grid": "Reliable",
+        "storage": "No",
+        "rec": "String",
+        "tone": "blue",
+        "reason": "Daytime self-consumption model — no backup or storage needed",
+        "highlight": false
+      },
+      {
+        "scenario": "Cold chain / pharma — critical uptime",
+        "grid": "Any",
+        "storage": "Yes — essential",
+        "rec": "Hybrid",
+        "tone": "green",
+        "reason": "Product loss risk on outage far exceeds inverter cost difference",
+        "highlight": true
+      },
+      {
+        "scenario": "Utility ground-mount — large scale",
+        "grid": "Stable",
+        "storage": "Separate BESS",
+        "rec": "String or Central + PCS",
+        "tone": "blue",
+        "reason": "Dedicated Battery PCS more efficient than hybrid at utility scale",
+        "highlight": false
+      }
+    ],
+    "hybridNote": "Hybrid payback depends on local grid outage frequency and cost of downtime. For manufacturing and cold chain, the business case is often compelling even without storage. Always model against your specific tariff, outage frequency, and downtime cost before specifying.",
+    "s6p1": "Every inverter installed in India must comply with Central Electricity Authority regulations. Compliance is not optional — a non-compliant inverter will fail DISCOM grid synchronisation approval. The compliance checklist for procurement teams is straightforward but non-negotiable.",
+    "compliance": {
+      "label": "⚠ Grid compliance — non-negotiable",
+      "title": "What every inverter must carry before installation in India",
+      "items": [
+        "<strong>IEC 62109-1 + IEC 62109-2 certification:</strong> Safety standard for power converters used in photovoltaic power systems — both parts required. Demand valid certificate from an accredited lab (CPRI, TÜV, Bureau Veritas)",
+        "<strong>Anti-islanding protection:</strong> Mandatory under CEA Grid Code — inverter must disconnect automatically on grid loss. Verify ROCOF and vector shift relay settings comply with CEA (Amendment 2023) requirements",
+        "<strong>Low Voltage Ride Through (LVRT):</strong> Required for grid-connected systems above 50 kW under CEA technical standards — verify LVRT curve compliance with DISCOM before specifying",
+        "<strong>DISCOM-approved make:</strong> Several state DISCOMs maintain an approved inverter brand list. Confirm with your state DISCOM before placing order — a non-listed make can fail net metering approval regardless of IEC certification",
+        "<strong>IP65 minimum for outdoor installation:</strong> Any inverter installed in an outdoor or semi-outdoor environment must carry IP65 rating minimum — IP66 recommended for coastal and high-humidity sites"
+      ]
+    },
+    "brandHeaders": [
+      "Brand",
+      "String",
+      "Central",
+      "Hybrid",
+      "Best for",
+      "Service network"
+    ],
+    "brandRows": [
+      {
+        "brand": "Sungrow",
+        "string": "Strong",
+        "sTone": "green",
+        "central": "Strong",
+        "cTone": "green",
+        "hybrid": "Strong",
+        "hTone": "green",
+        "best": "All project types — largest installed base in India",
+        "service": "Pan-India",
+        "svcTone": "green"
+      },
+      {
+        "brand": "Growatt",
+        "string": "Strong",
+        "sTone": "green",
+        "central": "Limited",
+        "cTone": "amber",
+        "hybrid": "Strong",
+        "hTone": "green",
+        "best": "Rooftop and hybrid — competitive pricing, good hybrid range",
+        "service": "Good pan-India",
+        "svcTone": "green"
+      },
+      {
+        "brand": "Solis (Ginlong)",
+        "string": "Strong",
+        "sTone": "green",
+        "central": "Limited",
+        "cTone": "amber",
+        "hybrid": "Growing",
+        "hTone": "green",
+        "best": "Commercial rooftop — strong in C&I segment",
+        "service": "Good — expanding",
+        "svcTone": "amber"
+      },
+      {
+        "brand": "SMA",
+        "string": "Strong",
+        "sTone": "green",
+        "central": "Limited",
+        "cTone": "amber",
+        "hybrid": "Strong",
+        "hTone": "green",
+        "best": "Premium rooftop and hybrid — best monitoring platform",
+        "service": "Selective — major cities",
+        "svcTone": "amber"
+      },
+      {
+        "brand": "TBEA Energy India",
+        "string": "Strong",
+        "sTone": "green",
+        "central": "Strong",
+        "cTone": "green",
+        "hybrid": "Limited",
+        "hTone": "amber",
+        "best": "Utility-scale ground-mount — strong in large project segment",
+        "service": "Project-based",
+        "svcTone": "amber"
+      },
+      {
+        "brand": "FIMER India",
+        "string": "Limited",
+        "sTone": "amber",
+        "central": "Strong",
+        "cTone": "green",
+        "hybrid": "Limited",
+        "hTone": "amber",
+        "best": "Utility-scale — ABB heritage, strong central inverter track record",
+        "service": "Selected states",
+        "svcTone": "amber"
+      }
+    ],
+    "brandNote": "Brand assessment based on Headsup B2B supplier data and TechFinePV India market analysis, August 2026. Service network coverage changes — verify current regional coverage directly with brand before specifying for remote sites.",
+    "checklist": {
+      "label": "Procurement checklist — before placing inverter order",
+      "title": "Six things to verify on every inverter purchase order",
+      "items": [
+        "<strong>IEC 62109-1 and -2 certificates valid and in-scope</strong> for the exact model number being ordered — not just the brand",
+        "<strong>DISCOM approved make confirmed</strong> — call your state DISCOM or check their published approved brand list before ordering",
+        "<strong>IP rating appropriate for installation environment</strong> — IP65 minimum, IP66 for coastal/high-humidity sites",
+        "<strong>Warranty terms documented</strong> — standard is 5 years; specify extended warranty (10 years) in the supply agreement for projects with long PPA obligations",
+        "<strong>Local service network confirmed</strong> — nearest authorised service centre must be within 200 km of site for projects in Tier 2 and Tier 3 locations",
+        "<strong>String sizing validated</strong> — confirm inverter MPPT voltage range covers your module Voc at minimum temperature (cold winter morning in the project state) — a design error here causes inverter shutdowns"
+      ]
+    },
+    "takeaways": [
+      {
+        "title": "String inverters are the right default choice for rooftop projects up to 3 MW and ground-mount up to 5–10 MW.",
+        "body": "Modular, easy to maintain, and competitive on total cost at these scales."
+      },
+      {
+        "title": "Central inverters only deliver their cost advantage above 5–10 MW on uniform, unshaded sites.",
+        "body": "Below that, infrastructure costs reverse the economics."
+      },
+      {
+        "title": "Specify hybrid inverters when storage is planned within 5 years or when grid instability creates production risk.",
+        "body": "The AC-coupled retrofit cost later exceeds the upfront hybrid premium."
+      },
+      {
+        "title": "IEC 62109-1 and -2 certification is mandatory for every inverter.",
+        "body": "Verify certificate validity and scope for the exact model number, not just the brand."
+      },
+      {
+        "title": "Confirm DISCOM approved brand list before ordering.",
+        "body": "A non-listed brand fails net metering inspection regardless of IEC certification."
+      },
+      {
+        "title": "Validate string sizing against MPPT voltage range at minimum site temperature.",
+        "body": "A design error here causes inverter shutdowns that are expensive to diagnose and correct post-commissioning."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "At what project scale should I switch from string to central inverters?",
+        "a": "The crossover is typically 5–10 MW on uniform, unshaded ground-mount sites. Below 5 MW, central inverter infrastructure costs (power block, spare unit, specialist O&M) eliminate the per-kW equipment cost advantage. Above 10 MW on flat uniform terrain, central inverters are usually the lower total-cost option. Between 5–10 MW, model both options with actual site and quote data before deciding."
+      },
+      {
+        "q": "Can I add a battery to a string inverter later if my client wants storage?",
+        "a": "Yes, but at a cost penalty. AC-coupled storage (adding a separate battery inverter to an existing string system) is less efficient than DC-coupled hybrid integration — round-trip efficiency drops from 92–96% to 85–90%. The retrofit cost of adding AC-coupled storage typically exceeds the upfront premium of specifying a hybrid inverter. If storage is likely within 5 years, specify hybrid from the outset."
+      },
+      {
+        "q": "What certifications must an inverter carry for DISCOM grid approval in India?",
+        "a": "IEC 62109-1 and IEC 62109-2 are the mandatory safety certifications. Additionally, the inverter must comply with CEA Grid Code requirements for anti-islanding protection and, for systems above 50 kW, Low Voltage Ride Through (LVRT). Many state DISCOMs also maintain approved brand lists — an inverter not on the state list may be rejected at net metering inspection regardless of IEC certification."
+      },
+      {
+        "q": "Which inverter brand has the widest service network in India?",
+        "a": "Sungrow has the largest installed base and widest service network in India across all project types — utility, C&I, and residential. Growatt and Solis have strong networks in the rooftop segment. For remote project sites, always verify the nearest authorised service centre location before specifying — a strong national brand with no regional service presence is a liability for O&M."
+      },
+      {
+        "q": "What is the standard warranty for solar inverters in India in 2026?",
+        "a": "Standard warranty for string and central inverters is 5 years in 2026, extendable to 10 years with an extended warranty contract. Hybrid inverters typically offer 5–10 years on the inverter unit with battery components covered separately. For projects with 15–25 year PPA obligations, always specify the extended warranty in the supply agreement — it is significantly cheaper when negotiated at procurement than when the 5-year warranty expires mid-project."
+      },
+      {
+        "q": "Is a hybrid inverter worth it for a warehouse rooftop project?",
+        "a": "It depends on two factors: grid reliability at the site and whether storage is planned. For a warehouse with reliable grid access and no storage plan within 7 years, a string inverter is the correct choice — the hybrid premium is not justified. For a warehouse with frequent grid outages, a cold chain facility where product loss risk is high, or any site where storage is planned within 5 years, a hybrid inverter pays back within 3–4 years through avoided downtime or avoided AC-coupled storage retrofit costs."
+      }
+    ],
+    "sources": {
+      "title": "Sources and disclaimer",
+      "items": [
+        "IEC 62109-1 and IEC 62109-2 (2021) — safety of power converters for use in photovoltaic power systems.",
+        "CEA Grid Code 2023 (including Amendment 2023) — anti-islanding, ROCOF and vector shift relay requirements, and LVRT obligations for grid-connected systems above 50 kW.",
+        "Published inverter specifications from Sungrow, SMA and Growatt; SurePV technical database.",
+        "Sunwave Technology comparative analysis and TechFinePV India market analysis for brand and scale positioning.",
+        "Headsup B2B procurement data as of August 2026.",
+        "All specifications, brand data, and market information in this guide are based on publicly available technical documentation and Headsup B2B procurement data as of August 2026. Inverter pricing, warranty terms, service network coverage, and DISCOM approved brand lists change regularly. Always verify current IEC certification status, DISCOM compliance requirements, and brand service coverage for your project location before placing orders. This guide is for procurement reference only and does not substitute for project-specific electrical design or engineering sign-off."
+      ]
+    },
+    "cta": {
+      "kicker": "Solar Procurement Platform",
+      "heading": "Source IEC-Certified Solar Inverters from Verified Suppliers",
+      "subtitle": "Headsup B2B supplies Sungrow, Growatt, Solis, and SMA inverters across string, central, and hybrid types — verified IEC 62109 certification, BOQ-mapped delivery, and 60-day collateral-free procurement credit across India.",
+      "features": [
+        "String, central & hybrid",
+        "IEC 62109 certified",
+        "Top Indian brands",
+        "60-day credit",
+        "Pan-India delivery"
+      ],
+      "button": "Get inverter pricing →",
+      "footer": "1,000+ verified suppliers · 500+ projects delivered · No collateral required"
+    },
+    "consultationTitle": "Talk to a solar inverter procurement specialist",
+    "keywords": [
+      "Solar inverter selection",
+      "String vs central inverter",
+      "Hybrid inverter India",
+      "IEC 62109 certification",
+      "CEA grid compliance",
+      "Sungrow inverter",
+      "Growatt inverter",
+      "Solar inverter price India",
+      "MPPT string sizing",
+      "DISCOM approved inverter"
+    ],
+    "footer": {
+      "publishedLine": "Published 28 August 2026 · Headsup B2B Editorial Team · Procurement Intelligence"
     }
   }
 }

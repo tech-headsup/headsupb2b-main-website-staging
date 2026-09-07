@@ -26,6 +26,7 @@ import floatingSolarProcurement from "../../public/floating-solar-procurement-in
 import solarModulePrices from "../../public/solar-module-prices-india.webp"
 import solarFinancing from "../../public/solar-project-financing-contractors.webp"
 import greenHydrogen from "../../public/green-hydrogen-solar-india.webp"
+import solarInverter from "../../public/solar-inverter-selection-guide.webp"
 
 const researchData = [
   {
@@ -216,6 +217,13 @@ const researchData = [
     date: "2026-08-12",
     image: greenHydrogen,
     description: "India's National Green Hydrogen Mission is moving from paper to projects. Complete guide for solar EPC contractors — NGHM status, the solar opportunity, project scale, cost sensitivity, and how to position for upcoming tenders.",
+  },
+  {
+    title: "Solar Inverter Selection Guide: String vs Central vs Hybrid India 2026",
+    slug: "solar-inverter-selection-guide",
+    date: "2026-08-28",
+    image: solarInverter,
+    description: "Complete inverter procurement guide for Indian EPC contractors — string vs central vs hybrid comparison, project scale selection, CEA compliance, top brands (Sungrow, Growatt, SMA), and worked cost model.",
   },
 ];
 
