@@ -132,10 +132,14 @@ export default function index({ data, initialDataa, categoryProductOptions }) {
           <MainCategory initialDataa={initialDataa} />
         </div>
       </div>
+      
+       {/* 6. REQUIREMENT TO EXECUTION (from services page) */}
+      <RequirementToExecution />
 
       {/* 3b. CLIENT PARTNER SWITCH */}
       <div className="page-container">
-        <div className="section-top">
+        {/* tighter than .section-top (5rem) — RequirementToExecution already has bottom padding */}
+        <div className="pt-6 md:pt-8">
           <ClientPartnerSwitch
             twoRows
             partnerCompanyList={Response?.doc?.[0]?.partner}
@@ -157,8 +161,8 @@ export default function index({ data, initialDataa, categoryProductOptions }) {
       {/* 6. HOW IT WORKS */}
       {/* <HowItWorks onSubmit={() => setShowGetQuoteModal(t("home.modals.submitToday"))} /> */}
 
-      {/* 6. REQUIREMENT TO EXECUTION (from services page) */}
-      <RequirementToExecution />
+      {/* 6. REQUIREMENT TO EXECUTION (from services page)
+      <RequirementToExecution /> */}
 
       {/* 7. TESTIMONIALS */}
       <TestimonialsCarousel />
@@ -175,9 +179,9 @@ export default function index({ data, initialDataa, categoryProductOptions }) {
         {/* 9. CTA */}
         <CTABanner onGetQuote={() => setgetInstantQuoteModal(true)} />
 
-        <div className="section-gap">
+        {/* <div className="section-gap">
           <CallAndChat />
-        </div>
+        </div> */}
 
         <PanIndiaText />
 

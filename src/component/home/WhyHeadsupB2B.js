@@ -44,13 +44,13 @@ export default function WhyHeadsupB2B({ onContactUs, heading, showCreditNote = f
                 />
               </div>
               <span
-                className="text-sm sm:text-base md:text-[17px] font-bold text-[#111] leading-snug w-full text-center"
+                className="text-sm sm:text-base md:text-[17px] text-[#111] leading-snug w-full text-center"
                 style={{ fontFamily: "'Manrope', sans-serif" }}
               >
                 {title}
                 {showCreditNote && item.isCredit && (
                   <span
-                    className="ml-2 text-[#111] text-sm sm:text-base md:text-[17px] font-bold"
+                    className="ml-2 text-[#111] text-sm sm:text-base md:text-[17px]"
                     style={{ fontFamily: "'Manrope', sans-serif" }}
                   >
                     {t("home.why.note")}

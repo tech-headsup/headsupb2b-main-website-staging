@@ -5,8 +5,9 @@ const STEPS = [1, 2, 3, 4];
 export default function RequirementToExecution() {
   const { t } = useTranslation();
   return (
-    <div className="bg-white w-full pt-8 md:pt-12 pb-8 md:pb-12 px-6 md:px-12 lg:px-8">
-      <div className="max-w-[1280px] mx-auto">
+    <div className="bg-white w-full pt-8 md:pt-12 pb-8 md:pb-12">
+      {/* same container as the navbar so the card's left edge lines up with the logo */}
+      <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8">
         <div className="bg-white border border-[#E5E5E5] rounded-2xl md:rounded-3xl px-6 py-10 md:px-14 md:py-16">
           <div className="text-center">
             <h2
