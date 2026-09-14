@@ -373,7 +373,7 @@ export default function ALMMGuidePage() {
                     <span className="mx-1.5">/</span>
                     <Link href="/" className="text-[#7a7060] no-underline hover:text-[#c8860a]">{t("almmGuide.breadcrumb.research")}</Link>
                     <span className="mx-1.5">/</span>
-                    <Link href="/renewable-energy-solutions" className="text-[#7a7060] no-underline hover:text-[#c8860a]">{t("almmGuide.breadcrumb.solarProcurement")}</Link>
+                    <Link href="/solar-solutions" className="text-[#7a7060] no-underline hover:text-[#c8860a]">{t("almmGuide.breadcrumb.solarProcurement")}</Link>
                     <span className="mx-1.5">/</span>
                     {t("almmGuide.breadcrumb.current")}
                 </nav>

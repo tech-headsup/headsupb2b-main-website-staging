@@ -41,7 +41,7 @@ export default function CTABanner({ onGetQuote }) {
         </button>
         <button
           className="w-full sm:w-auto rounded-full px-8 py-3 font-bold text-sm sm:text-base text-[#4A3772] border-none cursor-pointer transition-all duration-200 hover:-translate-y-0.5 inline-flex items-center justify-center gap-2"
-          style={{ background: "#80EBF7", fontFamily: "'DM Sans', sans-serif", boxShadow: "0 4px 15px rgba(128,235,247,0.35)" }}
+          style={{ background: "#80EBF7", fontFamily: "'DM Sans', sans-serif" }}
           onClick={() => { window.open("https://wa.me/+918595736388", "_blank", "noopener,noreferrer"); }}
         >
           <span className="inline-block w-[22px] h-[22px] shrink-0">

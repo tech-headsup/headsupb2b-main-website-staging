@@ -16,6 +16,7 @@ export default function Company() {
     { _id: 3, key: 'footer.contactUs', url: '/contact', active: true },
     { _id: 4, key: 'footer.raisedFunds', url: '/we-have-raised-funds', active: true },
     { _id: 5, key: 'footer.research', url: '/research', active: true },
+    { _id: 6, key: 'footer.pmSuryaGhar', url: '/pm-surya-ghar', active: true },
   ]
 
   const isActive = (url) => pathname === url || pathname.startsWith(`${url}/`)

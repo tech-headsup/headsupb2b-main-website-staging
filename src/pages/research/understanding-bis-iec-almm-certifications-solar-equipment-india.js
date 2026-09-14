@@ -1012,7 +1012,7 @@ export default function SolarCertificationsGuidePage() {
               {t("bisIecAlmm.cta.subtitle")}
             </p>
             <Link
-              href="/renewable-energy-solutions/solar-charge-controllers"
+              href="/solar-solutions/solar-charge-controllers"
               style={{
                 display: "inline-block",
                 background: "#00d4f5",

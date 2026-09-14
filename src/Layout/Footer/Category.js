@@ -2,6 +2,7 @@ import { getAllCategoryAndNameData } from "@/Contants/APIEndpoint";
 import { useQuery } from "@tanstack/react-query";
 import { useTranslation } from "react-i18next";
 import { useDynamicTranslate } from "@/lib/useDynamicTranslate";
+import { sortCategories } from "@/Contants/categoryOrder";
 
 // Fetch function
 const fetchCategoriesNameAndSlug = async () => {
@@ -17,7 +18,7 @@ const fetchCategoriesNameAndSlug = async () => {
     throw new Error(result.error || 'Failed to fetch categories');
   }
   
-  return result.data;
+  return sortCategories(result.data);
 };
 
 export default function Category() {

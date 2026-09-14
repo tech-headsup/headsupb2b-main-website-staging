@@ -38,6 +38,2138 @@
     "subtitle": "In-depth guides on solar procurement, energy infrastructure, and India's power sector.",
     "readGuide": "Read Guide"
   },
+  "pmSuryaGhar": {
+    "seoTitle": "PM Surya Ghar Guides - Headsup B2B",
+    "seoDescription": "Practical guides to the PM Surya Ghar rooftop solar scheme — subsidy amounts, how to apply, vendor registration, DCR certificates and loans.",
+    "heading": "PM Surya Ghar",
+    "subtitle": "Practical guides to India's rooftop solar subsidy scheme — for homeowners, vendors and installers.",
+    "readGuide": "Read Guide",
+    "moreGuides": "More PM Surya Ghar guides",
+    "guideLinks": [
+      {
+        "slug": "",
+        "label": "PM Surya Ghar"
+      },
+      {
+        "slug": "complete-guide",
+        "label": "Complete guide"
+      },
+      {
+        "slug": "subsidy-amount",
+        "label": "Subsidy amount 1/2/3 kW"
+      },
+      {
+        "slug": "how-to-apply",
+        "label": "How to apply online"
+      },
+      {
+        "slug": "subsidy-not-received",
+        "label": "Subsidy not received"
+      },
+      {
+        "slug": "vendor-registration",
+        "label": "Become a vendor"
+      },
+      {
+        "slug": "dcr-certificate",
+        "label": "DCR certificate"
+      },
+      {
+        "slug": "loan",
+        "label": "Loan via Jansamarth"
+      },
+      {
+        "slug": "1kw-2kw-3kw-comparison",
+        "label": "1 kW vs 2 kW vs 3 kW"
+      }
+    ],
+    "guides": {
+      "completeGuide": {
+        "meta": {
+          "seoTitle": "PM Surya Ghar Muft Bijli Yojana 2026: Complete Guide",
+          "seoDescription": "Everything a homeowner needs to know about PM Surya Ghar Muft Bijli Yojana in 2026 — subsidy amounts, eligibility, the 12-step application, loan option, DCR rule and the March 2027 deadline.",
+          "ogTitle": "PM Surya Ghar Muft Bijli Yojana 2026: Complete Guide",
+          "ogDescription": "Everything a homeowner needs to know about PM Surya Ghar Muft Bijli Yojana in 2026 — subsidy amounts, eligibility, the 12-step application, loan option, DCR rule and the March 2027 deadline."
+        },
+        "hero": {
+          "badge": "PM Surya Ghar",
+          "readTime": "10 min read",
+          "published": "Updated 11 September 2026",
+          "title1": "PM Surya Ghar Muft Bijli Yojana 2026:",
+          "title2": "The Complete Guide",
+          "subtitle": "Subsidy, eligibility, the 12-step application, vendor selection, the loan route and the March 2027 deadline — everything a homeowner needs before installing.",
+          "sourceLine": "Last updated: 11 September 2026. Scheme rules change frequently; always confirm on pmsuryaghar.gov.in or with your DISCOM before acting.",
+          "stats": [
+            {
+              "num": "₹75,000 cr",
+              "label": "Scheme outlay"
+            },
+            {
+              "num": "~53 lakh",
+              "label": "Installations completed by Aug 2026"
+            },
+            {
+              "num": "31 Mar 2027",
+              "label": "Scheme deadline"
+            }
+          ],
+          "strip": [
+            "Subsidy",
+            "Eligibility",
+            "Application",
+            "Vendor selection",
+            "Grievance"
+          ]
+        },
+        "tocLabel": "What this guide covers",
+        "toc": [
+          "What is PM Surya Ghar Muft Bijli Yojana?",
+          "Where the scheme stands in September 2026",
+          "Subsidy amount 2026",
+          "Who is eligible?",
+          "Documents you need",
+          "How the application works — the 12 steps",
+          "Choosing a vendor: what to check",
+          "What to do if something goes wrong",
+          "Is it worth it?"
+        ],
+        "sections": [
+          {
+            "kicker": "The scheme",
+            "title": "What is PM Surya Ghar Muft Bijli Yojana?",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "PM Surya Ghar Muft Bijli Yojana (PMSGMBY) is the Government of India's residential rooftop solar programme, launched on <b>15 February 2024</b> with a <b>₹75,000 crore</b> outlay. Its stated goal is one crore (10 million) household rooftop installations and up to <b>300 free units of electricity per month</b> for participating families, with a deadline of 31 March 2027."
+              },
+              {
+                "type": "p",
+                "html": "The scheme works on three pillars:"
+              },
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "<b>Central Financial Assistance (CFA)</b> — a direct cash subsidy paid into the consumer's bank account after the system is commissioned.",
+                  "<b>Collateral-free low-interest loans</b> — arranged through the Jansamarth portal for households that do not want to pay upfront.",
+                  "<b>Empanelled vendors</b> — only registered, bank-guaranteed installers can execute subsidised systems."
+                ]
+              }
+            ]
+          },
+          {
+            "kicker": "Progress",
+            "title": "Where the scheme stands in September 2026",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "Official dashboard figures read publicly by field vendors show the trajectory:"
+              },
+              {
+                "type": "table",
+                "headers": [
+                  "Date",
+                  "Installations completed",
+                  "Applications",
+                  "Progress to 1 crore"
+                ],
+                "rows": [
+                  [
+                    "Feb 2026",
+                    "~25 lakh",
+                    "—",
+                    "~25%"
+                  ],
+                  [
+                    "May 2026",
+                    "~35 lakh",
+                    "—",
+                    "~35%"
+                  ],
+                  [
+                    "Jul 2026",
+                    "~40 lakh",
+                    "~76 lakh",
+                    "~40%"
+                  ],
+                  [
+                    "Aug 2026",
+                    "<b>~53 lakh</b>",
+                    "~78 lakh",
+                    "<b>~53%</b>"
+                  ]
+                ]
+              },
+              {
+                "type": "p",
+                "html": "Installed capacity crossed <b>14,349 MW</b> and subsidy disbursed crossed <b>₹27,343 crore</b> by July 2026. Two practical conclusions for a homeowner:"
+              },
+              {
+                "type": "list",
+                "items": [
+                  "<b>The scheme is real and paying out.</b> Over half the target has been installed.",
+                  "<b>The March 2027 deadline is tight.</b> At the historical pace (~5,800 installations a day) the target cannot be met by March 2027; the required run-rate is roughly 3.7× that."
+                ]
+              },
+              {
+                "type": "callout",
+                "label": "Plan around this",
+                "title": "Current subsidy rates are guaranteed only up to 31 March 2027",
+                "body": "Whether the scheme is extended, renamed or its subsidy revised after March 2027 has not been announced. If you are planning to install, the safe assumption is that today's rates apply only to applications <b>commissioned before 31 March 2027</b>."
+              }
+            ]
+          },
+          {
+            "kicker": "Subsidy",
+            "title": "Subsidy amount 2026",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "Central subsidy is fixed nationally. Several states add a top-up. Uttar Pradesh figures are shown as an example:"
+              },
+              {
+                "type": "table",
+                "headers": [
+                  "System size",
+                  "Central subsidy",
+                  "UP state top-up",
+                  "Total (UP)",
+                  "Typical net cost (UP)"
+                ],
+                "rows": [
+                  [
+                    "1 kW",
+                    "₹30,000",
+                    "₹15,000",
+                    "₹45,000",
+                    "₹20,000–25,000"
+                  ],
+                  [
+                    "2 kW",
+                    "₹60,000",
+                    "₹30,000",
+                    "₹90,000",
+                    "₹40,000–50,000"
+                  ],
+                  [
+                    "3 kW and above",
+                    "₹78,000",
+                    "₹30,000",
+                    "<b>₹1,08,000</b>",
+                    "₹70,000–75,000"
+                  ]
+                ]
+              },
+              {
+                "type": "p",
+                "html": "<b>₹78,000 central (₹1,08,000 with UP top-up) is the ceiling.</b> A 4, 5 or 6 kW system gets no additional subsidy. Haryana also pays a ₹30,000 top-up at 2 kW; other states vary — check your state nodal agency. Full breakdown: <a href=\"/pm-surya-ghar/subsidy-amount\" class=\"text-headupb2b font-semibold underline\">PM Surya Ghar subsidy amount by system size</a>."
+              }
+            ]
+          },
+          {
+            "kicker": "Eligibility",
+            "title": "Who is eligible?",
+            "blocks": [
+              {
+                "type": "list",
+                "items": [
+                  "Indian citizen owning a house with a roof suitable for panels.",
+                  "A valid electricity connection in the applicant's name — or the name must be corrected on the bill before applying.",
+                  "No prior solar subsidy availed on that connection.",
+                  "Proposed capacity must not exceed the sanctioned load on your electricity connection; get the load enhanced first if needed.",
+                  "Modules must be <b>DCR-compliant</b> (Domestic Content Requirement — Indian-made cells and modules). Non-DCR panels get no subsidy.",
+                  "The system must be <b>on-grid with net metering</b>. Off-grid systems do not qualify, because the subsidy route runs through the DISCOM inspection and net meter."
+                ]
+              }
+            ]
+          },
+          {
+            "kicker": "Paperwork",
+            "title": "Documents you need",
+            "blocks": [
+              {
+                "type": "list",
+                "items": [
+                  "Aadhaar card",
+                  "PAN card",
+                  "Latest electricity bill (not older than 6 months)",
+                  "Bank passbook first page or cancelled cheque — a printed statement is rejected",
+                  "Roof photograph and property ownership proof (if applying for a loan)"
+                ]
+              },
+              {
+                "type": "callout",
+                "label": "Critical",
+                "title": "The name must match exactly across all four documents",
+                "body": "Since mid-2026 the name must match across electricity bill, Aadhaar, PAN and bank passbook. A single spelling difference — one demonstrated case: <b>“PRASNT” vs “PRASHANT”</b> — stalls the subsidy. Fix the documents <i>before</i> you apply."
+              }
+            ]
+          },
+          {
+            "kicker": "Process",
+            "title": "How the application works — the 12 steps",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "<b>Consumer registration</b> on pmsuryaghar.gov.in with mobile OTP.",
+                  "<b>Rooftop application</b> — select state, district, DISCOM, enter consumer number, pin your roof on the map, upload the bill. Keep “With DCR” selected and never tick “Give up subsidy”.",
+                  "<b>Select an empanelled vendor</b> and enter subsidy bank details.",
+                  "<b>Vendor accepts</b> the application from the vendor login.",
+                  "<b>Agreement signed</b> on ₹100 non-judicial stamp paper (Annexure 2 format).",
+                  "<b>Site Feasibility Report</b> uploaded by the vendor after a physical visit.",
+                  "<b>Loan (optional)</b> via Jansamarth — the loan tile activates only after steps 5 and 6.",
+                  "<b>Procurement of DCR modules</b>; vendor issues your B2C DCR certificate.",
+                  "<b>Vendor submits installation details</b> — inverter serial, DCR certificate number, geo-tagged photo.",
+                  "<b>You confirm the installation</b> and rate the vendor from your own login.",
+                  "<b>DISCOM inspection</b> and net meter installation.",
+                  "<b>Commissioning</b>, then you click “Redeem Subsidy”."
+                ]
+              },
+              {
+                "type": "p",
+                "html": "Real-world turnaround from installation to commissioning has been as short as <b>six days</b> in well-run files. Subsidy then arrives in two tranches — central within roughly <b>7–15 days</b>, state top-up around <b>15 days later</b> — with a 30-day guideline from bank verification."
+              }
+            ]
+          },
+          {
+            "kicker": "Vendor selection",
+            "title": "Choosing a vendor: what to check",
+            "blocks": [
+              {
+                "type": "list",
+                "items": [
+                  "<b>Empanelment certificate</b> downloadable from the MNRE/state nodal portal — ask for it.",
+                  "<b>Bank guarantee tier:</b> state vendors post ₹2.5 lakh per state, national vendors ₹25 lakh. Both are valid; the point is that the vendor is registered on <i>both</i> the national portal and your state nodal agency (UPNEDA, BREDA, HAREDA, RRECL etc.).",
+                  "<b>Physical site visit before quotation</b> — now mandatory through the Site Feasibility Report.",
+                  "<b>DCR certificate</b> handed to you with your panel serial numbers listed.",
+                  "<b>PMSGMBY logo</b> on modules, inverter and distribution box — mandatory since 3 August 2026, at the vendor's cost.",
+                  "<b>Warranty cards and technical certificates</b> handed over at commissioning.",
+                  "Be wary of anyone who says <i>“subsidy guarantee is ours”</i> — no vendor controls disbursal. The government pays only if your file is correct."
+                ]
+              }
+            ]
+          },
+          {
+            "kicker": "Grievance",
+            "title": "What to do if something goes wrong",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "The June 2026 MNRE Standard Operating Procedure gives consumers a formal complaint route through the national portal's <b>Grievance Management System</b>. Vendors who do not respond within the escalation windows (<b>8 days → 15 days → 30 days</b>) are blocked and listed publicly."
+              },
+              {
+                "type": "p",
+                "html": "Subsidy-related issues — verification pending, wrong bank details — go through <b>Raise a Query → Subsidy Related Issue</b>. UP consumers can also use the Solar Samadhan portal (upnedasolarsamadhan.in)."
+              }
+            ]
+          },
+          {
+            "kicker": "Payback",
+            "title": "Is it worth it?",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "For a typical 3 kW on-grid system costing <b>₹1.5–1.9 lakh</b> installed, the net cost after the ₹1,08,000 subsidy (UP) is about <b>₹72,000</b>. Generating 360–450 units a month, most households recover that in <b>2–2.5 years</b> and then enjoy near-zero bills for the remaining 20+ years of module life."
+              },
+              {
+                "type": "p",
+                "html": "The rollout of smart meters — which has pushed many estimated bills of ₹1,500–2,000 to actual bills of ₹3,500–4,000 — has made the case sharper."
+              },
+              {
+                "type": "callout",
+                "label": "Procurement support",
+                "title": "Installing under PM Surya Ghar?",
+                "body": "Headsup B2B operates PM Surya Ghar supply and installation hubs in <b>Patna and Dausa</b> and works with empanelled vendors across Bihar, Rajasthan, UP and Delhi-NCR. For a site visit or a DCR-compliant module quotation, contact our solar desk."
+              }
+            ]
+          }
+        ],
+        "faqKicker": "FAQ",
+        "faqTitle": "Frequently asked questions",
+        "faqs": [],
+        "keywords": [],
+        "ctaHeading": "Planning a rooftop solar project?",
+        "ctaSubtitle": "Talk to our solar team for vetted vendors, DCR-compliant modules and end-to-end procurement support.",
+        "ctaButton": "Request a Consultation",
+        "ctaFooter": "No obligation · Response within 24 hours",
+        "consultationTitle": "Request a Consultation"
+      },
+      "subsidyAmount": {
+        "meta": {
+          "seoTitle": "PM Surya Ghar Subsidy Amount 2026: 1kW, 2kW & 3kW Rates",
+          "seoDescription": "Exact PM Surya Ghar subsidy for 1 kW, 2 kW and 3 kW systems in 2026, state top-ups, why 5 kW gets no extra subsidy, how the money is paid, and what you actually pay out of pocket.",
+          "ogTitle": "PM Surya Ghar Subsidy Amount 2026: 1kW, 2kW & 3kW Rates",
+          "ogDescription": "Exact PM Surya Ghar subsidy for 1 kW, 2 kW and 3 kW systems in 2026, state top-ups, why 5 kW gets no extra subsidy, how the money is paid, and what you actually pay out of pocket."
+        },
+        "hero": {
+          "badge": "PM Surya Ghar",
+          "readTime": "7 min read",
+          "published": "Updated 14 September 2026",
+          "title1": "PM Surya Ghar Subsidy Amount 2026:",
+          "title2": "1 kW, 2 kW and 3 kW",
+          "subtitle": "Central subsidy for every system size, state top-ups, why 5 kW gets no extra money, how the payout actually reaches you, and what you pay out of pocket.",
+          "sourceLine": "Last updated: 14 September 2026. State top-ups differ by state and are revised periodically. Verify on your state nodal agency's website.",
+          "stats": [
+            {
+              "num": "₹30,000",
+              "label": "Central subsidy at 1 kW"
+            },
+            {
+              "num": "₹78,000",
+              "label": "Central ceiling — reached at 3 kW"
+            },
+            {
+              "num": "₹1,08,000",
+              "label": "Total at 3 kW in Uttar Pradesh"
+            }
+          ],
+          "strip": [
+            "Central CFA",
+            "State top-up",
+            "Net cost",
+            "Payout timeline",
+            "Eligibility"
+          ]
+        },
+        "tocLabel": "What this guide covers",
+        "toc": [
+          "Subsidy by system size",
+          "Why 3 kW is the sweet spot",
+          "What the subsidy is really worth: net cost",
+          "How and when the money is paid",
+          "Conditions attached to the subsidy",
+          "Common subsidy calculation mistakes",
+          "What happens after March 2027?"
+        ],
+        "sections": [
+          {
+            "kicker": "Subsidy by capacity",
+            "title": "",
+            "blocks": [
+              {
+                "type": "table",
+                "headers": [
+                  "System capacity",
+                  "Central subsidy (CFA)",
+                  "UP state top-up",
+                  "Total in UP"
+                ],
+                "rows": [
+                  [
+                    "1 kW",
+                    "₹30,000",
+                    "₹15,000",
+                    "₹45,000"
+                  ],
+                  [
+                    "2 kW",
+                    "₹60,000",
+                    "₹30,000",
+                    "₹90,000"
+                  ],
+                  [
+                    "3 kW",
+                    "₹78,000",
+                    "₹30,000",
+                    "<b>₹1,08,000</b>"
+                  ],
+                  [
+                    "4 kW, 5 kW, 6 kW+",
+                    "₹78,000",
+                    "₹30,000",
+                    "₹1,08,000 <i>(no increase)</i>"
+                  ]
+                ]
+              },
+              {
+                "type": "p",
+                "html": "The central figures apply <b>all over India</b>. The state column is Uttar Pradesh's additional contribution; Haryana pays ₹30,000 at 2 kW as well. Bihar, Rajasthan, Delhi and other states have their own arrangements — some pay nothing extra, some pay through the DISCOM, and Delhi has announced a separate zero-upfront model for 3 kW systems. Check the state nodal agency before you calculate."
+              }
+            ]
+          },
+          {
+            "kicker": "The ₹78,000 ceiling",
+            "title": "Why 3 kW is the sweet spot",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "The central subsidy is capped at <b>₹78,000</b>, which is reached at 3 kW. Every kW beyond that is paid fully by you. That is why the vast majority of PM Surya Ghar installations are 3 kW, and why vendors quote 3 kW as the default."
+              },
+              {
+                "type": "p",
+                "html": "If you need 5 kW — two ACs, a pump, a larger family — the economics still work, because the per-kW cost of the extra capacity falls once inverter, structure and DISCOM costs are shared. But do not expect the subsidy to scale with it."
+              }
+            ]
+          },
+          {
+            "kicker": "Net cost",
+            "title": "What the subsidy is really worth",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "Indicative Uttar Pradesh market prices for on-grid DCR systems in 2026:"
+              },
+              {
+                "type": "table",
+                "headers": [
+                  "",
+                  "1 kW",
+                  "2 kW",
+                  "3 kW"
+                ],
+                "rows": [
+                  [
+                    "<b>Installed cost (range)</b>",
+                    "₹60,000–70,000",
+                    "₹1,10,000–1,40,000",
+                    "₹1,50,000–1,90,000"
+                  ],
+                  [
+                    "<b>Subsidy (UP)</b>",
+                    "₹45,000",
+                    "₹90,000",
+                    "₹1,08,000"
+                  ],
+                  [
+                    "<b>Net cost to you</b>",
+                    "~₹20,000–25,000",
+                    "~₹40,000–50,000",
+                    "~₹70,000–75,000"
+                  ],
+                  [
+                    "<b>Generation per month</b>",
+                    "120–150 units",
+                    "240–300 units",
+                    "360–450 units"
+                  ],
+                  [
+                    "<b>Simple payback</b>",
+                    "~3 years",
+                    "2–3 years",
+                    "2–2.5 years"
+                  ]
+                ]
+              },
+              {
+                "type": "p",
+                "html": "Prices vary with module brand (540 W vs 580 W), inverter brand, structure height and city. Treat these as a sanity check for the quotation you receive, not as a quotation."
+              }
+            ]
+          },
+          {
+            "kicker": "Payout",
+            "title": "How and when the money is paid",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "The subsidy is <b>not a discount on the invoice</b>. You pay the vendor the full amount (or take a loan), the system gets commissioned, and the government transfers the subsidy into your bank account afterwards."
+              },
+              {
+                "type": "callout",
+                "label": "How it lands",
+                "title": "Two tranches, two governments",
+                "body": "The central subsidy comes first, typically <b>7–15 days</b> after you click <i>Redeem Subsidy</i> and your bank account is verified. The state top-up follows around <b>15 days later</b>. There is nothing extra to file for the state portion."
+              },
+              {
+                "type": "list",
+                "items": [
+                  "<b>Guideline:</b> 30 days from bank verification.",
+                  "<b>Loan customers:</b> since August 2026 the subsidy is credited to the loan account, not your savings account. It reduces your outstanding principal.",
+                  "<b>Who clicks Redeem:</b> you do, from your consumer login. Vendors cannot do it for you."
+                ]
+              }
+            ]
+          },
+          {
+            "kicker": "Eligibility",
+            "title": "Conditions attached to the subsidy",
+            "blocks": [
+              {
+                "type": "list",
+                "items": [
+                  "<b>DCR modules only.</b> The vendor must issue you a B2C DCR certificate listing every panel serial installed on your roof. No certificate, no subsidy.",
+                  "<b>On-grid with net meter.</b> Off-grid and battery-only systems are not eligible. Hybrid systems qualify for the solar portion when connected through a net meter.",
+                  "<b>Capacity must not fall short of the sanctioned proposal.</b> Installing 3.3 kW of modules on a 3 kW application is fine; installing 2.7 kW is not. MNRE allows ±10% DC/AC tolerance for net-metering purposes since 29 July 2026, but a customer who pays for 5 kW should receive 5 kW.",
+                  "<b>Name match</b> across electricity bill, Aadhaar, PAN and bank passbook.",
+                  "<b>Bank proof</b> must be a passbook first page or cancelled cheque bearing the bank's stamp and signature.",
+                  "<b>PMSGMBY logo</b> on modules, inverter and DB — the vendor's responsibility, at the vendor's cost."
+                ]
+              }
+            ]
+          },
+          {
+            "kicker": "Avoid these",
+            "title": "Common subsidy calculation mistakes",
+            "blocks": [
+              {
+                "type": "list",
+                "items": [
+                  "<b>Assuming 5 kW gets ₹1,30,000.</b> It does not — the central ceiling is ₹78,000.",
+                  "<b>Adding a state top-up your state does not pay.</b> Confirm your state's figure first.",
+                  "<b>Treating the quotation as net of subsidy.</b> Ask the vendor explicitly: “Is this the amount I pay you, before subsidy?”",
+                  "<b>Forgetting net-meter and DISCOM charges.</b> Some DISCOMs charge separately for the bi-directional meter and inspection."
+                ]
+              }
+            ]
+          },
+          {
+            "kicker": "Scheme deadline",
+            "title": "What happens after March 2027?",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "The scheme deadline is <b>31 March 2027</b>. With about 53% of the target achieved by August 2026, the government has not announced whether the subsidy continues, reduces or ends."
+              },
+              {
+                "type": "p",
+                "html": "The prudent approach is to apply and commission before the deadline — a file stuck in inspection on 1 April 2027 is an avoidable risk."
+              },
+              {
+                "type": "callout",
+                "label": "Procurement support",
+                "title": "Buying for a PM Surya Ghar project?",
+                "body": "Headsup B2B supplies DCR-certified modules, inverters and structures to PM Surya Ghar vendors from its Patna and Dausa hubs, and arranges installation through empanelled partners. Ask for a written quotation showing <b>gross cost, subsidy and net cost separately</b>."
+              }
+            ]
+          }
+        ],
+        "faqKicker": "FAQ",
+        "faqTitle": "Frequently asked questions",
+        "faqs": [],
+        "keywords": [],
+        "consultationTitle": "Request a Consultation",
+        "ctaHeading": "Planning a rooftop solar project?",
+        "ctaSubtitle": "Talk to our solar team for vetted vendors, DCR-compliant modules and end-to-end procurement support.",
+        "ctaButton": "Request a Consultation",
+        "ctaFooter": "No obligation · Response within 24 hours"
+      },
+      "howToApply": {
+        "meta": {
+          "seoTitle": "How to Apply for PM Surya Ghar Online 2026: Step-by-Step",
+          "seoDescription": "A step-by-step walkthrough of the PM Surya Ghar application on pmsuryaghar.gov.in — registration, rooftop application, vendor selection, agreement, feasibility report, installation confirmation, DISCOM inspection and subsidy redemption — with the mistakes that stall files.",
+          "ogTitle": "How to Apply for PM Surya Ghar Online 2026: Step-by-Step",
+          "ogDescription": "A step-by-step walkthrough of the PM Surya Ghar application on pmsuryaghar.gov.in — registration, rooftop application, vendor selection, agreement, feasibility report, installation confirmation, DISCOM inspection and subsidy redemption — with the mistakes that stall files."
+        },
+        "hero": {
+          "badge": "PM Surya Ghar",
+          "readTime": "9 min read",
+          "published": "Updated 5 September 2026",
+          "title1": "How to Apply for PM Surya Ghar Online in 2026:",
+          "title2": "Registration to Redeem Subsidy",
+          "subtitle": "Most stuck PM Surya Ghar files are stuck because of a wrong upload or a skipped step, not because of the government. This guide follows the portal in the exact order it enforces.",
+          "sourceLine": "Last updated: 5 September 2026.",
+          "stats": [
+            {
+              "num": "12",
+              "label": "Steps on the portal"
+            },
+            {
+              "num": "6–8 weeks",
+              "label": "Application to money in bank"
+            },
+            {
+              "num": "₹100",
+              "label": "Stamp paper for the agreement"
+            }
+          ],
+          "strip": [
+            "Registration",
+            "Vendor",
+            "Agreement",
+            "Inspection",
+            "Redeem"
+          ]
+        },
+        "tocLabel": "What this guide covers",
+        "toc": [
+          "Before you start: get four things right",
+          "Step 1 — Consumer registration",
+          "Step 2 — Rooftop solar application",
+          "Step 3 — Vendor and subsidy bank details",
+          "Steps 4–6 — Consent, agreement, feasibility",
+          "Steps 7–8 — Loan and DCR certificate",
+          "Steps 9–10 — Installation and your confirmation",
+          "Steps 11–12 — Inspection, commissioning, redeem",
+          "Realistic timeline"
+        ],
+        "sections": [
+          {
+            "kicker": "Preparation",
+            "title": "Before you start: get four things right",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "<b>Name consistency.</b> Your name must be identical on the electricity bill, Aadhaar, PAN and bank passbook. If the bill is wrong, get the bill corrected at the DISCOM — do not try to change Aadhaar to match a bill error.",
+                  "<b>Sanctioned load.</b> Your proposed solar capacity cannot exceed your connection's sanctioned load. A 2 kW connection cannot apply for 3 kW solar; apply for load enhancement first.",
+                  "<b>Bank proof.</b> Scan the first page of your passbook or a cancelled cheque clearly. A statement or mini-statement will be rejected.",
+                  "<b>Recent bill.</b> Not older than six months."
+                ]
+              }
+            ]
+          },
+          {
+            "kicker": "Step 1",
+            "title": "Consumer registration",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "Go to <b>pmsuryaghar.gov.in → Consumer → Apply Now</b>. Enter your mobile number, verify OTP, then select state, district and DISCOM. Enter your name as per Aadhaar. The communication address must be the installation address."
+              }
+            ]
+          },
+          {
+            "kicker": "Step 2",
+            "title": "Rooftop solar application",
+            "blocks": [
+              {
+                "type": "list",
+                "items": [
+                  "Enter your 10-digit consumer account number and click <b>Fetch Details</b>. The portal pulls the bill-holder's name and sanctioned load from the DISCOM.",
+                  "Enter proposed capacity (typically 3 kW). If it exceeds sanctioned load, the portal warns you.",
+                  "Pin your roof on the map: search the PIN code, click <b>Point</b>, then draw the <b>Polygon</b> over the roof.",
+                  "Upload the electricity bill.",
+                  "Leave <b>With DCR</b> selected. Never tick “Give up subsidy.” Accept the net metering agreement."
+                ]
+              }
+            ]
+          },
+          {
+            "kicker": "Step 3",
+            "title": "Select vendor and enter subsidy bank details",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "Choose an empanelled vendor from the list for your district. Then fill <b>Subsidy Bank Details</b>: bank, IFSC, branch, account holder name exactly as in the passbook, and upload the passbook page or cancelled cheque."
+              }
+            ]
+          },
+          {
+            "kicker": "Steps 4–6",
+            "title": "Vendor consent, agreement and feasibility report",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "<b>Step 4 — Vendor consent.</b> The vendor logs into the vendor portal and accepts your application. Nothing further moves until this happens; if your vendor is slow, follow up."
+              },
+              {
+                "type": "p",
+                "html": "<b>Step 5 — Agreement on ₹100 stamp paper.</b> The vendor uploads an agreement between you (First Party) and the vendor (Second Party) on a ₹100 non-judicial stamp paper under Article 5 (“Agreement or Memorandum of an Agreement”) in the Annexure 2 format available on the consumer portal."
+              },
+              {
+                "type": "callout",
+                "label": "Leading cause of rejection",
+                "title": "A ₹50 stamp paper is wrong",
+                "body": "Quotations, passbooks or blank paper uploaded in the agreement field are a leading cause of rejection. It must be the Annexure 2 agreement on ₹100 non-judicial stamp paper."
+              },
+              {
+                "type": "p",
+                "html": "<b>Step 6 — Site Feasibility Report.</b> The vendor visits your roof and uploads a report: shadow-free roof (yes/no), shadow-free area in square metres, proposed capacity, visiting employee's name and number, a roof photograph and the quotation as a PDF. This visit is <b>mandatory</b> — a vendor who fills the report without visiting is breaking the rules."
+              },
+              {
+                "type": "p",
+                "html": "Only after steps 5 and 6 are uploaded does the <b>Bank Loan</b> option become active."
+              }
+            ]
+          },
+          {
+            "kicker": "Steps 7–8",
+            "title": "Loan and DCR certificate",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "<b>Step 7 — Loan (optional).</b> If you want financing, the consumer portal redirects you to Jansamarth. See our separate guide on <a href=\"/pm-surya-ghar/loan\" class=\"text-headupb2b font-semibold underline\">PM Surya Ghar loan via Jansamarth</a>. Own contribution is usually 10% (sometimes 20%) of project cost."
+              },
+              {
+                "type": "p",
+                "html": "<b>Step 8 — DCR certificate and procurement.</b> The vendor buys DCR modules from a distributor and issues a <a href=\"/pm-surya-ghar/dcr-certificate\" class=\"text-headupb2b font-semibold underline\">B2C DCR certificate</a> in your name, containing your application number and the serial numbers of every panel to be installed on your roof. This certificate is emailed to the address in your application — keep it."
+              }
+            ]
+          },
+          {
+            "kicker": "Steps 9–10",
+            "title": "Installation and your confirmation",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "<b>Step 9 — Vendor submits installation.</b> After installing, the vendor enters: inverter manufacturer (must match the label), capacity in kVA, inverter serial number (the portal validates it live), your DCR certificate number (which auto-fills the module details), and a geo-tagged photograph of the array with you in the frame. Installed module capacity may exceed the proposal slightly but must not be less."
+              },
+              {
+                "type": "p",
+                "html": "<b>Step 10 — Your confirmation and vendor rating.</b> Log in with your own OTP, review the installation details, tick the confirmations, click <b>Submit</b> (not “Send to Vendor”) and rate the vendor honestly."
+              },
+              {
+                "type": "callout",
+                "label": "Do this yourself",
+                "title": "Never hand your OTP to the vendor",
+                "body": "Handing your OTP to the vendor so they can rate themselves defeats the only independent check in the process and leaves you without recourse if there is a defect later."
+              }
+            ]
+          },
+          {
+            "kicker": "Steps 11–12",
+            "title": "Inspection, commissioning and redeem",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "<b>Step 11 — DISCOM inspection and net meter.</b> An offline step. Carry the acknowledgement/e-token, feasibility report, Aadhaar, PAN, electricity bill, DCR certificate and a work-completion certificate on the vendor's letterhead. Requirements vary by DISCOM. The inspector checks earthing, structure, surge protection, wiring and serial numbers, then the bi-directional meter is installed."
+              },
+              {
+                "type": "p",
+                "html": "<b>Step 12 — Commissioning and Redeem Subsidy.</b> Once the DISCOM marks the project commissioned, log into your consumer account and click <b>Redeem Subsidy</b>. Central subsidy arrives in roughly 7–15 days, state top-up around 15 days later. If account verification remains pending beyond 15–20 days, raise a query under <b>Subsidy Related Issue → Account Verification Pending</b>."
+              }
+            ]
+          },
+          {
+            "kicker": "Timeline",
+            "title": "Realistic timeline",
+            "blocks": [
+              {
+                "type": "table",
+                "headers": [
+                  "Stage",
+                  "Typical time"
+                ],
+                "rows": [
+                  [
+                    "Registration to vendor acceptance",
+                    "1–3 days"
+                  ],
+                  [
+                    "Agreement + feasibility upload",
+                    "2–5 days"
+                  ],
+                  [
+                    "Loan sanction (if any)",
+                    "7–20 days"
+                  ],
+                  [
+                    "Installation",
+                    "1–2 days on site"
+                  ],
+                  [
+                    "DISCOM inspection + net meter",
+                    "5–15 days (one observed file: 6 days)"
+                  ],
+                  [
+                    "Subsidy credit after redeem",
+                    "15–30 days"
+                  ]
+                ]
+              },
+              {
+                "type": "p",
+                "html": "A well-prepared file goes from application to money-in-bank in about <b>six to eight weeks</b>."
+              },
+              {
+                "type": "callout",
+                "label": "Before you file",
+                "title": "Get your documents pre-checked",
+                "body": "Headsup B2B's solar desk in <b>Patna and Dausa</b> can pre-check your bill, Aadhaar, PAN and bank proof for name mismatches before you file, and connect you with an empanelled vendor in your district."
+              }
+            ]
+          }
+        ],
+        "faqKicker": "FAQ",
+        "faqTitle": "Frequently asked questions",
+        "faqs": [],
+        "keywords": [],
+        "ctaHeading": "Planning a rooftop solar project?",
+        "ctaSubtitle": "Talk to our solar team for vetted vendors, DCR-compliant modules and end-to-end procurement support.",
+        "ctaButton": "Request a Consultation",
+        "ctaFooter": "No obligation · Response within 24 hours",
+        "consultationTitle": "Request a Consultation"
+      },
+      "subsidyNotReceived": {
+        "meta": {
+          "seoTitle": "PM Surya Ghar Subsidy Not Received? 5 Reasons & Fixes",
+          "seoDescription": "Solar installed, inspection done, but no subsidy? Here are the five reasons PM Surya Ghar subsidies get stuck — name mismatch, wrong bank document, verification pending, Jansamarth loan-account details, and who has to click Redeem — with the exact fix for each.",
+          "ogTitle": "PM Surya Ghar Subsidy Not Received? 5 Reasons & Fixes",
+          "ogDescription": "Solar installed, inspection done, but no subsidy? Here are the five reasons PM Surya Ghar subsidies get stuck — name mismatch, wrong bank document, verification pending, Jansamarth loan-account details, and who has to click Redeem — with the exact fix for each."
+        },
+        "hero": {
+          "badge": "PM Surya Ghar",
+          "readTime": "8 min read",
+          "published": "Updated 5 September 2026",
+          "title1": "PM Surya Ghar Subsidy Not Received?",
+          "title2": "The 5 Reasons Files Get Stuck",
+          "subtitle": "The subsidy is paid automatically once a file is clean. When it does not arrive, the cause is almost always one of five things — and in every case the fix is on the consumer's or vendor's side, not the government's.",
+          "sourceLine": "Last updated: 5 September 2026.",
+          "stats": [
+            {
+              "num": "2–24 hrs",
+              "label": "Normal bank verification time"
+            },
+            {
+              "num": "7–15 days",
+              "label": "Central subsidy after redeem"
+            },
+            {
+              "num": "30 days",
+              "label": "Overall guideline from bank verification"
+            }
+          ],
+          "strip": [
+            "Name mismatch",
+            "Bank proof",
+            "Verification",
+            "Loan account",
+            "Redeem"
+          ]
+        },
+        "tocLabel": "What this guide covers",
+        "toc": [
+          "First, check where your file actually is",
+          "Reason 1 — Name mismatch across documents",
+          "Reason 2 — Wrong bank document uploaded",
+          "Reason 3 — Account verification pending",
+          "Reason 4 — Loan customers: Jansamarth details",
+          "Reason 5 — Nobody clicked Redeem",
+          "Less common causes",
+          "What the timeline should look like",
+          "Beware of “subsidy guarantee” claims"
+        ],
+        "sections": [
+          {
+            "kicker": "Start here",
+            "title": "First, check where your file actually is",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "Log into pmsuryaghar.gov.in and open <b>My Applications</b>. The status will be one of: installation pending, consumer confirmation pending, DISCOM inspection pending, commissioned, subsidy redeem pending, bank verification pending, or subsidy released."
+              },
+              {
+                "type": "p",
+                "html": "Only files marked <b>commissioned</b> are eligible for subsidy. If you have not clicked <b>Redeem Subsidy</b>, nothing has been requested yet."
+              }
+            ]
+          },
+          {
+            "kicker": "Reason 1",
+            "title": "Name mismatch across documents",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "Since around July 2026 the national portal requires the account-holder name to match <b>exactly</b> across the electricity bill, Aadhaar, PAN and the bank passbook. Earlier, a bill-only mismatch was tolerated; it no longer is. One demonstrated rejection was on <b>“PRASNT” versus “PRASHANT”</b> — a single letter."
+              },
+              {
+                "type": "callout",
+                "label": "Fix",
+                "title": "Correct the wrong document, then ask for re-verification",
+                "body": "Identify which document is wrong. If it is the electricity bill, apply for a name correction at your DISCOM (most now allow it online). If it is the bank passbook, get the bank to correct the name and re-upload proof. Then raise a query on the portal so the file is re-verified."
+              }
+            ]
+          },
+          {
+            "kicker": "Reason 2",
+            "title": "Wrong bank document uploaded",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "The portal accepts only a <b>passbook first page</b> or a <b>cancelled cheque</b> that shows name, account number, IFSC and the bank's stamp/signature. Uploads that are rejected as “unauthorised”:"
+              },
+              {
+                "type": "list",
+                "items": [
+                  "Bank statements or mini-statements",
+                  "Screenshots of a banking app",
+                  "Blurred or cropped scans where the IFSC is unreadable"
+                ]
+              },
+              {
+                "type": "callout",
+                "label": "Fix",
+                "title": "Re-upload a clean passbook page or cheque",
+                "body": "Re-upload through your consumer login. If the field is locked, raise a query under <b>Subsidy Related Issue</b> and attach the correct document."
+              }
+            ]
+          },
+          {
+            "kicker": "Reason 3",
+            "title": "Account verification pending",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "Bank account verification normally clears within <b>2–3 hours</b>, almost always within 24 hours. If it sits at “verification pending” for 15–20 days with correct data, it needs a ticket."
+              },
+              {
+                "type": "callout",
+                "label": "Fix",
+                "title": "Raise a query and follow up on WhatsApp",
+                "body": "On the national portal go to <b>Raise a Query → Subsidy Related Issue → Account Verification Pending</b>, quote your application number and attach the bank proof. Support is available by phone helpline, email and WhatsApp; WhatsApp typically responds within about 48 hours and is the fastest route in practice."
+              }
+            ]
+          },
+          {
+            "kicker": "Reason 4",
+            "title": "Loan customers: Jansamarth details not received",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "If you financed the system through Jansamarth, the subsidy is now routed to your <b>loan account</b> rather than your savings account (change effective around August 2026). The Redeem button stays disabled with a message asking you to verify loan details on Jansamarth until the bank pushes your loan account details to the portal."
+              },
+              {
+                "type": "callout",
+                "label": "Fix",
+                "title": "Wait out the 15-day window",
+                "body": "The portal gives the bank <b>15 days from inspection approval</b> to transmit loan details. If they have not arrived by then, the consumer is offered the option to substitute savings-account details. Do not assume the file is broken during the 15-day window; do not open duplicate tickets."
+              }
+            ]
+          },
+          {
+            "kicker": "Reason 5",
+            "title": "Nobody clicked Redeem",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "Redeeming the subsidy is the <b>consumer's step</b>, done from the consumer login after commissioning. Vendors cannot do it. Many customers assume the vendor “handles the subsidy” and wait for months on a file that has never been redeemed."
+              },
+              {
+                "type": "callout",
+                "label": "Fix",
+                "title": "Log in and click Redeem Subsidy",
+                "body": "Open the application, click <b>Redeem Subsidy</b>, confirm the bank details."
+              }
+            ]
+          },
+          {
+            "kicker": "Also check",
+            "title": "Less common causes",
+            "blocks": [
+              {
+                "type": "list",
+                "items": [
+                  "<b>Subsidy rejected by PFMS.</b> The Public Financial Management System rejects transfers where the account is dormant, frozen, jointly held with a different primary holder, or where the account type is unsupported. Provide an active single-holder savings account and re-upload proof.",
+                  "<b>DCR certificate not uploaded against the application.</b> The B2C DCR certificate remains “Unclaimed” on the DCR portal until the vendor attaches it to your file. Ask your vendor to confirm.",
+                  "<b>Serial number mismatch</b> between the DCR certificate and the panels physically installed. This is a third-party inspection finding under the MNRE SOP and will stall the file until corrected.",
+                  "<b>“Give up subsidy” ticked by mistake</b> at application. This is not reversible on the same application; it requires a fresh file."
+                ]
+              }
+            ]
+          },
+          {
+            "kicker": "Benchmarks",
+            "title": "What the timeline should look like",
+            "blocks": [
+              {
+                "type": "table",
+                "headers": [
+                  "Event",
+                  "Expected time"
+                ],
+                "rows": [
+                  [
+                    "Redeem clicked → bank verification",
+                    "2–24 hours"
+                  ],
+                  [
+                    "Bank verification → central subsidy credit",
+                    "7–15 days"
+                  ],
+                  [
+                    "Central credit → state top-up credit",
+                    "~15 days"
+                  ],
+                  [
+                    "Overall guideline",
+                    "30 days from bank verification"
+                  ]
+                ]
+              },
+              {
+                "type": "p",
+                "html": "If you are outside these windows and have ruled out the five reasons above, escalate: national portal query first; for UP, the Solar Samadhan portal (upnedasolarsamadhan.in) as a parallel route; then a written complaint to your state nodal agency quoting your <b>NP-prefixed application number</b>."
+              }
+            ]
+          },
+          {
+            "kicker": "Warning",
+            "title": "Beware of “subsidy guarantee” claims",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "No vendor can guarantee your subsidy. The government pays when the file is correct, and only then. A vendor who promises “100% subsidy is our responsibility” is making a sales claim, not a contractual one."
+              },
+              {
+                "type": "p",
+                "html": "What a good vendor <i>can</i> do is pre-check your documents for name mismatches and bank proof before filing — which prevents most of the failures on this page."
+              },
+              {
+                "type": "callout",
+                "label": "Stuck file?",
+                "title": "Tell us your portal status",
+                "body": "Headsup B2B's solar desk helps consumers and partner vendors diagnose stuck subsidy files. Share your application number and current portal status and we will tell you which of the five causes applies."
+              }
+            ]
+          }
+        ],
+        "faqKicker": "FAQ",
+        "faqTitle": "Frequently asked questions",
+        "faqs": [],
+        "keywords": [],
+        "ctaHeading": "Planning a rooftop solar project?",
+        "ctaSubtitle": "Talk to our solar team for vetted vendors, DCR-compliant modules and end-to-end procurement support.",
+        "ctaButton": "Request a Consultation",
+        "ctaFooter": "No obligation · Response within 24 hours",
+        "consultationTitle": "Request a Consultation"
+      },
+      "vendorRegistration": {
+        "meta": {
+          "seoTitle": "PM Surya Ghar Vendor Registration 2026: Empanelment Guide",
+          "seoDescription": "Everything a solar installer needs to get empanelled under PM Surya Ghar — vendor tiers and bank guarantee amounts, the two-portal registration, the document checklist, and the nine clerical mistakes that fill every rejection list.",
+          "ogTitle": "PM Surya Ghar Vendor Registration 2026: Empanelment Guide",
+          "ogDescription": "Everything a solar installer needs to get empanelled under PM Surya Ghar — vendor tiers and bank guarantee amounts, the two-portal registration, the document checklist, and the nine clerical mistakes that fill every rejection list."
+        },
+        "hero": {
+          "badge": "PM Surya Ghar",
+          "readTime": "9 min read",
+          "published": "Updated 5 September 2026",
+          "title1": "How to Become a PM Surya Ghar Vendor in 2026:",
+          "title2": "Empanelment, Bank Guarantee & 9 Rejection Reasons",
+          "subtitle": "Six months of published approval and rejection lists tell a consistent story — not one rejection was for lack of technical ability, financial capacity or experience. All were clerical.",
+          "sourceLine": "Last updated: 5 September 2026. Based on published UPNEDA/MNRE approval and rejection lists; verify current formats on pmsuryaghar.gov.in and your state nodal agency.",
+          "stats": [
+            {
+              "num": "₹2.5 lakh",
+              "label": "Bank guarantee — state vendor"
+            },
+            {
+              "num": "₹25 lakh",
+              "label": "Bank guarantee — national vendor"
+            },
+            {
+              "num": "9",
+              "label": "Clerical reasons behind every rejection"
+            }
+          ],
+          "strip": [
+            "Vendor tiers",
+            "Bank guarantee",
+            "Two portals",
+            "Documents",
+            "Rejections"
+          ]
+        },
+        "tocLabel": "What this guide covers",
+        "toc": [
+          "Vendor tiers and bank guarantee",
+          "The two-portal rule",
+          "Documents",
+          "The nine rejection reasons",
+          "Cadence and what to expect",
+          "Four things to do the day you are approved",
+          "Things not to do",
+          "Your first customer file"
+        ],
+        "sections": [
+          {
+            "kicker": "Tiers",
+            "title": "Vendor tiers and bank guarantee",
+            "blocks": [
+              {
+                "type": "table",
+                "headers": [
+                  "Tier",
+                  "Bank guarantee",
+                  "Scope"
+                ],
+                "rows": [
+                  [
+                    "State vendor",
+                    "₹2.5 lakh",
+                    "All districts of one state"
+                  ],
+                  [
+                    "Multi-state vendor",
+                    "₹2.5 lakh per state",
+                    "Two or more named states"
+                  ],
+                  [
+                    "National vendor",
+                    "₹25 lakh",
+                    "All India"
+                  ]
+                ]
+              },
+              {
+                "type": "p",
+                "html": "The bank guarantee must:"
+              },
+              {
+                "type": "list",
+                "items": [
+                  "Run for a full <b>five years</b> from the date of issue",
+                  "Be in the prescribed MNRE format",
+                  "Be signed and stamped by the bank <b>on every page</b> — unsigned second and third pages are a named rejection reason",
+                  "Be issued in favour of the state nodal agency (or MNRE for national)"
+                ]
+              },
+              {
+                "type": "p",
+                "html": "Most new installers should start as a <b>state vendor</b>. Selecting “multi-state” when you meant “state” is itself a rejection reason."
+              }
+            ]
+          },
+          {
+            "kicker": "Registration",
+            "title": "The two-portal rule — the mistake that fills every rejection list",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "You must register in <b>two</b> places:"
+              },
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "<b>Your state nodal agency portal</b> — UPNEDA (UP), BREDA (Bihar), RRECL (Rajasthan), HAREDA (Haryana) or the DISCOM where the DISCOM is the nodal body. The full list for all 36 states and UTs is on the PM Surya Ghar Knowledge Centre.",
+                  "<b>The national portal</b>, pmsuryaghar.gov.in → Vendor Registration."
+                ]
+              },
+              {
+                "type": "callout",
+                "label": "Most common rejection",
+                "title": "Registering on only one portal",
+                "body": "Registering on only one — usually the state portal — is the single most common reason for rejection across every list published in 2026. Complete <b>both</b> before couriering documents."
+              }
+            ]
+          },
+          {
+            "kicker": "Checklist",
+            "title": "Documents",
+            "blocks": [
+              {
+                "type": "list",
+                "items": [
+                  "Company/firm registration (GST certificate, Udyam/MSME certificate, PAN)",
+                  "Bank guarantee (original, all pages signed by bank)",
+                  "<b>15-point declaration/undertaking</b> on ₹100 non-judicial stamp paper, notarised, with the firm's stamp and authorised signatory",
+                  "<b>Authorisation letter</b> for the signatory — uploaded in its own field, not the declaration field",
+                  "Rooftop solar experience declaration — up to 100 kW is self-declared; 101 kW and above requires an experience certificate",
+                  "Details of technical staff and service infrastructure in the state",
+                  "Cancelled cheque, address proof, photographs of office/warehouse"
+                ]
+              },
+              {
+                "type": "p",
+                "html": "Physical originals go to the nodal office by <b>speed post or courier only</b> — hand delivery is refused under the current procedure."
+              }
+            ]
+          },
+          {
+            "kicker": "Rejections",
+            "title": "The nine rejection reasons, from the published lists",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "No registration on the national portal — applied on the state portal only.",
+                  "Declaration not on ₹100 stamp paper or not notarised.",
+                  "Bank guarantee validity under five years.",
+                  "Authorisation letter uploaded in the declaration field (wrong slot).",
+                  "Same document (usually the GST certificate) uploaded in every field.",
+                  "Firm's stamp/seal missing from the declaration.",
+                  "Bank has not signed pages 2 and 3 of the bank guarantee.",
+                  "Wrong vendor category — multi-state selected where state was intended.",
+                  "No re-registration after an earlier rejection. A rejection does not self-heal; you must correct and resubmit."
+                ]
+              },
+              {
+                "type": "p",
+                "html": "Print this list, tick each item before submission, and you have eliminated the causes behind essentially every rejection in the last six months."
+              }
+            ]
+          },
+          {
+            "kicker": "Cadence",
+            "title": "Cadence and what to expect",
+            "blocks": [
+              {
+                "type": "list",
+                "items": [
+                  "New approval/rejection lists publish roughly every <b>15–20 days</b>, typically 250–300 names combined.",
+                  "In the window March–August 2026 the national portal published lists on 7 May (123 approved), 5 July (58 rejected), 20 July (192 approved), 14 August (rejections) and 18 August (236 approved).",
+                  "In late August 2026, <b>300+ vendor IDs were deactivated</b> for non-compliance — empanelment is not permanent."
+                ]
+              }
+            ]
+          },
+          {
+            "kicker": "Day one",
+            "title": "Four things to do the day you are approved",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "<b>Download the empanelment certificate</b> from the portal and keep it on your letterhead; customers and DISCOMs will ask.",
+                  "<b>Register on the DCR Verification Portal</b> (separate portal, separate login). Without it you cannot issue B2C DCR certificates and your customers cannot claim subsidy. See our <a href=\"/pm-surya-ghar/dcr-certificate\" class=\"text-headupb2b font-semibold underline\">DCR certificate guide</a>.",
+                  "<b>Order PMSGMBY logo stickers</b> (weather-resistant PVC, 25×25 mm and 50×50 mm, English and Hindi) — mandatory on modules, inverters and DBs since 3 August 2026, at your cost.",
+                  "<b>Set up a complaint-response routine.</b> Under the June 2026 MNRE SOP, a complaint you do not answer within 8 days gets a reminder, then a show-cause, then a one-month portal block at day 30, and blocked vendors are listed publicly."
+                ]
+              },
+              {
+                "type": "callout",
+                "label": "Remember",
+                "title": "Silence, not defect, is what gets vendors blocked",
+                "body": "The escalation clock runs on your response, not on whether the complaint was justified. Answer every complaint inside 8 days."
+              }
+            ]
+          },
+          {
+            "kicker": "Avoid",
+            "title": "Things not to do",
+            "blocks": [
+              {
+                "type": "list",
+                "items": [
+                  "Do not <b>under-declare experience</b> to dodge the experience-certificate requirement. If you have 150 kW of installations, produce the certificate.",
+                  "Do not skip the ₹100 stamp paper because “someone got approved without it.” Approvals obtained on an incomplete declaration are exposed at audit.",
+                  "Do not pay a “training consultant” ₹30,000–40,000 for a hotel session because your name appeared on a vendor list. Everything in this article is the training."
+                ]
+              }
+            ]
+          },
+          {
+            "kicker": "Operations",
+            "title": "Your first customer file",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "Once empanelled, the operational sequence for each customer is: accept the application → agreement on ₹100 stamp paper → site feasibility report after a physical visit → procure DCR modules → issue B2C DCR certificate with panel serials → submit installation with inverter serial and geo-tagged photo → customer confirms from their own login → DISCOM inspection → customer redeems subsidy."
+              },
+              {
+                "type": "p",
+                "html": "Our <a href=\"/pm-surya-ghar/how-to-apply\" class=\"text-headupb2b font-semibold underline\">How to apply for PM Surya Ghar</a> and <a href=\"/pm-surya-ghar/dcr-certificate\" class=\"text-headupb2b font-semibold underline\">DCR certificate</a> guides cover each step."
+              },
+              {
+                "type": "callout",
+                "label": "Supply support",
+                "title": "Newly empanelled?",
+                "body": "Headsup B2B supports newly empanelled vendors in Bihar, Rajasthan, UP and Delhi-NCR with DCR module stock (B2B DCR transfer), inverters, structures, and a document pre-check before you courier your empanelment file."
+              }
+            ]
+          }
+        ],
+        "faqKicker": "FAQ",
+        "faqTitle": "Frequently asked questions",
+        "faqs": [],
+        "keywords": [],
+        "ctaHeading": "Planning a rooftop solar project?",
+        "ctaSubtitle": "Talk to our solar team for vetted vendors, DCR-compliant modules and end-to-end procurement support.",
+        "ctaButton": "Request a Consultation",
+        "ctaFooter": "No obligation · Response within 24 hours",
+        "consultationTitle": "Request a Consultation"
+      },
+      "dcrCertificate": {
+        "meta": {
+          "seoTitle": "DCR Certificate for PM Surya Ghar: Rules & Verification 2026",
+          "seoDescription": "The DCR certificate is the document that unlocks the PM Surya Ghar subsidy. This guide explains Domestic Content Requirement, the DCR Verification Portal, B2B vs B2C certificates, serial-number tracking, and the errors that get subsidies rejected at inspection.",
+          "ogTitle": "DCR Certificate for PM Surya Ghar: Rules & Verification 2026",
+          "ogDescription": "The DCR certificate is the document that unlocks the PM Surya Ghar subsidy. This guide explains Domestic Content Requirement, the DCR Verification Portal, B2B vs B2C certificates, serial-number tracking, and the errors that get subsidies rejected at inspection."
+        },
+        "hero": {
+          "badge": "PM Surya Ghar",
+          "readTime": "8 min read",
+          "published": "Updated 5 September 2026",
+          "title1": "DCR Certificate for PM Surya Ghar:",
+          "title2": "What It Is and Why No Subsidy Is Paid Without It",
+          "subtitle": "Domestic Content Requirement, the DCR Verification Portal, B2B vs B2C certificates, serial-number tracking, and the errors that get subsidies rejected at inspection.",
+          "sourceLine": "Last updated: 5 September 2026.",
+          "stats": [
+            {
+              "num": "3–4 hrs",
+              "label": "DCR portal login, typically"
+            },
+            {
+              "num": "3 tabs",
+              "label": "Sell B2B · Sell B2C · Unclaimed"
+            },
+            {
+              "num": "6",
+              "label": "Errors that stall subsidies"
+            }
+          ],
+          "strip": [
+            "DCR rule",
+            "Portal",
+            "B2B",
+            "B2C",
+            "Serial numbers"
+          ]
+        },
+        "tocLabel": "What this guide covers",
+        "toc": [
+          "What “DCR” means",
+          "The DCR Verification Portal",
+          "How stock moves: B2B certificates",
+          "Issuing a customer certificate: B2C",
+          "Managing serials across multiple customers",
+          "Where it connects to the national portal",
+          "Errors that cause DCR-related failures",
+          "For homeowners: what to ask your vendor"
+        ],
+        "sections": [
+          {
+            "kicker": "The rule",
+            "title": "What “DCR” means",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "DCR — <b>Domestic Content Requirement</b> — is the rule that solar modules installed under PM Surya Ghar must be made in India using Indian-manufactured solar cells as well as Indian-assembled modules. The certificate proves it for a specific set of panels, identified by serial number."
+              },
+              {
+                "type": "p",
+                "html": "The rule exists to build domestic manufacturing. Its practical effect for a homeowner is simple: <b>no DCR certificate, no subsidy</b>. Imported or non-DCR panels can be installed, but the file will not be paid."
+              },
+              {
+                "type": "p",
+                "html": "DCR modules cost more than non-DCR imported modules. That premium is what the subsidy partly offsets; if the DCR mandate were ever relaxed after the scheme's March 2027 deadline, unsubsidised rooftop economics would improve on their own — but as of September 2026 the mandate is in force."
+              }
+            ]
+          },
+          {
+            "kicker": "Portal",
+            "title": "The DCR Verification Portal",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "The DCR portal is <b>separate from pmsuryaghar.gov.in</b> and needs its own registration. For a vendor:"
+              },
+              {
+                "type": "list",
+                "items": [
+                  "Register as company type <b>“Reseller of Solar Panel Only”</b>",
+                  "Company name, address and PIN code must match the GST certificate <b>letter-for-letter</b>",
+                  "Login credentials are emailed, typically within 3–4 hours, at most 24 hours",
+                  "Set up your branch(es) — each installation is credited against a branch"
+                ]
+              },
+              {
+                "type": "p",
+                "html": "In August 2026 the portal was restructured into three tabs: <b>Sell B2B</b>, <b>Sell B2C</b> and <b>Unclaimed</b>."
+              }
+            ]
+          },
+          {
+            "kicker": "B2B",
+            "title": "How stock moves: B2B certificates",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "The DCR portal is a <b>serial-number ledger</b> that follows panels from manufacturer to rooftop."
+              },
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "The manufacturer issues DCR to the distributor.",
+                  "The distributor sells to a vendor and pushes a <b>B2B certificate</b> listing the serials sold.",
+                  "The vendor sees it under <b>Unclaimed</b>. Until the vendor clicks <b>Credit DCR</b> and selects the branch, the panels are not in stock on the ledger and cannot be assigned to a customer."
+                ]
+              },
+              {
+                "type": "callout",
+                "label": "Common oversight",
+                "title": "Skipping the Credit step",
+                "body": "Vendors who skip the <b>Credit DCR</b> step then cannot issue customer certificates and wonder why."
+              }
+            ]
+          },
+          {
+            "kicker": "B2C",
+            "title": "Issuing a customer certificate",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "For each subsidised customer the vendor goes to <b>Sell B2C</b> and enters:"
+              },
+              {
+                "type": "table",
+                "headers": [
+                  "Field",
+                  "What to enter"
+                ],
+                "rows": [
+                  [
+                    "Subsidy scheme",
+                    "PM Surya Ghar Muft Bijli Yojana"
+                  ],
+                  [
+                    "Application number",
+                    "The customer's NP-prefixed number from My Applications on the national portal"
+                  ],
+                  [
+                    "Customer email",
+                    "Mandatory — the certificate is emailed here"
+                  ],
+                  [
+                    "Invoice number",
+                    "The vendor's own GST invoice to the customer, <b>not</b> the supplier's invoice"
+                  ],
+                  [
+                    "Date of sale",
+                    "Date of sale to the customer, <b>not</b> the supplier's dispatch date"
+                  ],
+                  [
+                    "Panel serial numbers",
+                    "Every panel installed at that customer's premises"
+                  ]
+                ]
+              },
+              {
+                "type": "p",
+                "html": "The certificate records the <b>cell manufacturer</b> and the <b>module manufacturer</b> separately. The PM Surya Ghar installation form asks for the module manufacturer — read it from the “Solar module manufactured by” line."
+              },
+              {
+                "type": "p",
+                "html": "The B2C certificate stays <b>Unclaimed</b> until the vendor uploads it against the customer's application on the national portal. Only then does it count."
+              }
+            ]
+          },
+          {
+            "kicker": "Practice",
+            "title": "Managing serials across multiple customers",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "A vendor who buys 24 panels in one B2B lot and installs them on four 3 kW rooftops must issue four B2C certificates with the correct six serials each. Practical method:"
+              },
+              {
+                "type": "list",
+                "items": [
+                  "Copy all serials from the B2B certificate PDF into a text file",
+                  "<b>Cut</b> (not copy) each serial into the B2C form as it is assigned",
+                  "A serial can then never appear on two certificates"
+                ]
+              },
+              {
+                "type": "callout",
+                "label": "Inspection finding",
+                "title": "Serials must match the panels on the roof",
+                "body": "Serial-number mismatch is an explicit third-party inspection finding under the June 2026 MNRE SOP and stalls the subsidy until corrected. If a panel is swapped on site (damage, wrong delivery), correct the certificate <b>before</b> the customer confirms installation."
+              }
+            ]
+          },
+          {
+            "kicker": "Linkage",
+            "title": "Where it connects to the national portal",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "When the vendor submits installation on pmsuryaghar.gov.in, entering the B2C DCR certificate number <b>auto-fetches the module details</b>. The DCR certificate is the only mandatory upload at that step. The inverter serial is validated live against a database; the DCR number links the modules."
+              },
+              {
+                "type": "p",
+                "html": "The consumer should keep the emailed B2C certificate. It is asked for at DISCOM inspection and is the document that ties their subsidy to the panels on their roof."
+              }
+            ]
+          },
+          {
+            "kicker": "Errors",
+            "title": "Errors that cause DCR-related subsidy failures",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "<b>Supplier's invoice number entered instead of the vendor's</b> — the certificate then does not match the customer file.",
+                  "<b>Wrong or missing customer email</b> — certificate never reaches the customer; DISCOM asks for it.",
+                  "<b>Panels credited to the wrong branch</b> or never credited.",
+                  "<b>Serials split incorrectly</b> across customers.",
+                  "<b>Certificate issued but not uploaded</b> against the application — remains Unclaimed.",
+                  "<b>Non-DCR modules installed with a certificate for different panels</b> — a fraud finding, not an error."
+                ]
+              }
+            ]
+          },
+          {
+            "kicker": "For homeowners",
+            "title": "What to ask your vendor",
+            "blocks": [
+              {
+                "type": "list",
+                "items": [
+                  "“Send me the B2C DCR certificate by email <b>before</b> installation day.”",
+                  "“Show me that the serial numbers on the certificate match the panels being fitted.”",
+                  "“Which module and cell manufacturer are on the certificate?”"
+                ]
+              },
+              {
+                "type": "p",
+                "html": "A vendor who cannot answer these three questions should not be installing a subsidised system."
+              },
+              {
+                "type": "callout",
+                "label": "Supply support",
+                "title": "Same-day B2B DCR push",
+                "body": "Headsup B2B supplies ALMM-listed DCR modules to vendors from its <b>Patna and Dausa</b> hubs with B2B DCR certificates pushed on the DCR portal the same day as dispatch, so stock is creditable on arrival."
+              }
+            ]
+          }
+        ],
+        "faqKicker": "FAQ",
+        "faqTitle": "Frequently asked questions",
+        "faqs": [],
+        "keywords": [],
+        "ctaHeading": "Planning a rooftop solar project?",
+        "ctaSubtitle": "Talk to our solar team for vetted vendors, DCR-compliant modules and end-to-end procurement support.",
+        "ctaButton": "Request a Consultation",
+        "ctaFooter": "No obligation · Response within 24 hours",
+        "consultationTitle": "Request a Consultation"
+      },
+      "loan": {
+        "meta": {
+          "seoTitle": "PM Surya Ghar Loan via Jansamarth: Rates, Banks & Process",
+          "seoDescription": "How to finance a PM Surya Ghar rooftop system with a collateral-free loan through Jansamarth — actual sanctioned rates from SBI, Union Bank, Bank of Baroda and PNB, the documents banks ask for, the IFSC bug that derails applications, and how the subsidy repays the loan.",
+          "ogTitle": "PM Surya Ghar Loan via Jansamarth: Rates, Banks & Process",
+          "ogDescription": "How to finance a PM Surya Ghar rooftop system with a collateral-free loan through Jansamarth — actual sanctioned rates from SBI, Union Bank, Bank of Baroda and PNB, the documents banks ask for, the IFSC bug that derails applications, and how the subsidy repays the loan."
+        },
+        "hero": {
+          "badge": "PM Surya Ghar",
+          "readTime": "8 min read",
+          "published": "Updated 5 September 2026",
+          "title1": "PM Surya Ghar Loan via Jansamarth:",
+          "title2": "Rates, Bank List, Documents & Process",
+          "subtitle": "A collateral-free loan for most of the system cost, applied for from inside the consumer portal — with the subsidy credited straight into the loan account after commissioning.",
+          "sourceLine": "Last updated: 5 September 2026. Rates and terms are as observed in sanctioned cases; each bank's current terms apply.",
+          "stats": [
+            {
+              "num": "5.75–6%",
+              "label": "Observed interest rates p.a."
+            },
+            {
+              "num": "80–90%",
+              "label": "Of project cost financed"
+            },
+            {
+              "num": "10 years",
+              "label": "Maximum tenure"
+            }
+          ],
+          "strip": [
+            "Rates",
+            "Eligibility",
+            "Jansamarth",
+            "Documents",
+            "Subsidy"
+          ]
+        },
+        "tocLabel": "What this guide covers",
+        "toc": [
+          "The loan in one paragraph",
+          "Rates and amounts seen in actual sanctions",
+          "When the loan option appears",
+          "Step-by-step on Jansamarth",
+          "At the branch",
+          "How the subsidy interacts with the loan",
+          "Who should take the loan",
+          "Common failures"
+        ],
+        "sections": [
+          {
+            "kicker": "Overview",
+            "title": "The loan in one paragraph",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "A PM Surya Ghar consumer can borrow most of the system cost from a public-sector bank at concessional rates <b>without collateral</b>. The application is made from inside the consumer portal, which redirects to Jansamarth (the government's credit-linked schemes portal). Jansamarth gives in-principle approval; the branch sanctions after its own checks. Since August 2026 the government subsidy is credited into the <b>loan account</b>, which cuts the outstanding principal soon after commissioning."
+              }
+            ]
+          },
+          {
+            "kicker": "Rates",
+            "title": "Rates and amounts seen in actual sanctions (2026)",
+            "blocks": [
+              {
+                "type": "table",
+                "headers": [
+                  "Bank",
+                  "Observed terms"
+                ],
+                "rows": [
+                  [
+                    "State Bank of India",
+                    "₹1,76,000 at 6% p.a. over 10 years; product cap ₹2 lakh for 3 kW"
+                  ],
+                  [
+                    "Union Bank of India",
+                    "5.75% p.a."
+                  ],
+                  [
+                    "Bank of Baroda",
+                    "₹1,89,000 sanctioned against ₹2.1 lakh requested"
+                  ],
+                  [
+                    "Punjab National Bank",
+                    "₹1,89,000 sanctioned"
+                  ],
+                  [
+                    "Canara Bank, IDBI Bank, Indian Bank",
+                    "Listed on Jansamarth for the scheme"
+                  ]
+                ]
+              },
+              {
+                "type": "p",
+                "html": "Typical structure: loan covers <b>80–90%</b> of project cost, tenure up to 10 years, own contribution 10% (sometimes 20%) — enter whatever the portal displays."
+              },
+              {
+                "type": "callout",
+                "label": "Watch out",
+                "title": "At least one sanction letter showed zero processing fee",
+                "body": "If a bank official asks for a payment to “process” the file, refuse and report it."
+              }
+            ]
+          },
+          {
+            "kicker": "Sequencing",
+            "title": "When the loan option appears",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "The <b>Bank Loan</b> tile on the consumer portal is greyed out until two vendor uploads are complete:"
+              },
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "The signed agreement on ₹100 stamp paper",
+                  "The Site Feasibility Report with quotation PDF"
+                ]
+              },
+              {
+                "type": "p",
+                "html": "This sequencing is the most common reason people cannot find the loan option. Ask your vendor to complete both, then refresh. See the full sequence in our <a href=\"/pm-surya-ghar/how-to-apply\" class=\"text-headupb2b font-semibold underline\">application guide</a>."
+              }
+            ]
+          },
+          {
+            "kicker": "Process",
+            "title": "Step-by-step on Jansamarth",
+            "blocks": [
+              {
+                "type": "callout",
+                "label": "Before you begin",
+                "title": "Jansamarth has no Back button",
+                "body": "Every screen commits on <b>Next</b>. Read before you click."
+              },
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "From the consumer portal, click <b>Apply for Loan</b> → redirected to Jansamarth.",
+                  "<b>Aadhaar OTP verification.</b> Needs a working Aadhaar-linked mobile; OTP validity is about 3 minutes.",
+                  "<b>Name fields.</b> Aadhaar returns your full name into First Name. Move the surname to Last Name manually.",
+                  "<b>Personal and income details.</b> Enter true figures. Income and existing loan overdues are checked against CIBIL and bank records; misstatement is grounds for rejection and a fraud flag.",
+                  "<b>Project details.</b> Auto-filled from the PM Surya Ghar application: capacity, project cost, vendor.",
+                  "<b>Own contribution.</b> Enter the percentage the portal shows.",
+                  "<b>Co-applicant/guarantor.</b> Required only if the applicant is 60 or older.",
+                  "<b>Ownership document (PDF).</b> Officially optional on Jansamarth, but branches ask for it: property tax receipt, sale deed, lease deed, panchayat letter, land record (khatauni in rural UP/Bihar), or mutation certificate.",
+                  "<b>Bank and branch selection by IFSC.</b> This is the biggest single failure point. <b>Paste</b> the IFSC rather than typing it. A known bug shows the wrong branch name after entry; fix it by deleting and retyping the last character. A file sent to the wrong branch must be rejected and refiled from scratch.",
+                  "<b>Submit.</b> You receive a digital in-principle approval letter / e-token / acknowledgement."
+                ]
+              }
+            ]
+          },
+          {
+            "kicker": "Sanction",
+            "title": "At the branch",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "Take the e-token, quotation, feasibility report, Aadhaar, PAN, electricity bill, ownership proof and bank passbook to the selected branch. Sanction depends on the bank's own criteria — CIBIL score, income and existing obligations. <b>Jansamarth approval does not oblige the bank to lend.</b>"
+              },
+              {
+                "type": "p",
+                "html": "Bank of Baroda additionally requires an “additional details” block (project cost, tenure, moratorium, ownership, residency, declarations) plus uploads of the quotation and completed feasibility report."
+              }
+            ]
+          },
+          {
+            "kicker": "Subsidy",
+            "title": "How the subsidy interacts with the loan",
+            "blocks": [
+              {
+                "type": "list",
+                "items": [
+                  "Subsidy is credited to the <b>loan account</b>, not your savings account (from August 2026).",
+                  "The Redeem button stays disabled until the bank sends your loan account details to the national portal. The bank has <b>15 days</b> from inspection approval; after that you may substitute savings-account details.",
+                  "On a ₹1.8 lakh loan for a 3 kW system in UP, a ₹1,08,000 subsidy credit leaves roughly <b>₹72,000</b> to repay — at 6% over 10 years that is under <b>₹800 a month</b>, against a monthly bill saving that is usually larger."
+                ]
+              }
+            ]
+          },
+          {
+            "kicker": "Eligibility",
+            "title": "Who should take the loan",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "Households with a regular income and a CIBIL score above ~700 can usually get the loan and repay it from bill savings alone."
+              },
+              {
+                "type": "p",
+                "html": "Households with an existing overdue loan, no income proof, or a bill in a deceased relative's name should sort those out first — the loan will be declined at the branch even with Jansamarth approval."
+              }
+            ]
+          },
+          {
+            "kicker": "Troubleshooting",
+            "title": "Common failures",
+            "blocks": [
+              {
+                "type": "table",
+                "headers": [
+                  "Failure",
+                  "Cause",
+                  "Prevention"
+                ],
+                "rows": [
+                  [
+                    "Loan tile not visible",
+                    "Agreement or SFR not uploaded",
+                    "Chase vendor"
+                  ],
+                  [
+                    "Application sent to wrong branch",
+                    "IFSC bug / typing error",
+                    "Paste IFSC, verify branch name"
+                  ],
+                  [
+                    "OTP not received",
+                    "Mobile not linked to Aadhaar",
+                    "Update Aadhaar mobile first"
+                  ],
+                  [
+                    "Branch rejects despite e-token",
+                    "CIBIL / income",
+                    "Check CIBIL before applying"
+                  ],
+                  [
+                    "Subsidy not credited",
+                    "Bank has not sent loan details",
+                    "Wait 15 days, then substitute savings account"
+                  ]
+                ]
+              },
+              {
+                "type": "callout",
+                "label": "Vendor support",
+                "title": "Uploads done within 48 hours",
+                "body": "Headsup B2B's partner vendors in Bihar and Rajasthan complete the agreement and feasibility uploads within 48 hours of site visit so the loan option opens without delay."
+              }
+            ]
+          }
+        ],
+        "faqKicker": "FAQ",
+        "faqTitle": "Frequently asked questions",
+        "faqs": [],
+        "keywords": [],
+        "ctaHeading": "Planning a rooftop solar project?",
+        "ctaSubtitle": "Talk to our solar team for vetted vendors, DCR-compliant modules and end-to-end procurement support.",
+        "ctaButton": "Request a Consultation",
+        "ctaFooter": "No obligation · Response within 24 hours",
+        "consultationTitle": "Request a Consultation"
+      },
+      "kwComparison": {
+        "meta": {
+          "seoTitle": "1 kW vs 2 kW vs 3 kW Solar System: Cost & Subsidy 2026",
+          "seoDescription": "Honest comparison of 1 kW, 2 kW and 3 kW rooftop systems under PM Surya Ghar — installed cost, subsidy, net cost, monthly units, roof area, payback, and exactly which appliances each size can and cannot run. Plus on-grid vs hybrid vs off-grid.",
+          "ogTitle": "1 kW vs 2 kW vs 3 kW Solar System: Cost & Subsidy 2026",
+          "ogDescription": "Honest comparison of 1 kW, 2 kW and 3 kW rooftop systems under PM Surya Ghar — installed cost, subsidy, net cost, monthly units, roof area, payback, and exactly which appliances each size can and cannot run. Plus on-grid vs hybrid vs off-grid."
+        },
+        "hero": {
+          "badge": "PM Surya Ghar",
+          "readTime": "9 min read",
+          "published": "Updated 5 September 2026",
+          "title1": "1 kW vs 2 kW vs 3 kW Solar System for Home:",
+          "title2": "Cost, Subsidy, Generation and What Each Runs",
+          "subtitle": "Installed cost, subsidy, net cost, monthly units, roof area and payback compared side by side — plus exactly which appliances each size can and cannot run.",
+          "sourceLine": "Last updated: 5 September 2026. Costs are indicative North-India market ranges for DCR on-grid systems, not quotations.",
+          "stats": [
+            {
+              "num": "₹45,000",
+              "label": "Subsidy at 1 kW (central + UP)"
+            },
+            {
+              "num": "₹1,08,000",
+              "label": "Subsidy at 3 kW (central + UP)"
+            },
+            {
+              "num": "2–2.5 yrs",
+              "label": "Payback on a 3 kW system"
+            }
+          ],
+          "strip": [
+            "Cost",
+            "Subsidy",
+            "Generation",
+            "Roof area",
+            "Payback"
+          ]
+        },
+        "tocLabel": "What this guide covers",
+        "toc": [
+          "The comparison table",
+          "What each size actually runs",
+          "Should you go to 5 kW?",
+          "On-grid vs hybrid vs off-grid",
+          "Why bills have jumped",
+          "Sizing rule of thumb",
+          "What a proper quotation includes"
+        ],
+        "sections": [
+          {
+            "kicker": "Side by side",
+            "title": "The comparison table",
+            "blocks": [
+              {
+                "type": "table",
+                "headers": [
+                  "",
+                  "1 kW",
+                  "2 kW",
+                  "3 kW"
+                ],
+                "rows": [
+                  [
+                    "<b>Installed cost</b>",
+                    "₹60,000–70,000",
+                    "₹1,10,000–1,40,000",
+                    "₹1,50,000–1,90,000"
+                  ],
+                  [
+                    "<b>Subsidy (central + UP)</b>",
+                    "₹45,000",
+                    "₹90,000",
+                    "₹1,08,000"
+                  ],
+                  [
+                    "<b>Net cost</b>",
+                    "~₹20,000–25,000",
+                    "~₹40,000–50,000",
+                    "~₹70,000–75,000"
+                  ],
+                  [
+                    "<b>Generation per day</b>",
+                    "4–5 units",
+                    "8–10 units",
+                    "12–15 units"
+                  ],
+                  [
+                    "<b>Generation per month</b>",
+                    "120–150 units",
+                    "240–300 units",
+                    "360–450 units"
+                  ],
+                  [
+                    "<b>Shadow-free roof needed</b>",
+                    "80–100 sq ft",
+                    "~200 sq ft",
+                    "~300 sq ft"
+                  ],
+                  [
+                    "<b>Number of 540 W panels</b>",
+                    "2",
+                    "4",
+                    "5–6"
+                  ],
+                  [
+                    "<b>Simple payback</b>",
+                    "~3 years",
+                    "2–3 years",
+                    "2–2.5 years"
+                  ]
+                ]
+              },
+              {
+                "type": "p",
+                "html": "Subsidy shown is for Uttar Pradesh; central subsidy alone is ₹30,000 / ₹60,000 / ₹78,000. Beyond 3 kW there is <b>no additional subsidy</b> — see our <a href=\"/pm-surya-ghar/subsidy-amount\" class=\"text-headupb2b font-semibold underline\">subsidy amount guide</a>."
+              }
+            ]
+          },
+          {
+            "kicker": "Appliances",
+            "title": "What each size actually runs",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "This is the part most vendors gloss over."
+              },
+              {
+                "type": "p",
+                "html": "<b>1 kW</b> — 4–5 fans, 3–4 LED bulbs, a small TV, a laptop, phone charging, and a small pump for short spells. It will <b>not</b> run an air conditioner, a cooler or a washing machine. Suitable for a 1–2 room household with a bill under ₹1,000."
+              },
+              {
+                "type": "p",
+                "html": "<b>2 kW</b> — everything above plus a fridge, cooler and washing machine. Still not enough for an AC. If you have an AC, skip 2 kW and go to 3 kW — the subsidy jump (₹90,000 → ₹1,08,000) makes the marginal kW cheap."
+              },
+              {
+                "type": "p",
+                "html": "<b>3 kW</b> — 10–20 LEDs, 4–5 fans, 1–2 TVs, 1–2 fridges, cooler, washing machine, plus one 1-ton inverter AC during daylight hours. <b>Not</b>: two ACs together, a pump above 1.5 HP, a geyser or room heater."
+              },
+              {
+                "type": "callout",
+                "label": "Read this twice",
+                "title": "The daylight qualifier matters",
+                "body": "An on-grid system generates only while the sun is up and has no battery. At night you draw from the grid as before; the net meter offsets night-time consumption against daytime export, so your bill falls — but the AC at 11 pm is still running on the grid."
+              }
+            ]
+          },
+          {
+            "kicker": "Beyond 3 kW",
+            "title": "Should you go to 5 kW?",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "Yes if you run two ACs, a submersible pump or an electric geyser, or your monthly consumption is above 500 units. The subsidy stays at ₹78,000 central, so you pay the full cost of the extra 2 kW — but the per-kW cost of the increment is <b>lower</b> than the first 3 kW because inverter, structure, cabling, net meter and DISCOM charges are already covered."
+              },
+              {
+                "type": "p",
+                "html": "Your sanctioned load must be at least 5 kW; apply for load enhancement first."
+              }
+            ]
+          },
+          {
+            "kicker": "System type",
+            "title": "On-grid vs hybrid vs off-grid",
+            "blocks": [
+              {
+                "type": "table",
+                "headers": [
+                  "",
+                  "On-grid",
+                  "Hybrid",
+                  "Off-grid"
+                ],
+                "rows": [
+                  [
+                    "<b>Battery</b>",
+                    "No",
+                    "Yes",
+                    "Yes"
+                  ],
+                  [
+                    "<b>Net meter</b>",
+                    "Yes",
+                    "Yes",
+                    "No"
+                  ],
+                  [
+                    "<b>Works during power cut</b>",
+                    "No",
+                    "Yes",
+                    "Yes"
+                  ],
+                  [
+                    "<b>Subsidy eligible</b>",
+                    "Yes",
+                    "Solar portion, yes",
+                    "No"
+                  ],
+                  [
+                    "<b>3 kW indicative cost</b>",
+                    "~₹1.8 lakh",
+                    "~₹5 lakh",
+                    "~₹4 lakh"
+                  ],
+                  [
+                    "<b>Best for</b>",
+                    "Cities with reliable supply",
+                    "Villages/small towns with 2–4 hour daily cuts",
+                    "Sites with no grid"
+                  ]
+                ]
+              },
+              {
+                "type": "p",
+                "html": "The PM Surya Ghar subsidy flows through the DISCOM inspection and net meter, so off-grid systems are effectively ineligible even though this is rarely stated plainly. If you want backup, the sensible route is an on-grid system under the scheme now, with a battery added later — or a hybrid inverter from the start, accepting that the battery is unsubsidised."
+              }
+            ]
+          },
+          {
+            "kicker": "Context",
+            "title": "Why bills have jumped — and why solar pays faster than it used to",
+            "blocks": [
+              {
+                "type": "p",
+                "html": "The rollout of smart prepaid meters has ended estimated billing in many DISCOM areas. Households that were paying ₹1,500–2,000 on estimated bills are reporting <b>₹3,500–4,000</b> as actual consumption, fixed charges, fuel surcharge and regulatory surcharges become visible."
+              },
+              {
+                "type": "p",
+                "html": "At ₹4,000 a month, a 3 kW system with a ₹72,000 net cost pays back in <b>under two years</b>."
+              }
+            ]
+          },
+          {
+            "kicker": "Sizing",
+            "title": "Sizing rule of thumb",
+            "blocks": [
+              {
+                "type": "list",
+                "ordered": true,
+                "items": [
+                  "Take your last 12 electricity bills and average the monthly units.",
+                  "Divide by <b>120</b> (units per kW per month in North India).",
+                  "Round up to the nearest kW, capped by your sanctioned load and shadow-free roof area.",
+                  "If the answer is 2.5, go to 3 — the subsidy ceiling is at 3 kW and the incremental cost is small."
+                ]
+              },
+              {
+                "type": "callout",
+                "label": "Worked example",
+                "title": "380 units a month",
+                "body": "380 ÷ 120 = 3.2 → install <b>3 kW</b> (or 4 kW if roof and load allow and the budget is there)."
+              }
+            ]
+          },
+          {
+            "kicker": "Buying",
+            "title": "What a proper quotation includes",
+            "blocks": [
+              {
+                "type": "list",
+                "items": [
+                  "Module brand, wattage and count (e.g. 6 × 540 W = 3.24 kW DC)",
+                  "Inverter brand and rating (kVA)",
+                  "Structure type and height",
+                  "DC/AC cabling, earthing, lightning arrester, DCDB/ACDB",
+                  "Net-meter charges and DISCOM fees stated separately",
+                  "<b>Gross price, subsidy, net price — on three separate lines</b>",
+                  "Warranty: modules (25-year performance), inverter (5–10 years), workmanship (5-year CMC)",
+                  "Confirmation that modules are DCR/ALMM-listed and that a <a href=\"/pm-surya-ghar/dcr-certificate\" class=\"text-headupb2b font-semibold underline\">B2C DCR certificate</a> will be issued"
+                ]
+              },
+              {
+                "type": "p",
+                "html": "A quotation that only says “3 kW solar — ₹1,80,000” is not a quotation."
+              },
+              {
+                "type": "callout",
+                "label": "Sizing help",
+                "title": "Send us your last bill",
+                "body": "Headsup B2B's hubs in <b>Patna and Dausa</b> stock 540 W and 580 W DCR modules and on-grid and hybrid inverters, and can size a system from your last bill. Send the bill and a roof photo for a written quotation."
+              }
+            ]
+          }
+        ],
+        "faqKicker": "FAQ",
+        "faqTitle": "Frequently asked questions",
+        "faqs": [],
+        "keywords": [],
+        "ctaHeading": "Planning a rooftop solar project?",
+        "ctaSubtitle": "Talk to our solar team for vetted vendors, DCR-compliant modules and end-to-end procurement support.",
+        "ctaButton": "Request a Consultation",
+        "ctaFooter": "No obligation · Response within 24 hours",
+        "consultationTitle": "Request a Consultation"
+      }
+    }
+  },
   "coalReport2026": {
     "meta": {
       "seoTitle": "India's Coal Decade Delivers 210 MT — FY 2025-26 Sector Report | Headsup B2B",
@@ -11430,6 +13562,7 @@
     "contactUs": "Contact us",
     "raisedFunds": "We have raised funds!",
     "research": "Research",
+    "pmSuryaGhar": "PM Surya Ghar",
     "support": "Support",
     "privacyTerms": "Privacy & Terms",
     "generalEnquiry": "General Enquiry",
@@ -11876,6 +14009,7 @@
     "Industrial Automation Solutions": "Industrial Automation Solutions",
     "Petro-Chemical Solutions": "Petro-Chemical Solutions",
     "Renewable Solutions": "Renewable Solutions",
+    "Solar Solutions": "Solar Solutions",
     "Industrial Safety Solutions": "Industrial Safety Solutions",
     "Biomass": "Biomass",
     "Agro-Commodities": "Agro-Commodities",
@@ -13002,6 +15136,110 @@
     "bannerDescription": "Exploring the Essence of Headsup B2B",
     "heading": "About us",
     "body": "Established in 2021, Headsup B2B has rapidly grown into a leading supplier of industry essentials that offers comprehensive services to various sectors in the country. Our wide range of product portfolio consists of robust steel products, innovative renewable energy solutions, construction supplies, and much more. With a vision of simplifying procurement processes for everyone, we uphold unwavering standards of quality, reliability, and affordability in every aspect of our service. Whether you need premium TMT bars or advanced solar panels, our committed team ensures prompt and efficient delivery. Experience seamless procurement with Headsup B2B today!"
+  },
+  "aboutPage": {
+    "hero": {
+      "title": "Built for the Businesses That Build India.",
+      "subtitle": "The Platform. The Mission. The Story."
+    },
+    "about": {
+      "kicker": "About Us",
+      "heading": "We are India's full-stack B2B platform",
+      "lead": "Powering predictable, efficient supply chains across infrastructure, industrial, and renewable energy.",
+      "p1": "India's builders rely on supply chains that were never built for them. Fragmented sourcing. Inconsistent fulfilment. Credit that scales with your balance sheet, not your potential. Headsup B2B was built to change that.",
+      "p2": "From sourcing and vendor aggregation to last-mile delivery, execution support, and credit enablement — we operate across the entire value chain. We don't just connect buyers to sellers.",
+      "pullquote": "We engineer certainty into every transaction: the right product, the right price, the right time, and the capital to make it happen."
+    },
+    "founder": {
+      "kicker": "From the Founder's Desk",
+      "quote": "I've watched India build; not from a boardroom, but up close, on sites where one delayed truck of steel can stall the wages of fifty people.",
+      "name": "Sumit Kumar",
+      "role": "Founder & Director,",
+      "company": "Headsup B2B",
+      "portraitAlt": "Sumit Kumar, Founder & Director, Headsup B2B",
+      "paras": [
+        "The people who build this country carry an extraordinary weight, yet the smallest among them are still left to scattered calls, quiet favours, and guesswork.",
+        "So we built Headsup B2B on a simple belief: the size of your company shouldn't decide the certainty you're owed. The same sourcing, credit, and speed once reserved for the largest players, put within reach of the ones who need it most.",
+        "By 2030, my vision is that Headsup B2B is so woven into how India builds that no project — a village road or a national corridor — feels complete without it. Not because we're everywhere, but because we earned our place, one delivery at a time.",
+        "Today, we operate across infrastructure, industrial, and renewable energy categories — from steel and construction materials to solar systems, automation products, and industrial equipment. We are not just a procurement company. We are building the supply chain layer that India's growth economy has been missing."
+      ],
+      "closing": "We are just getting started."
+    },
+    "problem": {
+      "kicker": "The Problem We Solve",
+      "heading": "Procurement evolved in waves.",
+      "lead": "Trader, dealer, marketplace. More choice, more reach, but still just a place to transact. Each wave solved a piece. Headsup B2B is the fourth wave — where buying, financing, and building stop being separate steps.",
+      "waves": [
+        {
+          "label": "Wave 01",
+          "name": "Trader",
+          "text": "A relationship, and whatever stock it could reach."
+        },
+        {
+          "label": "Wave 02",
+          "name": "Dealer",
+          "text": "Wider range, still bound by one territory."
+        },
+        {
+          "label": "Wave 03",
+          "name": "Marketplace",
+          "text": "More choice and reach — but only a place to transact."
+        },
+        {
+          "label": "Wave 04",
+          "name": "Headsup B2B",
+          "text": "12+ material categories, collateral-free credit, and on-ground execution, on one accountable platform."
+        }
+      ],
+      "closing": "The first three waves helped you place an order. The fourth sees it through."
+    },
+    "promise": {
+      "headingLine1": "We don't just supply the project.",
+      "headingLine2": "We see it through.",
+      "points": [
+        "Fewer delays.",
+        "Lower risk.",
+        "Every project, moving on time."
+      ]
+    },
+    "journey": {
+      "kicker": "Our Journey",
+      "heading": "Five years of building the layer India was missing.",
+      "milestones": [
+        {
+          "year": "2022–23",
+          "text": "Founded with bootstrapped operations"
+        },
+        {
+          "year": "2023–24",
+          "text": "Expanded product range & customer base"
+        },
+        {
+          "year": "2024–25",
+          "text": "First funding milestone achieved"
+        },
+        {
+          "year": "2025–26",
+          "text": "More debt capital; ₹203+ Cr target reached"
+        },
+        {
+          "year": "2026–27",
+          "text": "Vertical integration, solar & services expansion"
+        }
+      ]
+    },
+    "missionVision": {
+      "kicker": "Mission & Vision",
+      "missionTitle": "Our Mission",
+      "missionBody": "To engineer certainty into India's B2B supply chains — making reliable sourcing, timely fulfilment, and accessible credit available to every business that builds, regardless of scale.",
+      "visionTitle": "Our Vision",
+      "visionBody": "By 2030, to be so deeply woven into how India builds that no project — from a village road to a national corridor — feels complete without Headsup B2B. Not because we're everywhere, but because we earned our place, one delivery at a time."
+    },
+    "cta": {
+      "heading": "Build With Headsup B2B",
+      "primary": "Start Sourcing Today",
+      "secondary": "Talk to our team"
+    }
   },
   "home": {
     "hero": {

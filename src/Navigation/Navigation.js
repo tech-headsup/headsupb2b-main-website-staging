@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useRef } from "react";
+import { useState, useRef, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import LogoDark from "../../public/logo-dark.webp";
 import CommonModal from "@/component/Modal/CommonModal";
@@ -10,6 +10,7 @@ import { sendEmailToSell } from "@/Contants/APIEndpoint";
 import NewsTicker from "@/component/home/NewsTicker";
 import LanguageToggle from "@/component/LanguageToggle/LanguageToggle";
 import { useDynamicTranslate } from "@/lib/useDynamicTranslate";
+import { sortCategories } from "@/Contants/categoryOrder";
 
 const NAV_LINKS = [
   { href: "/services", key: "nav.services" },
@@ -34,10 +35,15 @@ const NAV_LINKS = [
  * scrolled – boolean from Header scroll tracking
  */
 export default function Navigation({
-  rawCategories = [],
+  rawCategories: rawCategoriesProp = [],
   categoryProductOptions = [],
   scrolled = false,
 }) {
+  // the API order is not stable — pin it to the site-wide category order
+  const rawCategories = useMemo(
+    () => sortCategories(rawCategoriesProp),
+    [rawCategoriesProp],
+  );
   const { t } = useTranslation();
   const dt = useDynamicTranslate();
   const [menuOpen, setMenuOpen] = useState(false);

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import ProductCard from "../Card/ProductCard";
 import CustomText from "../Text/CustomText";
+import { sortCategories } from "@/Contants/categoryOrder";
 
 export default function MainCategory({ initialDataa }) {
   const { t } = useTranslation();
@@ -16,11 +17,13 @@ export default function MainCategory({ initialDataa }) {
   }, [width]);
 
   const renderCategories = () => {
-    const filtered = initialDataa?.filter(
-      (ele) =>
-        ele.name !== "IT Products" &&
-        ele.name !== "Tools and Accessories" &&
-        ele.name !== "Fitness Equipment"
+    const filtered = sortCategories(
+      initialDataa?.filter(
+        (ele) =>
+          ele.name !== "IT Products" &&
+          ele.name !== "Tools and Accessories" &&
+          ele.name !== "Fitness Equipment"
+      )
     );
 
     const items = isMobile && !showAllCategories ? filtered : filtered;

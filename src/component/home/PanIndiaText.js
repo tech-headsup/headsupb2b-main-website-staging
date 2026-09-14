@@ -64,7 +64,7 @@ export default function PanIndiaText() {
   return (
     <div className="-mx-4 sm:-mx-6 md:-mx-12 lg:-mx-20 xl:-mx-28">
     <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-8">
-    <div className="rounded-2xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
+    <div className="rounded-2xl overflow-hidden grid grid-cols-1 md:grid-cols-[35%_65%]">
       {/* Image */}
       <div className="relative w-full h-56 sm:h-72 md:h-auto">
         <Image
