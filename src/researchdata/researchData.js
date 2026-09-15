@@ -86,7 +86,7 @@ const researchData = [
     description: "JVVNL & AVVNL pipelines, RESCO developer profiles, district-wise opportunities and 2024–25 award data",
   },
   {
-    title: "Solar OM Bussiness India Guide 2026",
+    title: "Solar OM Business India Guide 2026",
     slug: "solar-om-business-india-guide",
     date: "2026-05-05",
     image: OMBusinessInIndia,
@@ -101,7 +101,7 @@ const researchData = [
   },
   {
     title: "India's Solar Boom: Procurement Challenges Facing Contractors in 2026–27",
-    slug: "India's-Solar-Boom-Procurement-Challenges-Facing-Contractors",
+    slug: "india-solar-boom-procurement-challenges-facing-contractors",
     date: "2026-05-11",
     image: indiasSolarBoom,
     description: "Ranked guide for plant owners & procurement heads shortlisting EPC vendors. Evaluated on: capacity, track record, O&M, panel quality, and financing options.",

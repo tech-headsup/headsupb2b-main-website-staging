@@ -93,16 +93,16 @@ export default function SolarProcurementChallengesPage() {
                     name="keywords"
                     content={t("solarBoom.meta.keywords")}
                 />
-                <link rel="canonical" href="https://www.headsupb2b.com/research/India's-Solar-Boom-Procurement-Challenges-Facing-Contractors" />
+                <link rel="canonical" href="https://www.headsupb2b.com/research/india-solar-boom-procurement-challenges-facing-contractors" />
                 <meta property="og:type" content="article" />
                 <meta property="og:title" content={t("solarBoom.meta.ogTitle")} />
                 <meta
                     property="og:description"
                     content={t("solarBoom.meta.ogDescription")}
                 />
-                <meta property="og:url" content="https://www.headsupb2b.com/research/India's-Solar-Boom-Procurement-Challenges-Facing-Contractors" />
+                <meta property="og:url" content="https://www.headsupb2b.com/research/india-solar-boom-procurement-challenges-facing-contractors" />
                 <meta property="og:site_name" content="Headsup B2B" />
-                <meta property="og:image" content="https://www.headsupb2b.com/India's-Solar-Boom-Procurement-Challenges-Facing-Contractors.webp" />
+                <meta property="og:image" content="https://www.headsupb2b.com/indians-solor-booms.webp" />
                 <meta property="og:locale" content="en_IN" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={t("solarBoom.meta.twitterTitle")} />
@@ -110,7 +110,7 @@ export default function SolarProcurementChallengesPage() {
                     name="twitter:description"
                     content={t("solarBoom.meta.twitterDescription")}
                 />
-                <meta name="twitter:image" content="https://www.headsupb2b.com/India's-Solar-Boom-Procurement-Challenges-Facing-Contractors.webp" />
+                <meta name="twitter:image" content="https://www.headsupb2b.com/indians-solor-booms.webp" />
             </Head>
 
             {/* HERO */}
