@@ -64,7 +64,7 @@ export default function ProductCardv2({ product, categoryName, categoryProductOp
           <div className="relative rounded-2xl overflow-hidden shadow-lg group w-full h-[144px]">
             <img
               src={`${product?.image?.url}`}
-              alt="Primary Bars"
+              alt={product?.name || product?.image?.name?.replace(/\.[^.]+$/, "") || "Product"}
               className="w-full h-52 object-fit transform group-hover:scale-105 transition-transform duration-300"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
