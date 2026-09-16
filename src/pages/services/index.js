@@ -8,6 +8,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { sendVendorOnboarding } from "@/Contants/APIEndpoint";
 import { getDemoPhone } from "@/Utils/demoDefaults";
+import { SERVICES_CATALOG } from "@/Contants/servicesCatalog";
 
 const FloatingHeroImage = () => {
   const controls = useAnimation();
@@ -89,17 +90,8 @@ const FloatingHeroImage = () => {
   );
 };
 
-const SERVICE_ITEMS = [
-  { key: "painting", icon: "/Ondemand/Painting.png" },
-  { key: "electrical", icon: "/Ondemand/Electrical.png" },
-  { key: "plumbing", icon: "/Ondemand/Plumbing.png" },
-  { key: "hvac", icon: "/Ondemand/AC.png" },
-  { key: "fire", icon: "/Ondemand/Fire.png", iconSize: 18 },
-  { key: "amc", icon: "/Ondemand/ACM.png" },
-  { key: "solar", icon: "/Ondemand/Solar.png" },
-  { key: "bess", icon: "/Ondemand/BESS.png", iconSize: 14 },
-  { key: "landscaping", icon: "/Ondemand/Contract.png" },
-];
+// Shared with the search box so these services are findable from any page.
+const SERVICE_ITEMS = SERVICES_CATALOG;
 
 const AUDIENCE_CARDS = [
   { icon: "/worker.png", key: "contractors" },
@@ -337,6 +329,8 @@ export default function ServicesPage() {
                 return (
                   <div
                     key={key}
+                    id={`service-${key}`}
+                    style={{ scrollMarginTop: "120px" }}
                     className="border border-[#e5e5e5] rounded-2xl p-5 sm:p-6 flex flex-col gap-3 bg-white transition-all duration-200 hover:shadow-[0_8px_30px_rgba(74,55,114,0.1)] hover:border-[#c5b8e8]"
                   >
                     <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#f0eef8] flex items-center justify-center flex-shrink-0 overflow-hidden">

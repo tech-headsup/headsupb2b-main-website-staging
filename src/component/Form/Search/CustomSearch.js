@@ -1,9 +1,10 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
 import { regexBasedProductSearch } from "@/Contants/APIEndpoint";
+import { searchServices, serviceHref } from "@/Contants/servicesCatalog";
 
 export default function CustomSearch({ variant = "default", onLight = false }) {
   const { t } = useTranslation();
@@ -59,6 +60,9 @@ export default function CustomSearch({ variant = "default", onLight = false }) {
     if (!aCatMatch && bCatMatch) return 1;
     return 0;
   });
+
+  // Services live outside the product catalogue, so match them locally.
+  const serviceResults = useMemo(() => searchServices(search, t), [search, t]);
 
   // ── Typewriter effect ────────────────────────────────────────────────────
   useEffect(() => {
@@ -134,16 +138,13 @@ export default function CustomSearch({ variant = "default", onLight = false }) {
             `${regexBasedProductSearch}?q=${encodeURIComponent(search.trim())}&fuzzyLevel=2`
           );
           const data = await response.json();
-          if (data.success && data.data) {
-            setSearchResults(data.data);
-            setIsOpen(true);
-          } else {
-            setSearchResults([]);
-          }
+          setSearchResults(data.success && data.data ? data.data : []);
         } catch (error) {
           console.error("Search error:", error);
           setSearchResults([]);
         } finally {
+          // Keep the dropdown open even with zero products — services may match.
+          setIsOpen(true);
           setLoading(false);
         }
       } else {
@@ -187,8 +188,50 @@ export default function CustomSearch({ variant = "default", onLight = false }) {
     >
       {loading ? (
         <div className="p-5 text-center text-gray-400 text-sm">Searching...</div>
-      ) : searchResults.length > 0 ? (
+      ) : searchResults.length > 0 || serviceResults.length > 0 ? (
         <>
+          {/* Services — matched locally, not returned by the product API */}
+          {serviceResults.length > 0 && (
+            <>
+              <p className="px-4 pb-2 text-[11px] font-bold uppercase tracking-wider text-gray-400">
+                Services
+              </p>
+              {serviceResults.map((service) => (
+                <Link key={service.key} href={serviceHref(service.key)} passHref>
+                  <div
+                    className="px-4 py-3 flex items-center gap-3 hover:bg-purple-50/60 cursor-pointer transition-colors border-b border-gray-50"
+                    onClick={handleResultClick}
+                  >
+                    <span
+                      className="w-[52px] h-[52px] rounded-lg flex items-center justify-center flex-shrink-0"
+                      style={{ background: "#f0eef8" }}
+                    >
+                      <Image
+                        src={service.icon}
+                        alt={service.title}
+                        width={24}
+                        height={24}
+                        className="object-contain"
+                        unoptimized
+                      />
+                    </span>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-semibold text-gray-900 text-sm leading-tight">
+                        {highlightText(service.title, search)}
+                      </h4>
+                      <p className="text-xs font-medium mt-0.5" style={{ color: "#4A3772" }}>
+                        On-Demand Service
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+              {searchResults.length > 0 && <hr className="mx-4 border-gray-100 my-2" />}
+            </>
+          )}
+
+          {searchResults.length > 0 && (
+          <>
           {/* Category badges */}
           <div className="flex flex-wrap gap-2 px-4 pb-3">
             {Object.values(groupedResults).map((group) => (
@@ -242,10 +285,12 @@ export default function CustomSearch({ variant = "default", onLight = false }) {
               </div>
             </Link>
           ))}
+          </>
+          )}
         </>
       ) : (
         <div className="p-8 text-center text-gray-400">
-          <p className="text-sm font-medium">No products found for "{search}"</p>
+          <p className="text-sm font-medium">No results found for "{search}"</p>
           <p className="text-xs mt-1">Try different keywords</p>
         </div>
       )}
