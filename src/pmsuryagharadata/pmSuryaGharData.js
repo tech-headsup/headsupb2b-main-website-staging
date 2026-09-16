@@ -39,14 +39,14 @@ const pmSuryaGharData = [
     description:
       "Central subsidy for 1 kW, 2 kW and 3 kW systems, state top-ups, why 5 kW gets no extra money, and what you actually pay out of pocket.",
   },
-  // {
-  //   title: "How to Apply for PM Surya Ghar Online 2026: Step-by-Step",
-  //   slug: "how-to-apply",
-  //   date: "2026-09-05",
-  //   image: howToApplyBanner,
-  //   description:
-  //     "Registration to Redeem Subsidy — the 12 steps in the order the portal enforces them, and the uploads that stall files.",
-  // },
+  {
+    title: "How to Apply for PM Surya Ghar Online 2026: Step-by-Step",
+    slug: "how-to-apply",
+    date: "2026-09-16",
+    image: howToApplyBanner,
+    description:
+      "Registration to Redeem Subsidy — the 12 steps in the order the portal enforces them, and the uploads that stall files.",
+  },
   // {
   //   title: "PM Surya Ghar Subsidy Not Received? 5 Reasons & Fixes",
   //   slug: "subsidy-not-received",
