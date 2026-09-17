@@ -170,6 +170,24 @@ const NEWS_ITEMS = [
     link: "https://www.theweek.in/news/biz-tech/2026/07/14/electric-vehicle-market-growth-india.html",
     image: "/news-image/electric-vehicles.jpg",
   },
+  {
+    tag: "Press Release - 18 Aug 2026",
+    title: "Why Off-Grid Solar + Battery Storage Could Shape India’s Next Phase of Industrial Energy",
+    link: "https://evolutionautoindia.in/why-off-grid-solar-battery-storage-could-shape-indias-next-phase-of-industrial-energy/",
+    image: "/news-image/off-grid-solar.jpg",
+  },
+  {
+    tag: "Press Release - 24 Aug 2026",
+    title: "Headsup B2B targets next growth phase with solar push, plans fundraise",
+    link: "https://www.vccircle.com/headsupb2b-targets-next-growth-phase-with-solar-push-plans-fundraise",
+    image: "/news-image/vccircle-solar.jpg",
+  },
+  {
+    tag: "Press Release - 31 Aug 2026",
+    title: "Smart Energy Magazine - The Growing Importance of Technology-led Procurement and Supply Chain Platforms in Enabling Renewable Energy Projects",
+    link: "/news-pdf/smart-energy-magazine-july-aug-2026.pdf",
+    image: "/news-image/smart-energy-procurement.jpg",
+  },
 ];
 
 export default function NewsPressRelease() {

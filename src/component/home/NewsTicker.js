@@ -128,6 +128,22 @@ const TICKER_ITEMS = [
     link: "https://www.theweek.in/news/biz-tech/2026/07/14/electric-vehicle-market-growth-india.html",
     image: "/news_logos/the-week.jpg",
   },
+  {
+    titleKey: "home.newsTicker.items.offGridSolarStorage",
+    link: "https://evolutionautoindia.in/why-off-grid-solar-battery-storage-could-shape-indias-next-phase-of-industrial-energy/",
+    image: "/news_logos/evolution-auto.webp",
+  },
+  {
+    titleKey: "home.newsTicker.items.vccircleSolarFundraise",
+    link: "https://www.vccircle.com/headsupb2b-targets-next-growth-phase-with-solar-push-plans-fundraise",
+    image: "/news_logos/vccircle.svg",
+    bg: "#000000",
+  },
+  {
+    titleKey: "home.newsTicker.items.smartEnergyProcurement",
+    link: "/news-pdf/smart-energy-magazine-july-aug-2026.pdf",
+    image: "/news_logos/smart-energy.png",
+  },
 ];
 
 // Group same titles together
