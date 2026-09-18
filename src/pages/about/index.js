@@ -193,14 +193,14 @@ export default function AboutPage() {
             </p>
             <div className="flex items-center gap-5 flex-wrap">
               <div
-                className="relative shrink-0 rounded-full overflow-hidden bg-[#EDE7FA] border-[3px] border-white w-[96px] h-[96px] t:w-[124px] t:h-[124px] l:w-[148px] l:h-[148px]"
+                className="relative shrink-0 rounded-full overflow-hidden bg-[#EDE7FA] border-[3px] border-white w-[180px] h-[180px] t:w-[240px] t:h-[240px] l:w-[300px] l:h-[300px]"
                 style={{ boxShadow: '0 6px 24px rgba(74,55,114,0.18)' }}
               >
                 <Image
-                  src="/news-image/sumit-image.png"
+                  src="/news-image/sumit-founder-square.webp"
                   alt={t('aboutPage.founder.portraitAlt')}
                   fill
-                  sizes="148px"
+                  sizes="300px"
                   className="object-cover"
                 />
               </div>
