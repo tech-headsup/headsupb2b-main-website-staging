@@ -99,6 +99,19 @@ const NEWS_ITEMS = [
     link: "/news-pdf/smart-energy-magazine-july-aug-2026.pdf",
     image: "/news-image/smart-energy-procurement.jpg",
   },
+  {
+    tag: "Press Release - 13 Aug 2026",
+    title: "Headsup B2B enters into partnership with INA Solar",
+    link: "https://www.news18.com/agency-feeds/headsup-b2b-enters-into-partnership-with-ina-solar-10251824.html",
+    image: "/news-image/ina-solar.jpg",
+    logos: [
+      { image: "/news_logos/18.png", link: "https://www.news18.com/agency-feeds/headsup-b2b-enters-into-partnership-with-ina-solar-10251824.html", title: "News18" },
+      { image: "/news_logos/energetica.jpeg", link: "https://www.energetica-india.net/news/headsup-b2b-partners-with-ina-solar-to-expand-solar-distribution-targets-inr-150-crore-annual-revenue", title: "Energetica India" },
+      { image: "/news_logos/saur-energy.webp", link: "https://www.saurenergy.com/solar-energy-news/headsup-b2b-signs-ina-solar-distribution-deal-targets-rs-150-crore-solar-revenue-12231159", title: "Saur Energy" },
+      { image: "/news_logos/hans-india.png", link: "https://www.thehansindia.com/business/headsup-b2b-signs-deal-with-ina-solar-1105153", title: "The Hans India" },
+      { image: "/news_logos/pti.png", link: "https://www.ptinews.com/detail/business/HeadsUp-B2B-enters-into-partnership-with-INA-Solar/3932329", title: "PTI" },
+    ],
+  },
 ];
 
 export default function NewsPressRelease() {
@@ -119,29 +132,24 @@ export default function NewsPressRelease() {
 
   const featuredLogos = [
     {
-      image: "/news_logos/18.png",
-      link: "https://www.news18.com/agency-feeds/headsup-b2b-enters-into-partnership-with-ina-solar-10251824.html",
-      title: "News18",
-    },
-    {
       image: "/news_logos/energetica.jpeg",
-      link: "https://www.energetica-india.net/news/headsup-b2b-partners-with-ina-solar-to-expand-solar-distribution-targets-inr-150-crore-annual-revenue",
+      link: "https://energetica-india.net/news/headsup-b2b-listed-as-national-vendor-on-pm-surya-ghar-portal-for-rooftop-solar",
       title: "Energetica India",
     },
     {
-      image: "/news_logos/saur-energy.webp",
-      link: "https://www.saurenergy.com/solar-energy-news/headsup-b2b-signs-ina-solar-distribution-deal-targets-rs-150-crore-solar-revenue-12231159",
-      title: "Saur Energy",
+      image: "/news_logos/pv-magazine.svg",
+      link: "https://www.pv-magazine-india.com/press-releases/headsup-b2b-joins-pm-surya-ghar-as-national-vendor-expands-operations/",
+      title: "pv magazine India",
     },
     {
-      image: "/news_logos/hans-india.png",
-      link: "https://www.thehansindia.com/business/headsup-b2b-signs-deal-with-ina-solar-1105153",
-      title: "The Hans India",
+      image: "/news_logos/business-news-this-week.jpeg",
+      link: "https://businessnewsthisweek.com/business/headsup-b2b-joins-pm-surya-ghar-as-national-vendor-expands-operations/",
+      title: "Business News This Week",
     },
     {
-      image: "/news_logos/pti.png",
-      link: "https://www.ptinews.com/detail/business/HeadsUp-B2B-enters-into-partnership-with-INA-Solar/3932329",
-      title: "PTI",
+      image: "/news_logos/business-news-week.png",
+      link: "https://businessnewsweek.in/business/headsup-b2b-joins-pm-surya-ghar-as-national-vendor-expands-operations/",
+      title: "Business News Week",
     },
   ];
 
@@ -162,8 +170,8 @@ export default function NewsPressRelease() {
         <div className="rounded-2xl mm:rounded-3xl p-3 mm:p-4 ml:p-5 t:p-6 l:p-8 bg-[#f4f1fb] border border-[#e8e2f5]">
           <div className="relative w-full h-[130px] ms:h-[180px] mm:h-[180px] ml:h-[210px] t:h-[390px] l:h-[260px] xl:h-[320px] rounded-xl mm:rounded-2xl overflow-hidden bg-white mb-4 ml:mb-6">
             <Image
-              src="/news-image/ina-solar.jpg"
-              alt="Headsup B2B enters into partnership with INA Solar"
+              src="/news-image/pm-surya-ghar.webp"
+              alt="Headsup B2B Listed as National Vendor on PM Surya Ghar Portal for Rooftop Solar"
               fill
               className="object-fit"
             />
@@ -174,7 +182,7 @@ export default function NewsPressRelease() {
           >
             {t("newsroom.featuredTitle")}
           </h3>
-          <div className="grid grid-cols-5 gap-2 mm:gap-3 t:gap-4">
+          <div className="grid grid-cols-4 gap-2 mm:gap-3 t:gap-4">
             {featuredLogos.map((item, i) => (
               <Link
                 href={item.link}
@@ -187,7 +195,7 @@ export default function NewsPressRelease() {
                   src={item.image}
                   alt={item.title}
                   fill
-                  className="object-contain p-1.5"
+                  className="object-contain"
                 />
               </Link>
             ))}

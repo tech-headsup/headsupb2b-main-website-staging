@@ -97,6 +97,29 @@ const INA_SOLAR_LOGOS = [
   },
 ];
 
+const PM_SURYA_GHAR_LOGOS = [
+  {
+    image: "/news_logos/energetica.jpeg",
+    link: "https://energetica-india.net/news/headsup-b2b-listed-as-national-vendor-on-pm-surya-ghar-portal-for-rooftop-solar",
+    title: "Energetica India",
+  },
+  {
+    image: "/news_logos/pv-magazine.svg",
+    link: "https://www.pv-magazine-india.com/press-releases/headsup-b2b-joins-pm-surya-ghar-as-national-vendor-expands-operations/",
+    title: "pv magazine India",
+  },
+  {
+    image: "/news_logos/business-news-this-week.jpeg",
+    link: "https://businessnewsthisweek.com/business/headsup-b2b-joins-pm-surya-ghar-as-national-vendor-expands-operations/",
+    title: "Business News This Week",
+  },
+  {
+    image: "/news_logos/business-news-week.png",
+    link: "https://businessnewsweek.in/business/headsup-b2b-joins-pm-surya-ghar-as-national-vendor-expands-operations/",
+    title: "Business News Week",
+  },
+];
+
 const NEWS_ITEMS = [
   {
     tag: "Press Release - 13 Aug 2026",
@@ -187,6 +210,13 @@ const NEWS_ITEMS = [
     title: "Smart Energy Magazine - The Growing Importance of Technology-led Procurement and Supply Chain Platforms in Enabling Renewable Energy Projects",
     link: "/news-pdf/smart-energy-magazine-july-aug-2026.pdf",
     image: "/news-image/smart-energy-procurement.jpg",
+  },
+  {
+    tag: "Press Release - 17 Sep 2026",
+    title: "Headsup B2B Listed as National Vendor on PM Surya Ghar Portal for Rooftop Solar",
+    link: "https://energetica-india.net/news/headsup-b2b-listed-as-national-vendor-on-pm-surya-ghar-portal-for-rooftop-solar",
+    image: "/news-image/pm-surya-ghar.webp",
+    logos: PM_SURYA_GHAR_LOGOS,
   },
 ];
 

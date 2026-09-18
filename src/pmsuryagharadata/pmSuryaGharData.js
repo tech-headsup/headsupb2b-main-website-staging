@@ -47,14 +47,14 @@ const pmSuryaGharData = [
     description:
       "Registration to Redeem Subsidy — the 12 steps in the order the portal enforces them, and the uploads that stall files.",
   },
-  // {
-  //   title: "PM Surya Ghar Subsidy Not Received? 5 Reasons & Fixes",
-  //   slug: "subsidy-not-received",
-  //   date: "2026-09-05",
-  //   image: subsidyNotReceivedBanner,
-  //   description:
-  //     "Name mismatch, wrong bank document, verification pending, loan-account details, and who has to click Redeem — with the exact fix for each.",
-  // },
+  {
+    title: "PM Surya Ghar Subsidy Not Received? 5 Reasons & Fixes",
+    slug: "subsidy-not-received",
+    date: "2026-09-18",
+    image: subsidyNotReceivedBanner,
+    description:
+      "Name mismatch, wrong bank document, verification pending, loan-account details, and who has to click Redeem — with the exact fix for each.",
+  },
   // {
   //   title: "How to Become a PM Surya Ghar Vendor in 2026",
   //   slug: "vendor-registration",

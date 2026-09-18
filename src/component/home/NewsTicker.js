@@ -144,6 +144,26 @@ const TICKER_ITEMS = [
     link: "/news-pdf/smart-energy-magazine-july-aug-2026.pdf",
     image: "/news_logos/smart-energy.png",
   },
+  {
+    titleKey: "home.newsTicker.items.pmSuryaGharVendor",
+    link: "https://energetica-india.net/news/headsup-b2b-listed-as-national-vendor-on-pm-surya-ghar-portal-for-rooftop-solar",
+    image: "/news_logos/energetica.jpeg",
+  },
+  {
+    titleKey: "home.newsTicker.items.pmSuryaGharVendor",
+    link: "https://www.pv-magazine-india.com/press-releases/headsup-b2b-joins-pm-surya-ghar-as-national-vendor-expands-operations/",
+    image: "/news_logos/pv-magazine.svg",
+  },
+  {
+    titleKey: "home.newsTicker.items.pmSuryaGharVendor",
+    link: "https://businessnewsthisweek.com/business/headsup-b2b-joins-pm-surya-ghar-as-national-vendor-expands-operations/",
+    image: "/news_logos/business-news-this-week.jpeg",
+  },
+  {
+    titleKey: "home.newsTicker.items.pmSuryaGharVendor",
+    link: "https://businessnewsweek.in/business/headsup-b2b-joins-pm-surya-ghar-as-national-vendor-expands-operations/",
+    image: "/news_logos/business-news-week.png",
+  },
 ];
 
 // Group same titles together

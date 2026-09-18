@@ -893,11 +893,11 @@
         "hero": {
           "badge": "PM Surya Ghar",
           "readTime": "8 min read",
-          "published": "Updated 5 September 2026",
+          "published": "Updated 18 September 2026",
           "title1": "PM Surya Ghar Subsidy Not Received?",
           "title2": "The 5 Reasons Files Get Stuck",
           "subtitle": "The subsidy is paid automatically once a file is clean. When it does not arrive, the cause is almost always one of five things — and in every case the fix is on the consumer's or vendor's side, not the government's.",
-          "sourceLine": "Last updated: 5 September 2026.",
+          "sourceLine": "Last updated: 18 September 2026.",
           "stats": [
             {
               "num": "2–24 hrs",
@@ -15303,7 +15303,8 @@
         "evRevolution": "What’s next in India’s EV (r)evolution?",
         "offGridSolarStorage": "Why Off-Grid Solar + Battery Storage Could Shape India’s Next Phase of Industrial Energy",
         "vccircleSolarFundraise": "Headsup B2B targets next growth phase with solar push, plans fundraise",
-        "smartEnergyProcurement": "Smart Energy Magazine - The Growing Importance of Technology-led Procurement and Supply Chain Platforms in Enabling Renewable Energy Projects"
+        "smartEnergyProcurement": "Smart Energy Magazine - The Growing Importance of Technology-led Procurement and Supply Chain Platforms in Enabling Renewable Energy Projects",
+        "pmSuryaGharVendor": "Headsup B2B Listed as National Vendor on PM Surya Ghar Portal for Rooftop Solar"
       }
     },
     "newsPress": {
@@ -15561,8 +15562,8 @@
     "latestReleases": "Latest Press Releases",
     "readRelease": "Read release",
     "pressReleasePrefix": "Press Release - ",
-    "featuredTitle": "Headsup B2B enters into partnership with INA Solar",
-    "featuredAlt": "HeadsUp B2B enters into partnership with INA Solar",
+    "featuredTitle": "Headsup B2B Listed as National Vendor on PM Surya Ghar Portal for Rooftop Solar",
+    "featuredAlt": "Headsup B2B Listed as National Vendor on PM Surya Ghar Portal for Rooftop Solar",
     "watchStoryTitle": "Sumit Kumar on Revolutionizing MSME Procurement with AI-Powered Solutions",
     "titles": {
       "Headsup B2B enters into partnership with INA Solar": "Headsup B2B enters into partnership with INA Solar",
@@ -15582,7 +15583,8 @@
       "What’s next in India’s EV\n(r)evolution?": "What’s next in India’s EV\n(r)evolution?",
       "Why Off-Grid Solar + Battery Storage Could Shape India’s Next Phase of Industrial Energy": "Why Off-Grid Solar + Battery Storage Could Shape India’s Next Phase of Industrial Energy",
       "Headsup B2B targets next growth phase with solar push, plans fundraise": "Headsup B2B targets next growth phase with solar push, plans fundraise",
-      "Smart Energy Magazine - The Growing Importance of Technology-led Procurement and Supply Chain Platforms in Enabling Renewable Energy Projects": "Smart Energy Magazine - The Growing Importance of Technology-led Procurement and Supply Chain Platforms in Enabling Renewable Energy Projects"
+      "Smart Energy Magazine - The Growing Importance of Technology-led Procurement and Supply Chain Platforms in Enabling Renewable Energy Projects": "Smart Energy Magazine - The Growing Importance of Technology-led Procurement and Supply Chain Platforms in Enabling Renewable Energy Projects",
+      "Headsup B2B Listed as National Vendor on PM Surya Ghar Portal for Rooftop Solar": "Headsup B2B Listed as National Vendor on PM Surya Ghar Portal for Rooftop Solar"
     }
   },
   "wayl": {
